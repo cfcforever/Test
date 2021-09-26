@@ -3,9 +3,9 @@ output_dir: ../docs
 navbar:
   title: Test
   left:
-  - text: Home1
+  - text: Home
     href: index.html
-  - text: About1
+  - text: About
     href: about.html
   - text: License
     href: license.html
