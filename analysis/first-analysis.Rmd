@@ -7,10 +7,10 @@ editor_options:
   chunk_output_type: console
 ---
 
-## Introduction
+# Introduction
 This is my first code for this website.
 
-### histogram for a
+## histogram for a
 ```{r}
 set.seed(33)
 a = rnorm(100, 0, 1)
