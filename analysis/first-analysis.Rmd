@@ -1,0 +1,18 @@
+---
+title: "first-analysis"
+author: "cfcforever"
+date: "2021-09-26"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## Introduction
+This is my first code for this website.
+```{r}
+set.seed(33)
+a = rnorm(100, 0, 1)
+
+hist(a)
+```
+
