@@ -35,3 +35,12 @@ c = rnorm(100, 0, 3)
 
 hist(c)
 ```
+
+
+### histogram for c1
+```{r}
+set.seed(33)
+c1 = rnorm(100, 0, 4)
+
+hist(c1)
+```
