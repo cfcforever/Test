@@ -332,13 +332,16 @@ div.tocify {
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="index.html">Home</a>
+  <a href="index.html">Home1</a>
 </li>
 <li>
-  <a href="about.html">About</a>
+  <a href="about.html">About1</a>
 </li>
 <li>
   <a href="license.html">License</a>
+</li>
+<li>
+  <a href="first-analysis.html">Analysis</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -476,22 +479,24 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree5da6d4a20b0e4810c2723b415c097191948ae38ctargetblank5da6d4aa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/5da6d4a20b0e4810c2723b415c097191948ae38c" target="_blank">5da6d4a</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreedbb250173fc9517bd7bdf24ddda7d4f9c223c63etargetblankdbb2501a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/dbb250173fc9517bd7bdf24ddda7d4f9c223c63e" target="_blank">dbb2501</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree5da6d4a20b0e4810c2723b415c097191948ae38ctargetblank5da6d4aa" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreedbb250173fc9517bd7bdf24ddda7d4f9c223c63etargetblankdbb2501a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/5da6d4a20b0e4810c2723b415c097191948ae38c" target="_blank">5da6d4a</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/dbb250173fc9517bd7bdf24ddda7d4f9c223c63e" target="_blank">dbb2501</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
 </p>
 <pre><code>
-working directory clean
+Ignored files:
+    Ignored:    .DS_Store
+
 </code></pre>
 <p>
 Note that any generated files, e.g. HTML, png, CSS, etc., are not included in this status report because it is ok for generated content to have uncommitted changes.
@@ -529,6 +534,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/7e33371a4126c7011f9a3449cbe94afa08c2df77/analysis/first-analysis.Rmd" target="_blank">7e33371</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-09-26
+</td>
+<td>
+make some changes
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cfcforever/Test/7e33371a4126c7011f9a3449cbe94afa08c2df77/docs/first-analysis.html" target="_blank">7e33371</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-09-26
+</td>
+<td>
+make some changes
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -655,11 +694,11 @@ Start my new project
 </div>
 </div>
 </div>
-<div id="introduction" class="section level2">
-<h2>Introduction</h2>
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
 <p>This is my first code for this website.</p>
-<div id="histogram-for-a" class="section level3">
-<h3>histogram for a</h3>
+<div id="histogram-for-a" class="section level2">
+<h2>histogram for a</h2>
 <pre class="r"><code>set.seed(33)
 a = rnorm(100, 0, 1)
 
@@ -700,7 +739,6 @@ cfcforever
 </tr>
 </tbody>
 </table>
-</div>
 </div>
 </div>
 <div id="histogram-for-b" class="section level3">
@@ -769,17 +807,21 @@ locale:
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
+other attached packages:
+[1] workflowr_1.6.2
+
 loaded via a namespace (and not attached):
  [1] Rcpp_1.0.6        whisker_0.4       knitr_1.32        magrittr_2.0.1   
- [5] workflowr_1.6.2   R6_2.5.0          rlang_0.4.10      fansi_0.4.2      
- [9] highr_0.8         stringr_1.4.0     tools_4.0.5       xfun_0.22        
-[13] utf8_1.2.1        git2r_0.28.0      jquerylib_0.1.3   htmltools_0.5.1.1
-[17] ellipsis_0.3.1    rprojroot_2.0.2   yaml_2.2.1        digest_0.6.27    
-[21] tibble_3.1.0      lifecycle_1.0.0   crayon_1.4.1      later_1.1.0.1    
-[25] sass_0.3.1        vctrs_0.3.7       promises_1.2.0.1  fs_1.5.0         
-[29] glue_1.4.2        evaluate_0.14     rmarkdown_2.10    stringi_1.5.3    
-[33] compiler_4.0.5    bslib_0.2.4       pillar_1.6.0      jsonlite_1.7.2   
-[37] httpuv_1.5.5      pkgconfig_2.0.3  </code></pre>
+ [5] R6_2.5.0          rlang_0.4.10      fansi_0.4.2       highr_0.8        
+ [9] stringr_1.4.0     tools_4.0.5       xfun_0.22         utf8_1.2.1       
+[13] git2r_0.28.0      jquerylib_0.1.3   htmltools_0.5.1.1 ellipsis_0.3.1   
+[17] rprojroot_2.0.2   yaml_2.2.1        digest_0.6.27     tibble_3.1.0     
+[21] lifecycle_1.0.0   crayon_1.4.1      later_1.1.0.1     sass_0.3.1       
+[25] vctrs_0.3.7       promises_1.2.0.1  fs_1.5.0          glue_1.4.2       
+[29] evaluate_0.14     rmarkdown_2.10    stringi_1.5.3     bslib_0.2.4      
+[33] compiler_4.0.5    pillar_1.6.0      jsonlite_1.7.2    httpuv_1.5.5     
+[37] pkgconfig_2.0.3  </code></pre>
+</div>
 </div>
 </div>
 </div>
