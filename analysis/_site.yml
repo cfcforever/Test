@@ -11,7 +11,7 @@ navbar:
     href: license.html
   - text: Analysis
     href: first-analysis.html
-  - test: Today
+  - text: Today
     href: script_Firminy_daily.html
   right:
   - icon: fa-github
