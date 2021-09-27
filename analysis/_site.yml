@@ -5,8 +5,10 @@ navbar:
   left:
   - text: Home
     href: index.html
-  - text: Today
-    href: first-analysis.html
+  - text: 09-25
+    href: 09-25.html
+  - text: 09-26
+    href: 09-26.html
   - text: About
     href: about.html
   - text: License
