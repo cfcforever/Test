@@ -5,12 +5,12 @@ navbar:
   left:
   - text: Home
     href: index.html
+  - text: Today
+    href: first-analysis.html
   - text: About
     href: about.html
   - text: License
     href: license.html
-  - text: Analysis
-    href: first-analysis.html
   right:
   - icon: fa-github
     text: Source code

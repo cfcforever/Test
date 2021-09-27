@@ -28,7 +28,7 @@ source("code/fun_convert_date.R")
 today = "2021-09-25"
 cat("data on:", today, "\n")
 
-json_data = fromJSON(file = paste0("data/position.json"))
+json_data = fromJSON(file = paste0("data/json/", today, "/position.json"))
 cat("Total collected positions: ", length(json_data), "\n")
 
 tagId_seq = unlist(lapply(json_data, function(x){x["tag_id"][[1]]}))
