@@ -9,3 +9,5 @@ analysis/*png
 analysis/*html
 analysis/*_cache
 analysis/site_libs
+code/fun_convert_date.R
+data/json
