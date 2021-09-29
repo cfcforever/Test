@@ -12,4 +12,4 @@ analysis/*_cache
 analysis/site_libs
 code
 data
-figure
+fig
