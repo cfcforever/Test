@@ -1,0 +1,113 @@
+---
+title: "0da6 - Brancard1"
+# author: "cfcforever"
+# date: ""
+output: 
+  workflowr::wflow_html:
+    code_folding: hide
+editor_options:
+  chunk_output_type: console
+---
+
+```{r include=FALSE}
+source("code/packages_and_functions.R")
+```
+
+# load tag
+```{r}
+days = paste0("2021-09-", sprintf("%02d", 25:27))
+nd = length(days)
+
+list_tag = vector("list", nd)
+for (k in 1:nd){
+  data_tag = read.csv(file = paste0("data/json/", days[k], "/0da6.csv"))
+  data_tag = data_tag %>% 
+    filter(tag=="0da6") %>%
+    select(c("x", "y", "record_timestamp"))
+  
+  list_tag[[k]] = data_tag
+}
+
+data_tag = do.call(rbind.data.frame, list_tag)
+
+data_tag = cbind.data.frame(data_tag, convert_date(data_tag$record_timestamp))
+
+plan <- read_excel("data/plan/Wall_lignes_firminy.xlsx")
+plan = as.data.frame(plan)
+plan$`Start X` <- as.numeric(plan$`Start X`)/100
+plan$`Start Y` <- as.numeric(plan$`Start Y`)/100
+plan$`End X` <- as.numeric(plan$`End X`)/100
+plan$`End Y` <- as.numeric(plan$`End Y`)/100
+colnames(plan) = c("Name", "Length", "Linetype Scale", "Angle", "Delta X",
+                   "Delta Y", "Delta Z", "EndX", "EndY", "EndZ", 
+                   "StartX", "StartY", "StartZ")
+q <- ggplot(plan) + theme_bw() + 
+  geom_segment(aes(x=StartX, y=StartY, xend=EndX, yend=EndY))
+```
+
+
+# 2021-09-25 {.tabset .tabset-pills}
+```{r results='asis'}
+for (day in sprintf("%02d", 25)){
+  for (hour in sprintf("%02d", 0:23)){
+    cat("\n")
+    cat("## ", hour, "\n")
+    temp_tag = data_tag %>%
+      filter(d==day & H==hour)
+    if (nrow(temp_tag)!=0){
+      p <- q + 
+        geom_point(data = temp_tag, aes(x=x, y=y), col = "red") +
+        coord_fixed(ratio = 1, xlim = c(-32,3), ylim = c(-65,3)) +
+        labs(x = "", y = "", title = paste0("0da6_2021_09_", day, "_", hour))
+      print(p)
+      # ggsave(paste0("figure/0da6_2021_09_", day, "_", hour, ".png"), width = 5, height = 9)
+    }
+    cat("\n")
+  }
+}
+```
+
+
+
+# 2021-09-26 {.tabset .tabset-pills}
+```{r results='asis'}
+for (day in sprintf("%02d", 26)){
+  for (hour in sprintf("%02d", 0:23)){
+    cat("\n")
+    cat("## ", hour, "\n")
+    temp_tag = data_tag %>%
+      filter(d==day & H==hour)
+    if (nrow(temp_tag)!=0){
+      p <- q + 
+        geom_point(data = temp_tag, aes(x=x, y=y), col = "red") +
+        coord_fixed(ratio = 1, xlim = c(-32,3), ylim = c(-65,3)) +
+        labs(x = "", y = "", title = paste0("0da6_2021_09_", day, "_", hour))
+      print(p)
+      # ggsave(paste0("figure/0da6_2021_09_", day, "_", hour, ".png"), width = 5, height = 9)
+    }
+    cat("\n")
+  }
+}
+```
+
+
+# 2021-09-27 {.tabset .tabset-pills}
+```{r results='asis'}
+for (day in sprintf("%02d", 27)){
+  for (hour in sprintf("%02d", 0:23)){
+    cat("\n")
+    cat("## ", hour, "\n")
+    temp_tag = data_tag %>%
+      filter(d==day & H==hour)
+    if (nrow(temp_tag)!=0){
+      p <- q + 
+        geom_point(data = temp_tag, aes(x=x, y=y), col = "red") +
+        coord_fixed(ratio = 1, xlim = c(-32,3), ylim = c(-65,3)) +
+        labs(x = "", y = "", title = paste0("0da6_2021_09_", day, "_", hour))
+      print(p)
+      # ggsave(paste0("figure/0da6_2021_09_", day, "_", hour, ".png"), width = 5, height = 9)
+    }
+    cat("\n")
+  }
+}
+```
