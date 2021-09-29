@@ -29,7 +29,6 @@ for (k in 1:nd){
 }
 
 data_tag = do.call(rbind.data.frame, list_tag)
-
 data_tag = cbind.data.frame(data_tag, convert_date(data_tag$record_timestamp))
 
 plan <- read_excel("data/plan/Wall_lignes_firminy.xlsx")
