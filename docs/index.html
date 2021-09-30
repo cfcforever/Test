@@ -29,6 +29,9 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
@@ -236,6 +239,69 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
@@ -243,6 +309,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -425,16 +501,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree37bd0263bace388722843303c922bf30ad772df9targetblank37bd026a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/37bd0263bace388722843303c922bf30ad772df9" target="_blank">37bd026</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreec804fa2a45e6e86de0f14c337c4c87e686ad105btargetblankc804fa2a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/c804fa2a45e6e86de0f14c337c4c87e686ad105b" target="_blank">c804fa2</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree37bd0263bace388722843303c922bf30ad772df9targetblank37bd026a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreec804fa2a45e6e86de0f14c337c4c87e686ad105btargetblankc804fa2a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/37bd0263bace388722843303c922bf30ad772df9" target="_blank">37bd026</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/c804fa2a45e6e86de0f14c337c4c87e686ad105b" target="_blank">c804fa2</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -485,6 +561,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/c804fa2a45e6e86de0f14c337c4c87e686ad105b/analysis/index.Rmd" target="_blank">c804fa2</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-09-30
+</td>
+<td>
+some changes
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cfcforever/Test/ecd66d75066cbefc9c67d6ba2554fb88c48a702a/docs/index.html" target="_blank">ecd66d7</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-09-30
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -953,167 +1063,197 @@ Start workflowr project.
 </div>
 <p>Welcome to my research website.</p>
 <div id="tags-and-labels" class="section level1">
-<h1>Tags and Labels</h1>
+<h1>Tags and labels</h1>
 <pre class="r"><code>names_tag &lt;- read.table(file = &quot;data/tag_names_20210924.txt&quot;, header = T, sep = &quot;\t&quot;)
 
-kable(t(names_tag)) %&gt;%
+kable(names_tag) %&gt;%
   kable_styling(bootstrap_options = &quot;striped&quot;, full_width = F)</code></pre>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+id
+</th>
+<th style="text-align:left;">
+Matériel
+</th>
+<th style="text-align:left;">
+label
+</th>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td style="text-align:left;">
-id
-</td>
-<td style="text-align:left;">
 2a51
-</td>
-<td style="text-align:left;">
-0da6
-</td>
-<td style="text-align:left;">
-2f7b
-</td>
-<td style="text-align:left;">
-2a73
-</td>
-<td style="text-align:left;">
-2f40
-</td>
-<td style="text-align:left;">
-2f77
-</td>
-<td style="text-align:left;">
-2b9c
-</td>
-<td style="text-align:left;">
-0d82
-</td>
-<td style="text-align:left;">
-29ed
-</td>
-<td style="text-align:left;">
-2c57
-</td>
-<td style="text-align:left;">
-28e9
-</td>
-<td style="text-align:left;">
-2e8d
-</td>
-<td style="text-align:left;">
-0baf
-</td>
-<td style="text-align:left;">
-0db4
-</td>
-<td style="text-align:left;">
-28d2
-</td>
-<td style="text-align:left;">
-2e55
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Matériel
 </td>
 <td style="text-align:left;">
 Bladder
 </td>
 <td style="text-align:left;">
+BLA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+0da6
+</td>
+<td style="text-align:left;">
 Brancard1
+</td>
+<td style="text-align:left;">
+BRA1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2f7b
 </td>
 <td style="text-align:left;">
 Brancard2
 </td>
 <td style="text-align:left;">
+BRA2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2a73
+</td>
+<td style="text-align:left;">
 Brancard3
+</td>
+<td style="text-align:left;">
+BRA3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2f40
 </td>
 <td style="text-align:left;">
 Brancard4
 </td>
 <td style="text-align:left;">
+BRA4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2f77
+</td>
+<td style="text-align:left;">
 Brancard polytrauma1
+</td>
+<td style="text-align:left;">
+BRP1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2b9c
 </td>
 <td style="text-align:left;">
 Brancard polytrauma2
 </td>
 <td style="text-align:left;">
+BRP2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+0d82
+</td>
+<td style="text-align:left;">
 Chariot de soins1
+</td>
+<td style="text-align:left;">
+CDS1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+29ed
 </td>
 <td style="text-align:left;">
 Chariot de soins2
 </td>
 <td style="text-align:left;">
+CDS2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2c57
+</td>
+<td style="text-align:left;">
 Dynamap1
+</td>
+<td style="text-align:left;">
+DYN1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+28e9
 </td>
 <td style="text-align:left;">
 Dynamap2
 </td>
 <td style="text-align:left;">
+DYN2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2e8d
+</td>
+<td style="text-align:left;">
 Dynamap3
+</td>
+<td style="text-align:left;">
+DYN3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+0baf
 </td>
 <td style="text-align:left;">
 Electro-cardiogramme
 </td>
 <td style="text-align:left;">
+ELC
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+0db4
+</td>
+<td style="text-align:left;">
 Fauteuil roulant
+</td>
+<td style="text-align:left;">
+FAU
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+28d2
 </td>
 <td style="text-align:left;">
 Ordi mobile
 </td>
 <td style="text-align:left;">
-Scope mobile
+ORD
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-label
+2e55
 </td>
 <td style="text-align:left;">
-BLA
-</td>
-<td style="text-align:left;">
-BRA1
-</td>
-<td style="text-align:left;">
-BRA2
-</td>
-<td style="text-align:left;">
-BRA3
-</td>
-<td style="text-align:left;">
-BRA4
-</td>
-<td style="text-align:left;">
-BRP1
-</td>
-<td style="text-align:left;">
-BRP2
-</td>
-<td style="text-align:left;">
-CDS1
-</td>
-<td style="text-align:left;">
-CDS2
-</td>
-<td style="text-align:left;">
-DYN1
-</td>
-<td style="text-align:left;">
-DYN2
-</td>
-<td style="text-align:left;">
-DYN3
-</td>
-<td style="text-align:left;">
-ELC
-</td>
-<td style="text-align:left;">
-FAU
-</td>
-<td style="text-align:left;">
-ORD
+Scope mobile
 </td>
 <td style="text-align:left;">
 SCO
@@ -1183,6 +1323,8 @@ footer is added to webpages before the MathJax javascript. -->
 
 
 
+</div>
+</div>
 
 </div>
 
@@ -1220,6 +1362,35 @@ $(document).ready(function () {
 });
 </script>
 
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
