@@ -10,13 +10,15 @@ navbar:
   - text: 09-26
     href: 09-26.html
   - text: 09-27
-    href: 09-27.html 
+    href: 09-27.html
   - text: 09-28
-    href: 09-28.html 
+    href: 09-28.html
   - text: 09-29
-    href: 09-29.html   
+    href: 09-29.html
+  - text: 09-30
+    href: 09-30.html
   - text: tag 0da6
-    href: 0da6.html    
+    href: 0da6.html
   - text: About
     href: about.html
   - text: License
