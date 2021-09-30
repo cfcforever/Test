@@ -6,5 +6,6 @@ library(kableExtra)
 library(nnet)
 library(dplyr)
 library(lubridate)
+library(readxl)
 
 source("code/fun_convert_date.R")
