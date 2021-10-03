@@ -6,8 +6,8 @@ navbar:
   left:
   - text: Home
     href: index.html
-  - text: Daily result
-    href: daily_result.html
+  - text: Daily results
+    href: daily_results.html
   right:
   - text: About
     href: about.html
