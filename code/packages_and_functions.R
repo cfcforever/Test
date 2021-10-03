@@ -7,5 +7,6 @@ library(nnet)
 library(dplyr)
 library(lubridate)
 library(readxl)
+library(DT)
 
 source("code/fun_convert_date.R")
