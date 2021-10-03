@@ -5,25 +5,13 @@ navbar:
   left:
   - text: Home
     href: index.html
-  - text: 09-25
-    href: 09-25.html
-  - text: 09-26
-    href: 09-26.html
-  - text: 09-27
-    href: 09-27.html
-  - text: 09-28
-    href: 09-28.html
-  - text: 09-29
-    href: 09-29.html
-  - text: 09-30
-    href: 09-30.html
-  - text: tag 0da6
-    href: 0da6.html
+  - text: Daily result
+    href: daily_result.html
+  right:
   - text: About
     href: about.html
   - text: License
-    href: license.html
-  right:
+    href: license.html  
   - icon: fa-github
     text: Source code
     href: https://github.com/cfcforever/Test
