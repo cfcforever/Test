@@ -11,7 +11,7 @@
 
 
 
-<title>2021-10-01</title>
+<title>2021-10-02</title>
 
 <script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -372,7 +372,7 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">2021-10-01</h1>
+<h1 class="title toc-ignore">2021-10-02</h1>
 
 </div>
 
@@ -488,16 +488,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree0a06553eb9028ba853ef3aef5981e51e3042de4etargetblank0a06553a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/0a06553eb9028ba853ef3aef5981e51e3042de4e" target="_blank">0a06553</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree5193bae748a47f364619b52863d78942dc575adatargetblank5193baea"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/5193bae748a47f364619b52863d78942dc575ada" target="_blank">5193bae</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree0a06553eb9028ba853ef3aef5981e51e3042de4etargetblank0a06553a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree5193bae748a47f364619b52863d78942dc575adatargetblank5193baea" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/0a06553eb9028ba853ef3aef5981e51e3042de4e" target="_blank">0a06553</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/5193bae748a47f364619b52863d78942dc575ada" target="_blank">5193bae</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -555,6 +555,40 @@ Message
 Rmd
 </td>
 <td>
+<a href="https://github.com/cfcforever/Test/blob/5193bae748a47f364619b52863d78942dc575ada/analysis/2021-10-02.Rmd" target="_blank">5193bae</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-03
+</td>
+<td>
+add new analysis
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cfcforever/Test/b7071cd6cdcf9c0d10c304c7d2159f14413f5813/docs/2021-10-02.html" target="_blank">b7071cd</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-03
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
 <a href="https://github.com/cfcforever/Test/blob/0a06553eb9028ba853ef3aef5981e51e3042de4e/analysis/2021-10-02.Rmd" target="_blank">0a06553</a>
 </td>
 <td>
@@ -576,24 +610,24 @@ some changes
 </div>
 <div id="load-data.json" class="section level1">
 <h1>load data.json</h1>
-<pre class="r"><code>today = &quot;2021-10-01&quot;
+<pre class="r"><code>today = &quot;2021-10-02&quot;
 cat(&quot;data on:&quot;, today, &quot;\n&quot;)</code></pre>
-<pre><code>data on: 2021-10-01 </code></pre>
+<pre><code>data on: 2021-10-02 </code></pre>
 <pre class="r"><code>json_data = fromJSON(file = paste0(&quot;data/json/&quot;, today, &quot;/position.json&quot;))
 cat(&quot;Total collected positions: &quot;, length(json_data), &quot;\n&quot;)</code></pre>
-<pre><code>Total collected positions:  578535 </code></pre>
+<pre><code>Total collected positions:  938391 </code></pre>
 <pre class="r"><code>tagId_seq = unlist(lapply(json_data, function(x){x[&quot;tag_id&quot;][[1]]}))
 tagId = unique(tagId_seq)
 nb_tag = length(tagId)
 
 cat(&quot;Tags are: &quot;, tagId, &quot;\n&quot;)</code></pre>
-<pre><code>Tags are:  2e55 2a51 0d82 2f7b 2c57 2f40 28d2 2b9c 0baf 0db4 2f77 19ab 2e8d 2dd9 </code></pre>
+<pre><code>Tags are:  2f40 2b9c 2f7b 2e8d 0baf 2dd9 2f77 0db4 19ab 2e55 0d82 2a51 28d2 2c57 </code></pre>
 <pre class="r"><code>table(tagId_seq)</code></pre>
 <pre><code>tagId_seq
- 0baf  0d82  0db4  19ab  28d2  2a51  2b9c  2c57  2dd9  2e55  2e8d  2f40  2f77 
-51728 51708 52096 10376 51530 51808 43203 51820     1 51834  7432 51469 51732 
- 2f7b 
-51798 </code></pre>
+  0baf   0d82   0db4   19ab   28d2   2a51   2b9c   2c57   2dd9   2e55   2e8d 
+120177      3 117901  24052      3      3 119838  38600 111672  87589  31124 
+  2f40   2f77   2f7b 
+105022 120476  61931 </code></pre>
 </div>
 <div id="general-analysis" class="section level1">
 <h1>general analysis</h1>
@@ -690,28 +724,28 @@ freq_3Q
 BLA
 </td>
 <td style="text-align:left;">
-2021-10-01 00:00:00
+2021-10-02 11:56:16
 </td>
 <td style="text-align:left;">
-2021-10-01 07:24:45
+2021-10-02 23:11:27
 </td>
 <td style="text-align:right;">
-51808
-</td>
-<td style="text-align:right;">
-50
-</td>
-<td style="text-align:right;">
-1.00
+3
 </td>
 <td style="text-align:right;">
 0
 </td>
 <td style="text-align:right;">
-1
+1.00
 </td>
 <td style="text-align:right;">
-1
+168
+</td>
+<td style="text-align:right;">
+336
+</td>
+<td style="text-align:right;">
+20255.5
 </td>
 </tr>
 <tr>
@@ -722,16 +756,16 @@ BLA
 BRA2
 </td>
 <td style="text-align:left;">
-2021-10-01 00:00:00
+2021-10-02 11:56:16
 </td>
 <td style="text-align:left;">
-2021-10-01 07:24:45
+2021-10-02 23:59:59
 </td>
 <td style="text-align:right;">
-51798
+61931
 </td>
 <td style="text-align:right;">
-422
+882
 </td>
 <td style="text-align:right;">
 0.99
@@ -740,10 +774,10 @@ BRA2
 0
 </td>
 <td style="text-align:right;">
-1
+0
 </td>
 <td style="text-align:right;">
-1
+1.0
 </td>
 </tr>
 <tr>
@@ -754,28 +788,28 @@ BRA2
 BRA4
 </td>
 <td style="text-align:left;">
-2021-10-01 00:00:00
+2021-10-02 11:56:17
 </td>
 <td style="text-align:left;">
-2021-10-01 07:24:45
+2021-10-02 23:59:59
 </td>
 <td style="text-align:right;">
-51469
+105022
 </td>
 <td style="text-align:right;">
-3792
+357
 </td>
 <td style="text-align:right;">
-0.93
+1.00
 </td>
 <td style="text-align:right;">
 0
 </td>
 <td style="text-align:right;">
-1
+0
 </td>
 <td style="text-align:right;">
-1
+1.0
 </td>
 </tr>
 <tr>
@@ -786,28 +820,28 @@ BRA4
 BRP1
 </td>
 <td style="text-align:left;">
-2021-10-01 00:00:00
+2021-10-02 11:56:17
 </td>
 <td style="text-align:left;">
-2021-10-01 07:24:45
+2021-10-02 23:59:59
 </td>
 <td style="text-align:right;">
-51732
+120476
 </td>
 <td style="text-align:right;">
-70
+1514
 </td>
 <td style="text-align:right;">
-1.00
+0.99
 </td>
 <td style="text-align:right;">
 0
 </td>
 <td style="text-align:right;">
-1
+0
 </td>
 <td style="text-align:right;">
-1
+1.0
 </td>
 </tr>
 <tr>
@@ -818,28 +852,28 @@ BRP1
 BRP2
 </td>
 <td style="text-align:left;">
-2021-10-01 01:09:41
+2021-10-02 11:56:16
 </td>
 <td style="text-align:left;">
-2021-10-01 07:24:45
+2021-10-02 23:59:59
 </td>
 <td style="text-align:right;">
-43203
+119838
+</td>
+<td style="text-align:right;">
+4544
+</td>
+<td style="text-align:right;">
+0.96
 </td>
 <td style="text-align:right;">
 0
 </td>
 <td style="text-align:right;">
-1.00
-</td>
-<td style="text-align:right;">
 0
 </td>
 <td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-1
+1.0
 </td>
 </tr>
 <tr>
@@ -850,28 +884,28 @@ BRP2
 CDS1
 </td>
 <td style="text-align:left;">
-2021-10-01 00:00:00
+2021-10-02 11:56:16
 </td>
 <td style="text-align:left;">
-2021-10-01 07:24:45
+2021-10-02 23:11:27
 </td>
 <td style="text-align:right;">
-51708
-</td>
-<td style="text-align:right;">
-96
-</td>
-<td style="text-align:right;">
-1.00
+3
 </td>
 <td style="text-align:right;">
 0
 </td>
 <td style="text-align:right;">
-1
+1.00
 </td>
 <td style="text-align:right;">
-1
+168
+</td>
+<td style="text-align:right;">
+336
+</td>
+<td style="text-align:right;">
+20255.5
 </td>
 </tr>
 <tr>
@@ -882,28 +916,28 @@ CDS1
 DYN1
 </td>
 <td style="text-align:left;">
-2021-10-01 00:00:00
+2021-10-02 11:56:16
 </td>
 <td style="text-align:left;">
-2021-10-01 07:24:45
+2021-10-02 23:11:27
 </td>
 <td style="text-align:right;">
-51820
+38600
 </td>
 <td style="text-align:right;">
-320
+4129
 </td>
 <td style="text-align:right;">
-0.99
+0.89
 </td>
 <td style="text-align:right;">
 0
 </td>
 <td style="text-align:right;">
-1
+0
 </td>
 <td style="text-align:right;">
-1
+1.0
 </td>
 </tr>
 <tr>
@@ -914,28 +948,28 @@ DYN1
 DYN3
 </td>
 <td style="text-align:left;">
-2021-10-01 00:58:13
+2021-10-02 11:56:17
 </td>
 <td style="text-align:left;">
-2021-10-01 06:09:57
+2021-10-02 23:59:59
 </td>
 <td style="text-align:right;">
-7432
+31124
 </td>
 <td style="text-align:right;">
-515
+72
 </td>
 <td style="text-align:right;">
-0.93
+1.00
 </td>
 <td style="text-align:right;">
 0
 </td>
 <td style="text-align:right;">
-1
+0
 </td>
 <td style="text-align:right;">
-1
+1.0
 </td>
 </tr>
 <tr>
@@ -946,28 +980,28 @@ DYN3
 ELC
 </td>
 <td style="text-align:left;">
-2021-10-01 00:00:00
+2021-10-02 11:56:17
 </td>
 <td style="text-align:left;">
-2021-10-01 07:24:45
+2021-10-02 23:59:59
 </td>
 <td style="text-align:right;">
-51728
+120177
 </td>
 <td style="text-align:right;">
-27167
+1323
 </td>
 <td style="text-align:right;">
-0.47
+0.99
 </td>
 <td style="text-align:right;">
 0
 </td>
 <td style="text-align:right;">
-1
+0
 </td>
 <td style="text-align:right;">
-1
+1.0
 </td>
 </tr>
 <tr>
@@ -978,28 +1012,28 @@ ELC
 FAU
 </td>
 <td style="text-align:left;">
-2021-10-01 00:00:00
+2021-10-02 11:56:17
 </td>
 <td style="text-align:left;">
-2021-10-01 07:24:45
+2021-10-02 23:59:59
 </td>
 <td style="text-align:right;">
-52096
+117901
 </td>
 <td style="text-align:right;">
-7425
+11829
 </td>
 <td style="text-align:right;">
-0.86
+0.90
 </td>
 <td style="text-align:right;">
 0
 </td>
 <td style="text-align:right;">
-1
+0
 </td>
 <td style="text-align:right;">
-1
+1.0
 </td>
 </tr>
 <tr>
@@ -1010,28 +1044,28 @@ FAU
 ORD
 </td>
 <td style="text-align:left;">
-2021-10-01 00:00:00
+2021-10-02 11:56:16
 </td>
 <td style="text-align:left;">
-2021-10-01 07:24:45
+2021-10-02 23:11:27
 </td>
 <td style="text-align:right;">
-51530
-</td>
-<td style="text-align:right;">
-328
-</td>
-<td style="text-align:right;">
-0.99
+3
 </td>
 <td style="text-align:right;">
 0
 </td>
 <td style="text-align:right;">
-1
+1.00
 </td>
 <td style="text-align:right;">
-1
+168
+</td>
+<td style="text-align:right;">
+336
+</td>
+<td style="text-align:right;">
+20255.5
 </td>
 </tr>
 <tr>
@@ -1042,16 +1076,16 @@ ORD
 SCO
 </td>
 <td style="text-align:left;">
-2021-10-01 00:00:00
+2021-10-02 11:56:16
 </td>
 <td style="text-align:left;">
-2021-10-01 07:42:11
+2021-10-02 23:11:27
 </td>
 <td style="text-align:right;">
-51834
+87589
 </td>
 <td style="text-align:right;">
-2
+0
 </td>
 <td style="text-align:right;">
 1.00
@@ -1060,10 +1094,10 @@ SCO
 0
 </td>
 <td style="text-align:right;">
-1
+0
 </td>
 <td style="text-align:right;">
-1
+1.0
 </td>
 </tr>
 </tbody>
@@ -1079,6 +1113,43 @@ p &lt;- ggplot(dat) + theme_bw() +
   labs(x = &quot;hour&quot;, y = &quot;&quot;, title = today)
 print(p)</code></pre>
 <p><img src="figure/2021-10-02.Rmd/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-5-1">
+Past versions of unnamed-chunk-5-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-5-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/b7071cd6cdcf9c0d10c304c7d2159f14413f5813/docs/figure/2021-10-02.Rmd/unnamed-chunk-5-1.png" target="_blank">b7071cd</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-03
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="plot-without-nas" class="section level3">
 <h3>plot without NAs</h3>
@@ -1088,7 +1159,7 @@ cat(&quot;if x_na = y_na:&quot;, identical(x_na, y_na), &quot;\n&quot;)</code></
 <pre><code>if x_na = y_na: TRUE </code></pre>
 <pre class="r"><code>cat(&quot;number of NA positions:&quot;, length(x_na), &quot;/&quot;, length(tagId_seq), &quot;(=&quot;, 
     length(x_na)/length(tagId_seq)*100, &quot;%)&quot;, &quot;\n&quot;)</code></pre>
-<pre><code>number of NA positions: 40187 / 578535 (= 6.946339 %) </code></pre>
+<pre><code>number of NA positions: 24650 / 938391 (= 2.626837 %) </code></pre>
 <pre class="r"><code>if (length(x_na)!=0){
   dat = dat[-x_na,]
 }</code></pre>
@@ -1101,6 +1172,43 @@ p &lt;- ggplot(dat) + theme_bw() +
   labs(x = &quot;hour&quot;, y = &quot;&quot;, title = today)
 print(p)</code></pre>
 <p><img src="figure/2021-10-02.Rmd/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-7-1">
+Past versions of unnamed-chunk-7-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-7-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/b7071cd6cdcf9c0d10c304c7d2159f14413f5813/docs/figure/2021-10-02.Rmd/unnamed-chunk-7-1.png" target="_blank">b7071cd</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-03
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code>list_tag &lt;- split(dat, dat$tag)
 
 for (tag in names(list_tag)){
@@ -1147,50 +1255,494 @@ p &lt;- ggplot(plan) + theme_bw() +
 <div id="bla" class="section level2">
 <h2>BLA</h2>
 <p><img src="figure/2021-10-02.Rmd/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-1">
+Past versions of unnamed-chunk-10-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-10-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/b7071cd6cdcf9c0d10c304c7d2159f14413f5813/docs/figure/2021-10-02.Rmd/unnamed-chunk-10-1.png" target="_blank">b7071cd</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-03
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="bra2" class="section level2">
 <h2>BRA2</h2>
 <p><img src="figure/2021-10-02.Rmd/unnamed-chunk-10-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-2">
+Past versions of unnamed-chunk-10-2.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-10-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/b7071cd6cdcf9c0d10c304c7d2159f14413f5813/docs/figure/2021-10-02.Rmd/unnamed-chunk-10-2.png" target="_blank">b7071cd</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-03
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="bra4" class="section level2">
 <h2>BRA4</h2>
 <p><img src="figure/2021-10-02.Rmd/unnamed-chunk-10-3.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-3">
+Past versions of unnamed-chunk-10-3.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-10-3" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/b7071cd6cdcf9c0d10c304c7d2159f14413f5813/docs/figure/2021-10-02.Rmd/unnamed-chunk-10-3.png" target="_blank">b7071cd</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-03
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="brp1" class="section level2">
 <h2>BRP1</h2>
 <p><img src="figure/2021-10-02.Rmd/unnamed-chunk-10-4.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-4">
+Past versions of unnamed-chunk-10-4.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-10-4" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/b7071cd6cdcf9c0d10c304c7d2159f14413f5813/docs/figure/2021-10-02.Rmd/unnamed-chunk-10-4.png" target="_blank">b7071cd</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-03
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="brp2" class="section level2">
 <h2>BRP2</h2>
 <p><img src="figure/2021-10-02.Rmd/unnamed-chunk-10-5.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-5">
+Past versions of unnamed-chunk-10-5.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-10-5" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/b7071cd6cdcf9c0d10c304c7d2159f14413f5813/docs/figure/2021-10-02.Rmd/unnamed-chunk-10-5.png" target="_blank">b7071cd</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-03
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="cds1" class="section level2">
 <h2>CDS1</h2>
 <p><img src="figure/2021-10-02.Rmd/unnamed-chunk-10-6.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-6">
+Past versions of unnamed-chunk-10-6.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-10-6" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/b7071cd6cdcf9c0d10c304c7d2159f14413f5813/docs/figure/2021-10-02.Rmd/unnamed-chunk-10-6.png" target="_blank">b7071cd</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-03
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="dyn1" class="section level2">
 <h2>DYN1</h2>
 <p><img src="figure/2021-10-02.Rmd/unnamed-chunk-10-7.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-7">
+Past versions of unnamed-chunk-10-7.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-10-7" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/b7071cd6cdcf9c0d10c304c7d2159f14413f5813/docs/figure/2021-10-02.Rmd/unnamed-chunk-10-7.png" target="_blank">b7071cd</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-03
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="dyn3" class="section level2">
 <h2>DYN3</h2>
 <p><img src="figure/2021-10-02.Rmd/unnamed-chunk-10-8.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-8">
+Past versions of unnamed-chunk-10-8.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-10-8" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/b7071cd6cdcf9c0d10c304c7d2159f14413f5813/docs/figure/2021-10-02.Rmd/unnamed-chunk-10-8.png" target="_blank">b7071cd</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-03
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="elc" class="section level2">
 <h2>ELC</h2>
 <p><img src="figure/2021-10-02.Rmd/unnamed-chunk-10-9.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-9">
+Past versions of unnamed-chunk-10-9.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-10-9" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/b7071cd6cdcf9c0d10c304c7d2159f14413f5813/docs/figure/2021-10-02.Rmd/unnamed-chunk-10-9.png" target="_blank">b7071cd</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-03
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="fau" class="section level2">
 <h2>FAU</h2>
 <p><img src="figure/2021-10-02.Rmd/unnamed-chunk-10-10.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-10">
+Past versions of unnamed-chunk-10-10.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-10-10" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/b7071cd6cdcf9c0d10c304c7d2159f14413f5813/docs/figure/2021-10-02.Rmd/unnamed-chunk-10-10.png" target="_blank">b7071cd</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-03
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="ord" class="section level2">
 <h2>ORD</h2>
 <p><img src="figure/2021-10-02.Rmd/unnamed-chunk-10-11.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-11">
+Past versions of unnamed-chunk-10-11.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-10-11" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/b7071cd6cdcf9c0d10c304c7d2159f14413f5813/docs/figure/2021-10-02.Rmd/unnamed-chunk-10-11.png" target="_blank">b7071cd</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-03
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="sco" class="section level2">
 <h2>SCO</h2>
 <p><img src="figure/2021-10-02.Rmd/unnamed-chunk-10-12.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-12">
+Past versions of unnamed-chunk-10-12.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-10-12" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/b7071cd6cdcf9c0d10c304c7d2159f14413f5813/docs/figure/2021-10-02.Rmd/unnamed-chunk-10-12.png" target="_blank">b7071cd</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-03
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
