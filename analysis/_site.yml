@@ -2,6 +2,7 @@ name: Test
 output_dir: ../docs
 navbar:
   title: Test
+  search: true
   left:
   - text: Home
     href: index.html
