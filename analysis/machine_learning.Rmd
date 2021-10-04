@@ -16,5 +16,190 @@ source("code/packages_and_functions.R")
 ```
 
 
+# Introduction
+This is an example of 199 points with the frequency of 200ms. 
+We want to use a machine learning model to recognize if any 5 consecutive points are moving or not. 
+
+```{r}
+# load json file
+json_data <- fromJSON(file = "data/Stabiliseur/data/2021-02-12_Firminy/test1/t1_anchor1_3tags_200ms.json")
+
+# choose tagId, x and y from json_data, and convert list to data.frame
+data <- data.frame(tagId = unlist(lapply(json_data, function(x){x$tagId})),
+                   x = unlist(lapply(json_data, function(x){as.numeric(x$posUnfiltered$x)})),
+                   y = unlist(lapply(json_data, function(x){as.numeric(x$posUnfiltered$y)})))
+
+# choose a tag
+dd = data %>%
+  filter(tagId == "82a5")
+```
+
+## plot of data
+```{r}
+p <- ggplot(dd) + theme_bw() +
+  geom_point(aes(x=x, y=y), col="red") + 
+  coord_equal(ratio = 1)
+print(p)
+```
 
 
+# Machine learning method
+## load model and predict data
+```{r}
+load("data/Stabiliseur/ML/ML_model.RData")
+
+input = as.data.frame(matrix(NA, nrow = nrow(dd)-4, ncol = 10))
+for (k in 1:nrow(input)){
+  input[k,] = as.numeric(dist(dd[k:(k+4), c("x","y")]))
+}
+
+dd$pred = 0
+dd$pred[1:nrow(input)] = round(predict(ir, input), 3)
+
+datatable(dd, class = 'cell-border stripe')
+```
+
+
+# Study cases{.tabset .tabset-pills}
+## case 1
+```{r}
+k = 42
+dk = 4
+
+dist = round(as.matrix(dist(dd[k:(k+dk),c("x","y")])), 3)
+kable(dist) %>%
+  kable_styling(bootstrap_options = "striped", full_width = F)
+
+p <- ggplot() + theme_bw() +
+  geom_point(data=dd[k:(k+dk),], aes(x=x, y=y), col="red") + 
+  geom_text(data=dd[k:(k+dk),], aes(x=x, y=y, label=k:(k+dk), vjust=-0.5), size=3) + 
+  geom_path(data=dd[k:(k+dk),], aes(x=x,y=y), col="red") + 
+  coord_equal(ratio = 1, xlim = range(dd$x), ylim = range(dd$y))
+p
+```
+
+
+## case 2
+```{r}
+k = 61
+dk = 7
+
+dist = round(as.matrix(dist(dd[k:(k+dk),c("x","y")])), 3)
+kable(dist) %>%
+  kable_styling(bootstrap_options = "striped", full_width = F)
+
+p <- ggplot() + theme_bw() +
+  geom_point(data=dd[k:(k+dk),], aes(x=x, y=y), col="red") + 
+  geom_text(data=dd[k:(k+dk),], aes(x=x, y=y, label=k:(k+dk), vjust=-0.5), size=3) + 
+  geom_path(data=dd[k:(k+dk),], aes(x=x,y=y), col="red") + 
+  coord_equal(ratio = 1, xlim = range(dd$x), ylim = range(dd$y))
+p
+```
+
+
+## case 3
+```{r}
+k = 71
+dk = 5
+
+dist = round(as.matrix(dist(dd[k:(k+dk),c("x","y")])), 3)
+kable(dist) %>%
+  kable_styling(bootstrap_options = "striped", full_width = F)
+
+p <- ggplot() + theme_bw() +
+  geom_point(data=dd[k:(k+dk),], aes(x=x, y=y), col="red") + 
+  geom_text(data=dd[k:(k+dk),], aes(x=x, y=y, label=k:(k+dk), vjust=-0.5), size=3) + 
+  geom_path(data=dd[k:(k+dk),], aes(x=x,y=y), col="red") + 
+  coord_equal(ratio = 1, xlim = range(dd$x), ylim = range(dd$y))
+p
+```
+
+
+## case 4
+```{r}
+k = 75
+dk = 4
+
+dist = round(as.matrix(dist(dd[k:(k+dk),c("x","y")])), 3)
+kable(dist) %>%
+  kable_styling(bootstrap_options = "striped", full_width = F)
+
+p <- ggplot() + theme_bw() +
+  geom_point(data=dd[k:(k+dk),], aes(x=x, y=y), col="red") + 
+  geom_text(data=dd[k:(k+dk),], aes(x=x, y=y, label=k:(k+dk), vjust=-0.5), size=3) + 
+  geom_path(data=dd[k:(k+dk),], aes(x=x,y=y), col="red") + 
+  coord_equal(ratio = 1, xlim = range(dd$x), ylim = range(dd$y))
+p
+```
+
+
+## case 5
+```{r}
+k = 79
+dk = 4
+
+dist = round(as.matrix(dist(dd[k:(k+dk),c("x","y")])), 3)
+kable(dist) %>%
+  kable_styling(bootstrap_options = "striped", full_width = F)
+
+p <- ggplot() + theme_bw() +
+  geom_point(data=dd[k:(k+dk),], aes(x=x, y=y), col="red") + 
+  geom_text(data=dd[k:(k+dk),], aes(x=x, y=y, label=k:(k+dk), vjust=-0.5), size=3) + 
+  geom_path(data=dd[k:(k+dk),], aes(x=x,y=y), col="red") + 
+  coord_equal(ratio = 1, xlim = range(dd$x), ylim = range(dd$y))
+p
+```
+
+
+## case 6
+```{r}
+k = 81
+dk = 4
+
+dist = round(as.matrix(dist(dd[k:(k+dk),c("x","y")])), 3)
+kable(dist) %>%
+  kable_styling(bootstrap_options = "striped", full_width = F)
+
+p <- ggplot() + theme_bw() +
+  geom_point(data=dd[k:(k+dk),], aes(x=x, y=y), col="red") + 
+  geom_text(data=dd[k:(k+dk),], aes(x=x, y=y, label=k:(k+dk), vjust=-0.5), size=3) + 
+  geom_path(data=dd[k:(k+dk),], aes(x=x,y=y), col="red") + 
+  coord_equal(ratio = 1, xlim = range(dd$x), ylim = range(dd$y))
+p
+```
+
+
+## case 7
+```{r}
+k = 88
+dk = 4
+
+dist = round(as.matrix(dist(dd[k:(k+dk),c("x","y")])), 3)
+kable(dist) %>%
+  kable_styling(bootstrap_options = "striped", full_width = F)
+
+p <- ggplot() + theme_bw() +
+  geom_point(data=dd[k:(k+dk),], aes(x=x, y=y), col="red") + 
+  geom_text(data=dd[k:(k+dk),], aes(x=x, y=y, label=k:(k+dk), vjust=-0.5), size=3) + 
+  geom_path(data=dd[k:(k+dk),], aes(x=x,y=y), col="red") + 
+  coord_equal(ratio = 1, xlim = range(dd$x), ylim = range(dd$y))
+p
+```
+
+
+## case 8
+```{r}
+k = 94
+dk = 6
+
+dist = round(as.matrix(dist(dd[k:(k+dk),c("x","y")])), 3)
+kable(dist) %>%
+  kable_styling(bootstrap_options = "striped", full_width = F)
+
+p <- ggplot() + theme_bw() +
+  geom_point(data=dd[k:(k+dk),], aes(x=x, y=y), col="red") + 
+  geom_text(data=dd[k:(k+dk),], aes(x=x, y=y, label=k:(k+dk), vjust=-0.5), size=3) + 
+  geom_path(data=dd[k:(k+dk),], aes(x=x,y=y), col="red") + 
+  coord_equal(ratio = 1, xlim = range(dd$x), ylim = range(dd$y))
+p
+```
