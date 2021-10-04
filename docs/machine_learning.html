@@ -11,7 +11,7 @@
 
 
 
-<title>About</title>
+<title>Machine learning method</title>
 
 <script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -29,7 +29,11 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
@@ -227,7 +231,73 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
 
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
 
 
 
@@ -237,6 +307,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -293,9 +373,17 @@ $(document).ready(function () {
 
 <div id="header">
 
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
 
 
-<h1 class="title toc-ignore">About</h1>
+
+<h1 class="title toc-ignore">Machine learning method</h1>
 
 </div>
 
@@ -323,7 +411,7 @@ $(document).ready(function () {
 <strong>Last updated:</strong> 2021-10-04
 </p>
 <p>
-<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 2 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
 </p>
 <p>
 <strong>Knit directory:</strong> <code>Test/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
@@ -345,6 +433,66 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
 <div class="panel-body">
 <p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongempty"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Environment:</strong> empty </a>
+</p>
+</div>
+<div id="strongEnvironmentstrongempty" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! The global environment was empty. Objects defined in the global environment can affect the analysis in your R Markdown file in unknown ways. For reproduciblity it’s best to always run the code in an empty environment.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed20210926code"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Seed:</strong> <code>set.seed(20210926)</code> </a>
+</p>
+</div>
+<div id="strongSeedstrongcodesetseed20210926code" class="panel-collapse collapse">
+<div class="panel-body">
+<p>The command <code>set.seed(20210926)</code> was run prior to running the code in the R Markdown file. Setting a seed ensures that any results that rely on randomness, e.g. subsampling or permutations, are reproducible.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSessioninformationstrongrecorded"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Session information:</strong> recorded </a>
+</p>
+</div>
+<div id="strongSessioninformationstrongrecorded" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Recording the operating system, R version, and package versions is critical for reproducibility.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Cache:</strong> none </a>
+</p>
+</div>
+<div id="strongCachestrongnone" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Nice! There were no cached chunks for this analysis, so you can be confident that you successfully produced the results during this run.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongFilepathsstrongrelative"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>File paths:</strong> relative </a>
+</p>
+</div>
+<div id="strongFilepathsstrongrelative" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Using relative paths to the files within your workflowr project makes it easier to run your code on other machines.</p>
 </div>
 </div>
 </div>
@@ -392,7 +540,7 @@ Note that any generated files, e.g. HTML, png, CSS, etc., are not included in t
 <div id="versions" class="tab-pane fade">
 
 <p>
-These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/about.Rmd</code>) and HTML (<code>docs/about.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
+These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/machine_learning.Rmd</code>) and HTML (<code>docs/machine_learning.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
 </p>
 <div class="table-responsive">
 <table class="table table-condensed table-hover">
@@ -418,444 +566,19 @@ Message
 <tbody>
 <tr>
 <td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/cfcforever/Test/a8517f23be208fa3a367967b1fcec86e392cb8a8/docs/about.html" target="_blank">a8517f2</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2021-10-03
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/cfcforever/Test/6308a85f6bcd5a93d1c3c0003fdcce0011f321d3/docs/about.html" target="_blank">6308a85</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2021-10-03
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/cfcforever/Test/0dc6453929cbec41bd5c7efd1dd8f1a497ce57f5/docs/about.html" target="_blank">0dc6453</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2021-10-03
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/cfcforever/Test/d0217773a4fbbbdc3425ee8d2ddd068ccd00bdf0/docs/about.html" target="_blank">d021777</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2021-10-03
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/cfcforever/Test/067277d91499bab0b249581d10f3c16e0e008355/docs/about.html" target="_blank">067277d</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2021-10-01
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/cfcforever/Test/d5d884c64bdc85cdc3cc8ba6ffcf6b03134f93ef/docs/about.html" target="_blank">d5d884c</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2021-09-30
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/cfcforever/Test/743f07a78d5fc532e66da20d4b15e8fe558b34e6/docs/about.html" target="_blank">743f07a</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2021-09-29
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/cfcforever/Test/dd7e1c2df39852cc7a7779c496a61ce0b2682dcc/docs/about.html" target="_blank">dd7e1c2</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2021-09-29
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/cfcforever/Test/f14120bfe371ebc0883ccac6757b65a55f915e0e/docs/about.html" target="_blank">f14120b</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2021-09-29
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/cfcforever/Test/305a152a772a0f1454169ba970e2b48937e2c001/docs/about.html" target="_blank">305a152</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2021-09-29
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/cfcforever/Test/8cd6144b9c9d6a0d88e7000e5b2d9c6b1eb98412/docs/about.html" target="_blank">8cd6144</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2021-09-29
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/cfcforever/Test/5aceb7ad9f8c9141bffa0cb1094c68835ff092bf/docs/about.html" target="_blank">5aceb7a</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2021-09-28
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/cfcforever/Test/38c31b1f0c95804cd9729e9597b2e7dceab288b2/docs/about.html" target="_blank">38c31b1</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2021-09-28
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/cfcforever/Test/d37afca581cfee7836e7c3466c9af114c71ba097/docs/about.html" target="_blank">d37afca</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2021-09-28
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/cfcforever/Test/fb1bb55ac5bab03133a526ba17a403691a037943/docs/about.html" target="_blank">fb1bb55</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2021-09-28
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/cfcforever/Test/9255211f5f6358575fb713b7acc6af7b3d5feea5/docs/about.html" target="_blank">9255211</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2021-09-28
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/cfcforever/Test/6289c6988579b15e43fb30979a28cfbb1c632801/docs/about.html" target="_blank">6289c69</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2021-09-28
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/cfcforever/Test/f8288b3ec11a38630292af516a90fc8e846ea751/docs/about.html" target="_blank">f8288b3</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2021-09-28
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/cfcforever/Test/2846b2e477abb3633784514e6de69d57262da6d8/docs/about.html" target="_blank">2846b2e</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2021-09-28
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/cfcforever/Test/08db2acd4a0f2411061b184cf3cb10c12e2e9e80/docs/about.html" target="_blank">08db2ac</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2021-09-27
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/cfcforever/Test/180545c1e4ce1602d79227186b509cfc186df379/docs/about.html" target="_blank">180545c</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2021-09-27
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/cfcforever/Test/da558548cdf527394efdcfc2d3f4f93baf93f56b/docs/about.html" target="_blank">da55854</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2021-09-27
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/cfcforever/Test/a04527dd59d1582114ada6f66c396545c6a427b3/docs/about.html" target="_blank">a04527d</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2021-09-26
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/cfcforever/Test/84a0479ded9a3d799a8b5a52d54c81d9b7bbec6c/docs/about.html" target="_blank">84a0479</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2021-09-26
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/cfcforever/Test/e82c22b7c57cac8cedf13ba32385bc0eb97c7c18/docs/about.html" target="_blank">e82c22b</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2021-09-26
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
 Rmd
 </td>
 <td>
-<a href="https://github.com/cfcforever/Test/blob/b71def14a5ab8c7e4f8d6212772ab384fd2aad0b/analysis/about.Rmd" target="_blank">b71def1</a>
+<a href="https://github.com/cfcforever/Test/blob/497949e0f4fb1b5c885d1ea0f6efea626ee9933e/analysis/machine_learning.Rmd" target="_blank">497949e</a>
 </td>
 <td>
 cfcforever
 </td>
 <td>
-2021-09-26
+2021-10-04
 </td>
 <td>
-Start workflowr project.
+some changes
 </td>
 </tr>
 </tbody>
@@ -865,7 +588,51 @@ Start workflowr project.
 </div>
 </div>
 </div>
-<p>Describe your project.</p>
+<p>We are using the machine learning method to stabilize the points.</p>
+<br>
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
+<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Session information
+</button>
+</p>
+<div id="workflowr-sessioninfo" class="collapse">
+<pre class="r"><code>sessionInfo()</code></pre>
+<pre><code>R version 4.0.2 (2020-06-22)
+Platform: x86_64-apple-darwin17.0 (64-bit)
+Running under: macOS Catalina 10.15.7
+
+Matrix products: default
+BLAS:   /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRblas.dylib
+LAPACK: /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRlapack.dylib
+
+locale:
+[1] fr_FR.UTF-8/fr_FR.UTF-8/fr_FR.UTF-8/C/fr_FR.UTF-8/fr_FR.UTF-8
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] DT_0.17          readxl_1.3.1     lubridate_1.7.10 dplyr_1.0.6     
+ [5] nnet_7.3-14      kableExtra_1.1.0 rjson_0.2.20     cowplot_1.1.0   
+ [9] gganimate_1.0.7  ggplot2_3.3.3    workflowr_1.6.2 
+
+loaded via a namespace (and not attached):
+ [1] progress_1.2.2    tidyselect_1.1.0  xfun_0.25         purrr_0.3.4      
+ [5] colorspace_1.4-1  vctrs_0.3.8       generics_0.1.0    viridisLite_0.3.0
+ [9] htmltools_0.5.0   yaml_2.2.1        utf8_1.1.4        rlang_0.4.11     
+[13] later_1.1.0.1     pillar_1.6.0      glue_1.4.1        withr_2.4.2      
+[17] DBI_1.1.1         tweenr_1.0.1      lifecycle_1.0.0   stringr_1.4.0    
+[21] cellranger_1.1.0  munsell_0.5.0     gtable_0.3.0      rvest_1.0.0      
+[25] htmlwidgets_1.5.1 evaluate_0.14     knitr_1.33        httpuv_1.5.4     
+[29] fansi_0.4.1       gifski_0.8.6      Rcpp_1.0.5        readr_1.4.0      
+[33] promises_1.1.1    scales_1.1.1      backports_1.1.8   webshot_0.5.2    
+[37] farver_2.0.3      fs_1.5.0          hms_1.0.0         digest_0.6.25    
+[41] stringi_1.4.6     grid_4.0.2        rprojroot_1.3-2   tools_4.0.2      
+[45] magrittr_2.0.1    tibble_3.1.1      crayon_1.4.1      whisker_0.4      
+[49] pkgconfig_2.0.3   ellipsis_0.3.1    xml2_1.3.2        prettyunits_1.1.1
+[53] httr_1.4.2        rstudioapi_0.13   assertthat_0.2.1  rmarkdown_2.10   
+[57] R6_2.4.1          git2r_0.28.0      compiler_4.0.2   </code></pre>
+</div>
 
 
 <!-- Adjust MathJax settings so that all math formulae are shown using
@@ -883,6 +650,8 @@ footer is added to webpages before the MathJax javascript. -->
 
 
 
+</div>
+</div>
 
 </div>
 
@@ -914,7 +683,41 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
 
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
