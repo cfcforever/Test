@@ -54,10 +54,21 @@ for (k in 1:nrow(input)){
 }
 
 dd$pred = 0
-dd$pred[1:nrow(input)] = round(predict(ir, input), 3)
+prediction = round(predict(ir, input), 3)
+dd$pred[1:nrow(input)] = prediction
 
 datatable(dd, class = 'cell-border stripe')
 ```
+
+
+## result
+```{r}
+nb = length(prediction)
+num = sum(prediction<=0.7)
+ratio = num/nb
+message(paste0(unique(dd$tagId), " - with ", nb, " points and to be predicted ", ratio*100, "% corrected of resting positions (which ", nb-num, " points are false)."))
+```
+
 
 
 # Study cases{.tabset .tabset-pills}
