@@ -13,4 +13,5 @@ analysis/site_libs
 workflowr.R
 data/json
 data/plan
+data/Stabiliseur
 fig

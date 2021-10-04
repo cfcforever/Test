@@ -1,5 +1,6 @@
 library(ggplot2)
 library(gganimate)
+library(gifski)
 library(cowplot)
 library(rjson)
 library(kableExtra)
@@ -8,5 +9,6 @@ library(dplyr)
 library(lubridate)
 library(readxl)
 library(DT)
+library(nnet)
 
 source("code/fun_convert_date.R")
