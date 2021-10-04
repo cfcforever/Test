@@ -500,16 +500,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree497949e0f4fb1b5c885d1ea0f6efea626ee9933etargetblank497949ea"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/497949e0f4fb1b5c885d1ea0f6efea626ee9933e" target="_blank">497949e</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreeed2c623854d44e926bcb6cb11d609aa9ada14739targetblanked2c623a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/ed2c623854d44e926bcb6cb11d609aa9ada14739" target="_blank">ed2c623</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree497949e0f4fb1b5c885d1ea0f6efea626ee9933etargetblank497949ea" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreeed2c623854d44e926bcb6cb11d609aa9ada14739targetblanked2c623a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/497949e0f4fb1b5c885d1ea0f6efea626ee9933e" target="_blank">497949e</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/ed2c623854d44e926bcb6cb11d609aa9ada14739" target="_blank">ed2c623</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -520,13 +520,15 @@ Ignored files:
     Ignored:    .Rhistory
     Ignored:    .Rproj.user/
     Ignored:    data/.DS_Store
+    Ignored:    data/Stabiliseur/
     Ignored:    data/json/
     Ignored:    data/plan/
     Ignored:    fig/
     Ignored:    workflowr.R
 
 Unstaged changes:
-    Modified:   analysis/_site.yml
+    Modified:   .gitignore
+    Modified:   code/packages_and_functions.R
 
 </code></pre>
 <p>
@@ -565,6 +567,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cfcforever/Test/5fe63f5ca5f0489f26d8566ecbe0cee435bad897/docs/index.html" target="_blank">5fe63f5</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-04
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -1409,7 +1428,7 @@ attached base packages:
 other attached packages:
  [1] DT_0.17          readxl_1.3.1     lubridate_1.7.10 dplyr_1.0.6     
  [5] nnet_7.3-14      kableExtra_1.1.0 rjson_0.2.20     cowplot_1.1.0   
- [9] gganimate_1.0.7  ggplot2_3.3.3    workflowr_1.6.2 
+ [9] gifski_0.8.6     gganimate_1.0.7  ggplot2_3.3.3    workflowr_1.6.2 
 
 loaded via a namespace (and not attached):
  [1] progress_1.2.2    tidyselect_1.1.0  xfun_0.25         purrr_0.3.4      
@@ -1419,14 +1438,14 @@ loaded via a namespace (and not attached):
 [17] DBI_1.1.1         tweenr_1.0.1      lifecycle_1.0.0   stringr_1.4.0    
 [21] cellranger_1.1.0  munsell_0.5.0     gtable_0.3.0      rvest_1.0.0      
 [25] htmlwidgets_1.5.1 evaluate_0.14     knitr_1.33        httpuv_1.5.4     
-[29] fansi_0.4.1       gifski_0.8.6      highr_0.8         Rcpp_1.0.5       
-[33] readr_1.4.0       promises_1.1.1    scales_1.1.1      backports_1.1.8  
-[37] webshot_0.5.2     farver_2.0.3      fs_1.5.0          hms_1.0.0        
-[41] digest_0.6.25     stringi_1.4.6     grid_4.0.2        rprojroot_1.3-2  
-[45] tools_4.0.2       magrittr_2.0.1    tibble_3.1.1      crayon_1.4.1     
-[49] whisker_0.4       pkgconfig_2.0.3   ellipsis_0.3.1    xml2_1.3.2       
-[53] prettyunits_1.1.1 httr_1.4.2        rstudioapi_0.13   assertthat_0.2.1 
-[57] rmarkdown_2.10    R6_2.4.1          git2r_0.28.0      compiler_4.0.2   </code></pre>
+[29] fansi_0.4.1       highr_0.8         Rcpp_1.0.5        readr_1.4.0      
+[33] promises_1.1.1    scales_1.1.1      backports_1.1.8   webshot_0.5.2    
+[37] farver_2.0.3      fs_1.5.0          hms_1.0.0         digest_0.6.25    
+[41] stringi_1.4.6     grid_4.0.2        rprojroot_1.3-2   tools_4.0.2      
+[45] magrittr_2.0.1    tibble_3.1.1      crayon_1.4.1      whisker_0.4      
+[49] pkgconfig_2.0.3   ellipsis_0.3.1    xml2_1.3.2        prettyunits_1.1.1
+[53] httr_1.4.2        rstudioapi_0.13   assertthat_0.2.1  rmarkdown_2.10   
+[57] R6_2.4.1          git2r_0.28.0      compiler_4.0.2   </code></pre>
 </div>
 </div>
 
