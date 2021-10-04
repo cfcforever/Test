@@ -1,0 +1,20 @@
+---
+title: "Machine learning method"
+# author: "cfcforever"
+# date: ""
+output: 
+  workflowr::wflow_html:
+    code_folding: hide
+editor_options:
+  chunk_output_type: console
+---
+
+We are using the machine learning method to stabilize the points.
+
+```{r include=FALSE}
+source("code/packages_and_functions.R")
+```
+
+
+
+
