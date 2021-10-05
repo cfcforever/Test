@@ -500,16 +500,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreeb102c3d66c57227506605f76e9ea7981283abad9targetblankb102c3da"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/b102c3d66c57227506605f76e9ea7981283abad9" target="_blank">b102c3d</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreeddfcae117d6a4550bd66ce0166ce9395efa41401targetblankddfcae1a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/ddfcae117d6a4550bd66ce0166ce9395efa41401" target="_blank">ddfcae1</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreeb102c3d66c57227506605f76e9ea7981283abad9targetblankb102c3da" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreeddfcae117d6a4550bd66ce0166ce9395efa41401targetblankddfcae1a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/b102c3d66c57227506605f76e9ea7981283abad9" target="_blank">b102c3d</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/ddfcae117d6a4550bd66ce0166ce9395efa41401" target="_blank">ddfcae1</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -568,6 +568,40 @@ Message
 Rmd
 </td>
 <td>
+<a href="https://github.com/cfcforever/Test/blob/ddfcae117d6a4550bd66ce0166ce9395efa41401/analysis/2021-10-05.Rmd" target="_blank">ddfcae1</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-05
+</td>
+<td>
+add new analysis
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cfcforever/Test/b96181dc220b8d8fd45e51d3ea1a98f36e4d207c/docs/2021-10-05.html" target="_blank">b96181d</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-05
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
 <a href="https://github.com/cfcforever/Test/blob/b102c3d66c57227506605f76e9ea7981283abad9/analysis/2021-10-05.Rmd" target="_blank">b102c3d</a>
 </td>
 <td>
@@ -617,19 +651,20 @@ dat = cbind.data.frame(dat, convert_date(dat$record_timestamp))
 dat$x = as.numeric(dat$x)
 dat$y = as.numeric(dat$y)
 
-names_tag &lt;- read.table(file = &quot;data/tag_names_20210924.txt&quot;, header = T, sep = &quot;\t&quot;)
-names_tag = names_tag[names_tag$id%in%tagId, ]
+# names_tag &lt;- read.table(file = &quot;data/tag_names_20210924.txt&quot;, header = T, sep = &quot;\t&quot;)
+# names_tag = names_tag[names_tag$id%in%tagId, ]
 
-tagId = names_tag$id
-nb_tag = length(tagId)
-
-dat = dat[dat$tag%in%tagId,]
-dat$label = factor(dat$tag, levels = names_tag$id, labels = names_tag$label)
+# tagId = names_tag$id
+# nb_tag = length(tagId)
+# 
+# dat = dat[dat$tag%in%tagId,]
+# dat$label = factor(dat$tag, levels = names_tag$id, labels = names_tag$label)
 
 list_tag &lt;- split(dat, dat$tag)</code></pre>
 <div id="quality-of-collecting-data" class="section level2">
 <h2>quality of collecting data</h2>
-<pre class="r"><code>table_tag &lt;- data.frame(tag = names_tag$id, label = names_tag$label)
+<pre class="r"><code># table_tag &lt;- data.frame(tag = names_tag$id, label = names_tag$label)
+table_tag &lt;- data.frame(tag = tagId)
 table_tag$first_record = NA
 table_tag$last_record = NA
 table_tag$number = NA
@@ -664,9 +699,6 @@ kable(table_tag) %&gt;%
 tag
 </th>
 <th style="text-align:left;">
-label
-</th>
-<th style="text-align:left;">
 first_record
 </th>
 <th style="text-align:left;">
@@ -695,10 +727,36 @@ freq_3Q
 <tbody>
 <tr>
 <td style="text-align:left;">
-0d82
+2dd9
 </td>
 <td style="text-align:left;">
-CDS1
+2021-10-05 00:00:00
+</td>
+<td style="text-align:left;">
+2021-10-05 10:34:08
+</td>
+<td style="text-align:right;">
+186559
+</td>
+<td style="text-align:right;">
+2542
+</td>
+<td style="text-align:right;">
+0.99
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+0d82
 </td>
 <td style="text-align:left;">
 2021-10-05 00:00:00
@@ -727,10 +785,36 @@ CDS1
 </tr>
 <tr>
 <td style="text-align:left;">
-2e8d
+19ab
 </td>
 <td style="text-align:left;">
-DYN3
+2021-10-05 00:00:00
+</td>
+<td style="text-align:left;">
+2021-10-05 10:34:08
+</td>
+<td style="text-align:right;">
+37794
+</td>
+<td style="text-align:right;">
+301
+</td>
+<td style="text-align:right;">
+0.99
+</td>
+<td style="text-align:right;">
+0.999
+</td>
+<td style="text-align:right;">
+1.0
+</td>
+<td style="text-align:right;">
+1.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2e8d
 </td>
 <td style="text-align:left;">
 2021-10-05 00:00:00
@@ -763,13 +847,50 @@ DYN3
 <h3>plot with NAs</h3>
 <pre class="r"><code>timestamp_breaks = as.numeric(as.POSIXct(paste0(today, &quot; &quot;, sprintf(&quot;%02d&quot;, 0:23), &quot;:00:00 CEST&quot;))) + 3600*6
 p &lt;- ggplot(dat) + theme_bw() + 
-  geom_point(aes(x=record_timestamp, y=label, col=label)) +
+  geom_point(aes(x=record_timestamp, y=tag, col=tag)) +
   scale_x_continuous(breaks = timestamp_breaks, labels = 0:23) +
   coord_cartesian(xlim = c(timestamp_breaks[1], timestamp_breaks[23]+3600)) +
   theme(legend.position = &quot;None&quot;) +
   labs(x = &quot;hour&quot;, y = &quot;&quot;, title = today)
 print(p)</code></pre>
 <p><img src="figure/2021-10-05.Rmd/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-5-1">
+Past versions of unnamed-chunk-5-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-5-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/b96181dc220b8d8fd45e51d3ea1a98f36e4d207c/docs/figure/2021-10-05.Rmd/unnamed-chunk-5-1.png" target="_blank">b96181d</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-05
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="plot-without-nas" class="section level3">
 <h3>plot without NAs</h3>
@@ -779,19 +900,56 @@ cat(&quot;if x_na = y_na:&quot;, identical(x_na, y_na), &quot;\n&quot;)</code></
 <pre><code>if x_na = y_na: TRUE </code></pre>
 <pre class="r"><code>cat(&quot;number of NA positions:&quot;, length(x_na), &quot;/&quot;, length(tagId_seq), &quot;(=&quot;, 
     length(x_na)/length(tagId_seq)*100, &quot;%)&quot;, &quot;\n&quot;)</code></pre>
-<pre><code>number of NA positions: 3159 / 433369 (= 0.72894 %) </code></pre>
+<pre><code>number of NA positions: 6002 / 433369 (= 1.384963 %) </code></pre>
 <pre class="r"><code>if (length(x_na)!=0){
   dat = dat[-x_na,]
 }</code></pre>
 <pre class="r"><code>timestamp_breaks = as.numeric(as.POSIXct(paste0(today, &quot; &quot;, sprintf(&quot;%02d&quot;, 0:23), &quot;:00:00 CEST&quot;))) + 3600*6
 p &lt;- ggplot(dat) + theme_bw() + 
-  geom_point(aes(x=record_timestamp, y=label, col=label)) +
+  geom_point(aes(x=record_timestamp, y=tag, col=tag)) +
   scale_x_continuous(breaks = timestamp_breaks, labels = 0:23) +
   coord_cartesian(xlim = c(timestamp_breaks[1], timestamp_breaks[23]+3600)) +
   theme(legend.position = &quot;None&quot;) +
   labs(x = &quot;hour&quot;, y = &quot;&quot;, title = today)
 print(p)</code></pre>
 <p><img src="figure/2021-10-05.Rmd/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-7-1">
+Past versions of unnamed-chunk-7-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-7-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/b96181dc220b8d8fd45e51d3ea1a98f36e4d207c/docs/figure/2021-10-05.Rmd/unnamed-chunk-7-1.png" target="_blank">b96181d</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-05
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code>list_tag &lt;- split(dat, dat$tag)
 
 for (tag in names(list_tag)){
@@ -823,25 +981,106 @@ colnames(plan) = c(&quot;Name&quot;, &quot;Length&quot;, &quot;Linetype Scale&qu
 p &lt;- ggplot(plan) + theme_bw() + 
   geom_segment(aes(x=StartX, y=StartY, xend=EndX, yend=EndY))</code></pre>
 <pre class="r"><code>for (k in 1:nb_tag){
-  tag = names_tag$id[k]
-  label = names_tag$label[k]
+  tag = tagId[k]
   cat(&quot;\n&quot;)
-  cat(&quot;## &quot;, label, &quot;\n&quot;)
+  cat(&quot;## &quot;, tag, &quot;\n&quot;)
   dd = list_tag[tag][[1]]
   q &lt;- p + 
     geom_point(data = dd, aes(x=x,y=y), col=&quot;red&quot;, size = 1) +
     coord_equal(ratio = 1, xlim = c(-35,5), ylim = c(-60,5)) + 
-    labs(x = &quot;&quot;, y = &quot;&quot;, title = paste0(tag, &quot; - &quot;, names_tag$Matériel[names_tag$id==tag]))
+    labs(x = &quot;&quot;, y = &quot;&quot;, title = paste0(tag))
   print(q)
   cat(&quot;\n&quot;)
 }</code></pre>
-<div id="cds1" class="section level2">
-<h2>CDS1</h2>
+<div id="dd9" class="section level2">
+<h2>2dd9</h2>
 <p><img src="figure/2021-10-05.Rmd/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-1">
+Past versions of unnamed-chunk-10-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-10-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/b96181dc220b8d8fd45e51d3ea1a98f36e4d207c/docs/figure/2021-10-05.Rmd/unnamed-chunk-10-1.png" target="_blank">b96181d</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-05
+</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div id="dyn3" class="section level2">
-<h2>DYN3</h2>
+</div>
+</div>
+<div id="d82" class="section level2">
+<h2>0d82</h2>
 <p><img src="figure/2021-10-05.Rmd/unnamed-chunk-10-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-2">
+Past versions of unnamed-chunk-10-2.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-10-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/b96181dc220b8d8fd45e51d3ea1a98f36e4d207c/docs/figure/2021-10-05.Rmd/unnamed-chunk-10-2.png" target="_blank">b96181d</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-05
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="ab" class="section level2">
+<h2>19ab</h2>
+<p><img src="figure/2021-10-05.Rmd/unnamed-chunk-10-3.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="e8d" class="section level2">
+<h2>2e8d</h2>
+<p><img src="figure/2021-10-05.Rmd/unnamed-chunk-10-4.png" width="672" style="display: block; margin: auto;" /></p>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
