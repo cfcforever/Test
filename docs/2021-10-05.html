@@ -409,7 +409,7 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2021-10-05
+<strong>Last updated:</strong> 2021-10-06
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -500,16 +500,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree4e21956229185d72fd9e1ead121ec98a00c9f860targetblank4e21956a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/4e21956229185d72fd9e1ead121ec98a00c9f860" target="_blank">4e21956</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree8100c31436093d7310c2473d8aa0f014a873c9detargetblank8100c31a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/8100c31436093d7310c2473d8aa0f014a873c9de" target="_blank">8100c31</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree4e21956229185d72fd9e1ead121ec98a00c9f860targetblank4e21956a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree8100c31436093d7310c2473d8aa0f014a873c9detargetblank8100c31a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/4e21956229185d72fd9e1ead121ec98a00c9f860" target="_blank">4e21956</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/8100c31436093d7310c2473d8aa0f014a873c9de" target="_blank">8100c31</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -525,6 +525,9 @@ Ignored files:
     Ignored:    data/plan/
     Ignored:    fig/
     Ignored:    workflowr.R
+
+Untracked files:
+    Untracked:  analysis/2021-10-06.Rmd
 
 </code></pre>
 <p>
@@ -563,6 +566,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cfcforever/Test/8100c31436093d7310c2473d8aa0f014a873c9de/docs/2021-10-05.html" target="_blank">8100c31</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-05
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -662,17 +682,19 @@ cat(&quot;data on:&quot;, today, &quot;\n&quot;)</code></pre>
 <pre><code>data on: 2021-10-05 </code></pre>
 <pre class="r"><code>json_data = fromJSON(file = paste0(&quot;data/json/&quot;, today, &quot;/position.json&quot;))
 cat(&quot;Total collected positions: &quot;, length(json_data), &quot;\n&quot;)</code></pre>
-<pre><code>Total collected positions:  433369 </code></pre>
+<pre><code>Total collected positions:  1127577 </code></pre>
 <pre class="r"><code>tagId_seq = unlist(lapply(json_data, function(x){x[&quot;tag_id&quot;][[1]]}))
 tagId = unique(tagId_seq)
 nb_tag = length(tagId)
 
 cat(&quot;Tags are: &quot;, tagId, &quot;\n&quot;)</code></pre>
-<pre><code>Tags are:  2dd9 0d82 19ab 2e8d </code></pre>
+<pre><code>Tags are:  0da6 2a51 0db4 2f77 2c57 2e55 28d2 0baf 2dd9 2f40 0d82 2f7b 2b9c 19ab 2e8d </code></pre>
 <pre class="r"><code>table(tagId_seq)</code></pre>
 <pre><code>tagId_seq
-  0d82   19ab   2dd9   2e8d 
-189515  37794 186559  19501 </code></pre>
+  0baf   0d82   0da6   0db4   19ab   28d2   2a51   2b9c   2c57   2dd9   2e55 
+ 27772 345574  20093  54885  68767  26810  28379  20092  29291 335327  25393 
+  2e8d   2f40   2f77   2f7b 
+ 59237  34142  32119  19696 </code></pre>
 </div>
 <div id="general-analysis" class="section level1">
 <h1>general analysis</h1>
@@ -753,16 +775,320 @@ kable(table_diff_ts) %&gt;%
 <tbody>
 <tr>
 <td style="text-align:left;">
+0da6
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.507
+</td>
+<td style="text-align:right;">
+0.551
+</td>
+<td style="text-align:right;">
+0.585
+</td>
+<td style="text-align:right;">
+0.600
+</td>
+<td style="text-align:right;">
+0.630
+</td>
+<td style="text-align:right;">
+0.644
+</td>
+<td style="text-align:right;">
+0.675
+</td>
+<td style="text-align:right;">
+0.693
+</td>
+<td style="text-align:right;">
+0.738
+</td>
+<td style="text-align:right;">
+3.325
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2a51
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.407
+</td>
+<td style="text-align:right;">
+0.460
+</td>
+<td style="text-align:right;">
+0.506
+</td>
+<td style="text-align:right;">
+0.550
+</td>
+<td style="text-align:right;">
+0.588
+</td>
+<td style="text-align:right;">
+0.606
+</td>
+<td style="text-align:right;">
+0.641
+</td>
+<td style="text-align:right;">
+0.678
+</td>
+<td style="text-align:right;">
+0.729
+</td>
+<td style="text-align:right;">
+25.128
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+0db4
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.179
+</td>
+<td style="text-align:right;">
+0.198
+</td>
+<td style="text-align:right;">
+0.207
+</td>
+<td style="text-align:right;">
+0.248
+</td>
+<td style="text-align:right;">
+0.363
+</td>
+<td style="text-align:right;">
+0.465
+</td>
+<td style="text-align:right;">
+0.547
+</td>
+<td style="text-align:right;">
+0.608
+</td>
+<td style="text-align:right;">
+0.685
+</td>
+<td style="text-align:right;">
+208.792
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2f77
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.312
+</td>
+<td style="text-align:right;">
+0.408
+</td>
+<td style="text-align:right;">
+0.462
+</td>
+<td style="text-align:right;">
+0.509
+</td>
+<td style="text-align:right;">
+0.557
+</td>
+<td style="text-align:right;">
+0.597
+</td>
+<td style="text-align:right;">
+0.634
+</td>
+<td style="text-align:right;">
+0.659
+</td>
+<td style="text-align:right;">
+0.714
+</td>
+<td style="text-align:right;">
+43.768
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2c57
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.391
+</td>
+<td style="text-align:right;">
+0.452
+</td>
+<td style="text-align:right;">
+0.499
+</td>
+<td style="text-align:right;">
+0.544
+</td>
+<td style="text-align:right;">
+0.585
+</td>
+<td style="text-align:right;">
+0.604
+</td>
+<td style="text-align:right;">
+0.640
+</td>
+<td style="text-align:right;">
+0.673
+</td>
+<td style="text-align:right;">
+0.721
+</td>
+<td style="text-align:right;">
+11.994
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2e55
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.412
+</td>
+<td style="text-align:right;">
+0.468
+</td>
+<td style="text-align:right;">
+0.535
+</td>
+<td style="text-align:right;">
+0.583
+</td>
+<td style="text-align:right;">
+0.600
+</td>
+<td style="text-align:right;">
+0.631
+</td>
+<td style="text-align:right;">
+0.646
+</td>
+<td style="text-align:right;">
+0.687
+</td>
+<td style="text-align:right;">
+0.774
+</td>
+<td style="text-align:right;">
+9.741
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+28d2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.446
+</td>
+<td style="text-align:right;">
+0.468
+</td>
+<td style="text-align:right;">
+0.512
+</td>
+<td style="text-align:right;">
+0.556
+</td>
+<td style="text-align:right;">
+0.595
+</td>
+<td style="text-align:right;">
+0.626
+</td>
+<td style="text-align:right;">
+0.646
+</td>
+<td style="text-align:right;">
+0.687
+</td>
+<td style="text-align:right;">
+0.739
+</td>
+<td style="text-align:right;">
+16.770
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+0baf
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.430
+</td>
+<td style="text-align:right;">
+0.471
+</td>
+<td style="text-align:right;">
+0.534
+</td>
+<td style="text-align:right;">
+0.572
+</td>
+<td style="text-align:right;">
+0.595
+</td>
+<td style="text-align:right;">
+0.608
+</td>
+<td style="text-align:right;">
+0.639
+</td>
+<td style="text-align:right;">
+0.654
+</td>
+<td style="text-align:right;">
+0.692
+</td>
+<td style="text-align:right;">
+9.734
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 2dd9
 </td>
 <td style="text-align:right;">
 0
 </td>
 <td style="text-align:right;">
-0.157
+0.155
 </td>
 <td style="text-align:right;">
-0.198
+0.197
 </td>
 <td style="text-align:right;">
 0.199
@@ -771,13 +1097,10 @@ kable(table_diff_ts) %&gt;%
 0.200
 </td>
 <td style="text-align:right;">
-0.2
+0.200
 </td>
 <td style="text-align:right;">
-0.2
-</td>
-<td style="text-align:right;">
-0.201
+0.200
 </td>
 <td style="text-align:right;">
 0.202
@@ -786,7 +1109,48 @@ kable(table_diff_ts) %&gt;%
 0.243
 </td>
 <td style="text-align:right;">
-258.345
+0.328
+</td>
+<td style="text-align:right;">
+6186.247
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2f40
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.241
+</td>
+<td style="text-align:right;">
+0.358
+</td>
+<td style="text-align:right;">
+0.451
+</td>
+<td style="text-align:right;">
+0.512
+</td>
+<td style="text-align:right;">
+0.562
+</td>
+<td style="text-align:right;">
+0.597
+</td>
+<td style="text-align:right;">
+0.628
+</td>
+<td style="text-align:right;">
+0.646
+</td>
+<td style="text-align:right;">
+0.688
+</td>
+<td style="text-align:right;">
+34.059
 </td>
 </tr>
 <tr>
@@ -797,7 +1161,7 @@ kable(table_diff_ts) %&gt;%
 0
 </td>
 <td style="text-align:right;">
-0.195
+0.161
 </td>
 <td style="text-align:right;">
 0.198
@@ -809,10 +1173,7 @@ kable(table_diff_ts) %&gt;%
 0.200
 </td>
 <td style="text-align:right;">
-0.2
-</td>
-<td style="text-align:right;">
-0.2
+0.200
 </td>
 <td style="text-align:right;">
 0.200
@@ -824,7 +1185,86 @@ kable(table_diff_ts) %&gt;%
 0.203
 </td>
 <td style="text-align:right;">
-29.401
+0.312
+</td>
+<td style="text-align:right;">
+6185.939
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2f7b
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.546
+</td>
+<td style="text-align:right;">
+0.582
+</td>
+<td style="text-align:right;">
+0.595
+</td>
+<td style="text-align:right;">
+0.603
+</td>
+<td style="text-align:right;">
+0.630
+</td>
+<td style="text-align:right;">
+0.642
+</td>
+<td style="text-align:right;">
+0.651
+</td>
+<td style="text-align:right;">
+0.685
+</td>
+<td style="text-align:right;">
+0.725
+</td>
+<td style="text-align:right;">
+23.507
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2b9c
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.507
+</td>
+<td style="text-align:right;">
+0.552
+</td>
+<td style="text-align:right;">
+0.586
+</td>
+<td style="text-align:right;">
+0.600
+</td>
+<td style="text-align:right;">
+0.629
+</td>
+<td style="text-align:right;">
+0.643
+</td>
+<td style="text-align:right;">
+0.671
+</td>
+<td style="text-align:right;">
+0.692
+</td>
+<td style="text-align:right;">
+0.741
+</td>
+<td style="text-align:right;">
+3.057
 </td>
 </tr>
 <tr>
@@ -835,22 +1275,19 @@ kable(table_diff_ts) %&gt;%
 0
 </td>
 <td style="text-align:right;">
-0.955
+0.954
 </td>
 <td style="text-align:right;">
-0.999
+0.998
+</td>
+<td style="text-align:right;">
+1.000
 </td>
 <td style="text-align:right;">
 1.000
 </td>
 <td style="text-align:right;">
 1.000
-</td>
-<td style="text-align:right;">
-1.0
-</td>
-<td style="text-align:right;">
-1.0
 </td>
 <td style="text-align:right;">
 1.000
@@ -859,10 +1296,13 @@ kable(table_diff_ts) %&gt;%
 1.001
 </td>
 <td style="text-align:right;">
-1.044
+1.045
 </td>
 <td style="text-align:right;">
-36.900
+1.552
+</td>
+<td style="text-align:right;">
+6187.255
 </td>
 </tr>
 <tr>
@@ -873,31 +1313,31 @@ kable(table_diff_ts) %&gt;%
 0
 </td>
 <td style="text-align:right;">
-0.148
+0.152
 </td>
 <td style="text-align:right;">
-0.156
+0.181
 </td>
 <td style="text-align:right;">
-0.195
+0.196
 </td>
 <td style="text-align:right;">
 0.199
 </td>
 <td style="text-align:right;">
-0.2
+0.200
 </td>
 <td style="text-align:right;">
-0.2
+0.204
 </td>
 <td style="text-align:right;">
-0.201
+0.242
 </td>
 <td style="text-align:right;">
-0.206
+0.280
 </td>
 <td style="text-align:right;">
-0.245
+0.631
 </td>
 <td style="text-align:right;">
 13979.880
@@ -969,31 +1409,292 @@ freq_3Q
 <tbody>
 <tr>
 <td style="text-align:left;">
+0da6
+</td>
+<td style="text-align:left;">
+2021-10-05 20:29:18
+</td>
+<td style="text-align:left;">
+2021-10-05 23:59:59
+</td>
+<td style="text-align:right;">
+20093
+</td>
+<td style="text-align:right;">
+147
+</td>
+<td style="text-align:right;">
+0.99
+</td>
+<td style="text-align:right;">
+0.563
+</td>
+<td style="text-align:right;">
+0.630
+</td>
+<td style="text-align:right;">
+0.686
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2a51
+</td>
+<td style="text-align:left;">
+2021-10-05 19:25:27
+</td>
+<td style="text-align:left;">
+2021-10-05 23:59:59
+</td>
+<td style="text-align:right;">
+28379
+</td>
+<td style="text-align:right;">
+723
+</td>
+<td style="text-align:right;">
+0.97
+</td>
+<td style="text-align:right;">
+0.483
+</td>
+<td style="text-align:right;">
+0.588
+</td>
+<td style="text-align:right;">
+0.649
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+0db4
+</td>
+<td style="text-align:left;">
+2021-10-05 17:51:19
+</td>
+<td style="text-align:left;">
+2021-10-05 23:59:59
+</td>
+<td style="text-align:right;">
+54885
+</td>
+<td style="text-align:right;">
+10200
+</td>
+<td style="text-align:right;">
+0.81
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.363
+</td>
+<td style="text-align:right;">
+0.587
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2f77
+</td>
+<td style="text-align:left;">
+2021-10-05 19:10:24
+</td>
+<td style="text-align:left;">
+2021-10-05 23:59:59
+</td>
+<td style="text-align:right;">
+32119
+</td>
+<td style="text-align:right;">
+93
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.447
+</td>
+<td style="text-align:right;">
+0.557
+</td>
+<td style="text-align:right;">
+0.644
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2c57
+</td>
+<td style="text-align:left;">
+2021-10-05 19:22:20
+</td>
+<td style="text-align:left;">
+2021-10-05 23:59:59
+</td>
+<td style="text-align:right;">
+29291
+</td>
+<td style="text-align:right;">
+1465
+</td>
+<td style="text-align:right;">
+0.95
+</td>
+<td style="text-align:right;">
+0.468
+</td>
+<td style="text-align:right;">
+0.585
+</td>
+<td style="text-align:right;">
+0.647
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2e55
+</td>
+<td style="text-align:left;">
+2021-10-05 19:47:18
+</td>
+<td style="text-align:left;">
+2021-10-05 23:59:59
+</td>
+<td style="text-align:right;">
+25393
+</td>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.503
+</td>
+<td style="text-align:right;">
+0.600
+</td>
+<td style="text-align:right;">
+0.660
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+28d2
+</td>
+<td style="text-align:left;">
+2021-10-05 19:34:12
+</td>
+<td style="text-align:left;">
+2021-10-05 23:59:59
+</td>
+<td style="text-align:right;">
+26810
+</td>
+<td style="text-align:right;">
+216
+</td>
+<td style="text-align:right;">
+0.99
+</td>
+<td style="text-align:right;">
+0.496
+</td>
+<td style="text-align:right;">
+0.595
+</td>
+<td style="text-align:right;">
+0.670
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+0baf
+</td>
+<td style="text-align:left;">
+2021-10-05 19:30:58
+</td>
+<td style="text-align:left;">
+2021-10-05 23:59:59
+</td>
+<td style="text-align:right;">
+27772
+</td>
+<td style="text-align:right;">
+216
+</td>
+<td style="text-align:right;">
+0.99
+</td>
+<td style="text-align:right;">
+0.503
+</td>
+<td style="text-align:right;">
+0.595
+</td>
+<td style="text-align:right;">
+0.645
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 2dd9
 </td>
 <td style="text-align:left;">
 2021-10-05 00:00:00
 </td>
 <td style="text-align:left;">
-2021-10-05 10:34:08
+2021-10-05 23:59:59
 </td>
 <td style="text-align:right;">
-186559
+335327
 </td>
 <td style="text-align:right;">
-2542
+20415
 </td>
 <td style="text-align:right;">
-0.99
+0.94
 </td>
 <td style="text-align:right;">
 0.199
 </td>
 <td style="text-align:right;">
-0.2
+0.200
 </td>
 <td style="text-align:right;">
-0.201
+0.204
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2f40
+</td>
+<td style="text-align:left;">
+2021-10-05 19:02:58
+</td>
+<td style="text-align:left;">
+2021-10-05 23:59:59
+</td>
+<td style="text-align:right;">
+34142
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.407
+</td>
+<td style="text-align:right;">
+0.562
+</td>
+<td style="text-align:right;">
+0.639
 </td>
 </tr>
 <tr>
@@ -1004,25 +1705,83 @@ freq_3Q
 2021-10-05 00:00:00
 </td>
 <td style="text-align:left;">
-2021-10-05 10:34:08
+2021-10-05 23:59:59
 </td>
 <td style="text-align:right;">
-189515
+345574
 </td>
 <td style="text-align:right;">
-2861
+3083
 </td>
 <td style="text-align:right;">
-0.98
+0.99
 </td>
 <td style="text-align:right;">
 0.199
 </td>
 <td style="text-align:right;">
-0.2
+0.200
 </td>
 <td style="text-align:right;">
-0.201
+0.202
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2f7b
+</td>
+<td style="text-align:left;">
+2021-10-05 20:29:18
+</td>
+<td style="text-align:left;">
+2021-10-05 23:59:59
+</td>
+<td style="text-align:right;">
+19696
+</td>
+<td style="text-align:right;">
+17435
+</td>
+<td style="text-align:right;">
+0.11
+</td>
+<td style="text-align:right;">
+0.590
+</td>
+<td style="text-align:right;">
+0.630
+</td>
+<td style="text-align:right;">
+0.673
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2b9c
+</td>
+<td style="text-align:left;">
+2021-10-05 20:29:18
+</td>
+<td style="text-align:left;">
+2021-10-05 23:59:59
+</td>
+<td style="text-align:right;">
+20092
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0.572
+</td>
+<td style="text-align:right;">
+0.629
+</td>
+<td style="text-align:right;">
+0.685
 </td>
 </tr>
 <tr>
@@ -1033,13 +1792,13 @@ freq_3Q
 2021-10-05 00:00:00
 </td>
 <td style="text-align:left;">
-2021-10-05 10:34:08
+2021-10-05 23:59:58
 </td>
 <td style="text-align:right;">
-37794
+68767
 </td>
 <td style="text-align:right;">
-301
+606
 </td>
 <td style="text-align:right;">
 0.99
@@ -1048,10 +1807,10 @@ freq_3Q
 0.999
 </td>
 <td style="text-align:right;">
-1.0
+1.000
 </td>
 <td style="text-align:right;">
-1.001
+1.003
 </td>
 </tr>
 <tr>
@@ -1062,25 +1821,25 @@ freq_3Q
 2021-10-05 00:00:00
 </td>
 <td style="text-align:left;">
-2021-10-05 10:30:59
+2021-10-05 23:20:38
 </td>
 <td style="text-align:right;">
-19501
+59237
 </td>
 <td style="text-align:right;">
-298
+682
 </td>
 <td style="text-align:right;">
-0.98
+0.99
 </td>
 <td style="text-align:right;">
-0.183
+0.191
 </td>
 <td style="text-align:right;">
-0.2
+0.200
 </td>
 <td style="text-align:right;">
-0.203
+0.246
 </td>
 </tr>
 </tbody>
@@ -1096,6 +1855,43 @@ p &lt;- ggplot(dat) + theme_bw() +
   labs(x = &quot;hour&quot;, y = &quot;&quot;, title = today)
 print(p)</code></pre>
 <p><img src="figure/2021-10-05.Rmd/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-6-1">
+Past versions of unnamed-chunk-6-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-6-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/8100c31436093d7310c2473d8aa0f014a873c9de/docs/figure/2021-10-05.Rmd/unnamed-chunk-6-1.png" target="_blank">8100c31</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-05
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="plot-without-nas" class="section level3">
 <h3>plot without NAs</h3>
@@ -1105,7 +1901,7 @@ cat(&quot;if x_na = y_na:&quot;, identical(x_na, y_na), &quot;\n&quot;)</code></
 <pre><code>if x_na = y_na: TRUE </code></pre>
 <pre class="r"><code>cat(&quot;number of NA positions:&quot;, length(x_na), &quot;/&quot;, length(tagId_seq), &quot;(=&quot;, 
     length(x_na)/length(tagId_seq)*100, &quot;%)&quot;, &quot;\n&quot;)</code></pre>
-<pre><code>number of NA positions: 6002 / 433369 (= 1.384963 %) </code></pre>
+<pre><code>number of NA positions: 55334 / 1127577 (= 4.907337 %) </code></pre>
 <pre class="r"><code>if (length(x_na)!=0){
   dat = dat[-x_na,]
 }</code></pre>
@@ -1118,6 +1914,43 @@ p &lt;- ggplot(dat) + theme_bw() +
   labs(x = &quot;hour&quot;, y = &quot;&quot;, title = today)
 print(p)</code></pre>
 <p><img src="figure/2021-10-05.Rmd/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-8-1">
+Past versions of unnamed-chunk-8-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-8-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/8100c31436093d7310c2473d8aa0f014a873c9de/docs/figure/2021-10-05.Rmd/unnamed-chunk-8-1.png" target="_blank">8100c31</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-05
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code>list_tag &lt;- split(dat, dat$tag)
 
 for (tag in names(list_tag)){
@@ -1160,21 +1993,213 @@ p &lt;- ggplot(plan) + theme_bw() +
   print(q)
   cat(&quot;\n&quot;)
 }</code></pre>
+<div id="da6" class="section level2">
+<h2>0da6</h2>
+<p><img src="figure/2021-10-05.Rmd/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-11-1">
+Past versions of unnamed-chunk-11-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-11-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/8100c31436093d7310c2473d8aa0f014a873c9de/docs/figure/2021-10-05.Rmd/unnamed-chunk-11-1.png" target="_blank">8100c31</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-05
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="a51" class="section level2">
+<h2>2a51</h2>
+<p><img src="figure/2021-10-05.Rmd/unnamed-chunk-11-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-11-2">
+Past versions of unnamed-chunk-11-2.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-11-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/8100c31436093d7310c2473d8aa0f014a873c9de/docs/figure/2021-10-05.Rmd/unnamed-chunk-11-2.png" target="_blank">8100c31</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-05
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="db4" class="section level2">
+<h2>0db4</h2>
+<p><img src="figure/2021-10-05.Rmd/unnamed-chunk-11-3.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-11-3">
+Past versions of unnamed-chunk-11-3.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-11-3" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/8100c31436093d7310c2473d8aa0f014a873c9de/docs/figure/2021-10-05.Rmd/unnamed-chunk-11-3.png" target="_blank">8100c31</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-05
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="f77" class="section level2">
+<h2>2f77</h2>
+<p><img src="figure/2021-10-05.Rmd/unnamed-chunk-11-4.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-11-4">
+Past versions of unnamed-chunk-11-4.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-11-4" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/8100c31436093d7310c2473d8aa0f014a873c9de/docs/figure/2021-10-05.Rmd/unnamed-chunk-11-4.png" target="_blank">8100c31</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-05
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="c57" class="section level2">
+<h2>2c57</h2>
+<p><img src="figure/2021-10-05.Rmd/unnamed-chunk-11-5.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="e55" class="section level2">
+<h2>2e55</h2>
+<p><img src="figure/2021-10-05.Rmd/unnamed-chunk-11-6.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="d2" class="section level2">
+<h2>28d2</h2>
+<p><img src="figure/2021-10-05.Rmd/unnamed-chunk-11-7.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="baf" class="section level2">
+<h2>0baf</h2>
+<p><img src="figure/2021-10-05.Rmd/unnamed-chunk-11-8.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
 <div id="dd9" class="section level2">
 <h2>2dd9</h2>
-<p><img src="figure/2021-10-05.Rmd/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-10-05.Rmd/unnamed-chunk-11-9.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="f40" class="section level2">
+<h2>2f40</h2>
+<p><img src="figure/2021-10-05.Rmd/unnamed-chunk-11-10.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="d82" class="section level2">
 <h2>0d82</h2>
-<p><img src="figure/2021-10-05.Rmd/unnamed-chunk-11-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-10-05.Rmd/unnamed-chunk-11-11.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="f7b" class="section level2">
+<h2>2f7b</h2>
+<p><img src="figure/2021-10-05.Rmd/unnamed-chunk-11-12.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="b9c" class="section level2">
+<h2>2b9c</h2>
+<p><img src="figure/2021-10-05.Rmd/unnamed-chunk-11-13.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="ab" class="section level2">
 <h2>19ab</h2>
-<p><img src="figure/2021-10-05.Rmd/unnamed-chunk-11-3.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-10-05.Rmd/unnamed-chunk-11-14.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="e8d" class="section level2">
 <h2>2e8d</h2>
-<p><img src="figure/2021-10-05.Rmd/unnamed-chunk-11-4.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-10-05.Rmd/unnamed-chunk-11-15.png" width="672" style="display: block; margin: auto;" /></p>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
