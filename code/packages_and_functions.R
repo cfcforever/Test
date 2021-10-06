@@ -10,5 +10,6 @@ library(lubridate)
 library(readxl)
 library(DT)
 library(nnet)
+library(scales)
 
 source("code/fun_convert_date.R")
