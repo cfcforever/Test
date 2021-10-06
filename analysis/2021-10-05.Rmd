@@ -50,6 +50,7 @@ nb_tag = length(tagId)
 
 dat = dat[dat$tag%in%tagId,]
 dat$label = factor(dat$tag, levels = names_tag$id, labels = names_tag$label)
+dat$tagn = as.numeric(factor(dat$tag, levels = names_tag$id, labels = 1:nb_tag))
 
 list_tag <- split(dat, dat$tag)
 ```
@@ -111,8 +112,10 @@ kable(table_tag) %>%
 ```{r}
 timestamp_breaks = as.numeric(as.POSIXct(paste0(today, " ", sprintf("%02d", 0:23), ":00:00 CEST"))) + 3600*6
 p <- ggplot(dat) + theme_bw() + 
-  geom_point(aes(x=record_timestamp, y=label, col=label)) +
+  geom_point(aes(x=record_timestamp, y=tagn, col=tagn)) +
   scale_x_continuous(breaks = timestamp_breaks, labels = 0:23) +
+  scale_y_continuous(breaks = 1:nb_tag, labels = names_tag$label) + 
+  scale_color_gradientn(colours = hue_pal()(nb_tag)) + 
   coord_cartesian(xlim = c(timestamp_breaks[1], timestamp_breaks[23]+3600)) +
   theme(legend.position = "None") +
   labs(x = "hour", y = "", title = today)
@@ -136,8 +139,10 @@ if (length(x_na)!=0){
 ```{r}
 timestamp_breaks = as.numeric(as.POSIXct(paste0(today, " ", sprintf("%02d", 0:23), ":00:00 CEST"))) + 3600*6
 p <- ggplot(dat) + theme_bw() + 
-  geom_point(aes(x=record_timestamp, y=label, col=label)) +
+  geom_point(aes(x=record_timestamp, y=tagn, col=tagn)) +
   scale_x_continuous(breaks = timestamp_breaks, labels = 0:23) +
+  scale_y_continuous(breaks = 1:nb_tag, labels = names_tag$label) + 
+  scale_color_gradientn(colours = hue_pal()(nb_tag)) + 
   coord_cartesian(xlim = c(timestamp_breaks[1], timestamp_breaks[23]+3600)) +
   theme(legend.position = "None") +
   labs(x = "hour", y = "", title = today)
@@ -191,9 +196,9 @@ for (k in 1:nb_tag){
       geom_point(data = dd, aes(x=x,y=y), col="red", size = 1) +
       coord_equal(ratio = 1, xlim = c(-35,5), ylim = c(-60,5)) + 
       labs(x = "", y = "", title = paste0(tag, " - ", names_tag$Matériel[names_tag$id==tag]))
-    print(q) 
+    print(q)
   }else{
-    message("NO DATA for plot!!")
+    cat("NO DATA for plot!!")
   }
   cat("\n")
 }
