@@ -17,5 +17,3 @@ id	Matériel	label
 19ab	Tag fixe	FIX
 28d2	Ordi mobile	ORD
 2e55	Scope mobile	SCO
-2dd9	Fauteuil roulant2	FAU2
-19ab	Tag fixe	FIX
