@@ -115,7 +115,7 @@ p <- ggplot(dat) + theme_bw() +
   geom_point(aes(x=record_timestamp, y=tagn, col=tagn)) +
   scale_x_continuous(breaks = timestamp_breaks, labels = 0:23) +
   scale_y_continuous(breaks = 1:nb_tag, labels = names_tag$label) + 
-  scale_color_gradientn(colours = rainbow(nb_tag)) + 
+  scale_color_gradientn(colours = hue_pal()(nb_tag)) + 
   coord_cartesian(xlim = c(timestamp_breaks[1], timestamp_breaks[23]+3600)) +
   theme(legend.position = "None") +
   labs(x = "hour", y = "", title = today)
@@ -142,7 +142,7 @@ p <- ggplot(dat) + theme_bw() +
   geom_point(aes(x=record_timestamp, y=tagn, col=tagn)) +
   scale_x_continuous(breaks = timestamp_breaks, labels = 0:23) +
   scale_y_continuous(breaks = 1:nb_tag, labels = names_tag$label) + 
-  scale_color_gradientn(colours = rainbow(nb_tag)) + 
+  scale_color_gradientn(colours = hue_pal()(nb_tag)) + 
   coord_cartesian(xlim = c(timestamp_breaks[1], timestamp_breaks[23]+3600)) +
   theme(legend.position = "None") +
   labs(x = "hour", y = "", title = today)
@@ -197,10 +197,8 @@ for (k in 1:nb_tag){
       coord_equal(ratio = 1, xlim = c(-35,5), ylim = c(-60,5)) + 
       labs(x = "", y = "", title = paste0(tag, " - ", names_tag$Matériel[names_tag$id==tag]))
     print(q)
-    cat("\n")
   }else{
     cat("NO DATA for plot!!")
-    cat("\n")
   }
   cat("\n")
 }
