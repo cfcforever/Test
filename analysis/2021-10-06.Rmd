@@ -50,6 +50,7 @@ nb_tag = length(tagId)
 
 dat = dat[dat$tag%in%tagId,]
 dat$label = factor(dat$tag, levels = names_tag$id, labels = names_tag$label)
+dat$tagn = as.numeric(factor(dat$tag, levels = names_tag$id, labels = 1:nb_tag))
 
 list_tag <- split(dat, dat$tag)
 ```
@@ -110,10 +111,11 @@ kable(table_tag) %>%
 ### plot with NAs
 ```{r}
 timestamp_breaks = as.numeric(as.POSIXct(paste0(today, " ", sprintf("%02d", 0:23), ":00:00 CEST"))) + 3600*6
-col = rainbow(nb_tag)
 p <- ggplot(dat) + theme_bw() + 
-  geom_point(aes(x=record_timestamp, y=label, col=label)) +
+  geom_point(aes(x=record_timestamp, y=tagn, col=tagn)) +
   scale_x_continuous(breaks = timestamp_breaks, labels = 0:23) +
+  scale_y_continuous(breaks = 1:nb_tag, labels = names_tag$label) + 
+  scale_color_gradientn(colours = rainbow(nb_tag)) + 
   coord_cartesian(xlim = c(timestamp_breaks[1], timestamp_breaks[23]+3600)) +
   theme(legend.position = "None") +
   labs(x = "hour", y = "", title = today)
@@ -136,10 +138,11 @@ if (length(x_na)!=0){
 
 ```{r}
 timestamp_breaks = as.numeric(as.POSIXct(paste0(today, " ", sprintf("%02d", 0:23), ":00:00 CEST"))) + 3600*6
-col = rainbow(nb_tag)
 p <- ggplot(dat) + theme_bw() + 
-  geom_point(aes(x=record_timestamp, y=label, col=label)) +
+  geom_point(aes(x=record_timestamp, y=tagn, col=tagn)) +
   scale_x_continuous(breaks = timestamp_breaks, labels = 0:23) +
+  scale_y_continuous(breaks = 1:nb_tag, labels = names_tag$label) + 
+  scale_color_gradientn(colours = rainbow(nb_tag)) + 
   coord_cartesian(xlim = c(timestamp_breaks[1], timestamp_breaks[23]+3600)) +
   theme(legend.position = "None") +
   labs(x = "hour", y = "", title = today)
