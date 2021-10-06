@@ -196,7 +196,7 @@ for (k in 1:nb_tag){
     print(q)
     cat("\n")
   }else{
-    message("NO DATA for plot!!")
+    cat("NO DATA for plot!!")
     cat("\n")
   }
   cat("\n")
