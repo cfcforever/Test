@@ -110,6 +110,7 @@ kable(table_tag) %>%
 ### plot with NAs
 ```{r}
 timestamp_breaks = as.numeric(as.POSIXct(paste0(today, " ", sprintf("%02d", 0:23), ":00:00 CEST"))) + 3600*6
+col = rainbow(nb_tag)
 p <- ggplot(dat) + theme_bw() + 
   geom_point(aes(x=record_timestamp, y=label, col=label)) +
   scale_x_continuous(breaks = timestamp_breaks, labels = 0:23) +
@@ -135,6 +136,7 @@ if (length(x_na)!=0){
 
 ```{r}
 timestamp_breaks = as.numeric(as.POSIXct(paste0(today, " ", sprintf("%02d", 0:23), ":00:00 CEST"))) + 3600*6
+col = rainbow(nb_tag)
 p <- ggplot(dat) + theme_bw() + 
   geom_point(aes(x=record_timestamp, y=label, col=label)) +
   scale_x_continuous(breaks = timestamp_breaks, labels = 0:23) +
@@ -186,7 +188,6 @@ for (k in 1:nb_tag){
   cat("\n")
   cat("## ", label, "\n")
   dd = list_tag[tag][[1]]
-<<<<<<< HEAD
   if (!is.null(dd)){
     q <- p + 
       geom_point(data = dd, aes(x=x,y=y), col="red", size = 1) +
@@ -196,13 +197,6 @@ for (k in 1:nb_tag){
   }else{
     message("NO DATA for plot!!")
   }
-=======
-  q <- p + 
-    geom_point(data = dd, aes(x=x,y=y), col="red", size = 1) +
-    coord_equal(ratio = 1, xlim = c(-35,5), ylim = c(-60,5)) + 
-    labs(x = "", y = "", title = paste0(tag, " - ", names_tag$Matériel[names_tag$id==tag]))
-  print(q)
->>>>>>> df6edbae5d196a71bede02b6035ad7f0ec7c8758
   cat("\n")
 }
 ```
