@@ -14,7 +14,7 @@
 <title>Home</title>
 
 <script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -36,7 +36,14 @@
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<script src="site_libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="site_libs/datatables-binding-0.17/datatables.js"></script>
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
@@ -500,16 +507,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree825a11926ab9e64e269934d3d42619961335ee23targetblank825a119a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/825a11926ab9e64e269934d3d42619961335ee23" target="_blank">825a119</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreecfa5ac4ec499ec6441c51430b2998b5f0497f687targetblankcfa5ac4a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/cfa5ac4ec499ec6441c51430b2998b5f0497f687" target="_blank">cfa5ac4</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree825a11926ab9e64e269934d3d42619961335ee23targetblank825a119a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreecfa5ac4ec499ec6441c51430b2998b5f0497f687targetblankcfa5ac4a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/825a11926ab9e64e269934d3d42619961335ee23" target="_blank">825a119</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/cfa5ac4ec499ec6441c51430b2998b5f0497f687" target="_blank">cfa5ac4</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -525,9 +532,6 @@ Ignored files:
     Ignored:    data/plan/
     Ignored:    fig/
     Ignored:    workflowr.R
-
-Unstaged changes:
-    Modified:   analysis/2021-10-06.Rmd
 
 </code></pre>
 <p>
@@ -566,6 +570,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/cfa5ac4ec499ec6441c51430b2998b5f0497f687/analysis/index.Rmd" target="_blank">cfa5ac4</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-06
+</td>
+<td>
+add new analysis
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cfcforever/Test/ad88acc9c792fd6b4471d5e824cca78418493b26/docs/index.html" target="_blank">ad88acc</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-06
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -1241,223 +1279,12 @@ Start workflowr project.
 <h1>Tags and labels</h1>
 <pre class="r"><code>names_tag &lt;- read.table(file = &quot;data/tag_names_20210924.txt&quot;, header = T, sep = &quot;\t&quot;)
 
-kable(names_tag) %&gt;%
-  kable_styling(bootstrap_options = &quot;striped&quot;, full_width = F)</code></pre>
-<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
-<thead>
-<tr>
-<th style="text-align:left;">
-id
-</th>
-<th style="text-align:left;">
-Matériel
-</th>
-<th style="text-align:left;">
-label
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-2a51
-</td>
-<td style="text-align:left;">
-Bladder
-</td>
-<td style="text-align:left;">
-BLA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-0da6
-</td>
-<td style="text-align:left;">
-Brancard1
-</td>
-<td style="text-align:left;">
-BRA1
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2f7b
-</td>
-<td style="text-align:left;">
-Brancard2
-</td>
-<td style="text-align:left;">
-BRA2
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2a73
-</td>
-<td style="text-align:left;">
-Brancard3
-</td>
-<td style="text-align:left;">
-BRA3
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2f40
-</td>
-<td style="text-align:left;">
-Brancard4
-</td>
-<td style="text-align:left;">
-BRA4
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2f77
-</td>
-<td style="text-align:left;">
-Brancard polytrauma1
-</td>
-<td style="text-align:left;">
-BRP1
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2b9c
-</td>
-<td style="text-align:left;">
-Brancard polytrauma2
-</td>
-<td style="text-align:left;">
-BRP2
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-0d82
-</td>
-<td style="text-align:left;">
-Chariot de soins1
-</td>
-<td style="text-align:left;">
-CDS1
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-29ed
-</td>
-<td style="text-align:left;">
-Chariot de soins2
-</td>
-<td style="text-align:left;">
-CDS2
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2c57
-</td>
-<td style="text-align:left;">
-Dynamap1
-</td>
-<td style="text-align:left;">
-DYN1
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-28e9
-</td>
-<td style="text-align:left;">
-Dynamap2
-</td>
-<td style="text-align:left;">
-DYN2
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2e8d
-</td>
-<td style="text-align:left;">
-Dynamap3
-</td>
-<td style="text-align:left;">
-DYN3
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-0baf
-</td>
-<td style="text-align:left;">
-Electro-cardiogramme
-</td>
-<td style="text-align:left;">
-ELC
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-0db4
-</td>
-<td style="text-align:left;">
-Fauteuil roulant1
-</td>
-<td style="text-align:left;">
-FAU1
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2dd9
-</td>
-<td style="text-align:left;">
-Fauteuil roulant2
-</td>
-<td style="text-align:left;">
-FAU2
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-19ab
-</td>
-<td style="text-align:left;">
-Tag fixe
-</td>
-<td style="text-align:left;">
-FIX
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-28d2
-</td>
-<td style="text-align:left;">
-Ordi mobile
-</td>
-<td style="text-align:left;">
-ORD
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2e55
-</td>
-<td style="text-align:left;">
-Scope mobile
-</td>
-<td style="text-align:left;">
-SCO
-</td>
-</tr>
-</tbody>
-</table>
+# kable(names_tag) %&gt;%
+#   kable_styling(bootstrap_options = &quot;striped&quot;, full_width = F)
+
+datatable(names_tag, class = &#39;cell-border stripe&#39;, options = list(pageLength = nrow(names_tag)))</code></pre>
+<div id="htmlwidget-173e29cf4123579084a6" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-173e29cf4123579084a6">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18"],["2a51","0da6","2f7b","2a73","2f40","2f77","2b9c","0d82","29ed","2c57","28e9","2e8d","0baf","0db4","2dd9","19ab","28d2","2e55"],["Bladder","Brancard1","Brancard2","Brancard3","Brancard4","Brancard polytrauma1","Brancard polytrauma2","Chariot de soins1","Chariot de soins2","Dynamap1","Dynamap2","Dynamap3","Electro-cardiogramme","Fauteuil roulant1","Fauteuil roulant2","Tag fixe","Ordi mobile","Scope mobile"],["BLA","BRA1","BRA2","BRA3","BRA4","BRP1","BRP2","CDS1","CDS2","DYN1","DYN2","DYN3","ELC","FAU1","FAU2","FIX","ORD","SCO"]],"container":"<table class=\"cell-border stripe\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>id<\/th>\n      <th>Matériel<\/th>\n      <th>label<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":18,"order":[],"autoWidth":false,"orderClasses":false,"columnDefs":[{"orderable":false,"targets":0}],"lengthMenu":[10,18,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -1481,9 +1308,10 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] DT_0.17          readxl_1.3.1     lubridate_1.7.10 dplyr_1.0.6     
- [5] nnet_7.3-14      kableExtra_1.1.0 rjson_0.2.20     cowplot_1.1.0   
- [9] gifski_0.8.6     gganimate_1.0.7  ggplot2_3.3.3    workflowr_1.6.2 
+ [1] scales_1.1.1     DT_0.17          readxl_1.3.1     lubridate_1.7.10
+ [5] dplyr_1.0.6      nnet_7.3-14      kableExtra_1.1.0 rjson_0.2.20    
+ [9] cowplot_1.1.0    gifski_0.8.6     gganimate_1.0.7  ggplot2_3.3.3   
+[13] workflowr_1.6.2 
 
 loaded via a namespace (and not attached):
  [1] progress_1.2.2    tidyselect_1.1.0  xfun_0.25         purrr_0.3.4      
@@ -1492,9 +1320,9 @@ loaded via a namespace (and not attached):
 [13] later_1.1.0.1     pillar_1.6.0      glue_1.4.1        withr_2.4.2      
 [17] DBI_1.1.1         tweenr_1.0.1      lifecycle_1.0.0   stringr_1.4.0    
 [21] cellranger_1.1.0  munsell_0.5.0     gtable_0.3.0      rvest_1.0.0      
-[25] htmlwidgets_1.5.1 evaluate_0.14     knitr_1.33        httpuv_1.5.4     
-[29] fansi_0.4.1       highr_0.8         Rcpp_1.0.5        readr_1.4.0      
-[33] promises_1.1.1    scales_1.1.1      backports_1.1.8   webshot_0.5.2    
+[25] htmlwidgets_1.5.1 evaluate_0.14     knitr_1.33        crosstalk_1.1.0.1
+[29] httpuv_1.5.4      fansi_0.4.1       Rcpp_1.0.5        readr_1.4.0      
+[33] promises_1.1.1    backports_1.1.8   jsonlite_1.7.2    webshot_0.5.2    
 [37] farver_2.0.3      fs_1.5.0          hms_1.0.0         digest_0.6.25    
 [41] stringi_1.4.6     grid_4.0.2        rprojroot_1.3-2   tools_4.0.2      
 [45] magrittr_2.0.1    tibble_3.1.1      crayon_1.4.1      whisker_0.4      
