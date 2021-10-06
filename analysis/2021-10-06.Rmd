@@ -193,9 +193,11 @@ for (k in 1:nb_tag){
       geom_point(data = dd, aes(x=x,y=y), col="red", size = 1) +
       coord_equal(ratio = 1, xlim = c(-35,5), ylim = c(-60,5)) + 
       labs(x = "", y = "", title = paste0(tag, " - ", names_tag$Matériel[names_tag$id==tag]))
-    print(q) 
+    print(q)
+    cat("\n")
   }else{
     message("NO DATA for plot!!")
+    cat("\n")
   }
   cat("\n")
 }
