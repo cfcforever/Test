@@ -12,6 +12,8 @@ id	Matériel	label
 28e9	Dynamap2	DYN2
 2e8d	Dynamap3	DYN3
 0baf	Electro-cardiogramme	ELC
-0db4	Fauteuil roulant	FAU
+0db4	Fauteuil roulant1	FAU1
+2dd9	Fauteuil roulant2	FAU2
+19ab	Tag fixe	FIX
 28d2	Ordi mobile	ORD
 2e55	Scope mobile	SCO
