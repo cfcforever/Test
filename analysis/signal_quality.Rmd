@@ -1,5 +1,5 @@
 ---
-title: "Machine learning method"
+title: "Heat map for the signal quality"
 # author: "cfcforever"
 # date: ""
 output: 
@@ -16,8 +16,107 @@ source("code/packages_and_functions.R")
 ```
 
 
-# Introduction
+# load data
+```{r}
+today = "2021-09-29"
+json_data = fromJSON(file = paste0("data/json/", today, "/position.json"))
+
+tagId_seq = unlist(lapply(json_data, function(x){x["tag_id"][[1]]}))
+tagId = unique(tagId_seq)
+nb_tag = length(tagId)
+```
+
+We are using "`r today`" data as an example.
 
 
+# data without NAs
+```{r}
+dat <- data.frame(tag = unlist(lapply(json_data, function(x){x["tag_id"][[1]]})),
+                  x = unlist(lapply(json_data, function(x){x["x"][[1]]})),
+                  y = unlist(lapply(json_data, function(x){x["y"][[1]]})),
+                  record_timestamp = unlist(lapply(json_data, function(x){x["record_timestamp"][[1]]})))
+dat = dat[order(dat$record_timestamp),]
+# dat = cbind.data.frame(dat, convert_date(dat$record_timestamp))
+dat$x = as.numeric(dat$x)/100
+dat$y = as.numeric(dat$y)/100
 
+names_tag <- read.table(file = "data/tag_names_20210924.txt", header = T, sep = "\t")
+names_tag = names_tag[names_tag$id%in%tagId, ]
+
+tagId = names_tag$id
+nb_tag = length(tagId)
+
+dat = dat[dat$tag%in%tagId,]
+# dat$label = factor(dat$tag, levels = names_tag$id, labels = names_tag$label)
+
+x_na = which(is.na(dat$x))
+y_na = which(is.na(dat$y))
+cat("if x_na = y_na:", identical(x_na, y_na), "\n")
+if (length(x_na)!=0){
+  dat = dat[-x_na,]
+}
+
+list_tag <- split(dat, dat$tag)
+for (k in 1:nb_tag){
+  tag = tagId[k]
+  dat_tag <- list_tag[tag][[1]]
+  dat_tag$diff_ts = c(dat_tag$record_timestamp[-1]-dat_tag$record_timestamp[-nrow(dat_tag)],0)
+  list_tag[tag][[1]] = dat_tag
+}
+```
+
+
+## choose a threshold for a minimum interrupted time interval
+```{r}
+thres = 5
+cat("the threshold is", thres, "seconds.", "\n")
+
+dat_lowq = do.call(rbind.data.frame, list_tag)
+dat_lowq = dat_lowq %>%
+  filter(diff_ts>=thres)
+
+dat_lowq$x = as.numeric(sprintf("%.3f", dat_lowq$x))
+dat_lowq$y = as.numeric(sprintf("%.3f", dat_lowq$y))
+dat_lowq = dat_lowq[order(dat_lowq$record_timestamp),]
+
+datatable(dat_lowq, rownames = F)
+```
+
+
+# heatmap{.tabset .tabset-pills}
+```{r}
+plan <- read_excel("data/plan/Wall_lignes_firminy.xlsx")
+plan = as.data.frame(plan)
+plan$`Start X` <- as.numeric(plan$`Start X`)/100
+plan$`Start Y` <- as.numeric(plan$`Start Y`)/100
+plan$`End X` <- as.numeric(plan$`End X`)/100
+plan$`End Y` <- as.numeric(plan$`End Y`)/100
+colnames(plan) = c("Name", "Length", "Linetype Scale", "Angle", "Delta X",
+                   "Delta Y", "Delta Z", "EndX", "EndY", "EndZ", 
+                   "StartX", "StartY", "StartZ")
+p <- ggplot(plan) + theme_bw() + 
+  geom_segment(aes(x=StartX, y=StartY, xend=EndX, yend=EndY))
+```
+
+## 1x1
+```{r}
+res = 1
+q <- p + 
+  geom_bin2d(data = dat_lowq, aes(x = x, y = y), binwidth=c(res,res)) + 
+  scale_fill_gradient(low = "white", high = "red") + 
+  coord_equal(ratio = 1, xlim = c(-35,5), ylim = c(-65,5)) + 
+  labs(x = "", y = "")
+print(q)
+```
+
+## 2x2
+```{r}
+res = 2
+q <- p + 
+  geom_bin2d(data = dat_lowq, aes(x = x, y = y), binwidth=c(res,res)) + 
+  scale_fill_gradient(low = "white", high = "red") + 
+  coord_equal(ratio = 1, xlim = c(-35,5), ylim = c(-65,5)) + 
+  labs(x = "", y = "")
+print(q)
+```
 
