@@ -74,7 +74,7 @@ cat("the threshold is", thres, "seconds.", "\n")
 
 dat_lowq = do.call(rbind.data.frame, list_tag)
 dat_lowq = dat_lowq %>%
-  filter(diff_ts>=thres)
+  filter(diff_ts>=thres & tag!="2e8d")
 
 dat_lowq$x = as.numeric(sprintf("%.3f", dat_lowq$x))
 dat_lowq$y = as.numeric(sprintf("%.3f", dat_lowq$y))
@@ -143,7 +143,7 @@ cat("the threshold is", thres, "seconds.", "\n")
 
 dat_lowq = do.call(rbind.data.frame, list_tag)
 dat_lowq = dat_lowq %>%
-  filter(diff_ts>=thres)
+  filter(diff_ts>=thres & tag!="2e8d")
 
 dat_lowq$x = as.numeric(sprintf("%.3f", dat_lowq$x))
 dat_lowq$y = as.numeric(sprintf("%.3f", dat_lowq$y))
