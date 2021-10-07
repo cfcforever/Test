@@ -8,6 +8,8 @@ navbar:
     href: index.html
   - text: Daily results
     href: daily_results.html
+  - text: Signal quality
+    href: signal_quality.html
   - text: Stabilization
     menu:
       - text: Machine Learning
