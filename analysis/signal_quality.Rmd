@@ -108,6 +108,13 @@ q <- p +
   coord_equal(ratio = 1, xlim = c(-35,5), ylim = c(-65,5)) + 
   labs(x = "", y = "")
 print(q)
+
+q <- p + 
+  geom_bin2d(data = dat_lowq, aes(x = x, y = y), binwidth=c(res,res)) + 
+  scale_fill_gradient(low = "red", high = "yellow") + 
+  coord_equal(ratio = 1, xlim = c(-35,5), ylim = c(-65,5)) + 
+  labs(x = "", y = "")
+print(q)
 ```
 
 #### 2x2
@@ -116,6 +123,13 @@ res = 2
 q <- p + 
   geom_bin2d(data = dat_lowq, aes(x = x, y = y), binwidth=c(res,res)) + 
   scale_fill_gradient(low = "white", high = "red") + 
+  coord_equal(ratio = 1, xlim = c(-35,5), ylim = c(-65,5)) + 
+  labs(x = "", y = "")
+print(q)
+
+q <- p + 
+  geom_bin2d(data = dat_lowq, aes(x = x, y = y), binwidth=c(res,res)) + 
+  scale_fill_gradient(low = "red", high = "yellow") + 
   coord_equal(ratio = 1, xlim = c(-35,5), ylim = c(-65,5)) + 
   labs(x = "", y = "")
 print(q)
