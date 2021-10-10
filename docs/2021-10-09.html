@@ -503,16 +503,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreeab276e36a3dea98701202964f48fcf1ca67bb835targetblankab276e3a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/ab276e36a3dea98701202964f48fcf1ca67bb835" target="_blank">ab276e3</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree5bde00f4b612637f9ea9007179b200c210f79cbatargetblank5bde00fa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/5bde00f4b612637f9ea9007179b200c210f79cba" target="_blank">5bde00f</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreeab276e36a3dea98701202964f48fcf1ca67bb835targetblankab276e3a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree5bde00f4b612637f9ea9007179b200c210f79cbatargetblank5bde00fa" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/ab276e36a3dea98701202964f48fcf1ca67bb835" target="_blank">ab276e3</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/5bde00f4b612637f9ea9007179b200c210f79cba" target="_blank">5bde00f</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -566,6 +566,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/5bde00f4b612637f9ea9007179b200c210f79cba/analysis/2021-10-09.Rmd" target="_blank">5bde00f</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-10
+</td>
+<td>
+add new analysis
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cfcforever/Test/fd9ca214c1bd920addeec5492bcafa79e4923901/docs/2021-10-09.html" target="_blank">fd9ca21</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-10
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -636,8 +670,8 @@ cat(&quot;Total collected positions: &quot;, length(json_data), &quot;\n&quot;)<
 tagId = unique(tagId_seq)
 nb_tag = length(tagId)
 
-cat(&quot;Tags are: &quot;, tagId, &quot;\n&quot;)</code></pre>
-<pre><code>Tags are:  2e55 0d82 0da6 2c57 2f7b 2a51 28d2 2b9c 0baf 19ab 2e8d 2f77 0db4 </code></pre>
+cat(nb_tag, &quot;Tags are: &quot;, tagId, &quot;\n&quot;)</code></pre>
+<pre><code>13 Tags are:  2e55 0d82 0da6 2c57 2f7b 2a51 28d2 2b9c 0baf 19ab 2e8d 2f77 0db4 </code></pre>
 <pre class="r"><code>table(tagId_seq)</code></pre>
 <pre><code>tagId_seq
   0baf   0d82   0da6   0db4   19ab   28d2   2a51   2b9c   2c57   2e55   2e8d 
@@ -669,6 +703,362 @@ dat$tagn = as.numeric(factor(dat$tag, levels = names_tag$id, labels = 1:nb_tag))
 list_tag &lt;- split(dat, dat$tag)</code></pre>
 <div id="quality-of-collecting-data" class="section level2">
 <h2>quality of collecting data</h2>
+<pre class="r"><code>table_tag &lt;- data.frame(tag = names_tag$id, label = names_tag$label)
+table_tag$first_record = NA
+table_tag$last_record = NA
+table_tag$number = NA
+table_tag$number_NA = NA
+table_tag$ratio_non_NA = NA
+# table_tag$freq_1Q = NA
+# table_tag$freq_median = NA
+# table_tag$freq_3Q = NA
+
+
+for (k in 1:nb_tag){
+  tag = table_tag$tag[k]
+  temp = list_tag[tag][[1]]
+  temp$diff_ts = c(0, temp$record_timestamp[-1]-temp$record_timestamp[-nrow(temp)])
+  
+  table_tag$first_record[k] = head(as.character(temp$date),1)
+  table_tag$last_record[k] = tail(as.character(temp$date),1)
+  table_tag$number[k] = nrow(temp)
+  table_tag$number_NA[k] = sum(is.na(temp$x))
+  table_tag$ratio_non_NA[k] = round(1-table_tag$number_NA[k]/table_tag$number[k],2)
+  # table_tag$freq_1Q[k] = round(quantile(temp$diff_ts, 0.25), 3)
+  # table_tag$freq_median[k] = round(quantile(temp$diff_ts, 0.5), 3)
+  # table_tag$freq_3Q[k] = round(quantile(temp$diff_ts, 0.75), 3)
+}
+
+kable(table_tag) %&gt;%
+  kable_styling(bootstrap_options = &quot;striped&quot;, full_width = T)</code></pre>
+<table class="table table-striped" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+tag
+</th>
+<th style="text-align:left;">
+label
+</th>
+<th style="text-align:left;">
+first_record
+</th>
+<th style="text-align:left;">
+last_record
+</th>
+<th style="text-align:right;">
+number
+</th>
+<th style="text-align:right;">
+number_NA
+</th>
+<th style="text-align:right;">
+ratio_non_NA
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+2a51
+</td>
+<td style="text-align:left;">
+BLA
+</td>
+<td style="text-align:left;">
+2021-10-09 00:00:00
+</td>
+<td style="text-align:left;">
+2021-10-09 23:59:59
+</td>
+<td style="text-align:right;">
+174383
+</td>
+<td style="text-align:right;">
+3056
+</td>
+<td style="text-align:right;">
+0.98
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+0da6
+</td>
+<td style="text-align:left;">
+BRA1
+</td>
+<td style="text-align:left;">
+2021-10-09 00:00:00
+</td>
+<td style="text-align:left;">
+2021-10-09 23:59:59
+</td>
+<td style="text-align:right;">
+173952
+</td>
+<td style="text-align:right;">
+19627
+</td>
+<td style="text-align:right;">
+0.89
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2f7b
+</td>
+<td style="text-align:left;">
+BRA2
+</td>
+<td style="text-align:left;">
+2021-10-09 00:00:00
+</td>
+<td style="text-align:left;">
+2021-10-09 23:59:59
+</td>
+<td style="text-align:right;">
+174075
+</td>
+<td style="text-align:right;">
+1115
+</td>
+<td style="text-align:right;">
+0.99
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2f77
+</td>
+<td style="text-align:left;">
+BRP1
+</td>
+<td style="text-align:left;">
+2021-10-09 00:00:00
+</td>
+<td style="text-align:left;">
+2021-10-09 21:29:25
+</td>
+<td style="text-align:right;">
+152526
+</td>
+<td style="text-align:right;">
+2539
+</td>
+<td style="text-align:right;">
+0.98
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2b9c
+</td>
+<td style="text-align:left;">
+BRP2
+</td>
+<td style="text-align:left;">
+2021-10-09 00:00:00
+</td>
+<td style="text-align:left;">
+2021-10-09 23:59:59
+</td>
+<td style="text-align:right;">
+169748
+</td>
+<td style="text-align:right;">
+1294
+</td>
+<td style="text-align:right;">
+0.99
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+0d82
+</td>
+<td style="text-align:left;">
+CDS1
+</td>
+<td style="text-align:left;">
+2021-10-09 00:00:00
+</td>
+<td style="text-align:left;">
+2021-10-09 23:59:59
+</td>
+<td style="text-align:right;">
+174343
+</td>
+<td style="text-align:right;">
+1223
+</td>
+<td style="text-align:right;">
+0.99
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2c57
+</td>
+<td style="text-align:left;">
+DYN1
+</td>
+<td style="text-align:left;">
+2021-10-09 00:00:00
+</td>
+<td style="text-align:left;">
+2021-10-09 23:59:59
+</td>
+<td style="text-align:right;">
+174346
+</td>
+<td style="text-align:right;">
+734
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2e8d
+</td>
+<td style="text-align:left;">
+DYN3
+</td>
+<td style="text-align:left;">
+2021-10-09 00:00:00
+</td>
+<td style="text-align:left;">
+2021-10-09 22:41:54
+</td>
+<td style="text-align:right;">
+16331
+</td>
+<td style="text-align:right;">
+129
+</td>
+<td style="text-align:right;">
+0.99
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+0baf
+</td>
+<td style="text-align:left;">
+ELC
+</td>
+<td style="text-align:left;">
+2021-10-09 00:00:00
+</td>
+<td style="text-align:left;">
+2021-10-09 23:59:59
+</td>
+<td style="text-align:right;">
+174346
+</td>
+<td style="text-align:right;">
+1531
+</td>
+<td style="text-align:right;">
+0.99
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+0db4
+</td>
+<td style="text-align:left;">
+FAU1
+</td>
+<td style="text-align:left;">
+2021-10-09 00:00:00
+</td>
+<td style="text-align:left;">
+2021-10-09 16:07:29
+</td>
+<td style="text-align:right;">
+105486
+</td>
+<td style="text-align:right;">
+12430
+</td>
+<td style="text-align:right;">
+0.88
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+19ab
+</td>
+<td style="text-align:left;">
+FIX
+</td>
+<td style="text-align:left;">
+2021-10-09 00:00:01
+</td>
+<td style="text-align:left;">
+2021-10-09 23:59:58
+</td>
+<td style="text-align:right;">
+34710
+</td>
+<td style="text-align:right;">
+397
+</td>
+<td style="text-align:right;">
+0.99
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+28d2
+</td>
+<td style="text-align:left;">
+ORD
+</td>
+<td style="text-align:left;">
+2021-10-09 00:00:00
+</td>
+<td style="text-align:left;">
+2021-10-09 23:59:59
+</td>
+<td style="text-align:right;">
+130728
+</td>
+<td style="text-align:right;">
+5283
+</td>
+<td style="text-align:right;">
+0.96
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2e55
+</td>
+<td style="text-align:left;">
+SCO
+</td>
+<td style="text-align:left;">
+2021-10-09 00:00:00
+</td>
+<td style="text-align:left;">
+2021-10-09 23:59:59
+</td>
+<td style="text-align:right;">
+174338
+</td>
+<td style="text-align:right;">
+113
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+</tr>
+</tbody>
+</table>
 <pre class="r"><code>list_tag = lapply(list_tag, function(x){cbind(x, data.frame(diff_ts = c(0, x$record_timestamp[-1]-x$record_timestamp[-nrow(x)])))})
 
 nq = 10
@@ -682,8 +1072,8 @@ for (k in 1:nb_tag){
 table_diff_ts = cbind.data.frame(label = names_tag$label, table_diff_ts)
 
 kable(table_diff_ts) %&gt;%
-  kable_styling(bootstrap_options = &quot;striped&quot;, full_width = F)</code></pre>
-<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+  kable_styling(bootstrap_options = &quot;striped&quot;, full_width = T)</code></pre>
+<table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;">
@@ -1258,362 +1648,6 @@ SCO
 </td>
 <td style="text-align:right;">
 15.547
-</td>
-</tr>
-</tbody>
-</table>
-<pre class="r"><code>table_tag &lt;- data.frame(tag = names_tag$id, label = names_tag$label)
-table_tag$first_record = NA
-table_tag$last_record = NA
-table_tag$number = NA
-table_tag$number_NA = NA
-table_tag$ratio_non_NA = NA
-# table_tag$freq_1Q = NA
-# table_tag$freq_median = NA
-# table_tag$freq_3Q = NA
-
-
-for (k in 1:nb_tag){
-  tag = table_tag$tag[k]
-  temp = list_tag[tag][[1]]
-  temp$diff_ts = c(0, temp$record_timestamp[-1]-temp$record_timestamp[-nrow(temp)])
-  
-  table_tag$first_record[k] = head(as.character(temp$date),1)
-  table_tag$last_record[k] = tail(as.character(temp$date),1)
-  table_tag$number[k] = nrow(temp)
-  table_tag$number_NA[k] = sum(is.na(temp$x))
-  table_tag$ratio_non_NA[k] = round(1-table_tag$number_NA[k]/table_tag$number[k],2)
-  # table_tag$freq_1Q[k] = round(quantile(temp$diff_ts, 0.25), 3)
-  # table_tag$freq_median[k] = round(quantile(temp$diff_ts, 0.5), 3)
-  # table_tag$freq_3Q[k] = round(quantile(temp$diff_ts, 0.75), 3)
-}
-
-kable(table_tag) %&gt;%
-  kable_styling(bootstrap_options = &quot;striped&quot;, full_width = F)</code></pre>
-<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
-<thead>
-<tr>
-<th style="text-align:left;">
-tag
-</th>
-<th style="text-align:left;">
-label
-</th>
-<th style="text-align:left;">
-first_record
-</th>
-<th style="text-align:left;">
-last_record
-</th>
-<th style="text-align:right;">
-number
-</th>
-<th style="text-align:right;">
-number_NA
-</th>
-<th style="text-align:right;">
-ratio_non_NA
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-2a51
-</td>
-<td style="text-align:left;">
-BLA
-</td>
-<td style="text-align:left;">
-2021-10-09 00:00:00
-</td>
-<td style="text-align:left;">
-2021-10-09 23:59:59
-</td>
-<td style="text-align:right;">
-174383
-</td>
-<td style="text-align:right;">
-3056
-</td>
-<td style="text-align:right;">
-0.98
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-0da6
-</td>
-<td style="text-align:left;">
-BRA1
-</td>
-<td style="text-align:left;">
-2021-10-09 00:00:00
-</td>
-<td style="text-align:left;">
-2021-10-09 23:59:59
-</td>
-<td style="text-align:right;">
-173952
-</td>
-<td style="text-align:right;">
-19627
-</td>
-<td style="text-align:right;">
-0.89
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2f7b
-</td>
-<td style="text-align:left;">
-BRA2
-</td>
-<td style="text-align:left;">
-2021-10-09 00:00:00
-</td>
-<td style="text-align:left;">
-2021-10-09 23:59:59
-</td>
-<td style="text-align:right;">
-174075
-</td>
-<td style="text-align:right;">
-1115
-</td>
-<td style="text-align:right;">
-0.99
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2f77
-</td>
-<td style="text-align:left;">
-BRP1
-</td>
-<td style="text-align:left;">
-2021-10-09 00:00:00
-</td>
-<td style="text-align:left;">
-2021-10-09 21:29:25
-</td>
-<td style="text-align:right;">
-152526
-</td>
-<td style="text-align:right;">
-2539
-</td>
-<td style="text-align:right;">
-0.98
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2b9c
-</td>
-<td style="text-align:left;">
-BRP2
-</td>
-<td style="text-align:left;">
-2021-10-09 00:00:00
-</td>
-<td style="text-align:left;">
-2021-10-09 23:59:59
-</td>
-<td style="text-align:right;">
-169748
-</td>
-<td style="text-align:right;">
-1294
-</td>
-<td style="text-align:right;">
-0.99
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-0d82
-</td>
-<td style="text-align:left;">
-CDS1
-</td>
-<td style="text-align:left;">
-2021-10-09 00:00:00
-</td>
-<td style="text-align:left;">
-2021-10-09 23:59:59
-</td>
-<td style="text-align:right;">
-174343
-</td>
-<td style="text-align:right;">
-1223
-</td>
-<td style="text-align:right;">
-0.99
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2c57
-</td>
-<td style="text-align:left;">
-DYN1
-</td>
-<td style="text-align:left;">
-2021-10-09 00:00:00
-</td>
-<td style="text-align:left;">
-2021-10-09 23:59:59
-</td>
-<td style="text-align:right;">
-174346
-</td>
-<td style="text-align:right;">
-734
-</td>
-<td style="text-align:right;">
-1.00
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2e8d
-</td>
-<td style="text-align:left;">
-DYN3
-</td>
-<td style="text-align:left;">
-2021-10-09 00:00:00
-</td>
-<td style="text-align:left;">
-2021-10-09 22:41:54
-</td>
-<td style="text-align:right;">
-16331
-</td>
-<td style="text-align:right;">
-129
-</td>
-<td style="text-align:right;">
-0.99
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-0baf
-</td>
-<td style="text-align:left;">
-ELC
-</td>
-<td style="text-align:left;">
-2021-10-09 00:00:00
-</td>
-<td style="text-align:left;">
-2021-10-09 23:59:59
-</td>
-<td style="text-align:right;">
-174346
-</td>
-<td style="text-align:right;">
-1531
-</td>
-<td style="text-align:right;">
-0.99
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-0db4
-</td>
-<td style="text-align:left;">
-FAU1
-</td>
-<td style="text-align:left;">
-2021-10-09 00:00:00
-</td>
-<td style="text-align:left;">
-2021-10-09 16:07:29
-</td>
-<td style="text-align:right;">
-105486
-</td>
-<td style="text-align:right;">
-12430
-</td>
-<td style="text-align:right;">
-0.88
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-19ab
-</td>
-<td style="text-align:left;">
-FIX
-</td>
-<td style="text-align:left;">
-2021-10-09 00:00:01
-</td>
-<td style="text-align:left;">
-2021-10-09 23:59:58
-</td>
-<td style="text-align:right;">
-34710
-</td>
-<td style="text-align:right;">
-397
-</td>
-<td style="text-align:right;">
-0.99
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-28d2
-</td>
-<td style="text-align:left;">
-ORD
-</td>
-<td style="text-align:left;">
-2021-10-09 00:00:00
-</td>
-<td style="text-align:left;">
-2021-10-09 23:59:59
-</td>
-<td style="text-align:right;">
-130728
-</td>
-<td style="text-align:right;">
-5283
-</td>
-<td style="text-align:right;">
-0.96
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2e55
-</td>
-<td style="text-align:left;">
-SCO
-</td>
-<td style="text-align:left;">
-2021-10-09 00:00:00
-</td>
-<td style="text-align:left;">
-2021-10-09 23:59:59
-</td>
-<td style="text-align:right;">
-174338
-</td>
-<td style="text-align:right;">
-113
-</td>
-<td style="text-align:right;">
-1.00
 </td>
 </tr>
 </tbody>
