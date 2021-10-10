@@ -26,7 +26,7 @@ tagId_seq = unlist(lapply(json_data, function(x){x["tag_id"][[1]]}))
 tagId = unique(tagId_seq)
 nb_tag = length(tagId)
 
-cat("Tags are: ", tagId, "\n")
+cat(nb_tag, "Tags are: ", tagId, "\n")
 table(tagId_seq)
 ```
 
@@ -58,25 +58,6 @@ list_tag <- split(dat, dat$tag)
 
 ## quality of collecting data
 ```{r}
-list_tag = lapply(list_tag, function(x){cbind(x, data.frame(diff_ts = c(0, x$record_timestamp[-1]-x$record_timestamp[-nrow(x)])))})
-
-nq = 10
-table_diff_ts = matrix(NA, nrow = nb_tag, ncol = nq+1)
-colnames(table_diff_ts) = paste0(c(0:10)/10*100, "%")
-rownames(table_diff_ts) = tagId
-for (k in 1:nb_tag){
-  tag = tagId[k]
-  table_diff_ts[k,] = round(quantile(list_tag[tag][[1]]$diff_ts[-1], c(0:10)/10), 3)
-}
-table_diff_ts = cbind.data.frame(label = names_tag$label, table_diff_ts)
-
-kable(table_diff_ts) %>%
-  kable_styling(bootstrap_options = "striped", full_width = F)
-```
-
-
-
-```{r}
 table_tag <- data.frame(tag = names_tag$id, label = names_tag$label)
 table_tag$first_record = NA
 table_tag$last_record = NA
@@ -104,7 +85,25 @@ for (k in 1:nb_tag){
 }
 
 kable(table_tag) %>%
-  kable_styling(bootstrap_options = "striped", full_width = F)
+  kable_styling(bootstrap_options = "striped", full_width = T)
+```
+
+
+```{r}
+list_tag = lapply(list_tag, function(x){cbind(x, data.frame(diff_ts = c(0, x$record_timestamp[-1]-x$record_timestamp[-nrow(x)])))})
+
+nq = 10
+table_diff_ts = matrix(NA, nrow = nb_tag, ncol = nq+1)
+colnames(table_diff_ts) = paste0(c(0:10)/10*100, "%")
+rownames(table_diff_ts) = tagId
+for (k in 1:nb_tag){
+  tag = tagId[k]
+  table_diff_ts[k,] = round(quantile(list_tag[tag][[1]]$diff_ts[-1], c(0:10)/10), 3)
+}
+table_diff_ts = cbind.data.frame(label = names_tag$label, table_diff_ts)
+
+kable(table_diff_ts) %>%
+  kable_styling(bootstrap_options = "striped", full_width = T)
 ```
 
 
