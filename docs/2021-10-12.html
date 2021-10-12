@@ -503,16 +503,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreed8ddce7004a9286e7f62bdbd574dd244afd2cbe4targetblankd8ddce7a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/d8ddce7004a9286e7f62bdbd574dd244afd2cbe4" target="_blank">d8ddce7</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreedec7e99a1cd73dd309c7042050106acb7116d264targetblankdec7e99a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/dec7e99a1cd73dd309c7042050106acb7116d264" target="_blank">dec7e99</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreed8ddce7004a9286e7f62bdbd574dd244afd2cbe4targetblankd8ddce7a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreedec7e99a1cd73dd309c7042050106acb7116d264targetblankdec7e99a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/d8ddce7004a9286e7f62bdbd574dd244afd2cbe4" target="_blank">d8ddce7</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/dec7e99a1cd73dd309c7042050106acb7116d264" target="_blank">dec7e99</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -528,6 +528,9 @@ Ignored files:
     Ignored:    data/plan/
     Ignored:    fig/
     Ignored:    workflowr.R
+
+Untracked files:
+    Untracked:  analysis/2021-10-12b.Rmd
 
 </code></pre>
 <p>
@@ -566,6 +569,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/dec7e99a1cd73dd309c7042050106acb7116d264/analysis/2021-10-12.Rmd" target="_blank">dec7e99</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-12
+</td>
+<td>
+add new analysis
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cfcforever/Test/1c7eeca3987d305bb4b2a350401616d2b2e2f3ae/docs/2021-10-12.html" target="_blank">1c7eeca</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-12
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -1603,7 +1640,7 @@ SCO
 <h3>plot with NAs</h3>
 <pre class="r"><code>timestamp_breaks = as.numeric(as.POSIXct(paste0(today, &quot; &quot;, sprintf(&quot;%02d&quot;, 0:23), &quot;:00:00 CEST&quot;))) + 3600*6
 p &lt;- ggplot(dat) + theme_bw() + 
-  geom_point(aes(x=record_timestamp, y=tagn, col=tagn)) +
+  geom_point(aes(x=record_timestamp, y=tagn, col=tagn), size=0.5) +
   scale_x_continuous(breaks = timestamp_breaks, labels = 0:23) +
   scale_y_continuous(breaks = 1:nb_tag, labels = names_tag$label) + 
   scale_color_gradientn(colours = hue_pal()(nb_tag)) + 
@@ -1664,7 +1701,7 @@ cat(&quot;if x_na = y_na:&quot;, identical(x_na, y_na), &quot;\n&quot;)</code></
 }</code></pre>
 <pre class="r"><code>timestamp_breaks = as.numeric(as.POSIXct(paste0(today, &quot; &quot;, sprintf(&quot;%02d&quot;, 0:23), &quot;:00:00 CEST&quot;))) + 3600*6
 p &lt;- ggplot(dat) + theme_bw() + 
-  geom_point(aes(x=record_timestamp, y=tagn, col=tagn)) +
+  geom_point(aes(x=record_timestamp, y=tagn, col=tagn), size=0.5) +
   scale_x_continuous(breaks = timestamp_breaks, labels = 0:23) +
   scale_y_continuous(breaks = 1:nb_tag, labels = names_tag$label) + 
   scale_color_gradientn(colours = hue_pal()(nb_tag)) + 
