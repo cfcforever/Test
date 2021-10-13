@@ -1,0 +1,63 @@
+---
+title: "2021-10-12-2e55"
+# author: "cfcforever"
+# date: ""
+output: 
+  workflowr::wflow_html:
+    code_folding: hide
+editor_options:
+  chunk_output_type: console
+---
+
+```{r include=FALSE}
+source("code/packages_and_functions.R")
+```
+
+
+# load data.json
+```{r}
+today = "2021-10-12"
+cat("data on:", today, "\n")
+
+tag = "2e55"
+
+dat_tag = read.csv2(paste0("data/json/", today, "/", tag, ".csv"))
+cat("tag", tag, "has", nrow(dat_tag), "position data.")
+```
+
+
+```{r}
+plan <- read_excel("data/plan/Wall_lignes_firminy.xlsx")
+plan = as.data.frame(plan)
+plan$`Start X` <- as.numeric(plan$`Start X`)/100
+plan$`Start Y` <- as.numeric(plan$`Start Y`)/100
+plan$`End X` <- as.numeric(plan$`End X`)/100
+plan$`End Y` <- as.numeric(plan$`End Y`)/100
+colnames(plan) = c("Name", "Length", "Linetype Scale", "Angle", "Delta X",
+                   "Delta Y", "Delta Z", "EndX", "EndY", "EndZ", 
+                   "StartX", "StartY", "StartZ")
+q <- ggplot(plan) + theme_bw() + 
+  geom_segment(aes(x=StartX, y=StartY, xend=EndX, yend=EndY))
+```
+
+
+# hourly plot{.tabset .tabset-pills}
+```{r results='asis'}
+for (day in 12){
+  for (hour in 0:23){
+    cat("\n")
+    cat("## ", hour, "\n")
+    temp_tag = dat_tag %>%
+      filter(d==day & H==hour)
+    if (nrow(temp_tag)!=0){
+      p <- q + 
+        geom_point(data = temp_tag, aes(x=x, y=y), col = "red", size = 1) +
+        coord_fixed(ratio = 1, xlim = c(-32,3), ylim = c(-65,3)) +
+        labs(x = "", y = "", title = paste0(tag, "_2021_10_", day, "_", hour, "H"))
+      print(p)
+      # ggsave(paste0("figure/0da6_2021_09_", day, "_", hour, ".png"), width = 5, height = 9)
+    }
+    cat("\n")
+  }
+}
+```
