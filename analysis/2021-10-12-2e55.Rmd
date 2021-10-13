@@ -132,7 +132,7 @@ for (day in 12){
   for (hour in 0:23){
     cat("\n")
     cat("### ", hour, "\n")
-    temp_tag = dat_tag %>%
+    temp_tag = dat %>%
       filter(d==day & H==hour)
     if (nrow(temp_tag)!=0){
       p <- q + 
@@ -150,22 +150,22 @@ for (day in 12){
 
 # double check 
 ```{r}
-json_data = fromJSON(file = paste0("data/json/", today, "/position_2e55.json"))
-cat("Total collected positions: ", length(json_data), "\n")
+json_data1 = fromJSON(file = paste0("data/json/", today, "/position_2e55.json"))
+cat("Total collected positions: ", length(json_data1), "\n")
 
-tagId_seq = unlist(lapply(json_data, function(x){x["tag_id"][[1]]}))
-tagId = unique(tagId_seq)
-nb_tag = length(tagId)
+tagId_seq1 = unlist(lapply(json_data1, function(x){x["tag_id"][[1]]}))
+tagId1 = unique(tagId_seq1)
+nb_tag1 = length(tagId1)
 
-cat(nb_tag, "Tags are: ", tagId, "\n")
-table(tagId_seq)
+cat(nb_tag1, "Tags are: ", tagId1, "\n")
+table(tagId_seq1)
 
-dat <- data.frame(tag = unlist(lapply(json_data, function(x){x["tag_id"][[1]]})),
-                  x = unlist(lapply(json_data, function(x){x["x"][[1]]})),
-                  y = unlist(lapply(json_data, function(x){x["y"][[1]]})),
-                  record_timestamp = unlist(lapply(json_data, function(x){x["record_timestamp"][[1]]})))
+dat1 <- data.frame(tag = unlist(lapply(json_data1, function(x){x["tag_id"][[1]]})),
+                  x = unlist(lapply(json_data1, function(x){x["x"][[1]]})),
+                  y = unlist(lapply(json_data1, function(x){x["y"][[1]]})),
+                  record_timestamp = unlist(lapply(json_data1, function(x){x["record_timestamp"][[1]]})))
 
-dat = dat[order(dat$record_timestamp),]
+dat1 = dat1[order(dat1$record_timestamp),]
 dat = cbind.data.frame(dat, convert_date(dat$record_timestamp))
 dat$x = as.numeric(dat$x)
 dat$y = as.numeric(dat$y)
