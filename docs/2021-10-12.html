@@ -37,6 +37,7 @@
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
@@ -412,7 +413,7 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2021-10-12
+<strong>Last updated:</strong> 2021-10-13
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -503,16 +504,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreedec7e99a1cd73dd309c7042050106acb7116d264targetblankdec7e99a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/dec7e99a1cd73dd309c7042050106acb7116d264" target="_blank">dec7e99</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree16ef95b9eceea80b3082a2623f48a5364aacb057targetblank16ef95ba"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/16ef95b9eceea80b3082a2623f48a5364aacb057" target="_blank">16ef95b</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreedec7e99a1cd73dd309c7042050106acb7116d264targetblankdec7e99a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree16ef95b9eceea80b3082a2623f48a5364aacb057targetblank16ef95ba" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/dec7e99a1cd73dd309c7042050106acb7116d264" target="_blank">dec7e99</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/16ef95b9eceea80b3082a2623f48a5364aacb057" target="_blank">16ef95b</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -523,14 +524,12 @@ Ignored files:
     Ignored:    .Rhistory
     Ignored:    .Rproj.user/
     Ignored:    data/.DS_Store
-    Ignored:    data/Stabiliseur/
     Ignored:    data/json/
     Ignored:    data/plan/
-    Ignored:    fig/
     Ignored:    workflowr.R
 
 Untracked files:
-    Untracked:  analysis/2021-10-12b.Rmd
+    Untracked:  analysis/2021-10-13.Rmd
 
 </code></pre>
 <p>
@@ -569,6 +568,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cfcforever/Test/2061e11362c739c420786a9fa8311fecfd4a0132/docs/2021-10-12.html" target="_blank">2061e11</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-12
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -651,17 +667,19 @@ cat(&quot;data on:&quot;, today, &quot;\n&quot;)</code></pre>
 <pre><code>data on: 2021-10-12 </code></pre>
 <pre class="r"><code>json_data = fromJSON(file = paste0(&quot;data/json/&quot;, today, &quot;/position.json&quot;))
 cat(&quot;Total collected positions: &quot;, length(json_data), &quot;\n&quot;)</code></pre>
-<pre><code>Total collected positions:  522536 </code></pre>
+<pre><code>Total collected positions:  1951709 </code></pre>
 <pre class="r"><code>tagId_seq = unlist(lapply(json_data, function(x){x[&quot;tag_id&quot;][[1]]}))
 tagId = unique(tagId_seq)
 nb_tag = length(tagId)
 
 cat(nb_tag, &quot;Tags are: &quot;, tagId, &quot;\n&quot;)</code></pre>
-<pre><code>13 Tags are:  0baf 2b9c 2f77 2e8d 2c57 2e55 2f40 28d2 2a51 2f7b 0da6 19ab 0d82 </code></pre>
+<pre><code>13 Tags are:  19ab 2e55 2a51 28d2 2f7b 2f77 0baf 2c57 2b9c 0da6 2f40 2e8d 0d82 </code></pre>
 <pre class="r"><code>table(tagId_seq)</code></pre>
 <pre><code>tagId_seq
- 0baf  0d82  0da6  19ab  28d2  2a51  2b9c  2c57  2e55  2e8d  2f40  2f77  2f7b 
-54170    25 54013 12807 54046 54167 52109 54146 18407  6105 54192 54172 54177 </code></pre>
+  0baf   0d82   0da6   19ab   28d2   2a51   2b9c   2c57   2e55   2e8d   2f40 
+178842     33 178260 140706 180951 186781 177585 186140 150419  31877 186821 
+  2f77   2f7b 
+178320 174974 </code></pre>
 </div>
 <div id="general-analysis" class="section level1">
 <h1>general analysis</h1>
@@ -753,16 +771,16 @@ BLA
 2021-10-12 00:00:00
 </td>
 <td style="text-align:left;">
-2021-10-12 11:07:54
+2021-10-12 23:59:59
 </td>
 <td style="text-align:right;">
-54167
+186781
 </td>
 <td style="text-align:right;">
-7849
+7865
 </td>
 <td style="text-align:right;">
-0.86
+0.96
 </td>
 </tr>
 <tr>
@@ -776,13 +794,13 @@ BRA1
 2021-10-12 00:00:00
 </td>
 <td style="text-align:left;">
-2021-10-12 11:07:43
+2021-10-12 23:59:59
 </td>
 <td style="text-align:right;">
-54013
+178260
 </td>
 <td style="text-align:right;">
-419
+1944
 </td>
 <td style="text-align:right;">
 0.99
@@ -799,16 +817,16 @@ BRA2
 2021-10-12 00:00:00
 </td>
 <td style="text-align:left;">
-2021-10-12 11:07:50
+2021-10-12 23:59:59
 </td>
 <td style="text-align:right;">
-54177
+174974
 </td>
 <td style="text-align:right;">
-144
+3796
 </td>
 <td style="text-align:right;">
-1.00
+0.98
 </td>
 </tr>
 <tr>
@@ -822,13 +840,13 @@ BRA4
 2021-10-12 00:00:00
 </td>
 <td style="text-align:left;">
-2021-10-12 11:08:00
+2021-10-12 23:59:59
 </td>
 <td style="text-align:right;">
-54192
+186821
 </td>
 <td style="text-align:right;">
-92
+217
 </td>
 <td style="text-align:right;">
 1.00
@@ -845,16 +863,16 @@ BRP1
 2021-10-12 00:00:00
 </td>
 <td style="text-align:left;">
-2021-10-12 11:08:27
+2021-10-12 23:59:59
 </td>
 <td style="text-align:right;">
-54172
+178320
 </td>
 <td style="text-align:right;">
-33
+5953
 </td>
 <td style="text-align:right;">
-1.00
+0.97
 </td>
 </tr>
 <tr>
@@ -868,13 +886,13 @@ BRP2
 2021-10-12 00:00:00
 </td>
 <td style="text-align:left;">
-2021-10-12 11:08:40
+2021-10-12 23:59:59
 </td>
 <td style="text-align:right;">
-52109
+177585
 </td>
 <td style="text-align:right;">
-75
+131
 </td>
 <td style="text-align:right;">
 1.00
@@ -891,10 +909,10 @@ CDS1
 2021-10-12 06:36:59
 </td>
 <td style="text-align:left;">
-2021-10-12 11:05:52
+2021-10-12 13:34:23
 </td>
 <td style="text-align:right;">
-25
+33
 </td>
 <td style="text-align:right;">
 0
@@ -914,16 +932,16 @@ DYN1
 2021-10-12 00:00:00
 </td>
 <td style="text-align:left;">
-2021-10-12 11:08:19
+2021-10-12 23:59:59
 </td>
 <td style="text-align:right;">
-54146
+186140
 </td>
 <td style="text-align:right;">
-5333
+10246
 </td>
 <td style="text-align:right;">
-0.90
+0.94
 </td>
 </tr>
 <tr>
@@ -937,13 +955,13 @@ DYN3
 2021-10-12 00:11:16
 </td>
 <td style="text-align:left;">
-2021-10-12 11:08:20
+2021-10-12 23:31:57
 </td>
 <td style="text-align:right;">
-6105
+31877
 </td>
 <td style="text-align:right;">
-57
+256
 </td>
 <td style="text-align:right;">
 0.99
@@ -960,16 +978,16 @@ ELC
 2021-10-12 00:00:00
 </td>
 <td style="text-align:left;">
-2021-10-12 11:19:51
+2021-10-12 23:59:59
 </td>
 <td style="text-align:right;">
-54170
+178842
 </td>
 <td style="text-align:right;">
-1805
+24495
 </td>
 <td style="text-align:right;">
-0.97
+0.86
 </td>
 </tr>
 <tr>
@@ -983,13 +1001,13 @@ FIX
 2021-10-12 00:00:02
 </td>
 <td style="text-align:left;">
-2021-10-12 11:07:35
+2021-10-12 23:59:59
 </td>
 <td style="text-align:right;">
-12807
+140706
 </td>
 <td style="text-align:right;">
-176
+1413
 </td>
 <td style="text-align:right;">
 0.99
@@ -1006,16 +1024,16 @@ ORD
 2021-10-12 00:00:00
 </td>
 <td style="text-align:left;">
-2021-10-12 11:07:55
+2021-10-12 23:59:59
 </td>
 <td style="text-align:right;">
-54046
+180951
 </td>
 <td style="text-align:right;">
-3107
+3790
 </td>
 <td style="text-align:right;">
-0.94
+0.98
 </td>
 </tr>
 <tr>
@@ -1029,16 +1047,16 @@ SCO
 2021-10-12 00:00:00
 </td>
 <td style="text-align:left;">
-2021-10-12 11:08:08
+2021-10-12 23:59:59
 </td>
 <td style="text-align:right;">
-18407
+150419
 </td>
 <td style="text-align:right;">
-4629
+4862
 </td>
 <td style="text-align:right;">
-0.75
+0.97
 </td>
 </tr>
 </tbody>
@@ -1109,37 +1127,37 @@ label
 BLA
 </td>
 <td style="text-align:right;">
-0.050
+0.000
 </td>
 <td style="text-align:right;">
-0.322
+0.072
 </td>
 <td style="text-align:right;">
-0.385
+0.158
 </td>
 <td style="text-align:right;">
-0.416
+0.230
 </td>
 <td style="text-align:right;">
-0.428
+0.305
 </td>
 <td style="text-align:right;">
-0.456
+0.373
 </td>
 <td style="text-align:right;">
-0.470
+0.417
 </td>
 <td style="text-align:right;">
-0.498
+0.452
 </td>
 <td style="text-align:right;">
-0.527
+0.482
 </td>
 <td style="text-align:right;">
-0.618
+0.554
 </td>
 <td style="text-align:right;">
-1028.963
+1182.625
 </td>
 </tr>
 <tr>
@@ -1150,37 +1168,37 @@ BLA
 BRA1
 </td>
 <td style="text-align:right;">
-0.045
+0.000
 </td>
 <td style="text-align:right;">
-0.336
+0.092
 </td>
 <td style="text-align:right;">
-0.378
+0.190
 </td>
 <td style="text-align:right;">
-0.413
+0.271
 </td>
 <td style="text-align:right;">
-0.427
+0.338
 </td>
 <td style="text-align:right;">
-0.458
+0.384
 </td>
 <td style="text-align:right;">
-0.473
+0.425
 </td>
 <td style="text-align:right;">
-0.505
+0.464
 </td>
 <td style="text-align:right;">
-0.525
+0.504
 </td>
 <td style="text-align:right;">
-0.576
+0.556
 </td>
 <td style="text-align:right;">
-1009.902
+1184.291
 </td>
 </tr>
 <tr>
@@ -1191,37 +1209,37 @@ BRA1
 BRA2
 </td>
 <td style="text-align:right;">
-0.094
+0.000
 </td>
 <td style="text-align:right;">
-0.339
+0.087
 </td>
 <td style="text-align:right;">
-0.380
+0.175
 </td>
 <td style="text-align:right;">
-0.414
+0.257
 </td>
 <td style="text-align:right;">
-0.428
+0.333
 </td>
 <td style="text-align:right;">
-0.458
+0.384
 </td>
 <td style="text-align:right;">
-0.472
+0.425
 </td>
 <td style="text-align:right;">
-0.504
+0.464
 </td>
 <td style="text-align:right;">
-0.524
+0.488
 </td>
 <td style="text-align:right;">
-0.574
+0.550
 </td>
 <td style="text-align:right;">
-1090.368
+1630.233
 </td>
 </tr>
 <tr>
@@ -1232,37 +1250,37 @@ BRA2
 BRA4
 </td>
 <td style="text-align:right;">
-0.099
+0.000
 </td>
 <td style="text-align:right;">
-0.407
+0.071
 </td>
 <td style="text-align:right;">
-0.414
+0.163
 </td>
 <td style="text-align:right;">
-0.422
+0.245
 </td>
 <td style="text-align:right;">
-0.429
+0.332
 </td>
 <td style="text-align:right;">
-0.453
+0.388
 </td>
 <td style="text-align:right;">
-0.464
+0.423
+</td>
+<td style="text-align:right;">
+0.451
 </td>
 <td style="text-align:right;">
 0.474
 </td>
 <td style="text-align:right;">
-0.500
+0.521
 </td>
 <td style="text-align:right;">
-0.528
-</td>
-<td style="text-align:right;">
-1078.224
+1162.355
 </td>
 </tr>
 <tr>
@@ -1273,37 +1291,37 @@ BRA4
 BRP1
 </td>
 <td style="text-align:right;">
-0.090
+0.000
 </td>
 <td style="text-align:right;">
-0.366
+0.093
 </td>
 <td style="text-align:right;">
-0.410
+0.192
 </td>
 <td style="text-align:right;">
-0.418
+0.276
+</td>
+<td style="text-align:right;">
+0.357
+</td>
+<td style="text-align:right;">
+0.409
 </td>
 <td style="text-align:right;">
 0.429
 </td>
 <td style="text-align:right;">
-0.456
+0.464
 </td>
 <td style="text-align:right;">
-0.469
+0.479
 </td>
 <td style="text-align:right;">
-0.481
+0.523
 </td>
 <td style="text-align:right;">
-0.518
-</td>
-<td style="text-align:right;">
-0.572
-</td>
-<td style="text-align:right;">
-1089.263
+1175.145
 </td>
 </tr>
 <tr>
@@ -1314,37 +1332,37 @@ BRP1
 BRP2
 </td>
 <td style="text-align:right;">
-0.092
+0.000
 </td>
 <td style="text-align:right;">
-0.338
+0.078
 </td>
 <td style="text-align:right;">
-0.382
+0.176
 </td>
 <td style="text-align:right;">
-0.416
+0.262
 </td>
 <td style="text-align:right;">
-0.431
+0.339
 </td>
 <td style="text-align:right;">
-0.462
+0.391
 </td>
 <td style="text-align:right;">
-0.476
+0.428
 </td>
 <td style="text-align:right;">
-0.511
+0.466
 </td>
 <td style="text-align:right;">
-0.546
+0.498
 </td>
 <td style="text-align:right;">
-0.607
+0.544
 </td>
 <td style="text-align:right;">
-1089.806
+1144.682
 </td>
 </tr>
 <tr>
@@ -1355,37 +1373,37 @@ BRP2
 CDS1
 </td>
 <td style="text-align:right;">
-368.309
+355.645
 </td>
 <td style="text-align:right;">
-443.997
+428.950
 </td>
 <td style="text-align:right;">
-463.492
+458.171
 </td>
 <td style="text-align:right;">
-492.790
+488.202
 </td>
 <td style="text-align:right;">
-532.303
+534.035
 </td>
 <td style="text-align:right;">
-545.823
+546.239
 </td>
 <td style="text-align:right;">
-549.374
+594.419
 </td>
 <td style="text-align:right;">
-659.908
+973.346
 </td>
 <td style="text-align:right;">
-1032.329
+1124.546
 </td>
 <td style="text-align:right;">
-1119.225
+1279.362
 </td>
 <td style="text-align:right;">
-1181.887
+2572.370
 </td>
 </tr>
 <tr>
@@ -1396,37 +1414,37 @@ CDS1
 DYN1
 </td>
 <td style="text-align:right;">
-0.045
+0.000
 </td>
 <td style="text-align:right;">
-0.367
+0.073
 </td>
 <td style="text-align:right;">
-0.409
+0.166
 </td>
 <td style="text-align:right;">
-0.417
+0.246
 </td>
 <td style="text-align:right;">
-0.428
+0.331
 </td>
 <td style="text-align:right;">
-0.455
+0.389
 </td>
 <td style="text-align:right;">
-0.468
+0.425
 </td>
 <td style="text-align:right;">
-0.481
+0.458
 </td>
 <td style="text-align:right;">
-0.518
+0.475
 </td>
 <td style="text-align:right;">
-0.569
+0.519
 </td>
 <td style="text-align:right;">
-1044.017
+1213.460
 </td>
 </tr>
 <tr>
@@ -1437,37 +1455,37 @@ DYN1
 DYN3
 </td>
 <td style="text-align:right;">
-0.137
+0.000
 </td>
 <td style="text-align:right;">
-0.408
+0.253
 </td>
 <td style="text-align:right;">
-0.443
+0.423
 </td>
 <td style="text-align:right;">
 0.469
 </td>
 <td style="text-align:right;">
-0.489
+0.506
 </td>
 <td style="text-align:right;">
-0.513
+0.516
 </td>
 <td style="text-align:right;">
-0.525
+0.552
 </td>
 <td style="text-align:right;">
-0.558
+0.569
 </td>
 <td style="text-align:right;">
-0.579
+0.606
 </td>
 <td style="text-align:right;">
-0.640
+0.658
 </td>
 <td style="text-align:right;">
-5684.578
+7745.469
 </td>
 </tr>
 <tr>
@@ -1478,37 +1496,37 @@ DYN3
 ELC
 </td>
 <td style="text-align:right;">
-0.090
+0.000
 </td>
 <td style="text-align:right;">
-0.328
+0.092
 </td>
 <td style="text-align:right;">
-0.379
+0.189
 </td>
 <td style="text-align:right;">
-0.415
+0.273
+</td>
+<td style="text-align:right;">
+0.343
+</td>
+<td style="text-align:right;">
+0.394
 </td>
 <td style="text-align:right;">
 0.428
 </td>
 <td style="text-align:right;">
-0.459
+0.465
 </td>
 <td style="text-align:right;">
-0.473
+0.483
 </td>
 <td style="text-align:right;">
-0.503
+0.535
 </td>
 <td style="text-align:right;">
-0.527
-</td>
-<td style="text-align:right;">
-0.599
-</td>
-<td style="text-align:right;">
-1090.529
+1168.439
 </td>
 </tr>
 <tr>
@@ -1519,37 +1537,37 @@ ELC
 FIX
 </td>
 <td style="text-align:right;">
-0.046
+0.000
 </td>
 <td style="text-align:right;">
-0.622
+0.058
 </td>
 <td style="text-align:right;">
-1.957
+0.135
 </td>
 <td style="text-align:right;">
-2.101
+0.202
 </td>
 <td style="text-align:right;">
-2.144
+0.273
 </td>
 <td style="text-align:right;">
-2.169
+0.340
 </td>
 <td style="text-align:right;">
-2.211
+0.391
 </td>
 <td style="text-align:right;">
-2.292
+0.452
 </td>
 <td style="text-align:right;">
-2.382
+0.512
 </td>
 <td style="text-align:right;">
-2.473
+0.669
 </td>
 <td style="text-align:right;">
-1090.533
+1195.822
 </td>
 </tr>
 <tr>
@@ -1560,37 +1578,37 @@ FIX
 ORD
 </td>
 <td style="text-align:right;">
-0.046
+0.000
 </td>
 <td style="text-align:right;">
-0.282
+0.087
 </td>
 <td style="text-align:right;">
-0.369
+0.174
 </td>
 <td style="text-align:right;">
-0.412
+0.246
 </td>
 <td style="text-align:right;">
-0.426
+0.318
 </td>
 <td style="text-align:right;">
-0.457
+0.376
 </td>
 <td style="text-align:right;">
-0.473
+0.420
 </td>
 <td style="text-align:right;">
-0.509
+0.460
 </td>
 <td style="text-align:right;">
-0.560
+0.502
 </td>
 <td style="text-align:right;">
-0.649
+0.566
 </td>
 <td style="text-align:right;">
-1017.247
+1178.876
 </td>
 </tr>
 <tr>
@@ -1601,34 +1619,34 @@ ORD
 SCO
 </td>
 <td style="text-align:right;">
-0.049
+0.000
 </td>
 <td style="text-align:right;">
-0.412
+0.056
 </td>
 <td style="text-align:right;">
-0.453
+0.129
 </td>
 <td style="text-align:right;">
-0.464
+0.200
 </td>
 <td style="text-align:right;">
-0.475
+0.265
 </td>
 <td style="text-align:right;">
-0.500
+0.337
 </td>
 <td style="text-align:right;">
-0.515
+0.389
 </td>
 <td style="text-align:right;">
-0.527
+0.441
 </td>
 <td style="text-align:right;">
-0.566
+0.479
 </td>
 <td style="text-align:right;">
-0.631
+0.549
 </td>
 <td style="text-align:right;">
 5784.176
@@ -1673,6 +1691,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/cfcforever/Test/blob/2061e11362c739c420786a9fa8311fecfd4a0132/docs/figure/2021-10-12.Rmd/unnamed-chunk-6-1.png" target="_blank">2061e11</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-12
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/cfcforever/Test/blob/d8ddce7004a9286e7f62bdbd574dd244afd2cbe4/docs/figure/2021-10-12.Rmd/unnamed-chunk-6-1.png" target="_blank">d8ddce7</a>
 </td>
 <td>
@@ -1695,7 +1724,7 @@ cat(&quot;if x_na = y_na:&quot;, identical(x_na, y_na), &quot;\n&quot;)</code></
 <pre><code>if x_na = y_na: TRUE </code></pre>
 <pre class="r"><code>cat(&quot;number of NA positions:&quot;, length(x_na), &quot;/&quot;, length(tagId_seq), &quot;(=&quot;, 
     length(x_na)/length(tagId_seq)*100, &quot;%)&quot;, &quot;\n&quot;)</code></pre>
-<pre><code>number of NA positions: 23719 / 522536 (= 4.539209 %) </code></pre>
+<pre><code>number of NA positions: 64968 / 1951709 (= 3.328775 %) </code></pre>
 <pre class="r"><code>if (length(x_na)!=0){
   dat = dat[-x_na,]
 }</code></pre>
@@ -1732,6 +1761,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/2061e11362c739c420786a9fa8311fecfd4a0132/docs/figure/2021-10-12.Rmd/unnamed-chunk-8-1.png" target="_blank">2061e11</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-12
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/d8ddce7004a9286e7f62bdbd574dd244afd2cbe4/docs/figure/2021-10-12.Rmd/unnamed-chunk-8-1.png" target="_blank">d8ddce7</a>
@@ -2334,42 +2374,43 @@ cfcforever
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
 <pre class="r"><code>sessionInfo()</code></pre>
-<pre><code>R version 4.0.2 (2020-06-22)
+<pre><code>R version 4.0.5 (2021-03-31)
 Platform: x86_64-apple-darwin17.0 (64-bit)
-Running under: macOS Catalina 10.15.7
+Running under: macOS Big Sur 10.16
 
 Matrix products: default
 BLAS:   /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRblas.dylib
 LAPACK: /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRlapack.dylib
 
 locale:
-[1] fr_FR.UTF-8/fr_FR.UTF-8/fr_FR.UTF-8/C/fr_FR.UTF-8/fr_FR.UTF-8
+[1] zh_CN.UTF-8/zh_CN.UTF-8/zh_CN.UTF-8/C/zh_CN.UTF-8/zh_CN.UTF-8
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] scales_1.1.1     DT_0.17          readxl_1.3.1     lubridate_1.7.10
- [5] dplyr_1.0.6      nnet_7.3-14      kableExtra_1.1.0 rjson_0.2.20    
- [9] cowplot_1.1.0    gifski_0.8.6     gganimate_1.0.7  ggplot2_3.3.3   
+ [1] scales_1.1.1     DT_0.19          readxl_1.3.1     lubridate_1.7.10
+ [5] dplyr_1.0.5      nnet_7.3-15      kableExtra_1.3.4 rjson_0.2.20    
+ [9] cowplot_1.1.1    gifski_1.4.3-1   gganimate_1.0.7  ggplot2_3.3.5   
 [13] workflowr_1.6.2 
 
 loaded via a namespace (and not attached):
- [1] progress_1.2.2    tidyselect_1.1.0  xfun_0.25         purrr_0.3.4      
- [5] colorspace_1.4-1  vctrs_0.3.8       generics_0.1.0    viridisLite_0.3.0
- [9] htmltools_0.5.0   yaml_2.2.1        utf8_1.1.4        rlang_0.4.11     
-[13] later_1.1.0.1     pillar_1.6.0      glue_1.4.1        withr_2.4.2      
-[17] DBI_1.1.1         tweenr_1.0.1      lifecycle_1.0.0   stringr_1.4.0    
-[21] cellranger_1.1.0  munsell_0.5.0     gtable_0.3.0      rvest_1.0.0      
-[25] htmlwidgets_1.5.1 evaluate_0.14     labeling_0.3      knitr_1.33       
-[29] httpuv_1.5.4      fansi_0.4.1       highr_0.8         Rcpp_1.0.5       
-[33] readr_1.4.0       promises_1.1.1    backports_1.1.8   webshot_0.5.2    
-[37] farver_2.0.3      fs_1.5.0          hms_1.0.0         digest_0.6.25    
-[41] stringi_1.4.6     grid_4.0.2        rprojroot_1.3-2   tools_4.0.2      
-[45] magrittr_2.0.1    tibble_3.1.1      crayon_1.4.1      whisker_0.4      
-[49] pkgconfig_2.0.3   ellipsis_0.3.1    xml2_1.3.2        prettyunits_1.1.1
-[53] httr_1.4.2        rstudioapi_0.13   assertthat_0.2.1  rmarkdown_2.10   
-[57] R6_2.4.1          git2r_0.28.0      compiler_4.0.2   </code></pre>
+ [1] progress_1.2.2    tidyselect_1.1.0  xfun_0.22         bslib_0.2.4      
+ [5] purrr_0.3.4       colorspace_2.0-0  vctrs_0.3.7       generics_0.1.0   
+ [9] viridisLite_0.4.0 htmltools_0.5.1.1 yaml_2.2.1        utf8_1.2.1       
+[13] rlang_0.4.10      jquerylib_0.1.3   later_1.1.0.1     pillar_1.6.0     
+[17] glue_1.4.2        withr_2.4.1       tweenr_1.0.2      lifecycle_1.0.0  
+[21] stringr_1.4.0     cellranger_1.1.0  munsell_0.5.0     gtable_0.3.0     
+[25] rvest_1.0.0       htmlwidgets_1.5.3 evaluate_0.14     labeling_0.4.2   
+[29] knitr_1.32        httpuv_1.5.5      fansi_0.4.2       highr_0.8        
+[33] Rcpp_1.0.6        promises_1.2.0.1  webshot_0.5.2     jsonlite_1.7.2   
+[37] systemfonts_1.0.1 farver_2.1.0      fs_1.5.0          hms_1.0.0        
+[41] digest_0.6.27     stringi_1.5.3     grid_4.0.5        rprojroot_2.0.2  
+[45] tools_4.0.5       magrittr_2.0.1    sass_0.3.1        tibble_3.1.0     
+[49] crayon_1.4.1      whisker_0.4       pkgconfig_2.0.3   ellipsis_0.3.1   
+[53] xml2_1.3.2        prettyunits_1.1.1 svglite_2.0.0     rmarkdown_2.10   
+[57] httr_1.4.2        rstudioapi_0.13   R6_2.5.0          git2r_0.28.0     
+[61] compiler_4.0.5   </code></pre>
 </div>
 </div>
 </div>
