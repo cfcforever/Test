@@ -1,5 +1,5 @@
 ---
-title: "2021-10-14-0200-0300"
+title: "2021-10-14-0000-0100"
 # author: "cfcforever"
 # date: ""
 output: 
@@ -138,6 +138,9 @@ for (k in 1:nb_tag){
 
 # data from serveur
 ```{r}
+rm(list = ls())
+source("code/fun_convert_date.R")
+
 today = "2021-10-14"
 json_data = fromJSON(file = paste0("data/json/", today, "/20211014_0000_0100.json"))
 dat <- data.frame(tag = unlist(lapply(json_data, function(x){x["tag_id"][[1]]})),
