@@ -27,10 +27,13 @@ datatable(m, escape = FALSE, options = list(pageLength = 5))
 
 # Individual cases
 ## 2021-10-14
+We want to verify the data from Compass as the same as the data from the server.
+
 [2021-10-14-000-0100](https://cfcforever.github.io/Test/2021-10-14-0000-0100.html)
 
 [2021-10-14-000-2200](https://cfcforever.github.io/Test/2021-10-14-0000-2200.html)
 
+Conclusion: Yes! They are the SAME!
 
 
 
