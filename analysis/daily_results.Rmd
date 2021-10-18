@@ -35,6 +35,10 @@ We want to verify the data from Compass as the same as the data from the server.
 
 Conclusion: Yes! They are the SAME!
 
+If we look at the data from Compass and the server between 20h00 and 21h00 with 12 tags, the server can still collect the data with the frequency of 200ms instead of 500ms from Compass.
+So we can conclude that there is no problem when we collect the data with 12 tags in 200ms.
+
+[2021-10-10-2000-2100](https://cfcforever.github.io/Test/2021-10-10-2000-2100.html)
 
 
 
