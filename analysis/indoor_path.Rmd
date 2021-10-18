@@ -1,0 +1,44 @@
+---
+title: "Indoor path"
+# author: "cfcforever"
+# date: ""
+output: 
+  workflowr::wflow_html:
+    code_folding: hide
+editor_options:
+  chunk_output_type: console
+---
+
+In this page, we will discuss some interesting trajectories.
+
+```{r include=FALSE}
+source("code/packages_and_functions.R")
+```
+
+
+```{r}
+parcours <- function(tagId, day, start_time, end_time){
+  library(dplyr)
+  library(ggplot2)
+  
+  load("data/plan/plan_firminy.RData")
+  
+  tag_data <- read.csv2(paste0("data/json/", day, "/", tagId, ".csv"))
+  t1 = head(which(paste0(sprintf("%02d", tag_data$H), sprintf("%02d", tag_data$M))==start_time), 1)
+  t2 = tail(which(paste0(sprintf("%02d", tag_data$H), sprintf("%02d", tag_data$M))==end_time), 1)
+  tag_data = tag_data[t1:t2,]
+  
+  q <- p + 
+    geom_point(data = tag_data, aes(x = x, y = y), col = "red", size = 0.5) +
+    coord_fixed(ratio = 1, xlim = c(-35,5), ylim = c(-65, 5)) +
+    labs(x = "", y = "", title = paste0(tagId, " & ", day, " : ", start_time, " - ", end_time))
+  print(q)
+}
+
+parcours(tagId = "2f7b", day = "2021-10-15", start_time = "1950", end_time = "1952")
+parcours(tagId = "0da6", day = "2021-10-15", start_time = "1004", end_time = "1011")
+parcours(tagId = "2b9c", day = "2021-10-15", start_time = "1156", end_time = "1159")
+parcours(tagId = "2b9c", day = "2021-10-15", start_time = "1228", end_time = "1231")
+parcours(tagId = "2b9c", day = "2021-10-15", start_time = "1239", end_time = "1241")
+```
+
