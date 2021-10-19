@@ -35,7 +35,18 @@ coord2 = as.data.frame(matrix(c(-8.752,8.694,
                                 -0.752,8.694,
                                  1.248,8.694), ncol = 2, byrow = T))
 colnames(coord2) = c("x", "y")
+
+coord3 = as.data.frame(matrix(c(-7.642,-9.007,
+                                -7.642,-7.007,
+                                -7.642,-5.007,
+                                -7.642,-3.007,
+                                -7.642,-1.007,
+                                -7.642,0.993), ncol = 2, byrow = T))
+colnames(coord3) = c("x", "y")
 ```
+
+![](figure/Wire 2021-10-19 at 11-48-06.jpg)
+
 
 # test 1
 ## contre le corps
@@ -44,13 +55,6 @@ dat = data %>%
   filter(H==11 & M>=28 & M<=30)
 dat$num = 1:nrow(dat)
 
-# q <- p + 
-#   geom_point(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
-#   geom_point(data = coord1, aes(x=x,y=y), col = "black", size=1) +
-#   coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
-#   labs(x="", y="", title = "0daa: 11H28 - 11H30")
-# print(q)
-
 steps = dat$num
 q <- p + 
   geom_point(data = dat, aes(x=x, y=y), col="red", size=0.5) + 
@@ -58,10 +62,10 @@ q <- p +
   coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
   labs(x="", y="", title = "0daa: 11H28 - 11H30")
 print(q)
-q <- q + transition_time(num) + labs(title = paste0("0daa: 11H28 - 11H30 ", "{frame_time}/", length(steps)))
-# steps = 1:5
-animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T), 
-        width = 1500, height = 1000, res = 150)
+# q <- q + transition_time(num) + labs(title = paste0("0daa: 11H28 - 11H30 ", "{frame_time}/", length(steps)))
+# animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T), 
+#         width = 1500, height = 1000, res = 150)
+# anim_save("fig/0daa_20211019_1128_1130.gif")
 ```
 
 ## dans le poche
@@ -69,12 +73,17 @@ animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_rendere
 dat = data %>%
   filter(H==11 & M>=35 & M<=37)
 
-q <- p + 
-  geom_point(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
+steps = dat$num
+q <- p +
+  geom_point(data = dat, aes(x=x, y=y), col="red", size=0.5) +
   geom_point(data = coord1, aes(x=x,y=y), col = "black", size=1) +
-  coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
+  coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) +
   labs(x="", y="", title = "0daa: 11H35 - 11H37")
 print(q)
+# q <- q + transition_time(num) + labs(title = paste0("0daa: 11H35 - 11H37 ", "{frame_time}/", length(steps)))
+# animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T),
+#         width = 1500, height = 1000, res = 150)
+# anim_save("fig/0daa_20211019_1135_1137.gif")
 ```
 
 ## dessus de la tête
@@ -82,12 +91,17 @@ print(q)
 dat = data %>%
   filter(H==11 & M>=38 & M<=40)
 
+steps = dat$num
 q <- p + 
-  geom_point(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
+  geom_point(data = dat, aes(x=x, y=y), col="red", size=0.5) + 
   geom_point(data = coord1, aes(x=x,y=y), col = "black", size=1) +
   coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
   labs(x="", y="", title = "0daa: 11H38 - 11H40")
 print(q)
+# q <- q + transition_time(num) + labs(title = paste0("0daa: 11H38 - 11H40 ", "{frame_time}/", length(steps)))
+# animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T), 
+#         width = 1500, height = 1000, res = 150)
+# anim_save("fig/0daa_20211019_1138_1140.gif")
 ```
 
 
@@ -98,12 +112,17 @@ print(q)
 dat = data %>%
   filter(H==11 & M>=56 & M<=59)
 
+steps = dat$num
 q <- p + 
-  geom_point(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
-  geom_point(data = coord2, aes(x=x,y=y), col = "black", size=1) +
+  geom_point(data = dat, aes(x=x, y=y), col="red", size=0.5) + 
+  geom_point(data = coord1, aes(x=x,y=y), col = "black", size=1) +
   coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
   labs(x="", y="", title = "0daa: 11H56 - 11H59")
 print(q)
+# q <- q + transition_time(num) + labs(title = paste0("0daa: 11H56 - 11H59 ", "{frame_time}/", length(steps)))
+# animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T),
+#         width = 1500, height = 1000, res = 150)
+# anim_save("fig/0daa_20211019_1156_1159.gif")
 ```
 
 ## dans le poche
@@ -111,12 +130,17 @@ print(q)
 dat = data %>%
   filter(H==12 & M>=00 & M<=03)
 
+steps = dat$num
 q <- p + 
-  geom_point(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
-  geom_point(data = coord2, aes(x=x,y=y), col = "black", size=1) +
+  geom_point(data = dat, aes(x=x, y=y), col="red", size=0.5) + 
+  geom_point(data = coord1, aes(x=x,y=y), col = "black", size=1) +
   coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
   labs(x="", y="", title = "0daa: 12H00 - 12H03")
 print(q)
+# q <- q + transition_time(num) + labs(title = paste0("0daa: 12H00 - 12H03 ", "{frame_time}/", length(steps)))
+# animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T), 
+#         width = 1500, height = 1000, res = 150)
+# anim_save("fig/0daa_20211019_1200_1203.gif")
 ```
 
 ## dessus de la tête
@@ -124,11 +148,127 @@ print(q)
 dat = data %>%
   filter(H==12 & M>=04 & M<=07)
 
+steps = dat$num
 q <- p + 
-  geom_point(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
-  geom_point(data = coord2, aes(x=x,y=y), col = "black", size=1) +
+  geom_point(data = dat, aes(x=x, y=y), col="red", size=0.5) + 
+  geom_point(data = coord1, aes(x=x,y=y), col = "black", size=1) +
   coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
   labs(x="", y="", title = "0daa: 12H04 - 12H07")
 print(q)
+# q <- q + transition_time(num) + labs(title = paste0("0daa: 12H04 - 12H07 ", "{frame_time}/", length(steps)))
+# animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T), 
+#         width = 1500, height = 1000, res = 150)
+# anim_save("fig/0daa_20211019_1204_1207.gif")
 ```
 
+
+
+# test 3
+## à la main en continu
+```{r}
+dat = data %>%
+  filter(H==15 & M>=55 & M<=56)
+
+steps = dat$num
+q <- p + 
+  geom_point(data = dat, aes(x=x, y=y), col="red", size=0.5) + 
+  geom_point(data = coord3, aes(x=x,y=y), col = "black", size=1) +
+  coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
+  labs(x="", y="", title = "0daa: 15H55 - 15H56")
+print(q)
+# q <- q + transition_time(num) + labs(title = paste0("0daa: 15H55 - 15H56 ", "{frame_time}/", length(steps)))
+# animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T), 
+#         width = 1500, height = 1000, res = 150)
+# anim_save("fig/0daa_20211019_1555_1556.gif")
+```
+
+## dans le poche en continu
+```{r}
+dat = data %>%
+  filter(H==15 & M>=57 & M<=58)
+
+steps = dat$num
+q <- p + 
+  geom_point(data = dat, aes(x=x, y=y), col="red", size=0.5) + 
+  geom_point(data = coord3, aes(x=x,y=y), col = "black", size=1) +
+  coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
+  labs(x="", y="", title = "0daa: 15H57 - 15H58")
+print(q)
+# q <- q + transition_time(num) + labs(title = paste0("0daa: 15H57 - 15H58 ", "{frame_time}/", length(steps)))
+# animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T), 
+#         width = 1500, height = 1000, res = 150)
+# anim_save("fig/0daa_20211019_1557_1558.gif")
+```
+
+## dessus de la tête en continu
+```{r}
+dat = data %>%
+  filter(record_timestamp>=1634651940 & record_timestamp<=1634652060)
+
+steps = dat$num
+q <- p + 
+  geom_point(data = dat, aes(x=x, y=y), col="red", size=0.5) + 
+  geom_point(data = coord3, aes(x=x,y=y), col = "black", size=1) +
+  coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
+  labs(x="", y="", title = "0daa: 15H59 - 16H01")
+print(q)
+# q <- q + transition_time(num) + labs(title = paste0("0daa: 15H59 - 16H01 ", "{frame_time}/", length(steps)))
+# animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T), 
+#         width = 1500, height = 1000, res = 150)
+# anim_save("fig/0daa_20211019_1559_1601.gif")
+```
+
+
+## à la main sans continu
+```{r}
+dat = data %>%
+  filter(H==16 & M>=38 & M<=40)
+
+steps = dat$num
+q <- p + 
+  geom_point(data = dat, aes(x=x, y=y), col="red", size=0.5) + 
+  geom_point(data = coord3, aes(x=x,y=y), col = "black", size=1) +
+  coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
+  labs(x="", y="", title = "0daa: 16H38 - 16H40")
+print(q)
+# q <- q + transition_time(num) + labs(title = paste0("0daa: 16H38 - 16H40 ", "{frame_time}/", length(steps)))
+# animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T), 
+#         width = 1500, height = 1000, res = 150)
+# anim_save("fig/0daa_20211019_1638_1640.gif")
+```
+
+## dans le poche sans continu
+```{r}
+dat = data %>%
+  filter(H==16 & M>=41 & M<=43)
+
+steps = dat$num
+q <- p + 
+  geom_point(data = dat, aes(x=x, y=y), col="red", size=0.5) + 
+  geom_point(data = coord3, aes(x=x,y=y), col = "black", size=1) +
+  coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
+  labs(x="", y="", title = "0daa: 16H41 - 16H43")
+print(q)
+# q <- q + transition_time(num) + labs(title = paste0("0daa: 16H41 - 16H43 ", "{frame_time}/", length(steps)))
+# animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T), 
+#         width = 1500, height = 1000, res = 150)
+# anim_save("fig/0daa_20211019_1641_1643.gif")
+```
+
+## dessus de la tête sans continu
+```{r}
+dat = data %>%
+  filter(H==16 & M>=44 & M<=47)
+
+steps = dat$num
+q <- p + 
+  geom_point(data = dat, aes(x=x, y=y), col="red", size=0.5) + 
+  geom_point(data = coord3, aes(x=x,y=y), col = "black", size=1) +
+  coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
+  labs(x="", y="", title = "0daa: 16H44 - 16H47")
+print(q)
+# q <- q + transition_time(num) + labs(title = paste0("0daa: 16H44 - 16H47 ", "{frame_time}/", length(steps)))
+# animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T), 
+#         width = 1500, height = 1000, res = 150)
+# anim_save("fig/0daa_20211019_1644_1647.gif")
+```
