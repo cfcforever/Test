@@ -1,5 +1,5 @@
 ---
-title: "2021-10-18"
+title: "2021-10-19-Test"
 # author: "cfcforever"
 # date: ""
 output: 
@@ -21,11 +21,11 @@ data = read.csv2("data/json/2021-10-19/0daa.csv")
 tag = "0daa"
 ```
 
-![](data/json/2021-10-19/Wire 2021-10-19 at 11-48-06.jpg)
+![](/Users/shengchen/Documents/R/Test/data/json/2021-10-19/Wire 2021-10-19 at 11-48-06.jpg)
 
 
 # test 1
-![](data/json/2021-10-19/Wire 2021-10-19 at 17_34.png)
+![](/Users/shengchen/Documents/R/Test/data/json/2021-10-19/Wire 2021-10-19 at 17_34.png)
 
 ## contre le corps
 ```{r}
@@ -66,7 +66,7 @@ print(q)
 
 
 # test 2
-![](data/json/2021-10-19/Wire 2021-10-19 at 18_03.png)
+![](/Users/shengchen/Documents/R/Test/data/json/2021-10-19/Wire 2021-10-19 at 18_03.png)
 ## contre le corps
 ```{r}
 dat = data %>%
