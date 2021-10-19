@@ -21,16 +21,11 @@ data = read.csv2("data/json/2021-10-19/0daa.csv")
 tag = "0daa"
 ```
 
-![](/Users/shengchen/Documents/R/Test/data/json/2021-10-19/Wire 2021-10-19 at 11-48-06.jpg)
-
-
 # test 1
-![](/Users/shengchen/Documents/R/Test/data/json/2021-10-19/Wire 2021-10-19 at 17_34.png)
-
 ## contre le corps
 ```{r}
 dat = data %>%
-  filter(H==11 & M>=28 & M>=30)
+  filter(H==11 & M>=28 & M<=30)
 
 q <- p + 
   geom_point(data = dat, aes(x=x-15,y=y-30), col = "red", size=0.5) +
@@ -42,7 +37,7 @@ print(q)
 ## dans le poche
 ```{r}
 dat = data %>%
-  filter(H==11 & M>=35 & M>=37)
+  filter(H==11 & M>=35 & M<=37)
 
 q <- p + 
   geom_point(data = dat, aes(x=x-15,y=y-30), col = "red", size=0.5) +
@@ -54,7 +49,7 @@ print(q)
 ## dessus de la tête
 ```{r}
 dat = data %>%
-  filter(H==11 & M>=38 & M>=40)
+  filter(H==11 & M>=38 & M<=40)
 
 q <- p + 
   geom_point(data = dat, aes(x=x-15,y=y-30), col = "red", size=0.5) +
@@ -66,12 +61,10 @@ print(q)
 
 
 # test 2
-![](/Users/shengchen/Documents/R/Test/data/json/2021-10-19/Wire 2021-10-19 at 18_03.png)
-
 ## contre le corps
 ```{r}
 dat = data %>%
-  filter(H==11 & M>=56 & M>=59)
+  filter(H==11 & M>=56 & M<=59)
 
 q <- p + 
   geom_point(data = dat, aes(x=x-15,y=y-30), col = "red", size=0.5) +
@@ -83,7 +76,7 @@ print(q)
 ## dans le poche
 ```{r}
 dat = data %>%
-  filter(H==12 & M>=00 & M>=03)
+  filter(H==12 & M>=00 & M<=03)
 
 q <- p + 
   geom_point(data = dat, aes(x=x-15,y=y-30), col = "red", size=0.5) +
@@ -95,7 +88,7 @@ print(q)
 ## dessus de la tête
 ```{r}
 dat = data %>%
-  filter(H==12 & M>=04 & M>=07)
+  filter(H==12 & M>=04 & M<=07)
 
 q <- p + 
   geom_point(data = dat, aes(x=x-15,y=y-30), col = "red", size=0.5) +
