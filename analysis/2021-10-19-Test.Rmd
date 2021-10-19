@@ -99,7 +99,7 @@ dat = data %>%
 q <- p + 
   geom_point(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
   coord_fixed(ratio = 1, xlim = c(-35,10), ylim = c(-65,10)) + 
-  labs(x="", y="", title = "0daa: 11H04 - 11H07")
+  labs(x="", y="", title = "0daa: 12H04 - 12H07")
 print(q)
 ```
 
