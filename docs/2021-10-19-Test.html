@@ -505,16 +505,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree25b8dc380b59d5693595f801968bd15edbabdb0btargetblank25b8dc3a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/25b8dc380b59d5693595f801968bd15edbabdb0b" target="_blank">25b8dc3</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreef10a0ae8b2266ddf6d861946bad41cdeb9d8a4cbtargetblankf10a0aea"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/f10a0ae8b2266ddf6d861946bad41cdeb9d8a4cb" target="_blank">f10a0ae</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree25b8dc380b59d5693595f801968bd15edbabdb0btargetblank25b8dc3a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreef10a0ae8b2266ddf6d861946bad41cdeb9d8a4cbtargetblankf10a0aea" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/25b8dc380b59d5693595f801968bd15edbabdb0b" target="_blank">25b8dc3</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/f10a0ae8b2266ddf6d861946bad41cdeb9d8a4cb" target="_blank">f10a0ae</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -572,6 +572,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/f10a0ae8b2266ddf6d861946bad41cdeb9d8a4cb/analysis/2021-10-19-Test.Rmd" target="_blank">f10a0ae</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-19
+</td>
+<td>
+add new analysis
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cfcforever/Test/57b75c15aaea46a89875891c585cb896b019d353/docs/2021-10-19-Test.html" target="_blank">57b75c1</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-19
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -770,15 +804,13 @@ add new analysis
 <h1>load data</h1>
 <pre class="r"><code>data = read.csv2(&quot;data/json/2021-10-19/0daa.csv&quot;)
 tag = &quot;0daa&quot;</code></pre>
-<p><img src="/Users/shengchen/Documents/R/Test/data/json/2021-10-19/Wire%202021-10-19%20at%2011-48-06.jpg" /></p>
 </div>
 <div id="test-1" class="section level1">
 <h1>test 1</h1>
-<p><img src="/Users/shengchen/Documents/R/Test/data/json/2021-10-19/Wire%202021-10-19%20at%2017_34.png" /></p>
 <div id="contre-le-corps" class="section level2">
 <h2>contre le corps</h2>
 <pre class="r"><code>dat = data %&gt;%
-  filter(H==11 &amp; M&gt;=28 &amp; M&gt;=30)
+  filter(H==11 &amp; M&gt;=28 &amp; M&lt;=30)
 
 q &lt;- p + 
   geom_point(data = dat, aes(x=x-15,y=y-30), col = &quot;red&quot;, size=0.5) +
@@ -849,7 +881,7 @@ cfcforever
 <div id="dans-le-poche" class="section level2">
 <h2>dans le poche</h2>
 <pre class="r"><code>dat = data %&gt;%
-  filter(H==11 &amp; M&gt;=35 &amp; M&gt;=37)
+  filter(H==11 &amp; M&gt;=35 &amp; M&lt;=37)
 
 q &lt;- p + 
   geom_point(data = dat, aes(x=x-15,y=y-30), col = &quot;red&quot;, size=0.5) +
@@ -920,7 +952,7 @@ cfcforever
 <div id="dessus-de-la-tête" class="section level2">
 <h2>dessus de la tête</h2>
 <pre class="r"><code>dat = data %&gt;%
-  filter(H==11 &amp; M&gt;=38 &amp; M&gt;=40)
+  filter(H==11 &amp; M&gt;=38 &amp; M&lt;=40)
 
 q &lt;- p + 
   geom_point(data = dat, aes(x=x-15,y=y-30), col = &quot;red&quot;, size=0.5) +
@@ -991,11 +1023,10 @@ cfcforever
 </div>
 <div id="test-2" class="section level1">
 <h1>test 2</h1>
-<p><img src="/Users/shengchen/Documents/R/Test/data/json/2021-10-19/Wire%202021-10-19%20at%2018_03.png" /></p>
 <div id="contre-le-corps-1" class="section level2">
 <h2>contre le corps</h2>
 <pre class="r"><code>dat = data %&gt;%
-  filter(H==11 &amp; M&gt;=56 &amp; M&gt;=59)
+  filter(H==11 &amp; M&gt;=56 &amp; M&lt;=59)
 
 q &lt;- p + 
   geom_point(data = dat, aes(x=x-15,y=y-30), col = &quot;red&quot;, size=0.5) +
@@ -1066,7 +1097,7 @@ cfcforever
 <div id="dans-le-poche-1" class="section level2">
 <h2>dans le poche</h2>
 <pre class="r"><code>dat = data %&gt;%
-  filter(H==12 &amp; M&gt;=00 &amp; M&gt;=03)
+  filter(H==12 &amp; M&gt;=00 &amp; M&lt;=03)
 
 q &lt;- p + 
   geom_point(data = dat, aes(x=x-15,y=y-30), col = &quot;red&quot;, size=0.5) +
@@ -1137,7 +1168,7 @@ cfcforever
 <div id="dessus-de-la-tête-1" class="section level2">
 <h2>dessus de la tête</h2>
 <pre class="r"><code>dat = data %&gt;%
-  filter(H==12 &amp; M&gt;=04 &amp; M&gt;=07)
+  filter(H==12 &amp; M&gt;=04 &amp; M&lt;=07)
 
 q &lt;- p + 
   geom_point(data = dat, aes(x=x-15,y=y-30), col = &quot;red&quot;, size=0.5) +
