@@ -67,6 +67,7 @@ print(q)
 
 # test 2
 ![](/Users/shengchen/Documents/R/Test/data/json/2021-10-19/Wire 2021-10-19 at 18_03.png)
+
 ## contre le corps
 ```{r}
 dat = data %>%
