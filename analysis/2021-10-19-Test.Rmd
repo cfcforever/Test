@@ -1,0 +1,105 @@
+---
+title: "2021-10-18"
+# author: "cfcforever"
+# date: ""
+output: 
+  workflowr::wflow_html:
+    code_folding: hide
+editor_options:
+  chunk_output_type: console
+---
+
+```{r include=FALSE}
+source("code/packages_and_functions.R")
+load("data/plan/plan_firminy.RData")
+```
+
+
+# load data
+```{r}
+data = read.csv2("data/json/2021-10-19/0daa.csv")
+tag = "0daa"
+```
+
+![](data/json/2021-10-19/Wire 2021-10-19 at 11-48-06.jpg)
+
+
+# test 1
+![](data/json/2021-10-19/Wire 2021-10-19 at 17_34.png)
+
+## contre le corps
+```{r}
+dat = data %>%
+  filter(H==11 & M>=28 & M>=30)
+
+q <- p + 
+  geom_path(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
+  coord_fixed(ratio = 1, xlim = c(-35,10), ylim = c(-65,10)) + 
+  labs(x="", y="", title = "0daa: 11H28 - 11H30")
+print(q)
+```
+
+## dans le poche
+```{r}
+dat = data %>%
+  filter(H==11 & M>=35 & M>=37)
+
+q <- p + 
+  geom_path(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
+  coord_fixed(ratio = 1, xlim = c(-35,10), ylim = c(-65,10)) + 
+  labs(x="", y="", title = "0daa: 11H35 - 11H37")
+print(q)
+```
+
+## dessus de la tête
+```{r}
+dat = data %>%
+  filter(H==11 & M>=38 & M>=40)
+
+q <- p + 
+  geom_path(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
+  coord_fixed(ratio = 1, xlim = c(-35,10), ylim = c(-65,10)) + 
+  labs(x="", y="", title = "0daa: 11H38 - 11H40")
+print(q)
+```
+
+
+
+# test 2
+![](data/json/2021-10-19/Wire 2021-10-19 at 18_03.png)
+## contre le corps
+```{r}
+dat = data %>%
+  filter(H==11 & M>=56 & M>=59)
+
+q <- p + 
+  geom_path(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
+  coord_fixed(ratio = 1, xlim = c(-35,10), ylim = c(-65,10)) + 
+  labs(x="", y="", title = "0daa: 11H56 - 11H59")
+print(q)
+```
+
+## dans le poche
+```{r}
+dat = data %>%
+  filter(H==12 & M>=00 & M>=03)
+
+q <- p + 
+  geom_path(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
+  coord_fixed(ratio = 1, xlim = c(-35,10), ylim = c(-65,10)) + 
+  labs(x="", y="", title = "0daa: 12H00 - 12H03")
+print(q)
+```
+
+## dessus de la tête
+```{r}
+dat = data %>%
+  filter(H==12 & M>=04 & M>=07)
+
+q <- p + 
+  geom_path(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
+  coord_fixed(ratio = 1, xlim = c(-35,10), ylim = c(-65,10)) + 
+  labs(x="", y="", title = "0daa: 11H04 - 11H07")
+print(q)
+```
+
