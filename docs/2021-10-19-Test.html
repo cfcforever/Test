@@ -505,16 +505,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreea1d71b8034dc0bc66992412060c1ec9c75cf8aactargetblanka1d71b8a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/a1d71b8034dc0bc66992412060c1ec9c75cf8aac" target="_blank">a1d71b8</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreef42d53b0965b666304fe50e3a355f7f7d6146975targetblankf42d53ba"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/f42d53b0965b666304fe50e3a355f7f7d6146975" target="_blank">f42d53b</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreea1d71b8034dc0bc66992412060c1ec9c75cf8aactargetblanka1d71b8a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreef42d53b0965b666304fe50e3a355f7f7d6146975targetblankf42d53ba" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/a1d71b8034dc0bc66992412060c1ec9c75cf8aac" target="_blank">a1d71b8</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/f42d53b0965b666304fe50e3a355f7f7d6146975" target="_blank">f42d53b</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -572,6 +572,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/f42d53b0965b666304fe50e3a355f7f7d6146975/analysis/2021-10-19-Test.Rmd" target="_blank">f42d53b</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-19
+</td>
+<td>
+add new analysis
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cfcforever/Test/7ef6c492597e9c9a7a6a9279531f7b88179f6276/docs/2021-10-19-Test.html" target="_blank">7ef6c49</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-19
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -929,9 +963,18 @@ colnames(coord2) = c(&quot;x&quot;, &quot;y&quot;)</code></pre>
 <h2>contre le corps</h2>
 <pre class="r"><code>dat = data %&gt;%
   filter(H==11 &amp; M&gt;=28 &amp; M&lt;=30)
+dat$num = 1:nrow(dat)
 
+# q &lt;- p + 
+#   geom_point(data = dat, aes(x=x,y=y), col = &quot;red&quot;, size=0.5) +
+#   geom_point(data = coord1, aes(x=x,y=y), col = &quot;black&quot;, size=1) +
+#   coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
+#   labs(x=&quot;&quot;, y=&quot;&quot;, title = &quot;0daa: 11H28 - 11H30&quot;)
+# print(q)
+
+steps = dat$num
 q &lt;- p + 
-  geom_point(data = dat, aes(x=x,y=y), col = &quot;red&quot;, size=0.5) +
+  geom_point(data = dat, aes(x=x, y=y), col=&quot;red&quot;, size=0.5) + 
   geom_point(data = coord1, aes(x=x,y=y), col = &quot;black&quot;, size=1) +
   coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
   labs(x=&quot;&quot;, y=&quot;&quot;, title = &quot;0daa: 11H28 - 11H30&quot;)
@@ -1029,6 +1072,11 @@ cfcforever
 </table>
 </div>
 </div>
+<pre class="r"><code>q &lt;- q + transition_time(num) + labs(title = paste0(&quot;0daa: 11H28 - 11H30 &quot;, &quot;{frame_time}/&quot;, length(steps)))
+# steps = 1:5
+animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T), 
+        width = 1500, height = 1000, res = 150)</code></pre>
+<p><img src="figure/2021-10-19-Test.Rmd/unnamed-chunk-3-1.gif" style="display: block; margin: auto;" /></p>
 </div>
 <div id="dans-le-poche" class="section level2">
 <h2>dans le poche</h2>
@@ -1279,6 +1327,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/cfcforever/Test/blob/7ef6c492597e9c9a7a6a9279531f7b88179f6276/docs/figure/2021-10-19-Test.Rmd/unnamed-chunk-6-1.png" target="_blank">7ef6c49</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-19
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/cfcforever/Test/blob/0be87d8d15a4e629770f1db5d7bd2800df83c422/docs/figure/2021-10-19-Test.Rmd/unnamed-chunk-6-1.png" target="_blank">0be87d8</a>
 </td>
 <td>
@@ -1382,6 +1441,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/7ef6c492597e9c9a7a6a9279531f7b88179f6276/docs/figure/2021-10-19-Test.Rmd/unnamed-chunk-7-1.png" target="_blank">7ef6c49</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-19
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/0be87d8d15a4e629770f1db5d7bd2800df83c422/docs/figure/2021-10-19-Test.Rmd/unnamed-chunk-7-1.png" target="_blank">0be87d8</a>
@@ -1489,6 +1559,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/cfcforever/Test/blob/7ef6c492597e9c9a7a6a9279531f7b88179f6276/docs/figure/2021-10-19-Test.Rmd/unnamed-chunk-8-1.png" target="_blank">7ef6c49</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-19
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/cfcforever/Test/blob/0be87d8d15a4e629770f1db5d7bd2800df83c422/docs/figure/2021-10-19-Test.Rmd/unnamed-chunk-8-1.png" target="_blank">0be87d8</a>
 </td>
 <td>
@@ -1575,21 +1656,21 @@ other attached packages:
 [13] workflowr_1.6.2 
 
 loaded via a namespace (and not attached):
- [1] progress_1.2.2    tidyselect_1.1.0  xfun_0.25         purrr_0.3.4      
- [5] colorspace_1.4-1  vctrs_0.3.8       generics_0.1.0    viridisLite_0.3.0
- [9] htmltools_0.5.0   yaml_2.2.1        utf8_1.1.4        rlang_0.4.11     
-[13] later_1.1.0.1     pillar_1.6.0      glue_1.4.1        withr_2.4.2      
-[17] DBI_1.1.1         tweenr_1.0.1      lifecycle_1.0.0   stringr_1.4.0    
-[21] cellranger_1.1.0  munsell_0.5.0     gtable_0.3.0      rvest_1.0.0      
-[25] htmlwidgets_1.5.1 evaluate_0.14     labeling_0.3      knitr_1.33       
-[29] httpuv_1.5.4      fansi_0.4.1       highr_0.8         Rcpp_1.0.5       
-[33] readr_1.4.0       promises_1.1.1    backports_1.1.8   webshot_0.5.2    
-[37] farver_2.0.3      fs_1.5.0          hms_1.0.0         digest_0.6.25    
-[41] stringi_1.4.6     grid_4.0.2        rprojroot_1.3-2   tools_4.0.2      
-[45] magrittr_2.0.1    tibble_3.1.1      crayon_1.4.1      whisker_0.4      
-[49] pkgconfig_2.0.3   ellipsis_0.3.1    xml2_1.3.2        prettyunits_1.1.1
-[53] httr_1.4.2        rstudioapi_0.13   assertthat_0.2.1  rmarkdown_2.10   
-[57] R6_2.4.1          git2r_0.28.0      compiler_4.0.2   </code></pre>
+ [1] Rcpp_1.0.5        prettyunits_1.1.1 assertthat_0.2.1  rprojroot_1.3-2  
+ [5] digest_0.6.25     utf8_1.1.4        R6_2.4.1          cellranger_1.1.0 
+ [9] plyr_1.8.6        backports_1.1.8   evaluate_0.14     httr_1.4.2       
+[13] highr_0.8         pillar_1.6.0      rlang_0.4.11      progress_1.2.2   
+[17] rstudioapi_0.13   whisker_0.4       rmarkdown_2.10    labeling_0.3     
+[21] webshot_0.5.2     readr_1.4.0       stringr_1.4.0     htmlwidgets_1.5.1
+[25] munsell_0.5.0     compiler_4.0.2    httpuv_1.5.4      xfun_0.25        
+[29] pkgconfig_2.0.3   htmltools_0.5.0   tidyselect_1.1.0  tibble_3.1.1     
+[33] fansi_0.4.1       viridisLite_0.3.0 crayon_1.4.1      withr_2.4.2      
+[37] later_1.1.0.1     grid_4.0.2        gtable_0.3.0      lifecycle_1.0.0  
+[41] DBI_1.1.1         git2r_0.28.0      magrittr_2.0.1    stringi_1.4.6    
+[45] farver_2.0.3      fs_1.5.0          promises_1.1.1    xml2_1.3.2       
+[49] ellipsis_0.3.1    generics_0.1.0    vctrs_0.3.8       tools_4.0.2      
+[53] glue_1.4.1        tweenr_1.0.1      purrr_0.3.4       hms_1.0.0        
+[57] yaml_2.2.1        colorspace_1.4-1  rvest_1.0.0       knitr_1.33       </code></pre>
 </div>
 </div>
 </div>
