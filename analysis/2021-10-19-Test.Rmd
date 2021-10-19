@@ -33,7 +33,7 @@ dat = data %>%
   filter(H==11 & M>=28 & M>=30)
 
 q <- p + 
-  geom_path(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
+  geom_point(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
   coord_fixed(ratio = 1, xlim = c(-35,10), ylim = c(-65,10)) + 
   labs(x="", y="", title = "0daa: 11H28 - 11H30")
 print(q)
@@ -45,7 +45,7 @@ dat = data %>%
   filter(H==11 & M>=35 & M>=37)
 
 q <- p + 
-  geom_path(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
+  geom_point(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
   coord_fixed(ratio = 1, xlim = c(-35,10), ylim = c(-65,10)) + 
   labs(x="", y="", title = "0daa: 11H35 - 11H37")
 print(q)
@@ -57,7 +57,7 @@ dat = data %>%
   filter(H==11 & M>=38 & M>=40)
 
 q <- p + 
-  geom_path(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
+  geom_point(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
   coord_fixed(ratio = 1, xlim = c(-35,10), ylim = c(-65,10)) + 
   labs(x="", y="", title = "0daa: 11H38 - 11H40")
 print(q)
@@ -73,7 +73,7 @@ dat = data %>%
   filter(H==11 & M>=56 & M>=59)
 
 q <- p + 
-  geom_path(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
+  geom_point(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
   coord_fixed(ratio = 1, xlim = c(-35,10), ylim = c(-65,10)) + 
   labs(x="", y="", title = "0daa: 11H56 - 11H59")
 print(q)
@@ -85,7 +85,7 @@ dat = data %>%
   filter(H==12 & M>=00 & M>=03)
 
 q <- p + 
-  geom_path(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
+  geom_point(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
   coord_fixed(ratio = 1, xlim = c(-35,10), ylim = c(-65,10)) + 
   labs(x="", y="", title = "0daa: 12H00 - 12H03")
 print(q)
@@ -97,7 +97,7 @@ dat = data %>%
   filter(H==12 & M>=04 & M>=07)
 
 q <- p + 
-  geom_path(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
+  geom_point(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
   coord_fixed(ratio = 1, xlim = c(-35,10), ylim = c(-65,10)) + 
   labs(x="", y="", title = "0daa: 11H04 - 11H07")
 print(q)
