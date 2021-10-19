@@ -42,13 +42,26 @@ colnames(coord2) = c("x", "y")
 ```{r}
 dat = data %>%
   filter(H==11 & M>=28 & M<=30)
+dat$num = 1:nrow(dat)
 
+# q <- p + 
+#   geom_point(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
+#   geom_point(data = coord1, aes(x=x,y=y), col = "black", size=1) +
+#   coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
+#   labs(x="", y="", title = "0daa: 11H28 - 11H30")
+# print(q)
+
+steps = dat$num
 q <- p + 
-  geom_point(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
+  geom_point(data = dat, aes(x=x, y=y), col="red", size=0.5) + 
   geom_point(data = coord1, aes(x=x,y=y), col = "black", size=1) +
   coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
   labs(x="", y="", title = "0daa: 11H28 - 11H30")
 print(q)
+q <- q + transition_time(num) + labs(title = paste0("0daa: 11H28 - 11H30 ", "{frame_time}/", length(steps)))
+# steps = 1:5
+animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T), 
+        width = 1500, height = 1000, res = 150)
 ```
 
 ## dans le poche
