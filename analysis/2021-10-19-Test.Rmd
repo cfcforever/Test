@@ -45,10 +45,12 @@ coord3 = as.data.frame(matrix(c(-7.642,-9.007,
 colnames(coord3) = c("x", "y")
 ```
 
-![](figure/Wire 2021-10-19 at 11-48-06.jpg)
+![](figure/Wire 2021-10-19 at 11-48-06.jpg){width=50%}
 
 
 # test 1
+![](figure/Wire 2021-10-19 at 17_34.png){width=100%}
+
 ## contre le corps
 ```{r}
 dat = data %>%
@@ -107,6 +109,8 @@ print(q)
 
 
 # test 2
+![](figure/Wire 2021-10-19 at 18_03.png){width=100%}
+
 ## contre le corps
 ```{r}
 dat = data %>%
@@ -115,7 +119,7 @@ dat = data %>%
 steps = dat$num
 q <- p + 
   geom_point(data = dat, aes(x=x, y=y), col="red", size=0.5) + 
-  geom_point(data = coord1, aes(x=x,y=y), col = "black", size=1) +
+  geom_point(data = coord2, aes(x=x,y=y), col = "black", size=1) +
   coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
   labs(x="", y="", title = "0daa: 11H56 - 11H59")
 print(q)
@@ -133,7 +137,7 @@ dat = data %>%
 steps = dat$num
 q <- p + 
   geom_point(data = dat, aes(x=x, y=y), col="red", size=0.5) + 
-  geom_point(data = coord1, aes(x=x,y=y), col = "black", size=1) +
+  geom_point(data = coord2, aes(x=x,y=y), col = "black", size=1) +
   coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
   labs(x="", y="", title = "0daa: 12H00 - 12H03")
 print(q)
@@ -151,7 +155,7 @@ dat = data %>%
 steps = dat$num
 q <- p + 
   geom_point(data = dat, aes(x=x, y=y), col="red", size=0.5) + 
-  geom_point(data = coord1, aes(x=x,y=y), col = "black", size=1) +
+  geom_point(data = coord2, aes(x=x,y=y), col = "black", size=1) +
   coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
   labs(x="", y="", title = "0daa: 12H04 - 12H07")
 print(q)
@@ -164,6 +168,8 @@ print(q)
 
 
 # test 3
+![](figure/Wire 2021-10-19 at 22_26.png){width=100%}
+
 ## à la main en continu
 ```{r}
 dat = data %>%
