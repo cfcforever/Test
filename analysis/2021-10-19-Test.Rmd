@@ -65,7 +65,7 @@ q <- p +
   labs(x="", y="", title = "0daa: 11H28 - 11H30")
 print(q)
 # q <- q + transition_time(num) + labs(title = paste0("0daa: 11H28 - 11H30 ", "{frame_time}/", length(steps)))
-# animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T), 
+# animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T),
 #         width = 1500, height = 1000, res = 150)
 # anim_save("fig/0daa_20211019_1128_1130.gif")
 ```
@@ -74,6 +74,7 @@ print(q)
 ```{r}
 dat = data %>%
   filter(H==11 & M>=35 & M<=37)
+dat$num = 1:nrow(dat)
 
 steps = dat$num
 q <- p +
@@ -92,6 +93,7 @@ print(q)
 ```{r}
 dat = data %>%
   filter(H==11 & M>=38 & M<=40)
+dat$num = 1:nrow(dat)
 
 steps = dat$num
 q <- p + 
@@ -101,7 +103,7 @@ q <- p +
   labs(x="", y="", title = "0daa: 11H38 - 11H40")
 print(q)
 # q <- q + transition_time(num) + labs(title = paste0("0daa: 11H38 - 11H40 ", "{frame_time}/", length(steps)))
-# animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T), 
+# animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T),
 #         width = 1500, height = 1000, res = 150)
 # anim_save("fig/0daa_20211019_1138_1140.gif")
 ```
@@ -115,6 +117,7 @@ print(q)
 ```{r}
 dat = data %>%
   filter(H==11 & M>=56 & M<=59)
+dat$num = 1:nrow(dat)
 
 steps = dat$num
 q <- p + 
@@ -133,6 +136,7 @@ print(q)
 ```{r}
 dat = data %>%
   filter(H==12 & M>=00 & M<=03)
+dat$num = 1:nrow(dat)
 
 steps = dat$num
 q <- p + 
@@ -142,7 +146,7 @@ q <- p +
   labs(x="", y="", title = "0daa: 12H00 - 12H03")
 print(q)
 # q <- q + transition_time(num) + labs(title = paste0("0daa: 12H00 - 12H03 ", "{frame_time}/", length(steps)))
-# animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T), 
+# animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T),
 #         width = 1500, height = 1000, res = 150)
 # anim_save("fig/0daa_20211019_1200_1203.gif")
 ```
@@ -151,6 +155,7 @@ print(q)
 ```{r}
 dat = data %>%
   filter(H==12 & M>=04 & M<=07)
+dat$num = 1:nrow(dat)
 
 steps = dat$num
 q <- p + 
@@ -160,7 +165,7 @@ q <- p +
   labs(x="", y="", title = "0daa: 12H04 - 12H07")
 print(q)
 # q <- q + transition_time(num) + labs(title = paste0("0daa: 12H04 - 12H07 ", "{frame_time}/", length(steps)))
-# animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T), 
+# animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T),
 #         width = 1500, height = 1000, res = 150)
 # anim_save("fig/0daa_20211019_1204_1207.gif")
 ```
@@ -174,6 +179,7 @@ print(q)
 ```{r}
 dat = data %>%
   filter(H==15 & M>=55 & M<=56)
+dat$num = 1:nrow(dat)
 
 steps = dat$num
 q <- p + 
@@ -183,7 +189,7 @@ q <- p +
   labs(x="", y="", title = "0daa: 15H55 - 15H56")
 print(q)
 # q <- q + transition_time(num) + labs(title = paste0("0daa: 15H55 - 15H56 ", "{frame_time}/", length(steps)))
-# animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T), 
+# animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T),
 #         width = 1500, height = 1000, res = 150)
 # anim_save("fig/0daa_20211019_1555_1556.gif")
 ```
@@ -192,6 +198,7 @@ print(q)
 ```{r}
 dat = data %>%
   filter(H==15 & M>=57 & M<=58)
+dat$num = 1:nrow(dat)
 
 steps = dat$num
 q <- p + 
@@ -201,7 +208,7 @@ q <- p +
   labs(x="", y="", title = "0daa: 15H57 - 15H58")
 print(q)
 # q <- q + transition_time(num) + labs(title = paste0("0daa: 15H57 - 15H58 ", "{frame_time}/", length(steps)))
-# animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T), 
+# animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T),
 #         width = 1500, height = 1000, res = 150)
 # anim_save("fig/0daa_20211019_1557_1558.gif")
 ```
@@ -210,6 +217,7 @@ print(q)
 ```{r}
 dat = data %>%
   filter(record_timestamp>=1634651940 & record_timestamp<=1634652060)
+dat$num = 1:nrow(dat)
 
 steps = dat$num
 q <- p + 
@@ -219,7 +227,7 @@ q <- p +
   labs(x="", y="", title = "0daa: 15H59 - 16H01")
 print(q)
 # q <- q + transition_time(num) + labs(title = paste0("0daa: 15H59 - 16H01 ", "{frame_time}/", length(steps)))
-# animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T), 
+# animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T),
 #         width = 1500, height = 1000, res = 150)
 # anim_save("fig/0daa_20211019_1559_1601.gif")
 ```
@@ -229,6 +237,7 @@ print(q)
 ```{r}
 dat = data %>%
   filter(H==16 & M>=38 & M<=40)
+dat$num = 1:nrow(dat)
 
 steps = dat$num
 q <- p + 
@@ -238,7 +247,7 @@ q <- p +
   labs(x="", y="", title = "0daa: 16H38 - 16H40")
 print(q)
 # q <- q + transition_time(num) + labs(title = paste0("0daa: 16H38 - 16H40 ", "{frame_time}/", length(steps)))
-# animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T), 
+# animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T),
 #         width = 1500, height = 1000, res = 150)
 # anim_save("fig/0daa_20211019_1638_1640.gif")
 ```
@@ -247,6 +256,7 @@ print(q)
 ```{r}
 dat = data %>%
   filter(H==16 & M>=41 & M<=43)
+dat$num = 1:nrow(dat)
 
 steps = dat$num
 q <- p + 
@@ -256,7 +266,7 @@ q <- p +
   labs(x="", y="", title = "0daa: 16H41 - 16H43")
 print(q)
 # q <- q + transition_time(num) + labs(title = paste0("0daa: 16H41 - 16H43 ", "{frame_time}/", length(steps)))
-# animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T), 
+# animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T),
 #         width = 1500, height = 1000, res = 150)
 # anim_save("fig/0daa_20211019_1641_1643.gif")
 ```
@@ -265,6 +275,7 @@ print(q)
 ```{r}
 dat = data %>%
   filter(H==16 & M>=44 & M<=47)
+dat$num = 1:nrow(dat)
 
 steps = dat$num
 q <- p + 
@@ -274,7 +285,7 @@ q <- p +
   labs(x="", y="", title = "0daa: 16H44 - 16H47")
 print(q)
 # q <- q + transition_time(num) + labs(title = paste0("0daa: 16H44 - 16H47 ", "{frame_time}/", length(steps)))
-# animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T), 
+# animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T),
 #         width = 1500, height = 1000, res = 150)
 # anim_save("fig/0daa_20211019_1644_1647.gif")
 ```
