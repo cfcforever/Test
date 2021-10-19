@@ -27,6 +27,14 @@ coord1 = as.data.frame(matrix(c(-7.811,-8.616,
                                  0.189,-8.616,
                                  2.189,-8.616), ncol = 2, byrow = T))
 colnames(coord1) = c("x", "y")
+
+coord2 = as.data.frame(matrix(c(-8.752,8.694,
+                                -6.752,8.694,
+                                -4.752,8.694,
+                                -2.752,8.694,
+                                -0.752,8.694,
+                                 1.248,8.694), ncol = 2, byrow = T))
+colnames(coord2) = c("x", "y")
 ```
 
 # test 1
@@ -79,7 +87,7 @@ dat = data %>%
 
 q <- p + 
   geom_point(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
-  geom_point(data = coord1, aes(x=x,y=y), col = "black", size=1) +
+  geom_point(data = coord2, aes(x=x,y=y), col = "black", size=1) +
   coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
   labs(x="", y="", title = "0daa: 11H56 - 11H59")
 print(q)
@@ -92,7 +100,7 @@ dat = data %>%
 
 q <- p + 
   geom_point(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
-  geom_point(data = coord1, aes(x=x,y=y), col = "black", size=1) +
+  geom_point(data = coord2, aes(x=x,y=y), col = "black", size=1) +
   coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
   labs(x="", y="", title = "0daa: 12H00 - 12H03")
 print(q)
@@ -105,7 +113,7 @@ dat = data %>%
 
 q <- p + 
   geom_point(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
-  geom_point(data = coord1, aes(x=x,y=y), col = "black", size=1) +
+  geom_point(data = coord2, aes(x=x,y=y), col = "black", size=1) +
   coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
   labs(x="", y="", title = "0daa: 12H04 - 12H07")
 print(q)
