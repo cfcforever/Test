@@ -505,16 +505,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree7b55dbd38c1057ebb04fb6749c71a9a1b5854e69targetblank7b55dbda"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/7b55dbd38c1057ebb04fb6749c71a9a1b5854e69" target="_blank">7b55dbd</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreed78f0b065db3fed28e7e237598c6871caa6e9ebftargetblankd78f0b0a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/d78f0b065db3fed28e7e237598c6871caa6e9ebf" target="_blank">d78f0b0</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree7b55dbd38c1057ebb04fb6749c71a9a1b5854e69targetblank7b55dbda" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreed78f0b065db3fed28e7e237598c6871caa6e9ebftargetblankd78f0b0a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/7b55dbd38c1057ebb04fb6749c71a9a1b5854e69" target="_blank">7b55dbd</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/d78f0b065db3fed28e7e237598c6871caa6e9ebf" target="_blank">d78f0b0</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -572,6 +572,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/d78f0b065db3fed28e7e237598c6871caa6e9ebf/analysis/2021-10-19-Test.Rmd" target="_blank">d78f0b0</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-19
+</td>
+<td>
+add new analysis
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cfcforever/Test/46895f3a27348b65c9949c068f3d943721463138/docs/2021-10-19-Test.html" target="_blank">46895f3</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-19
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -837,7 +871,15 @@ add new analysis
 <div id="load-data" class="section level1">
 <h1>load data</h1>
 <pre class="r"><code>data = read.csv2(&quot;data/json/2021-10-19/0daa.csv&quot;)
-tag = &quot;0daa&quot;</code></pre>
+tag = &quot;0daa&quot;
+
+coord1 = as.data.frame(matrix(c(-7.811,-8.616,
+                                -5.811,-8.616,
+                                -3.811,-8.616,
+                                -1.811,-8.616,
+                                 0.189,-8.616,
+                                 2.189,-8.616), ncol = 2, byrow = T))
+colnames(coord1) = c(&quot;x&quot;, &quot;y&quot;)</code></pre>
 </div>
 <div id="test-1" class="section level1">
 <h1>test 1</h1>
@@ -847,8 +889,9 @@ tag = &quot;0daa&quot;</code></pre>
   filter(H==11 &amp; M&gt;=28 &amp; M&lt;=30)
 
 q &lt;- p + 
-  geom_point(data = dat, aes(x=x-15,y=y-30), col = &quot;red&quot;, size=0.5) +
-  coord_fixed(ratio = 1, xlim = c(-35,10), ylim = c(-50,-30)) + 
+  geom_point(data = dat, aes(x=x,y=y), col = &quot;red&quot;, size=0.5) +
+  geom_point(data = coord1, aes(x=x,y=y), col = &quot;black&quot;, size=1) +
+  coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
   labs(x=&quot;&quot;, y=&quot;&quot;, title = &quot;0daa: 11H28 - 11H30&quot;)
 print(q)</code></pre>
 <p><img src="figure/2021-10-19-Test.Rmd/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" /></p>
@@ -874,6 +917,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/46895f3a27348b65c9949c068f3d943721463138/docs/figure/2021-10-19-Test.Rmd/unnamed-chunk-3-1.png" target="_blank">46895f3</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-19
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/d11081d16afa5dfb4ca11dac2989aa0fd1faf5de/docs/figure/2021-10-19-Test.Rmd/unnamed-chunk-3-1.png" target="_blank">d11081d</a>
@@ -929,8 +983,9 @@ cfcforever
   filter(H==11 &amp; M&gt;=35 &amp; M&lt;=37)
 
 q &lt;- p + 
-  geom_point(data = dat, aes(x=x-15,y=y-30), col = &quot;red&quot;, size=0.5) +
-  coord_fixed(ratio = 1, xlim = c(-35,10), ylim = c(-50,-30)) + 
+  geom_point(data = dat, aes(x=x,y=y), col = &quot;red&quot;, size=0.5) +
+  geom_point(data = coord1, aes(x=x,y=y), col = &quot;black&quot;, size=1) +
+  coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
   labs(x=&quot;&quot;, y=&quot;&quot;, title = &quot;0daa: 11H35 - 11H37&quot;)
 print(q)</code></pre>
 <p><img src="figure/2021-10-19-Test.Rmd/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" /></p>
@@ -956,6 +1011,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/46895f3a27348b65c9949c068f3d943721463138/docs/figure/2021-10-19-Test.Rmd/unnamed-chunk-4-1.png" target="_blank">46895f3</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-19
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/d11081d16afa5dfb4ca11dac2989aa0fd1faf5de/docs/figure/2021-10-19-Test.Rmd/unnamed-chunk-4-1.png" target="_blank">d11081d</a>
@@ -1011,8 +1077,9 @@ cfcforever
   filter(H==11 &amp; M&gt;=38 &amp; M&lt;=40)
 
 q &lt;- p + 
-  geom_point(data = dat, aes(x=x-15,y=y-30), col = &quot;red&quot;, size=0.5) +
-  coord_fixed(ratio = 1, xlim = c(-35,10), ylim = c(-50,-30)) + 
+  geom_point(data = dat, aes(x=x,y=y), col = &quot;red&quot;, size=0.5) +
+  geom_point(data = coord1, aes(x=x,y=y), col = &quot;black&quot;, size=1) +
+  coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
   labs(x=&quot;&quot;, y=&quot;&quot;, title = &quot;0daa: 11H38 - 11H40&quot;)
 print(q)</code></pre>
 <p><img src="figure/2021-10-19-Test.Rmd/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" /></p>
@@ -1038,6 +1105,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/46895f3a27348b65c9949c068f3d943721463138/docs/figure/2021-10-19-Test.Rmd/unnamed-chunk-5-1.png" target="_blank">46895f3</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-19
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/d11081d16afa5dfb4ca11dac2989aa0fd1faf5de/docs/figure/2021-10-19-Test.Rmd/unnamed-chunk-5-1.png" target="_blank">d11081d</a>
@@ -1096,8 +1174,9 @@ cfcforever
   filter(H==11 &amp; M&gt;=56 &amp; M&lt;=59)
 
 q &lt;- p + 
-  geom_point(data = dat, aes(x=x-15,y=y-30), col = &quot;red&quot;, size=0.5) +
-  coord_fixed(ratio = 1, xlim = c(-35,10), ylim = c(-30,-10)) + 
+  geom_point(data = dat, aes(x=x,y=y), col = &quot;red&quot;, size=0.5) +
+  geom_point(data = coord1, aes(x=x,y=y), col = &quot;black&quot;, size=1) +
+  coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
   labs(x=&quot;&quot;, y=&quot;&quot;, title = &quot;0daa: 11H56 - 11H59&quot;)
 print(q)</code></pre>
 <p><img src="figure/2021-10-19-Test.Rmd/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" /></p>
@@ -1123,6 +1202,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/46895f3a27348b65c9949c068f3d943721463138/docs/figure/2021-10-19-Test.Rmd/unnamed-chunk-6-1.png" target="_blank">46895f3</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-19
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/d11081d16afa5dfb4ca11dac2989aa0fd1faf5de/docs/figure/2021-10-19-Test.Rmd/unnamed-chunk-6-1.png" target="_blank">d11081d</a>
@@ -1178,8 +1268,9 @@ cfcforever
   filter(H==12 &amp; M&gt;=00 &amp; M&lt;=03)
 
 q &lt;- p + 
-  geom_point(data = dat, aes(x=x-15,y=y-30), col = &quot;red&quot;, size=0.5) +
-  coord_fixed(ratio = 1, xlim = c(-35,10), ylim = c(-30,-10)) + 
+  geom_point(data = dat, aes(x=x,y=y), col = &quot;red&quot;, size=0.5) +
+  geom_point(data = coord1, aes(x=x,y=y), col = &quot;black&quot;, size=1) +
+  coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
   labs(x=&quot;&quot;, y=&quot;&quot;, title = &quot;0daa: 12H00 - 12H03&quot;)
 print(q)</code></pre>
 <p><img src="figure/2021-10-19-Test.Rmd/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" /></p>
@@ -1205,6 +1296,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/46895f3a27348b65c9949c068f3d943721463138/docs/figure/2021-10-19-Test.Rmd/unnamed-chunk-7-1.png" target="_blank">46895f3</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-19
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/d11081d16afa5dfb4ca11dac2989aa0fd1faf5de/docs/figure/2021-10-19-Test.Rmd/unnamed-chunk-7-1.png" target="_blank">d11081d</a>
@@ -1260,8 +1362,9 @@ cfcforever
   filter(H==12 &amp; M&gt;=04 &amp; M&lt;=07)
 
 q &lt;- p + 
-  geom_point(data = dat, aes(x=x-15,y=y-30), col = &quot;red&quot;, size=0.5) +
-  coord_fixed(ratio = 1, xlim = c(-35,10), ylim = c(-30,-10)) + 
+  geom_point(data = dat, aes(x=x,y=y), col = &quot;red&quot;, size=0.5) +
+  geom_point(data = coord1, aes(x=x,y=y), col = &quot;black&quot;, size=1) +
+  coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
   labs(x=&quot;&quot;, y=&quot;&quot;, title = &quot;0daa: 12H04 - 12H07&quot;)
 print(q)</code></pre>
 <p><img src="figure/2021-10-19-Test.Rmd/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto;" /></p>
@@ -1287,6 +1390,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/46895f3a27348b65c9949c068f3d943721463138/docs/figure/2021-10-19-Test.Rmd/unnamed-chunk-8-1.png" target="_blank">46895f3</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-19
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/d11081d16afa5dfb4ca11dac2989aa0fd1faf5de/docs/figure/2021-10-19-Test.Rmd/unnamed-chunk-8-1.png" target="_blank">d11081d</a>
