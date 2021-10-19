@@ -19,6 +19,14 @@ load("data/plan/plan_firminy.RData")
 ```{r}
 data = read.csv2("data/json/2021-10-19/0daa.csv")
 tag = "0daa"
+
+coord1 = as.data.frame(matrix(c(-7.811,-8.616,
+                                -5.811,-8.616,
+                                -3.811,-8.616,
+                                -1.811,-8.616,
+                                 0.189,-8.616,
+                                 2.189,-8.616), ncol = 2, byrow = T))
+colnames(coord1) = c("x", "y")
 ```
 
 # test 1
@@ -28,8 +36,9 @@ dat = data %>%
   filter(H==11 & M>=28 & M<=30)
 
 q <- p + 
-  geom_point(data = dat, aes(x=x-15,y=y-30), col = "red", size=0.5) +
-  coord_fixed(ratio = 1, xlim = c(-35,10), ylim = c(-50,-30)) + 
+  geom_point(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
+  geom_point(data = coord1, aes(x=x,y=y), col = "black", size=1) +
+  coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
   labs(x="", y="", title = "0daa: 11H28 - 11H30")
 print(q)
 ```
@@ -40,8 +49,9 @@ dat = data %>%
   filter(H==11 & M>=35 & M<=37)
 
 q <- p + 
-  geom_point(data = dat, aes(x=x-15,y=y-30), col = "red", size=0.5) +
-  coord_fixed(ratio = 1, xlim = c(-35,10), ylim = c(-50,-30)) + 
+  geom_point(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
+  geom_point(data = coord1, aes(x=x,y=y), col = "black", size=1) +
+  coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
   labs(x="", y="", title = "0daa: 11H35 - 11H37")
 print(q)
 ```
@@ -52,8 +62,9 @@ dat = data %>%
   filter(H==11 & M>=38 & M<=40)
 
 q <- p + 
-  geom_point(data = dat, aes(x=x-15,y=y-30), col = "red", size=0.5) +
-  coord_fixed(ratio = 1, xlim = c(-35,10), ylim = c(-50,-30)) + 
+  geom_point(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
+  geom_point(data = coord1, aes(x=x,y=y), col = "black", size=1) +
+  coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
   labs(x="", y="", title = "0daa: 11H38 - 11H40")
 print(q)
 ```
@@ -67,8 +78,9 @@ dat = data %>%
   filter(H==11 & M>=56 & M<=59)
 
 q <- p + 
-  geom_point(data = dat, aes(x=x-15,y=y-30), col = "red", size=0.5) +
-  coord_fixed(ratio = 1, xlim = c(-35,10), ylim = c(-30,-10)) + 
+  geom_point(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
+  geom_point(data = coord1, aes(x=x,y=y), col = "black", size=1) +
+  coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
   labs(x="", y="", title = "0daa: 11H56 - 11H59")
 print(q)
 ```
@@ -79,8 +91,9 @@ dat = data %>%
   filter(H==12 & M>=00 & M<=03)
 
 q <- p + 
-  geom_point(data = dat, aes(x=x-15,y=y-30), col = "red", size=0.5) +
-  coord_fixed(ratio = 1, xlim = c(-35,10), ylim = c(-30,-10)) + 
+  geom_point(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
+  geom_point(data = coord1, aes(x=x,y=y), col = "black", size=1) +
+  coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
   labs(x="", y="", title = "0daa: 12H00 - 12H03")
 print(q)
 ```
@@ -91,8 +104,9 @@ dat = data %>%
   filter(H==12 & M>=04 & M<=07)
 
 q <- p + 
-  geom_point(data = dat, aes(x=x-15,y=y-30), col = "red", size=0.5) +
-  coord_fixed(ratio = 1, xlim = c(-35,10), ylim = c(-30,-10)) + 
+  geom_point(data = dat, aes(x=x,y=y), col = "red", size=0.5) +
+  geom_point(data = coord1, aes(x=x,y=y), col = "black", size=1) +
+  coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-15,10)) + 
   labs(x="", y="", title = "0daa: 12H04 - 12H07")
 print(q)
 ```
