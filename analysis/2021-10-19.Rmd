@@ -169,17 +169,7 @@ dat = do.call(rbind.data.frame, list_tag)
 
 # plot {.tabset .tabset-pills}
 ```{r}
-plan <- read_excel("data/plan/Wall_lignes_firminy.xlsx")
-plan = as.data.frame(plan)
-plan$`Start X` <- as.numeric(plan$`Start X`)/100
-plan$`Start Y` <- as.numeric(plan$`Start Y`)/100
-plan$`End X` <- as.numeric(plan$`End X`)/100
-plan$`End Y` <- as.numeric(plan$`End Y`)/100
-colnames(plan) = c("Name", "Length", "Linetype Scale", "Angle", "Delta X",
-                   "Delta Y", "Delta Z", "EndX", "EndY", "EndZ", 
-                   "StartX", "StartY", "StartZ")
-p <- ggplot(plan) + theme_bw() + 
-  geom_segment(aes(x=StartX, y=StartY, xend=EndX, yend=EndY))
+load("data/plan/plan_firminy.RData")
 ```
 
 
