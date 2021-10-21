@@ -304,9 +304,9 @@ q <- p +
   coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-20,20)) + 
   labs(x="", y="", title = "0daa: 12H33 - 12H36 at 20 oct 2021")
 print(q)
-q <- q + transition_time(num) + labs(title = paste0("0daa: 12H33 - 12H36 at 20 oct 2021 - ", "{frame_time}/", length(steps)))
-animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T),
-        width = 1500, height = 1000, res = 150)
-anim_save("fig/0daa_20211020_1233_1236.gif")
+# q <- q + transition_time(num) + labs(title = paste0("0daa: 12H33 - 12H36 at 20 oct 2021 - ", "{frame_time}/", length(steps)))
+# animate(q, nframes = max(steps)-min(steps)+1, fps = 5, renderer = gifski_renderer(loop = T),
+#         width = 1500, height = 1000, res = 150)
+# anim_save("fig/0daa_20211020_1233_1236.gif")
 ```
 
