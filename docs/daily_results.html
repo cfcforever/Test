@@ -513,16 +513,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree87dcd2db34456adca102cc66cfc4cc6e1d554907targetblank87dcd2da"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/87dcd2db34456adca102cc66cfc4cc6e1d554907" target="_blank">87dcd2d</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree2da27332d41252aab63fde81f786e8e57a123716targetblank2da2733a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/2da27332d41252aab63fde81f786e8e57a123716" target="_blank">2da2733</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree87dcd2db34456adca102cc66cfc4cc6e1d554907targetblank87dcd2da" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree2da27332d41252aab63fde81f786e8e57a123716targetblank2da2733a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/87dcd2db34456adca102cc66cfc4cc6e1d554907" target="_blank">87dcd2d</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/2da27332d41252aab63fde81f786e8e57a123716" target="_blank">2da2733</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -582,6 +582,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/2da27332d41252aab63fde81f786e8e57a123716/analysis/daily_results.Rmd" target="_blank">2da2733</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-24
+</td>
+<td>
+some changes
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cfcforever/Test/70fa4ffcf403348995516be84769b525da704188/docs/daily_results.html" target="_blank">70fa4ff</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-24
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1691,15 +1725,12 @@ datatable(m, escape = FALSE, options = list(pageLength = 5))</code></pre>
 </div>
 <div id="tests" class="section level1">
 <h1>Tests</h1>
-<pre class="r"><code>m = matrix(c(&quot;2021-10-10&quot;, &quot;Ludovic, Germain&quot;, paste0(&#39;&lt;a href=&quot;https://cfcforever.github.io/Test/2021-10-19-Test.html&quot;&gt;&#39;, days, &#39;&lt;/a&gt;&#39;)), ncol = 3, byrow = T)</code></pre>
-<pre><code>Warning in matrix(c(&quot;2021-10-10&quot;, &quot;Ludovic, Germain&quot;, paste0(&quot;&lt;a href=\&quot;https://
-cfcforever.github.io/Test/2021-10-19-Test.html\&quot;&gt;&quot;, : la longueur des données
-[31] n&#39;est pas un diviseur ni un multiple du nombre de lignes [11]</code></pre>
-<pre class="r"><code>colnames(m) = c(&#39;&lt;b&gt;Date&lt;/b&gt;&#39;, &#39;&lt;b&gt;by&lt;/b&gt;&#39;, &#39;&lt;b&gt;Report link&lt;/b&gt;&#39;)
+<pre class="r"><code>m = matrix(c(&quot;2021-10-19&quot;, &quot;Ludovic, Germain&quot;, paste0(&#39;&lt;a href=&quot;https://cfcforever.github.io/Test/2021-10-19-Test.html&quot;&gt;&#39;, &#39;2021-10-19-Test&#39;, &#39;&lt;/a&gt;&#39;)), ncol = 3, byrow = T)
+colnames(m) = c(&#39;&lt;b&gt;Date&lt;/b&gt;&#39;, &#39;&lt;b&gt;by&lt;/b&gt;&#39;, &#39;&lt;b&gt;Report link&lt;/b&gt;&#39;)
 
 datatable(m, escape = FALSE, options = list(pageLength = 5))</code></pre>
 <p><div id="htmlwidget-759b57de01672425ed13" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-759b57de01672425ed13">{"x":{"filter":"none","data":[["2021-10-10","<a href=\"https://cfcforever.github.io/Test/2021-10-19-Test.html\">2021-10-22<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-10-19-Test.html\">2021-10-19<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-10-19-Test.html\">2021-10-16<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-10-19-Test.html\">2021-10-13<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-10-19-Test.html\">2021-10-10<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-10-19-Test.html\">2021-10-07<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-10-19-Test.html\">2021-10-04<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-10-19-Test.html\">2021-10-01<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-10-19-Test.html\">2021-09-28<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-10-19-Test.html\">2021-09-25<\/a>"],["Ludovic, Germain","<a href=\"https://cfcforever.github.io/Test/2021-10-19-Test.html\">2021-10-21<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-10-19-Test.html\">2021-10-18<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-10-19-Test.html\">2021-10-15<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-10-19-Test.html\">2021-10-12<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-10-19-Test.html\">2021-10-09<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-10-19-Test.html\">2021-10-06<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-10-19-Test.html\">2021-10-03<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-10-19-Test.html\">2021-09-30<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-10-19-Test.html\">2021-09-27<\/a>","2021-10-10"],["<a href=\"https://cfcforever.github.io/Test/2021-10-19-Test.html\">2021-10-23<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-10-19-Test.html\">2021-10-20<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-10-19-Test.html\">2021-10-17<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-10-19-Test.html\">2021-10-14<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-10-19-Test.html\">2021-10-11<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-10-19-Test.html\">2021-10-08<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-10-19-Test.html\">2021-10-05<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-10-19-Test.html\">2021-10-02<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-10-19-Test.html\">2021-09-29<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-10-19-Test.html\">2021-09-26<\/a>","Ludovic, Germain"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th><b>Date<\/b><\/th>\n      <th><b>by<\/b><\/th>\n      <th><b>Report link<\/b><\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script> ## 2021-10-19 The test is made by Ludo and Germain.</p>
+<script type="application/json" data-for="htmlwidget-759b57de01672425ed13">{"x":{"filter":"none","data":[["2021-10-19"],["Ludovic, Germain"],["<a href=\"https://cfcforever.github.io/Test/2021-10-19-Test.html\">2021-10-19-Test<\/a>"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th><b>Date<\/b><\/th>\n      <th><b>by<\/b><\/th>\n      <th><b>Report link<\/b><\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script> ## 2021-10-19 The test is made by Ludo and Germain.</p>
 <p><a href="https://cfcforever.github.io/Test/2021-10-19-Test.html">2021-10-19-Test</a></p>
 </div>
 <div id="individual-cases" class="section level1">
