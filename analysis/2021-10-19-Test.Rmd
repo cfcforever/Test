@@ -343,7 +343,7 @@ q
 
 
 ## 20211022: 12H46 - 13H02
-```{r}
+```{r fig.width=7, fig.height=9}
 json_data = fromJSON(file = paste0("data/json/2021-10-22/ancre_to_tag.json"))
 
 dat <- data.frame(tag = unlist(lapply(json_data, function(x){x["tag_id"][[1]]})),
@@ -371,7 +371,7 @@ q
 
 
 ## 20211022: 14H28 - 15H11
-```{r}
+```{r fig.width=7, fig.height=9}
 json_data = fromJSON(file = paste0("data/json/2021-10-22/ancre_to_tag2.json"))
 
 dat <- data.frame(tag = unlist(lapply(json_data, function(x){x["tag_id"][[1]]})),
