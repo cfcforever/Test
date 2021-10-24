@@ -310,3 +310,89 @@ print(q)
 # anim_save("fig/0daa_20211020_1233_1236.gif")
 ```
 
+
+# test ancre_tag_ancre
+## 20211020: 14H19 - 14H35
+```{r}
+json_data = fromJSON(file = paste0("data/json/2021-10-20/1400.json"))
+
+dat <- data.frame(tag = unlist(lapply(json_data, function(x){x["tag_id"][[1]]})),
+                  x = unlist(lapply(json_data, function(x){x["x"][[1]]})),
+                  y = unlist(lapply(json_data, function(x){x["y"][[1]]})),
+                  record_timestamp = unlist(lapply(json_data, function(x){x["record_timestamp"][[1]]})))
+dat = dat[order(dat$record_timestamp),]
+dat = cbind.data.frame(dat, convert_date(dat$record_timestamp))
+dat$x = as.numeric(dat$x)
+dat$y = as.numeric(dat$y)
+
+names_tag <- read.table(file = "data/tag_names_20210924.txt", header = T, sep = "\t")
+
+dat = dat[which(!dat$tag %in% names_tag$id), ]
+dat = dat %>%
+  filter(H==14 & M>=19 & M<=35)
+
+dat$x = dat$x/100
+dat$y = dat$y/100
+
+q <- p +
+  geom_point(data = dat, aes(x=x, y=y, col=tag), size = 0.5) +
+  coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-40,40)) +
+  labs(x="", y="", title = "20211020: 14H19 - 14H35")
+q
+```
+
+
+## 20211022: 12H46 - 13H02
+```{r}
+json_data = fromJSON(file = paste0("data/json/2021-10-22/ancre_to_tag.json"))
+
+dat <- data.frame(tag = unlist(lapply(json_data, function(x){x["tag_id"][[1]]})),
+                  x = unlist(lapply(json_data, function(x){x["x"][[1]]})),
+                  y = unlist(lapply(json_data, function(x){x["y"][[1]]})),
+                  record_timestamp = unlist(lapply(json_data, function(x){x["record_timestamp"][[1]]})))
+dat = dat[order(dat$record_timestamp),]
+dat = cbind.data.frame(dat, convert_date(dat$record_timestamp))
+dat$x = as.numeric(dat$x)
+dat$y = as.numeric(dat$y)
+
+names_tag <- read.table(file = "data/tag_names_20210924.txt", header = T, sep = "\t")
+
+dat = dat[which(!dat$tag %in% names_tag$id), ]
+
+dat$x = dat$x/100
+dat$y = dat$y/100
+
+q <- p +
+  geom_point(data = dat, aes(x=x, y=y, col=tag), size = 0.5) +
+  coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-40,40)) +
+  labs(x="", y="", title = "20211022: 12H46 - 13H02")
+q
+```
+
+
+## 20211022: 14H28 - 15H11
+```{r}
+json_data = fromJSON(file = paste0("data/json/2021-10-22/ancre_to_tag2.json"))
+
+dat <- data.frame(tag = unlist(lapply(json_data, function(x){x["tag_id"][[1]]})),
+                  x = unlist(lapply(json_data, function(x){x["x"][[1]]})),
+                  y = unlist(lapply(json_data, function(x){x["y"][[1]]})),
+                  record_timestamp = unlist(lapply(json_data, function(x){x["record_timestamp"][[1]]})))
+dat = dat[order(dat$record_timestamp),]
+dat = cbind.data.frame(dat, convert_date(dat$record_timestamp))
+dat$x = as.numeric(dat$x)
+dat$y = as.numeric(dat$y)
+
+names_tag <- read.table(file = "data/tag_names_20210924.txt", header = T, sep = "\t")
+
+dat = dat[which(!dat$tag %in% names_tag$id), ]
+
+dat$x = dat$x/100
+dat$y = dat$y/100
+
+q <- p +
+  geom_point(data = dat, aes(x=x, y=y, col=tag), size = 0.5) +
+  coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-40,40)) +
+  labs(x="", y="", title = "20211022: 14H28 - 15H11")
+q
+```
