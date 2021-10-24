@@ -336,7 +336,7 @@ dat$y = dat$y/100
 
 q <- p +
   geom_point(data = dat, aes(x=x, y=y, col=tag), size = 0.5) +
-  coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-40,40)) +
+  coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-35,35)) +
   labs(x="", y="", title = "20211020: 14H19 - 14H35")
 q
 ```
@@ -364,7 +364,7 @@ dat$y = dat$y/100
 
 q <- p +
   geom_point(data = dat, aes(x=x, y=y, col=tag), size = 0.5) +
-  coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-40,40)) +
+  coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-35,35)) +
   labs(x="", y="", title = "20211022: 12H46 - 13H02")
 q
 ```
@@ -392,7 +392,7 @@ dat$y = dat$y/100
 
 q <- p +
   geom_point(data = dat, aes(x=x, y=y, col=tag), size = 0.5) +
-  coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-40,40)) +
+  coord_fixed(ratio = 1, xlim = c(-20,20), ylim = c(-35,35)) +
   labs(x="", y="", title = "20211022: 14H28 - 15H11")
 q
 ```
