@@ -22,7 +22,7 @@ parcours <- function(tagId, day, start_time, end_time){
   library(dplyr)
   library(ggplot2)
   
-  load("data/plan/plan_firminy.RData")
+  load("data/plan/plan_firminy_old.RData")
   
   tag_data <- read.csv2(paste0("data/json/", day, "/", tagId, ".csv"))
   t1 = head(which(paste0(sprintf("%02d", tag_data$H), sprintf("%02d", tag_data$M))==start_time), 1)
