@@ -26,6 +26,12 @@ datatable(m, escape = FALSE, options = list(pageLength = 5))
 
 
 # Tests
+```{r}
+m = matrix(c("2021-10-10", "Ludovic, Germain", paste0('<a href="https://cfcforever.github.io/Test/', days, '.html">', days, '</a>')), ncol = 3, byrow = T)
+colnames(m) = c('<b>Date</b>', '<b>by</b>', '<b>Report link</b>')
+
+datatable(m, escape = FALSE, options = list(pageLength = 5))
+```
 ## 2021-10-19
 The test is made by Ludo and Germain.
 
