@@ -32,10 +32,6 @@ colnames(m) = c('<b>Date</b>', '<b>by</b>', '<b>Report link</b>')
 
 datatable(m, escape = FALSE, options = list(pageLength = 5))
 ```
-## 2021-10-19
-The test is made by Ludo and Germain.
-
-[2021-10-19-Test](https://cfcforever.github.io/Test/2021-10-19-Test.html)
 
 
 # Individual cases
