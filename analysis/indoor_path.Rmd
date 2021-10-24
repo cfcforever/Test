@@ -4,6 +4,7 @@ title: "Indoor path"
 # date: ""
 output: 
   workflowr::wflow_html:
+    toc: false
     code_folding: hide
 editor_options:
   chunk_output_type: console
