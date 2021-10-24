@@ -313,7 +313,7 @@ print(q)
 
 # test ancre_tag_ancre
 ## 20211020: 14H19 - 14H35
-```{r}
+```{r fig.width=9, fig.height=12}
 json_data = fromJSON(file = paste0("data/json/2021-10-20/1400.json"))
 
 dat <- data.frame(tag = unlist(lapply(json_data, function(x){x["tag_id"][[1]]})),
