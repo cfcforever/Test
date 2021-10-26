@@ -194,5 +194,18 @@ for (k in 1:nb_tag){
 ```
 
 
-
+```{r results='asis'}
+for (k in 1:nb_tag){
+  tag = names_tag$id[k]
+  label = names_tag$label[k]
+  cat("\n")
+  cat("## ", label, "\n")
+  cat("\n")
+  for (hour in sprintf("%02d", 0:23)){
+    cat("\n")
+    cat("### ", hour, "\n")
+  }
+  cat("\n")
+}
+```
 
