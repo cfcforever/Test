@@ -37,6 +37,7 @@
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
@@ -506,16 +507,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreef65ca58e4e1a7a537aafd774ae9906c9a42ac47atargetblankf65ca58a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/f65ca58e4e1a7a537aafd774ae9906c9a42ac47a" target="_blank">f65ca58</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree53e0f25245c49a1dca9e76cc6f69ff7419d36a9etargetblank53e0f25a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/53e0f25245c49a1dca9e76cc6f69ff7419d36a9e" target="_blank">53e0f25</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreef65ca58e4e1a7a537aafd774ae9906c9a42ac47atargetblankf65ca58a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree53e0f25245c49a1dca9e76cc6f69ff7419d36a9etargetblank53e0f25a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/f65ca58e4e1a7a537aafd774ae9906c9a42ac47a" target="_blank">f65ca58</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/53e0f25245c49a1dca9e76cc6f69ff7419d36a9e" target="_blank">53e0f25</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -525,15 +526,13 @@ Ignored files:
     Ignored:    .DS_Store
     Ignored:    .Rhistory
     Ignored:    .Rproj.user/
-    Ignored:    analysis/.DS_Store
+    Ignored:    analysis/figure/
     Ignored:    data/.DS_Store
     Ignored:    data/Stabiliseur/
     Ignored:    data/json/
     Ignored:    data/plan/
+    Ignored:    figure/
     Ignored:    workflowr.R
-
-Untracked files:
-    Untracked:  figure/
 
 </code></pre>
 <p>
@@ -577,6 +576,40 @@ Message
 Rmd
 </td>
 <td>
+<a href="https://github.com/cfcforever/Test/blob/53e0f25245c49a1dca9e76cc6f69ff7419d36a9e/analysis/2021-10-26.Rmd" target="_blank">53e0f25</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-27
+</td>
+<td>
+some changes
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cfcforever/Test/27bc534876d5e352329ad91ecc88af3e09443994/docs/2021-10-26.html" target="_blank">27bc534</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-27
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
 <a href="https://github.com/cfcforever/Test/blob/f65ca58e4e1a7a537aafd774ae9906c9a42ac47a/analysis/2021-10-26.Rmd" target="_blank">f65ca58</a>
 </td>
 <td>
@@ -603,17 +636,17 @@ cat(&quot;data on:&quot;, today, &quot;\n&quot;)</code></pre>
 <pre><code>data on: 2021-10-26 </code></pre>
 <pre class="r"><code>json_data = fromJSON(file = paste0(&quot;data/json/&quot;, today, &quot;/position.json&quot;))
 cat(&quot;Total collected positions: &quot;, length(json_data), &quot;\n&quot;)</code></pre>
-<pre><code>Total collected positions:  18489 </code></pre>
+<pre><code>Total collected positions:  3552429 </code></pre>
 <pre class="r"><code>tagId_seq = unlist(lapply(json_data, function(x){x[&quot;tag_id&quot;][[1]]}))
 tagId = unique(tagId_seq)
 nb_tag = length(tagId)
 
 cat(nb_tag, &quot;Tags are: &quot;, tagId, &quot;\n&quot;)</code></pre>
-<pre><code>8 Tags are:  0da6 2c57 2e55 28d2 2a51 0d82 19ab 0baf </code></pre>
+<pre><code>10 Tags are:  2c57 0d82 2a51 19ab 28d2 2e55 0da6 2b9c 0baf 2e8d </code></pre>
 <pre class="r"><code>table(tagId_seq)</code></pre>
 <pre><code>tagId_seq
-0baf 0d82 0da6 19ab 28d2 2a51 2c57 2e55 
-2912  229 2977 2952 3000 2962 2709  748 </code></pre>
+  0baf   0d82   0da6   19ab   28d2   2a51   2b9c   2c57   2e55   2e8d 
+427773 411025 408021 427601 412054 406526 195021 408172 409938  46298 </code></pre>
 </div>
 <div id="general-analysis" class="section level1">
 <h1>general analysis</h1>
@@ -705,16 +738,16 @@ BLA
 2021-10-26 00:00:00
 </td>
 <td style="text-align:left;">
-2021-10-26 00:09:59
+2021-10-26 23:59:59
 </td>
 <td style="text-align:right;">
-2962
+406526
 </td>
 <td style="text-align:right;">
-2616
+56881
 </td>
 <td style="text-align:right;">
-0.12
+0.86
 </td>
 </tr>
 <tr>
@@ -728,16 +761,39 @@ BRA1
 2021-10-26 00:00:00
 </td>
 <td style="text-align:left;">
-2021-10-26 00:09:59
+2021-10-26 23:59:59
 </td>
 <td style="text-align:right;">
-2977
+408021
 </td>
 <td style="text-align:right;">
-39
+1303
 </td>
 <td style="text-align:right;">
-0.99
+1.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2b9c
+</td>
+<td style="text-align:left;">
+BRP2
+</td>
+<td style="text-align:left;">
+2021-10-26 13:08:30
+</td>
+<td style="text-align:left;">
+2021-10-26 23:59:59
+</td>
+<td style="text-align:right;">
+195021
+</td>
+<td style="text-align:right;">
+226
+</td>
+<td style="text-align:right;">
+1.00
 </td>
 </tr>
 <tr>
@@ -751,16 +807,16 @@ CDS1
 2021-10-26 00:02:34
 </td>
 <td style="text-align:left;">
-2021-10-26 00:09:59
+2021-10-26 23:59:59
 </td>
 <td style="text-align:right;">
-229
+411025
 </td>
 <td style="text-align:right;">
-1
+80820
 </td>
 <td style="text-align:right;">
-1.00
+0.80
 </td>
 </tr>
 <tr>
@@ -774,16 +830,39 @@ DYN1
 2021-10-26 00:00:00
 </td>
 <td style="text-align:left;">
-2021-10-26 00:09:59
+2021-10-26 23:59:59
 </td>
 <td style="text-align:right;">
-2709
+408172
 </td>
 <td style="text-align:right;">
-2029
+41349
 </td>
 <td style="text-align:right;">
-0.25
+0.90
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2e8d
+</td>
+<td style="text-align:left;">
+DYN3
+</td>
+<td style="text-align:left;">
+2021-10-26 07:54:02
+</td>
+<td style="text-align:left;">
+2021-10-26 23:50:37
+</td>
+<td style="text-align:right;">
+46298
+</td>
+<td style="text-align:right;">
+1854
+</td>
+<td style="text-align:right;">
+0.96
 </td>
 </tr>
 <tr>
@@ -797,16 +876,16 @@ ELC
 2021-10-26 00:00:00
 </td>
 <td style="text-align:left;">
-2021-10-26 00:09:52
+2021-10-26 23:59:53
 </td>
 <td style="text-align:right;">
-2912
+427773
 </td>
 <td style="text-align:right;">
-1513
+62391
 </td>
 <td style="text-align:right;">
-0.48
+0.85
 </td>
 </tr>
 <tr>
@@ -820,16 +899,16 @@ FIX
 2021-10-26 00:00:00
 </td>
 <td style="text-align:left;">
-2021-10-26 00:09:59
+2021-10-26 23:59:59
 </td>
 <td style="text-align:right;">
-2952
+427601
 </td>
 <td style="text-align:right;">
-2952
+78969
 </td>
 <td style="text-align:right;">
-0.00
+0.82
 </td>
 </tr>
 <tr>
@@ -843,16 +922,16 @@ ORD
 2021-10-26 00:00:00
 </td>
 <td style="text-align:left;">
-2021-10-26 00:09:59
+2021-10-26 23:59:59
 </td>
 <td style="text-align:right;">
-3000
+412054
 </td>
 <td style="text-align:right;">
-2319
+55285
 </td>
 <td style="text-align:right;">
-0.23
+0.87
 </td>
 </tr>
 <tr>
@@ -866,16 +945,16 @@ SCO
 2021-10-26 00:01:05
 </td>
 <td style="text-align:left;">
-2021-10-26 00:09:59
+2021-10-26 23:59:59
 </td>
 <td style="text-align:right;">
-748
+409938
 </td>
 <td style="text-align:right;">
-4
+76851
 </td>
 <td style="text-align:right;">
-0.99
+0.81
 </td>
 </tr>
 </tbody>
@@ -946,7 +1025,7 @@ label
 BLA
 </td>
 <td style="text-align:right;">
-0.148
+0.000
 </td>
 <td style="text-align:right;">
 0.199
@@ -955,9 +1034,6 @@ BLA
 0.199
 </td>
 <td style="text-align:right;">
-0.200
-</td>
-<td style="text-align:right;">
 0.2
 </td>
 <td style="text-align:right;">
@@ -967,16 +1043,19 @@ BLA
 0.2
 </td>
 <td style="text-align:right;">
-0.200
+0.2
+</td>
+<td style="text-align:right;">
+0.2
 </td>
 <td style="text-align:right;">
 0.201
 </td>
 <td style="text-align:right;">
-0.202
+0.201
 </td>
 <td style="text-align:right;">
-5.704
+1563.498
 </td>
 </tr>
 <tr>
@@ -990,10 +1069,7 @@ BRA1
 0.000
 </td>
 <td style="text-align:right;">
-0.199
-</td>
-<td style="text-align:right;">
-0.199
+0.198
 </td>
 <td style="text-align:right;">
 0.199
@@ -1008,7 +1084,10 @@ BRA1
 0.2
 </td>
 <td style="text-align:right;">
-0.200
+0.2
+</td>
+<td style="text-align:right;">
+0.2
 </td>
 <td style="text-align:right;">
 0.201
@@ -1017,7 +1096,48 @@ BRA1
 0.202
 </td>
 <td style="text-align:right;">
-1.000
+1488.602
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2b9c
+</td>
+<td style="text-align:left;">
+BRP2
+</td>
+<td style="text-align:right;">
+0.001
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+10.801
 </td>
 </tr>
 <tr>
@@ -1028,16 +1148,13 @@ BRA1
 CDS1
 </td>
 <td style="text-align:right;">
-0.151
+0.000
 </td>
 <td style="text-align:right;">
 0.199
 </td>
 <td style="text-align:right;">
-0.200
-</td>
-<td style="text-align:right;">
-0.200
+0.199
 </td>
 <td style="text-align:right;">
 0.2
@@ -1049,13 +1166,16 @@ CDS1
 0.2
 </td>
 <td style="text-align:right;">
-0.200
+0.2
+</td>
+<td style="text-align:right;">
+0.2
 </td>
 <td style="text-align:right;">
 0.201
 </td>
 <td style="text-align:right;">
-0.294
+0.201
 </td>
 <td style="text-align:right;">
 368.000
@@ -1069,7 +1189,7 @@ CDS1
 DYN1
 </td>
 <td style="text-align:right;">
-0.147
+0.000
 </td>
 <td style="text-align:right;">
 0.199
@@ -1078,7 +1198,10 @@ DYN1
 0.199
 </td>
 <td style="text-align:right;">
-0.199
+0.2
+</td>
+<td style="text-align:right;">
+0.2
 </td>
 <td style="text-align:right;">
 0.2
@@ -1096,10 +1219,48 @@ DYN1
 0.201
 </td>
 <td style="text-align:right;">
-0.203
+333.005
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2e8d
+</td>
+<td style="text-align:left;">
+DYN3
 </td>
 <td style="text-align:right;">
-2.603
+0.001
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+4230.298
 </td>
 </tr>
 <tr>
@@ -1110,18 +1271,15 @@ DYN1
 ELC
 </td>
 <td style="text-align:right;">
-0.182
+0.000
+</td>
+<td style="text-align:right;">
+0.198
 </td>
 <td style="text-align:right;">
 0.199
 </td>
 <td style="text-align:right;">
-0.200
-</td>
-<td style="text-align:right;">
-0.200
-</td>
-<td style="text-align:right;">
 0.2
 </td>
 <td style="text-align:right;">
@@ -1131,16 +1289,19 @@ ELC
 0.2
 </td>
 <td style="text-align:right;">
-0.200
+0.2
 </td>
 <td style="text-align:right;">
-0.200
+0.2
 </td>
 <td style="text-align:right;">
 0.201
 </td>
 <td style="text-align:right;">
-7.400
+0.202
+</td>
+<td style="text-align:right;">
+35.801
 </td>
 </tr>
 <tr>
@@ -1160,9 +1321,6 @@ FIX
 0.199
 </td>
 <td style="text-align:right;">
-0.200
-</td>
-<td style="text-align:right;">
 0.2
 </td>
 <td style="text-align:right;">
@@ -1172,7 +1330,10 @@ FIX
 0.2
 </td>
 <td style="text-align:right;">
-0.200
+0.2
+</td>
+<td style="text-align:right;">
+0.2
 </td>
 <td style="text-align:right;">
 0.201
@@ -1181,7 +1342,7 @@ FIX
 0.201
 </td>
 <td style="text-align:right;">
-4.796
+36.001
 </td>
 </tr>
 <tr>
@@ -1192,10 +1353,7 @@ FIX
 ORD
 </td>
 <td style="text-align:right;">
-0.147
-</td>
-<td style="text-align:right;">
-0.198
+0.000
 </td>
 <td style="text-align:right;">
 0.199
@@ -1213,16 +1371,19 @@ ORD
 0.2
 </td>
 <td style="text-align:right;">
-0.201
+0.2
+</td>
+<td style="text-align:right;">
+0.2
 </td>
 <td style="text-align:right;">
 0.201
 </td>
 <td style="text-align:right;">
-0.202
+0.201
 </td>
 <td style="text-align:right;">
-0.393
+340.200
 </td>
 </tr>
 <tr>
@@ -1233,10 +1394,7 @@ ORD
 SCO
 </td>
 <td style="text-align:right;">
-0.151
-</td>
-<td style="text-align:right;">
-0.198
+0.000
 </td>
 <td style="text-align:right;">
 0.199
@@ -1254,16 +1412,19 @@ SCO
 0.2
 </td>
 <td style="text-align:right;">
-0.201
+0.2
+</td>
+<td style="text-align:right;">
+0.2
 </td>
 <td style="text-align:right;">
 0.201
 </td>
 <td style="text-align:right;">
-0.202
+0.201
 </td>
 <td style="text-align:right;">
-309.195
+333.201
 </td>
 </tr>
 </tbody>
@@ -1281,6 +1442,43 @@ p &lt;- ggplot(dat) + theme_bw() +
   labs(x = &quot;hour&quot;, y = &quot;&quot;, title = today)
 print(p)</code></pre>
 <p><img src="figure/2021-10-26.Rmd/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-6-1">
+Past versions of unnamed-chunk-6-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-6-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/27bc534876d5e352329ad91ecc88af3e09443994/docs/figure/2021-10-26.Rmd/unnamed-chunk-6-1.png" target="_blank">27bc534</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-27
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="plot-without-nas" class="section level3">
 <h3>plot without NAs</h3>
@@ -1290,7 +1488,7 @@ cat(&quot;if x_na = y_na:&quot;, identical(x_na, y_na), &quot;\n&quot;)</code></
 <pre><code>if x_na = y_na: TRUE </code></pre>
 <pre class="r"><code>cat(&quot;number of NA positions:&quot;, length(x_na), &quot;/&quot;, length(tagId_seq), &quot;(=&quot;, 
     length(x_na)/length(tagId_seq)*100, &quot;%)&quot;, &quot;\n&quot;)</code></pre>
-<pre><code>number of NA positions: 11473 / 18489 (= 62.05311 %) </code></pre>
+<pre><code>number of NA positions: 455929 / 3552429 (= 12.83429 %) </code></pre>
 <pre class="r"><code>if (length(x_na)!=0){
   dat = dat[-x_na,]
 }</code></pre>
@@ -1305,6 +1503,43 @@ p &lt;- ggplot(dat) + theme_bw() +
   labs(x = &quot;hour&quot;, y = &quot;&quot;, title = today)
 print(p)</code></pre>
 <p><img src="figure/2021-10-26.Rmd/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-8-1">
+Past versions of unnamed-chunk-8-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-8-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/27bc534876d5e352329ad91ecc88af3e09443994/docs/figure/2021-10-26.Rmd/unnamed-chunk-8-1.png" target="_blank">27bc534</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-27
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code>list_tag &lt;- split(dat, dat$tag)
 
 for (tag in names(list_tag)){
@@ -1345,34 +1580,1223 @@ dat = do.call(rbind.data.frame, list_tag)</code></pre>
 <div id="bla" class="section level2">
 <h2>BLA</h2>
 <p><img src="figure/2021-10-26.Rmd/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-11-1">
+Past versions of unnamed-chunk-11-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-11-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/27bc534876d5e352329ad91ecc88af3e09443994/docs/figure/2021-10-26.Rmd/unnamed-chunk-11-1.png" target="_blank">27bc534</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-27
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="bra1" class="section level2">
 <h2>BRA1</h2>
 <p><img src="figure/2021-10-26.Rmd/unnamed-chunk-11-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-11-2">
+Past versions of unnamed-chunk-11-2.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-11-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/27bc534876d5e352329ad91ecc88af3e09443994/docs/figure/2021-10-26.Rmd/unnamed-chunk-11-2.png" target="_blank">27bc534</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-27
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="brp2" class="section level2">
+<h2>BRP2</h2>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-11-3.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-11-3">
+Past versions of unnamed-chunk-11-3.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-11-3" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/27bc534876d5e352329ad91ecc88af3e09443994/docs/figure/2021-10-26.Rmd/unnamed-chunk-11-3.png" target="_blank">27bc534</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-27
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="cds1" class="section level2">
 <h2>CDS1</h2>
-<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-11-3.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-11-4.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-11-4">
+Past versions of unnamed-chunk-11-4.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-11-4" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/27bc534876d5e352329ad91ecc88af3e09443994/docs/figure/2021-10-26.Rmd/unnamed-chunk-11-4.png" target="_blank">27bc534</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-27
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="dyn1" class="section level2">
 <h2>DYN1</h2>
-<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-11-4.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-11-5.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-11-5">
+Past versions of unnamed-chunk-11-5.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-11-5" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/27bc534876d5e352329ad91ecc88af3e09443994/docs/figure/2021-10-26.Rmd/unnamed-chunk-11-5.png" target="_blank">27bc534</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-27
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="dyn3" class="section level2">
+<h2>DYN3</h2>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-11-6.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-11-6">
+Past versions of unnamed-chunk-11-6.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-11-6" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/27bc534876d5e352329ad91ecc88af3e09443994/docs/figure/2021-10-26.Rmd/unnamed-chunk-11-6.png" target="_blank">27bc534</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-27
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="elc" class="section level2">
 <h2>ELC</h2>
-<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-11-5.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-11-7.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-11-7">
+Past versions of unnamed-chunk-11-7.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-11-7" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/27bc534876d5e352329ad91ecc88af3e09443994/docs/figure/2021-10-26.Rmd/unnamed-chunk-11-7.png" target="_blank">27bc534</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-27
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="fix" class="section level2">
 <h2>FIX</h2>
-<p>NO DATA for plot!!</p>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-11-8.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="ord" class="section level2">
 <h2>ORD</h2>
-<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-11-6.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-11-9.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="sco" class="section level2">
 <h2>SCO</h2>
-<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-11-7.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-11-10.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="plot-by-hour" class="section level1 tabset tabset-pills">
+<h1 class="tabset tabset-pills">plot by hour</h1>
+<pre class="r"><code>for (k in c(1:2,4:10)){
+  tag = names_tag$id[k]
+  label = names_tag$label[k]
+  cat(&quot;\n&quot;)
+  cat(&quot;## &quot;, label, &quot; {.tabset .tabset-pills}&quot;, &quot;\n&quot;)
+  temp1 = read.csv2(paste0(&quot;data/json/2021-10-23/&quot;, tag, &quot;.csv&quot;))
+  temp2 = read.csv2(paste0(&quot;data/json/2021-10-24/&quot;, tag, &quot;.csv&quot;))
+  temp3 = read.csv2(paste0(&quot;data/json/2021-10-25/&quot;, tag, &quot;.csv&quot;))
+  temp4 = read.csv2(paste0(&quot;data/json/2021-10-26/&quot;, tag, &quot;.csv&quot;))
+  temp_tag = do.call(rbind.data.frame, list(temp1,temp2,temp3,temp4))
+  temp_tag$date = as.Date(temp_tag$date, format = &quot;%Y-%m-%d&quot;)
+  for (hour in sprintf(&quot;%02d&quot;, 0:23)){
+    cat(&quot;\n&quot;)
+    cat(&quot;### &quot;, hour, &quot;\n&quot;)
+    temp_tag_hour = temp_tag %&gt;%
+      filter(H==as.numeric(hour))
+    if (nrow(temp_tag_hour)!=0){
+      q &lt;- p + 
+        geom_point(data = temp_tag_hour, aes(x=x, y=y), col = &quot;red&quot;) +
+        coord_equal(ratio = 1, xlim = c(-20,20), ylim = c(-30,30)) + 
+        facet_wrap(~date) +
+        labs(x = &quot;&quot;, y = &quot;&quot;)
+      print(q)
+      # ggsave(paste0(&quot;figure/0da6_2021_09_&quot;, day, &quot;_&quot;, hour, &quot;.png&quot;), width = 5, height = 9)
+    }
+    cat(&quot;\n&quot;)
+  }
+  cat(&quot;\n&quot;)
+}</code></pre>
+<div id="bla-1" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">BLA</h2>
+<div id="section" class="section level3">
+<h3>00</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-1" class="section level3">
+<h3>01</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-2.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-2" class="section level3">
+<h3>02</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-3.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-3" class="section level3">
+<h3>03</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-4.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-4" class="section level3">
+<h3>04</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-5.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-5" class="section level3">
+<h3>05</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-6.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-6" class="section level3">
+<h3>06</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-7.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-7" class="section level3">
+<h3>07</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-8.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-8" class="section level3">
+<h3>08</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-9.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-9" class="section level3">
+<h3>09</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-10.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-10" class="section level3">
+<h3>10</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-11.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-11" class="section level3">
+<h3>11</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-12.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-12" class="section level3">
+<h3>12</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-13.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-13" class="section level3">
+<h3>13</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-14.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-14" class="section level3">
+<h3>14</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-15.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-15" class="section level3">
+<h3>15</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-16.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-16" class="section level3">
+<h3>16</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-17.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-17" class="section level3">
+<h3>17</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-18.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-18" class="section level3">
+<h3>18</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-19.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-19" class="section level3">
+<h3>19</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-20.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-20" class="section level3">
+<h3>20</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-21.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-21" class="section level3">
+<h3>21</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-22.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-22" class="section level3">
+<h3>22</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-23.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-23" class="section level3">
+<h3>23</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-24.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="bra1-1" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">BRA1</h2>
+<div id="section-24" class="section level3">
+<h3>00</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-25.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-25" class="section level3">
+<h3>01</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-26.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-26" class="section level3">
+<h3>02</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-27.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-27" class="section level3">
+<h3>03</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-28.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-28" class="section level3">
+<h3>04</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-29.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-29" class="section level3">
+<h3>05</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-30.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-30" class="section level3">
+<h3>06</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-31.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-31" class="section level3">
+<h3>07</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-32.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-32" class="section level3">
+<h3>08</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-33.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-33" class="section level3">
+<h3>09</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-34.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-34" class="section level3">
+<h3>10</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-35.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-35" class="section level3">
+<h3>11</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-36.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-36" class="section level3">
+<h3>12</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-37.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-37" class="section level3">
+<h3>13</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-38.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-38" class="section level3">
+<h3>14</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-39.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-39" class="section level3">
+<h3>15</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-40.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-40" class="section level3">
+<h3>16</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-41.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-41" class="section level3">
+<h3>17</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-42.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-42" class="section level3">
+<h3>18</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-43.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-43" class="section level3">
+<h3>19</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-44.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-44" class="section level3">
+<h3>20</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-45.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-45" class="section level3">
+<h3>21</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-46.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-46" class="section level3">
+<h3>22</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-47.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-47" class="section level3">
+<h3>23</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-48.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="cds1-1" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">CDS1</h2>
+<div id="section-48" class="section level3">
+<h3>00</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-49.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-49" class="section level3">
+<h3>01</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-50.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-50" class="section level3">
+<h3>02</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-51.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-51" class="section level3">
+<h3>03</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-52.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-52" class="section level3">
+<h3>04</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-53.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-53" class="section level3">
+<h3>05</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-54.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-54" class="section level3">
+<h3>06</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-55.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-55" class="section level3">
+<h3>07</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-56.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-56" class="section level3">
+<h3>08</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-57.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-57" class="section level3">
+<h3>09</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-58.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-58" class="section level3">
+<h3>10</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-59.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-59" class="section level3">
+<h3>11</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-60.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-60" class="section level3">
+<h3>12</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-61.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-61" class="section level3">
+<h3>13</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-62.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-62" class="section level3">
+<h3>14</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-63.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-63" class="section level3">
+<h3>15</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-64.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-64" class="section level3">
+<h3>16</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-65.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-65" class="section level3">
+<h3>17</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-66.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-66" class="section level3">
+<h3>18</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-67.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-67" class="section level3">
+<h3>19</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-68.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-68" class="section level3">
+<h3>20</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-69.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-69" class="section level3">
+<h3>21</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-70.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-70" class="section level3">
+<h3>22</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-71.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-71" class="section level3">
+<h3>23</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-72.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="dyn1-1" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">DYN1</h2>
+<div id="section-72" class="section level3">
+<h3>00</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-73.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-73" class="section level3">
+<h3>01</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-74.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-74" class="section level3">
+<h3>02</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-75.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-75" class="section level3">
+<h3>03</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-76.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-76" class="section level3">
+<h3>04</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-77.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-77" class="section level3">
+<h3>05</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-78.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-78" class="section level3">
+<h3>06</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-79.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-79" class="section level3">
+<h3>07</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-80.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-80" class="section level3">
+<h3>08</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-81.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-81" class="section level3">
+<h3>09</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-82.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-82" class="section level3">
+<h3>10</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-83.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-83" class="section level3">
+<h3>11</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-84.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-84" class="section level3">
+<h3>12</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-85.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-85" class="section level3">
+<h3>13</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-86.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-86" class="section level3">
+<h3>14</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-87.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-87" class="section level3">
+<h3>15</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-88.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-88" class="section level3">
+<h3>16</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-89.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-89" class="section level3">
+<h3>17</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-90.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-90" class="section level3">
+<h3>18</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-91.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-91" class="section level3">
+<h3>19</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-92.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-92" class="section level3">
+<h3>20</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-93.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-93" class="section level3">
+<h3>21</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-94.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-94" class="section level3">
+<h3>22</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-95.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-95" class="section level3">
+<h3>23</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-96.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="dyn3-1" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">DYN3</h2>
+<div id="section-96" class="section level3">
+<h3>00</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-97.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-97" class="section level3">
+<h3>01</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-98.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-98" class="section level3">
+<h3>02</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-99.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-99" class="section level3">
+<h3>03</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-100.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-100" class="section level3">
+<h3>04</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-101.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-101" class="section level3">
+<h3>05</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-102.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-102" class="section level3">
+<h3>06</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-103.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-103" class="section level3">
+<h3>07</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-104.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-104" class="section level3">
+<h3>08</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-105.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-105" class="section level3">
+<h3>09</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-106.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-106" class="section level3">
+<h3>10</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-107.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-107" class="section level3">
+<h3>11</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-108.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-108" class="section level3">
+<h3>12</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-109.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-109" class="section level3">
+<h3>13</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-110.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-110" class="section level3">
+<h3>14</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-111.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-111" class="section level3">
+<h3>15</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-112.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-112" class="section level3">
+<h3>16</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-113.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-113" class="section level3">
+<h3>17</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-114.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-114" class="section level3">
+<h3>18</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-115.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-115" class="section level3">
+<h3>19</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-116.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-116" class="section level3">
+<h3>20</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-117.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-117" class="section level3">
+<h3>21</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-118.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-118" class="section level3">
+<h3>22</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-119.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-119" class="section level3">
+<h3>23</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-120.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="elc-1" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">ELC</h2>
+<div id="section-120" class="section level3">
+<h3>00</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-121.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-121" class="section level3">
+<h3>01</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-122.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-122" class="section level3">
+<h3>02</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-123.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-123" class="section level3">
+<h3>03</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-124.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-124" class="section level3">
+<h3>04</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-125.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-125" class="section level3">
+<h3>05</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-126.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-126" class="section level3">
+<h3>06</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-127.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-127" class="section level3">
+<h3>07</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-128.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-128" class="section level3">
+<h3>08</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-129.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-129" class="section level3">
+<h3>09</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-130.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-130" class="section level3">
+<h3>10</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-131.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-131" class="section level3">
+<h3>11</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-132.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-132" class="section level3">
+<h3>12</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-133.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-133" class="section level3">
+<h3>13</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-134.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-134" class="section level3">
+<h3>14</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-135.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-135" class="section level3">
+<h3>15</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-136.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-136" class="section level3">
+<h3>16</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-137.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-137" class="section level3">
+<h3>17</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-138.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-138" class="section level3">
+<h3>18</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-139.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-139" class="section level3">
+<h3>19</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-140.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-140" class="section level3">
+<h3>20</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-141.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-141" class="section level3">
+<h3>21</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-142.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-142" class="section level3">
+<h3>22</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-143.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-143" class="section level3">
+<h3>23</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-144.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="fix-1" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">FIX</h2>
+<div id="section-144" class="section level3">
+<h3>00</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-145.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-145" class="section level3">
+<h3>01</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-146.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-146" class="section level3">
+<h3>02</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-147.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-147" class="section level3">
+<h3>03</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-148.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-148" class="section level3">
+<h3>04</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-149.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-149" class="section level3">
+<h3>05</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-150.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-150" class="section level3">
+<h3>06</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-151.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-151" class="section level3">
+<h3>07</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-152.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-152" class="section level3">
+<h3>08</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-153.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-153" class="section level3">
+<h3>09</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-154.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-154" class="section level3">
+<h3>10</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-155.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-155" class="section level3">
+<h3>11</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-156.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-156" class="section level3">
+<h3>12</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-157.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-157" class="section level3">
+<h3>13</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-158.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-158" class="section level3">
+<h3>14</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-159.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-159" class="section level3">
+<h3>15</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-160.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-160" class="section level3">
+<h3>16</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-161.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-161" class="section level3">
+<h3>17</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-162.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-162" class="section level3">
+<h3>18</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-163.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-163" class="section level3">
+<h3>19</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-164.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-164" class="section level3">
+<h3>20</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-165.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-165" class="section level3">
+<h3>21</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-166.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-166" class="section level3">
+<h3>22</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-167.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-167" class="section level3">
+<h3>23</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-168.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="ord-1" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">ORD</h2>
+<div id="section-168" class="section level3">
+<h3>00</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-169.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-169" class="section level3">
+<h3>01</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-170.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-170" class="section level3">
+<h3>02</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-171.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-171" class="section level3">
+<h3>03</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-172.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-172" class="section level3">
+<h3>04</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-173.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-173" class="section level3">
+<h3>05</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-174.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-174" class="section level3">
+<h3>06</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-175.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-175" class="section level3">
+<h3>07</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-176.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-176" class="section level3">
+<h3>08</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-177.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-177" class="section level3">
+<h3>09</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-178.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-178" class="section level3">
+<h3>10</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-179.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-179" class="section level3">
+<h3>11</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-180.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-180" class="section level3">
+<h3>12</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-181.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-181" class="section level3">
+<h3>13</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-182.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-182" class="section level3">
+<h3>14</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-183.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-183" class="section level3">
+<h3>15</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-184.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-184" class="section level3">
+<h3>16</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-185.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-185" class="section level3">
+<h3>17</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-186.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-186" class="section level3">
+<h3>18</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-187.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-187" class="section level3">
+<h3>19</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-188.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-188" class="section level3">
+<h3>20</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-189.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-189" class="section level3">
+<h3>21</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-190.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-190" class="section level3">
+<h3>22</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-191.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-191" class="section level3">
+<h3>23</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-192.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="sco-1" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">SCO</h2>
+<div id="section-192" class="section level3">
+<h3>00</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-193.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-193" class="section level3">
+<h3>01</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-194.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-194" class="section level3">
+<h3>02</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-195.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-195" class="section level3">
+<h3>03</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-196.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-196" class="section level3">
+<h3>04</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-197.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-197" class="section level3">
+<h3>05</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-198.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-198" class="section level3">
+<h3>06</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-199.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-199" class="section level3">
+<h3>07</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-200.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-200" class="section level3">
+<h3>08</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-201.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-201" class="section level3">
+<h3>09</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-202.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-202" class="section level3">
+<h3>10</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-203.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-203" class="section level3">
+<h3>11</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-204.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-204" class="section level3">
+<h3>12</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-205.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-205" class="section level3">
+<h3>13</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-206.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-206" class="section level3">
+<h3>14</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-207.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-207" class="section level3">
+<h3>15</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-208.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-208" class="section level3">
+<h3>16</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-209.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-209" class="section level3">
+<h3>17</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-210.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-210" class="section level3">
+<h3>18</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-211.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-211" class="section level3">
+<h3>19</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-212.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-212" class="section level3">
+<h3>20</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-213.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-213" class="section level3">
+<h3>21</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-214.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-214" class="section level3">
+<h3>22</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-215.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-215" class="section level3">
+<h3>23</h3>
+<p><img src="figure/2021-10-26.Rmd/unnamed-chunk-12-216.png" width="672" style="display: block; margin: auto;" /></p>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -1381,42 +2805,44 @@ dat = do.call(rbind.data.frame, list_tag)</code></pre>
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
 <pre class="r"><code>sessionInfo()</code></pre>
-<pre><code>R version 4.0.2 (2020-06-22)
+<pre><code>R version 4.0.5 (2021-03-31)
 Platform: x86_64-apple-darwin17.0 (64-bit)
-Running under: macOS Catalina 10.15.7
+Running under: macOS Big Sur 10.16
 
 Matrix products: default
 BLAS:   /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRblas.dylib
 LAPACK: /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRlapack.dylib
 
 locale:
-[1] fr_FR.UTF-8/fr_FR.UTF-8/fr_FR.UTF-8/C/fr_FR.UTF-8/fr_FR.UTF-8
+[1] zh_CN.UTF-8/zh_CN.UTF-8/zh_CN.UTF-8/C/zh_CN.UTF-8/zh_CN.UTF-8
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] scales_1.1.1     DT_0.17          readxl_1.3.1     lubridate_1.7.10
- [5] dplyr_1.0.6      nnet_7.3-14      kableExtra_1.1.0 rjson_0.2.20    
- [9] cowplot_1.1.0    gifski_0.8.6     gganimate_1.0.7  ggplot2_3.3.3   
+ [1] scales_1.1.1     DT_0.19          readxl_1.3.1     lubridate_1.7.10
+ [5] dplyr_1.0.5      nnet_7.3-15      kableExtra_1.3.4 rjson_0.2.20    
+ [9] cowplot_1.1.1    gifski_1.4.3-1   gganimate_1.0.7  ggplot2_3.3.5   
 [13] workflowr_1.6.2 
 
 loaded via a namespace (and not attached):
- [1] progress_1.2.2    tidyselect_1.1.0  xfun_0.25         purrr_0.3.4      
- [5] colorspace_1.4-1  vctrs_0.3.8       generics_0.1.0    viridisLite_0.3.0
- [9] htmltools_0.5.0   yaml_2.2.1        utf8_1.1.4        rlang_0.4.11     
-[13] later_1.1.0.1     pillar_1.6.0      glue_1.4.1        withr_2.4.2      
-[17] DBI_1.1.1         tweenr_1.0.1      lifecycle_1.0.0   stringr_1.4.0    
-[21] cellranger_1.1.0  munsell_0.5.0     gtable_0.3.0      rvest_1.0.0      
-[25] htmlwidgets_1.5.1 evaluate_0.14     labeling_0.3      knitr_1.33       
-[29] httpuv_1.5.4      fansi_0.4.1       highr_0.8         Rcpp_1.0.5       
-[33] readr_1.4.0       promises_1.1.1    backports_1.1.8   webshot_0.5.2    
-[37] farver_2.0.3      fs_1.5.0          hms_1.0.0         digest_0.6.25    
-[41] stringi_1.4.6     grid_4.0.2        rprojroot_1.3-2   tools_4.0.2      
-[45] magrittr_2.0.1    tibble_3.1.1      crayon_1.4.1      whisker_0.4      
-[49] pkgconfig_2.0.3   ellipsis_0.3.1    xml2_1.3.2        prettyunits_1.1.1
-[53] httr_1.4.2        rstudioapi_0.13   assertthat_0.2.1  rmarkdown_2.10   
-[57] R6_2.4.1          git2r_0.28.0      compiler_4.0.2   </code></pre>
+ [1] progress_1.2.2    tidyselect_1.1.0  xfun_0.22         bslib_0.2.4      
+ [5] purrr_0.3.4       colorspace_2.0-0  vctrs_0.3.7       generics_0.1.0   
+ [9] viridisLite_0.4.0 htmltools_0.5.1.1 yaml_2.2.1        utf8_1.2.1       
+[13] rlang_0.4.10      jquerylib_0.1.3   later_1.1.0.1     pillar_1.6.0     
+[17] glue_1.4.2        withr_2.4.1       tweenr_1.0.2      lifecycle_1.0.0  
+[21] stringr_1.4.0     cellranger_1.1.0  munsell_0.5.0     gtable_0.3.0     
+[25] rvest_1.0.0       htmlwidgets_1.5.3 evaluate_0.14     labeling_0.4.2   
+[29] knitr_1.32        httpuv_1.5.5      fansi_0.4.2       highr_0.8        
+[33] Rcpp_1.0.7        promises_1.2.0.1  webshot_0.5.2     jsonlite_1.7.2   
+[37] systemfonts_1.0.1 farver_2.1.0      fs_1.5.0          hms_1.0.0        
+[41] digest_0.6.27     stringi_1.5.3     grid_4.0.5        rprojroot_2.0.2  
+[45] tools_4.0.5       magrittr_2.0.1    sass_0.3.1        tibble_3.1.0     
+[49] crayon_1.4.1      whisker_0.4       pkgconfig_2.0.3   ellipsis_0.3.1   
+[53] xml2_1.3.2        prettyunits_1.1.1 svglite_2.0.0     rmarkdown_2.10   
+[57] httr_1.4.2        rstudioapi_0.13   R6_2.5.0          git2r_0.28.0     
+[61] compiler_4.0.5   </code></pre>
+</div>
 </div>
 </div>
 </div>
