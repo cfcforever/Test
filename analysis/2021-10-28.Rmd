@@ -199,17 +199,17 @@ for (k in 1:nb_tag){
 names_tag_all <- read.table(file = "data/tag_names_20210924.txt", header = T, sep = "\t")
 
 temp1 = read.csv2(paste0("data/json/2021-10-23/position.csv"))
-temp1 = temp1 %>% filter(tag %in% names_tag$id)
+temp1 = temp1 %>% filter(tag %in% names_tag_all$id)
 temp2 = read.csv2(paste0("data/json/2021-10-24/position.csv"))
-temp2 = temp2 %>% filter(tag %in% names_tag$id)
+temp2 = temp2 %>% filter(tag %in% names_tag_all$id)
 temp3 = read.csv2(paste0("data/json/2021-10-25/position.csv"))
-temp3 = temp3 %>% filter(tag %in% names_tag$id)
+temp3 = temp3 %>% filter(tag %in% names_tag_all$id)
 temp4 = read.csv2(paste0("data/json/2021-10-26/position.csv"))
-temp4 = temp4 %>% filter(tag %in% names_tag$id)
+temp4 = temp4 %>% filter(tag %in% names_tag_all$id)
 temp5 = read.csv2(paste0("data/json/2021-10-27/position.csv"))
-temp5 = temp5 %>% filter(tag %in% names_tag$id)
+temp5 = temp5 %>% filter(tag %in% names_tag_all$id)
 temp6 = read.csv2(paste0("data/json/2021-10-28/position.csv"))
-temp6 = temp6 %>% filter(tag %in% names_tag$id)
+temp6 = temp6 %>% filter(tag %in% names_tag_all$id)
 
 temp_tag = do.call(rbind.data.frame, list(temp1,temp2,temp3,temp4,temp5,temp6))
 temp_tag$date = as.Date(temp_tag$date, format = "%Y-%m-%d")
@@ -222,8 +222,7 @@ for (k in 1:nb_tag){
   for (hour in sprintf("%02d", 0:23)){
     cat("\n")
     cat("### ", hour, "\n")
-    temp_tag_hour = temp_tag %>%
-      filter(tag==tag) %>%
+    temp_tag_hour = temp_tag[temp_tag$tag==tag,] %>%
       filter(H==as.numeric(hour))
     if (nrow(temp_tag_hour)!=0){
       q <- p + 
