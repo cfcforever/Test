@@ -89,6 +89,24 @@ p
 ```
 
 
+### case 2
+```{r}
+k = 88
+dk = 9
+
+dist = round(as.matrix(dist(dd[k:(k+dk),c("x","y")])), 3)
+kable(dist) %>%
+  kable_styling(bootstrap_options = "striped", full_width = F)
+
+p <- ggplot() + theme_bw() +
+  geom_point(data=dd[k:(k+dk),], aes(x=x, y=y), col="red") + 
+  geom_text(data=dd[k:(k+dk),], aes(x=x, y=y, label=k:(k+dk), vjust=-0.5), size=3) + 
+  geom_path(data=dd[k:(k+dk),], aes(x=x,y=y), col="red") + 
+  coord_equal(ratio = 1, xlim = range(dd$x), ylim = range(dd$y))
+p
+```
+
+
 
 # Machine learning method with 5 consecutive points
 ## load model and predict data
