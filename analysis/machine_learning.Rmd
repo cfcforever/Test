@@ -43,7 +43,54 @@ print(p)
 ```
 
 
-# Machine learning method
+# Machine learning method with 10 consecutive points
+## load model and predict data
+```{r}
+load("data/Stabiliseur/ML/ML_model_with_10_points.RData")
+
+input = as.data.frame(matrix(NA, nrow = nrow(dd)-9, ncol = 45))
+for (k in 1:nrow(input)){
+  input[k,] = as.numeric(dist(dd[k:(k+9), c("x","y")]))
+}
+
+dd$pred = 0
+prediction = round(predict(ir, input), 3)
+dd$pred[1:nrow(input)] = prediction
+
+datatable(dd, class = 'cell-border stripe')
+```
+
+
+## result
+```{r}
+nb = length(prediction)
+num = sum(prediction<=0.7)
+ratio = num/nb
+message(paste0(unique(dd$tagId), " - with ", nb, " points and to be predicted ", ratio*100, "% corrected of resting positions (which ", nb-num, " points are false)."))
+```
+
+
+## Study cases{.tabset .tabset-pills}
+### case 1
+```{r}
+k = 57
+dk = 9
+
+dist = round(as.matrix(dist(dd[k:(k+dk),c("x","y")])), 3)
+kable(dist) %>%
+  kable_styling(bootstrap_options = "striped", full_width = F)
+
+p <- ggplot() + theme_bw() +
+  geom_point(data=dd[k:(k+dk),], aes(x=x, y=y), col="red") + 
+  geom_text(data=dd[k:(k+dk),], aes(x=x, y=y, label=k:(k+dk), vjust=-0.5), size=3) + 
+  geom_path(data=dd[k:(k+dk),], aes(x=x,y=y), col="red") + 
+  coord_equal(ratio = 1, xlim = range(dd$x), ylim = range(dd$y))
+p
+```
+
+
+
+# Machine learning method with 5 consecutive points
 ## load model and predict data
 ```{r}
 load("data/Stabiliseur/ML/ML_model.RData")
@@ -64,15 +111,14 @@ datatable(dd, class = 'cell-border stripe')
 ## result
 ```{r}
 nb = length(prediction)
-num = sum(prediction<=0.7)
+num = sum(prediction<=0.5)
 ratio = num/nb
 message(paste0(unique(dd$tagId), " - with ", nb, " points and to be predicted ", ratio*100, "% corrected of resting positions (which ", nb-num, " points are false)."))
 ```
 
 
-
-# Study cases{.tabset .tabset-pills}
-## case 1
+## Study cases{.tabset .tabset-pills}
+### case 1
 ```{r}
 k = 42
 dk = 4
@@ -90,7 +136,7 @@ p
 ```
 
 
-## case 2
+### case 2
 ```{r}
 k = 61
 dk = 7
@@ -108,7 +154,7 @@ p
 ```
 
 
-## case 3
+### case 3
 ```{r}
 k = 71
 dk = 5
@@ -126,7 +172,7 @@ p
 ```
 
 
-## case 4
+### case 4
 ```{r}
 k = 75
 dk = 4
@@ -144,7 +190,7 @@ p
 ```
 
 
-## case 5
+### case 5
 ```{r}
 k = 79
 dk = 4
@@ -162,7 +208,7 @@ p
 ```
 
 
-## case 6
+### case 6
 ```{r}
 k = 81
 dk = 4
@@ -180,7 +226,7 @@ p
 ```
 
 
-## case 7
+### case 7
 ```{r}
 k = 88
 dk = 4
@@ -198,7 +244,7 @@ p
 ```
 
 
-## case 8
+### case 8
 ```{r}
 k = 94
 dk = 6
