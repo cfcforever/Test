@@ -515,16 +515,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree483ea7e73692d046b00befcefe30acb46cccc48atargetblank483ea7ea"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/483ea7e73692d046b00befcefe30acb46cccc48a" target="_blank">483ea7e</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree6c245f908f626d06580fdafa4a23f1a2f0bda2e8targetblank6c245f9a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/6c245f908f626d06580fdafa4a23f1a2f0bda2e8" target="_blank">6c245f9</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree483ea7e73692d046b00befcefe30acb46cccc48atargetblank483ea7ea" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree6c245f908f626d06580fdafa4a23f1a2f0bda2e8targetblank6c245f9a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/483ea7e73692d046b00befcefe30acb46cccc48a" target="_blank">483ea7e</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/6c245f908f626d06580fdafa4a23f1a2f0bda2e8" target="_blank">6c245f9</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -578,6 +578,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/6c245f908f626d06580fdafa4a23f1a2f0bda2e8/analysis/machine_learning.Rmd" target="_blank">6c245f9</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-01
+</td>
+<td>
+add new content
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cfcforever/Test/ad8fef234c62ff485246db3858c0797c64bd6d34/docs/machine_learning.html" target="_blank">ad8fef2</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-01
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -1382,6 +1416,493 @@ cfcforever
 </div>
 </div>
 </div>
+<div id="case-2" class="section level3">
+<h3>case 2</h3>
+<pre class="r"><code>k = 88
+dk = 9
+
+dist = round(as.matrix(dist(dd[k:(k+dk),c(&quot;x&quot;,&quot;y&quot;)])), 3)
+kable(dist) %&gt;%
+  kable_styling(bootstrap_options = &quot;striped&quot;, full_width = F)</code></pre>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+88
+</th>
+<th style="text-align:right;">
+89
+</th>
+<th style="text-align:right;">
+90
+</th>
+<th style="text-align:right;">
+91
+</th>
+<th style="text-align:right;">
+92
+</th>
+<th style="text-align:right;">
+93
+</th>
+<th style="text-align:right;">
+94
+</th>
+<th style="text-align:right;">
+95
+</th>
+<th style="text-align:right;">
+96
+</th>
+<th style="text-align:right;">
+97
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+88
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.142
+</td>
+<td style="text-align:right;">
+0.231
+</td>
+<td style="text-align:right;">
+0.303
+</td>
+<td style="text-align:right;">
+0.343
+</td>
+<td style="text-align:right;">
+0.385
+</td>
+<td style="text-align:right;">
+0.402
+</td>
+<td style="text-align:right;">
+0.289
+</td>
+<td style="text-align:right;">
+0.061
+</td>
+<td style="text-align:right;">
+0.156
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+89
+</td>
+<td style="text-align:right;">
+0.142
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.090
+</td>
+<td style="text-align:right;">
+0.162
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+0.243
+</td>
+<td style="text-align:right;">
+0.260
+</td>
+<td style="text-align:right;">
+0.149
+</td>
+<td style="text-align:right;">
+0.081
+</td>
+<td style="text-align:right;">
+0.014
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+90
+</td>
+<td style="text-align:right;">
+0.231
+</td>
+<td style="text-align:right;">
+0.090
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.072
+</td>
+<td style="text-align:right;">
+0.113
+</td>
+<td style="text-align:right;">
+0.154
+</td>
+<td style="text-align:right;">
+0.172
+</td>
+<td style="text-align:right;">
+0.059
+</td>
+<td style="text-align:right;">
+0.170
+</td>
+<td style="text-align:right;">
+0.076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+91
+</td>
+<td style="text-align:right;">
+0.303
+</td>
+<td style="text-align:right;">
+0.162
+</td>
+<td style="text-align:right;">
+0.072
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.044
+</td>
+<td style="text-align:right;">
+0.084
+</td>
+<td style="text-align:right;">
+0.102
+</td>
+<td style="text-align:right;">
+0.019
+</td>
+<td style="text-align:right;">
+0.242
+</td>
+<td style="text-align:right;">
+0.147
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+92
+</td>
+<td style="text-align:right;">
+0.343
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+0.113
+</td>
+<td style="text-align:right;">
+0.044
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.041
+</td>
+<td style="text-align:right;">
+0.059
+</td>
+<td style="text-align:right;">
+0.063
+</td>
+<td style="text-align:right;">
+0.282
+</td>
+<td style="text-align:right;">
+0.187
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+93
+</td>
+<td style="text-align:right;">
+0.385
+</td>
+<td style="text-align:right;">
+0.243
+</td>
+<td style="text-align:right;">
+0.154
+</td>
+<td style="text-align:right;">
+0.084
+</td>
+<td style="text-align:right;">
+0.041
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.019
+</td>
+<td style="text-align:right;">
+0.102
+</td>
+<td style="text-align:right;">
+0.324
+</td>
+<td style="text-align:right;">
+0.228
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+94
+</td>
+<td style="text-align:right;">
+0.402
+</td>
+<td style="text-align:right;">
+0.260
+</td>
+<td style="text-align:right;">
+0.172
+</td>
+<td style="text-align:right;">
+0.102
+</td>
+<td style="text-align:right;">
+0.059
+</td>
+<td style="text-align:right;">
+0.019
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.120
+</td>
+<td style="text-align:right;">
+0.341
+</td>
+<td style="text-align:right;">
+0.246
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+95
+</td>
+<td style="text-align:right;">
+0.289
+</td>
+<td style="text-align:right;">
+0.149
+</td>
+<td style="text-align:right;">
+0.059
+</td>
+<td style="text-align:right;">
+0.019
+</td>
+<td style="text-align:right;">
+0.063
+</td>
+<td style="text-align:right;">
+0.102
+</td>
+<td style="text-align:right;">
+0.120
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.227
+</td>
+<td style="text-align:right;">
+0.135
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+96
+</td>
+<td style="text-align:right;">
+0.061
+</td>
+<td style="text-align:right;">
+0.081
+</td>
+<td style="text-align:right;">
+0.170
+</td>
+<td style="text-align:right;">
+0.242
+</td>
+<td style="text-align:right;">
+0.282
+</td>
+<td style="text-align:right;">
+0.324
+</td>
+<td style="text-align:right;">
+0.341
+</td>
+<td style="text-align:right;">
+0.227
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.096
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+97
+</td>
+<td style="text-align:right;">
+0.156
+</td>
+<td style="text-align:right;">
+0.014
+</td>
+<td style="text-align:right;">
+0.076
+</td>
+<td style="text-align:right;">
+0.147
+</td>
+<td style="text-align:right;">
+0.187
+</td>
+<td style="text-align:right;">
+0.228
+</td>
+<td style="text-align:right;">
+0.246
+</td>
+<td style="text-align:right;">
+0.135
+</td>
+<td style="text-align:right;">
+0.096
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>p &lt;- ggplot() + theme_bw() +
+  geom_point(data=dd[k:(k+dk),], aes(x=x, y=y), col=&quot;red&quot;) + 
+  geom_text(data=dd[k:(k+dk),], aes(x=x, y=y, label=k:(k+dk), vjust=-0.5), size=3) + 
+  geom_path(data=dd[k:(k+dk),], aes(x=x,y=y), col=&quot;red&quot;) + 
+  coord_equal(ratio = 1, xlim = range(dd$x), ylim = range(dd$y))
+p</code></pre>
+<p><img src="figure/machine_learning.Rmd/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-7-1">
+Past versions of unnamed-chunk-7-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-7-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/483ea7e73692d046b00befcefe30acb46cccc48a/docs/figure/machine_learning.Rmd/unnamed-chunk-7-1.png" target="_blank">483ea7e</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-01
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/2c4b0ea80335ae15e4f4111f6799213cfa720707/docs/figure/machine_learning.Rmd/unnamed-chunk-7-1.png" target="_blank">2c4b0ea</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-19
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/521a8d535d60f26e5166a03d22d80dab6bc113aa/docs/figure/machine_learning.Rmd/unnamed-chunk-7-1.png" target="_blank">521a8d5</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-18
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/81375a6a3e64813d531f44298dfb5dcbd04c2405/docs/figure/machine_learning.Rmd/unnamed-chunk-7-1.png" target="_blank">81375a6</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-04
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/99b80c99a1d4624fc5cb539e184a380a9c54e83f/docs/figure/machine_learning.Rmd/unnamed-chunk-7-1.png" target="_blank">99b80c9</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-04
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div id="machine-learning-method-with-5-consecutive-points" class="section level1">
@@ -1552,13 +2073,13 @@ kable(dist) %&gt;%
   geom_path(data=dd[k:(k+dk),], aes(x=x,y=y), col=&quot;red&quot;) + 
   coord_equal(ratio = 1, xlim = range(dd$x), ylim = range(dd$y))
 p</code></pre>
-<p><img src="figure/machine_learning.Rmd/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/machine_learning.Rmd/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-9-1">
-Past versions of unnamed-chunk-9-1.png
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-1">
+Past versions of unnamed-chunk-10-1.png
 </button>
 </p>
-<div id="fig-unnamed-chunk-9-1" class="collapse">
+<div id="fig-unnamed-chunk-10-1" class="collapse">
 <div class="table-responsive">
 <table class="table table-condensed table-hover">
 <thead>
@@ -1577,7 +2098,7 @@ Date
 <tbody>
 <tr>
 <td>
-<a href="https://github.com/cfcforever/Test/blob/483ea7e73692d046b00befcefe30acb46cccc48a/docs/figure/machine_learning.Rmd/unnamed-chunk-9-1.png" target="_blank">483ea7e</a>
+<a href="https://github.com/cfcforever/Test/blob/483ea7e73692d046b00befcefe30acb46cccc48a/docs/figure/machine_learning.Rmd/unnamed-chunk-10-1.png" target="_blank">483ea7e</a>
 </td>
 <td>
 cfcforever
@@ -1588,7 +2109,7 @@ cfcforever
 </tr>
 <tr>
 <td>
-<a href="https://github.com/cfcforever/Test/blob/2c4b0ea80335ae15e4f4111f6799213cfa720707/docs/figure/machine_learning.Rmd/unnamed-chunk-9-1.png" target="_blank">2c4b0ea</a>
+<a href="https://github.com/cfcforever/Test/blob/2c4b0ea80335ae15e4f4111f6799213cfa720707/docs/figure/machine_learning.Rmd/unnamed-chunk-10-1.png" target="_blank">2c4b0ea</a>
 </td>
 <td>
 cfcforever
@@ -1599,7 +2120,7 @@ cfcforever
 </tr>
 <tr>
 <td>
-<a href="https://github.com/cfcforever/Test/blob/521a8d535d60f26e5166a03d22d80dab6bc113aa/docs/figure/machine_learning.Rmd/unnamed-chunk-9-1.png" target="_blank">521a8d5</a>
+<a href="https://github.com/cfcforever/Test/blob/521a8d535d60f26e5166a03d22d80dab6bc113aa/docs/figure/machine_learning.Rmd/unnamed-chunk-10-1.png" target="_blank">521a8d5</a>
 </td>
 <td>
 cfcforever
@@ -1610,7 +2131,7 @@ cfcforever
 </tr>
 <tr>
 <td>
-<a href="https://github.com/cfcforever/Test/blob/81375a6a3e64813d531f44298dfb5dcbd04c2405/docs/figure/machine_learning.Rmd/unnamed-chunk-9-1.png" target="_blank">81375a6</a>
+<a href="https://github.com/cfcforever/Test/blob/81375a6a3e64813d531f44298dfb5dcbd04c2405/docs/figure/machine_learning.Rmd/unnamed-chunk-10-1.png" target="_blank">81375a6</a>
 </td>
 <td>
 cfcforever
@@ -1621,7 +2142,7 @@ cfcforever
 </tr>
 <tr>
 <td>
-<a href="https://github.com/cfcforever/Test/blob/99b80c99a1d4624fc5cb539e184a380a9c54e83f/docs/figure/machine_learning.Rmd/unnamed-chunk-9-1.png" target="_blank">99b80c9</a>
+<a href="https://github.com/cfcforever/Test/blob/99b80c99a1d4624fc5cb539e184a380a9c54e83f/docs/figure/machine_learning.Rmd/unnamed-chunk-10-1.png" target="_blank">99b80c9</a>
 </td>
 <td>
 cfcforever
@@ -1635,7 +2156,7 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="case-2" class="section level3">
+<div id="case-2-1" class="section level3">
 <h3>case 2</h3>
 <pre class="r"><code>k = 61
 dk = 7
@@ -1915,13 +2436,13 @@ kable(dist) %&gt;%
   geom_path(data=dd[k:(k+dk),], aes(x=x,y=y), col=&quot;red&quot;) + 
   coord_equal(ratio = 1, xlim = range(dd$x), ylim = range(dd$y))
 p</code></pre>
-<p><img src="figure/machine_learning.Rmd/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/machine_learning.Rmd/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-1">
-Past versions of unnamed-chunk-10-1.png
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-11-1">
+Past versions of unnamed-chunk-11-1.png
 </button>
 </p>
-<div id="fig-unnamed-chunk-10-1" class="collapse">
+<div id="fig-unnamed-chunk-11-1" class="collapse">
 <div class="table-responsive">
 <table class="table table-condensed table-hover">
 <thead>
@@ -1940,7 +2461,7 @@ Date
 <tbody>
 <tr>
 <td>
-<a href="https://github.com/cfcforever/Test/blob/483ea7e73692d046b00befcefe30acb46cccc48a/docs/figure/machine_learning.Rmd/unnamed-chunk-10-1.png" target="_blank">483ea7e</a>
+<a href="https://github.com/cfcforever/Test/blob/483ea7e73692d046b00befcefe30acb46cccc48a/docs/figure/machine_learning.Rmd/unnamed-chunk-11-1.png" target="_blank">483ea7e</a>
 </td>
 <td>
 cfcforever
@@ -1951,7 +2472,7 @@ cfcforever
 </tr>
 <tr>
 <td>
-<a href="https://github.com/cfcforever/Test/blob/2c4b0ea80335ae15e4f4111f6799213cfa720707/docs/figure/machine_learning.Rmd/unnamed-chunk-10-1.png" target="_blank">2c4b0ea</a>
+<a href="https://github.com/cfcforever/Test/blob/2c4b0ea80335ae15e4f4111f6799213cfa720707/docs/figure/machine_learning.Rmd/unnamed-chunk-11-1.png" target="_blank">2c4b0ea</a>
 </td>
 <td>
 cfcforever
@@ -1962,7 +2483,7 @@ cfcforever
 </tr>
 <tr>
 <td>
-<a href="https://github.com/cfcforever/Test/blob/521a8d535d60f26e5166a03d22d80dab6bc113aa/docs/figure/machine_learning.Rmd/unnamed-chunk-10-1.png" target="_blank">521a8d5</a>
+<a href="https://github.com/cfcforever/Test/blob/521a8d535d60f26e5166a03d22d80dab6bc113aa/docs/figure/machine_learning.Rmd/unnamed-chunk-11-1.png" target="_blank">521a8d5</a>
 </td>
 <td>
 cfcforever
@@ -1973,7 +2494,7 @@ cfcforever
 </tr>
 <tr>
 <td>
-<a href="https://github.com/cfcforever/Test/blob/81375a6a3e64813d531f44298dfb5dcbd04c2405/docs/figure/machine_learning.Rmd/unnamed-chunk-10-1.png" target="_blank">81375a6</a>
+<a href="https://github.com/cfcforever/Test/blob/81375a6a3e64813d531f44298dfb5dcbd04c2405/docs/figure/machine_learning.Rmd/unnamed-chunk-11-1.png" target="_blank">81375a6</a>
 </td>
 <td>
 cfcforever
@@ -1984,7 +2505,7 @@ cfcforever
 </tr>
 <tr>
 <td>
-<a href="https://github.com/cfcforever/Test/blob/99b80c99a1d4624fc5cb539e184a380a9c54e83f/docs/figure/machine_learning.Rmd/unnamed-chunk-10-1.png" target="_blank">99b80c9</a>
+<a href="https://github.com/cfcforever/Test/blob/99b80c99a1d4624fc5cb539e184a380a9c54e83f/docs/figure/machine_learning.Rmd/unnamed-chunk-11-1.png" target="_blank">99b80c9</a>
 </td>
 <td>
 cfcforever
@@ -2178,13 +2699,13 @@ kable(dist) %&gt;%
   geom_path(data=dd[k:(k+dk),], aes(x=x,y=y), col=&quot;red&quot;) + 
   coord_equal(ratio = 1, xlim = range(dd$x), ylim = range(dd$y))
 p</code></pre>
-<p><img src="figure/machine_learning.Rmd/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/machine_learning.Rmd/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-11-1">
-Past versions of unnamed-chunk-11-1.png
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-1">
+Past versions of unnamed-chunk-12-1.png
 </button>
 </p>
-<div id="fig-unnamed-chunk-11-1" class="collapse">
+<div id="fig-unnamed-chunk-12-1" class="collapse">
 <div class="table-responsive">
 <table class="table table-condensed table-hover">
 <thead>
@@ -2203,7 +2724,7 @@ Date
 <tbody>
 <tr>
 <td>
-<a href="https://github.com/cfcforever/Test/blob/483ea7e73692d046b00befcefe30acb46cccc48a/docs/figure/machine_learning.Rmd/unnamed-chunk-11-1.png" target="_blank">483ea7e</a>
+<a href="https://github.com/cfcforever/Test/blob/483ea7e73692d046b00befcefe30acb46cccc48a/docs/figure/machine_learning.Rmd/unnamed-chunk-12-1.png" target="_blank">483ea7e</a>
 </td>
 <td>
 cfcforever
@@ -2214,7 +2735,7 @@ cfcforever
 </tr>
 <tr>
 <td>
-<a href="https://github.com/cfcforever/Test/blob/2c4b0ea80335ae15e4f4111f6799213cfa720707/docs/figure/machine_learning.Rmd/unnamed-chunk-11-1.png" target="_blank">2c4b0ea</a>
+<a href="https://github.com/cfcforever/Test/blob/2c4b0ea80335ae15e4f4111f6799213cfa720707/docs/figure/machine_learning.Rmd/unnamed-chunk-12-1.png" target="_blank">2c4b0ea</a>
 </td>
 <td>
 cfcforever
@@ -2225,7 +2746,7 @@ cfcforever
 </tr>
 <tr>
 <td>
-<a href="https://github.com/cfcforever/Test/blob/521a8d535d60f26e5166a03d22d80dab6bc113aa/docs/figure/machine_learning.Rmd/unnamed-chunk-11-1.png" target="_blank">521a8d5</a>
+<a href="https://github.com/cfcforever/Test/blob/521a8d535d60f26e5166a03d22d80dab6bc113aa/docs/figure/machine_learning.Rmd/unnamed-chunk-12-1.png" target="_blank">521a8d5</a>
 </td>
 <td>
 cfcforever
@@ -2236,7 +2757,7 @@ cfcforever
 </tr>
 <tr>
 <td>
-<a href="https://github.com/cfcforever/Test/blob/81375a6a3e64813d531f44298dfb5dcbd04c2405/docs/figure/machine_learning.Rmd/unnamed-chunk-11-1.png" target="_blank">81375a6</a>
+<a href="https://github.com/cfcforever/Test/blob/81375a6a3e64813d531f44298dfb5dcbd04c2405/docs/figure/machine_learning.Rmd/unnamed-chunk-12-1.png" target="_blank">81375a6</a>
 </td>
 <td>
 cfcforever
@@ -2247,7 +2768,7 @@ cfcforever
 </tr>
 <tr>
 <td>
-<a href="https://github.com/cfcforever/Test/blob/99b80c99a1d4624fc5cb539e184a380a9c54e83f/docs/figure/machine_learning.Rmd/unnamed-chunk-11-1.png" target="_blank">99b80c9</a>
+<a href="https://github.com/cfcforever/Test/blob/99b80c99a1d4624fc5cb539e184a380a9c54e83f/docs/figure/machine_learning.Rmd/unnamed-chunk-12-1.png" target="_blank">99b80c9</a>
 </td>
 <td>
 cfcforever
@@ -2400,13 +2921,13 @@ kable(dist) %&gt;%
   geom_path(data=dd[k:(k+dk),], aes(x=x,y=y), col=&quot;red&quot;) + 
   coord_equal(ratio = 1, xlim = range(dd$x), ylim = range(dd$y))
 p</code></pre>
-<p><img src="figure/machine_learning.Rmd/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/machine_learning.Rmd/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-1">
-Past versions of unnamed-chunk-12-1.png
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-13-1">
+Past versions of unnamed-chunk-13-1.png
 </button>
 </p>
-<div id="fig-unnamed-chunk-12-1" class="collapse">
+<div id="fig-unnamed-chunk-13-1" class="collapse">
 <div class="table-responsive">
 <table class="table table-condensed table-hover">
 <thead>
@@ -2425,7 +2946,7 @@ Date
 <tbody>
 <tr>
 <td>
-<a href="https://github.com/cfcforever/Test/blob/483ea7e73692d046b00befcefe30acb46cccc48a/docs/figure/machine_learning.Rmd/unnamed-chunk-12-1.png" target="_blank">483ea7e</a>
+<a href="https://github.com/cfcforever/Test/blob/483ea7e73692d046b00befcefe30acb46cccc48a/docs/figure/machine_learning.Rmd/unnamed-chunk-13-1.png" target="_blank">483ea7e</a>
 </td>
 <td>
 cfcforever
@@ -2436,7 +2957,7 @@ cfcforever
 </tr>
 <tr>
 <td>
-<a href="https://github.com/cfcforever/Test/blob/2c4b0ea80335ae15e4f4111f6799213cfa720707/docs/figure/machine_learning.Rmd/unnamed-chunk-12-1.png" target="_blank">2c4b0ea</a>
+<a href="https://github.com/cfcforever/Test/blob/2c4b0ea80335ae15e4f4111f6799213cfa720707/docs/figure/machine_learning.Rmd/unnamed-chunk-13-1.png" target="_blank">2c4b0ea</a>
 </td>
 <td>
 cfcforever
@@ -2447,7 +2968,7 @@ cfcforever
 </tr>
 <tr>
 <td>
-<a href="https://github.com/cfcforever/Test/blob/521a8d535d60f26e5166a03d22d80dab6bc113aa/docs/figure/machine_learning.Rmd/unnamed-chunk-12-1.png" target="_blank">521a8d5</a>
+<a href="https://github.com/cfcforever/Test/blob/521a8d535d60f26e5166a03d22d80dab6bc113aa/docs/figure/machine_learning.Rmd/unnamed-chunk-13-1.png" target="_blank">521a8d5</a>
 </td>
 <td>
 cfcforever
@@ -2458,18 +2979,7 @@ cfcforever
 </tr>
 <tr>
 <td>
-<a href="https://github.com/cfcforever/Test/blob/81375a6a3e64813d531f44298dfb5dcbd04c2405/docs/figure/machine_learning.Rmd/unnamed-chunk-12-1.png" target="_blank">81375a6</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2021-10-04
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/99b80c99a1d4624fc5cb539e184a380a9c54e83f/docs/figure/machine_learning.Rmd/unnamed-chunk-12-1.png" target="_blank">99b80c9</a>
+<a href="https://github.com/cfcforever/Test/blob/81375a6a3e64813d531f44298dfb5dcbd04c2405/docs/figure/machine_learning.Rmd/unnamed-chunk-13-1.png" target="_blank">81375a6</a>
 </td>
 <td>
 cfcforever
@@ -2622,13 +3132,13 @@ kable(dist) %&gt;%
   geom_path(data=dd[k:(k+dk),], aes(x=x,y=y), col=&quot;red&quot;) + 
   coord_equal(ratio = 1, xlim = range(dd$x), ylim = range(dd$y))
 p</code></pre>
-<p><img src="figure/machine_learning.Rmd/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/machine_learning.Rmd/unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-13-1">
-Past versions of unnamed-chunk-13-1.png
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-14-1">
+Past versions of unnamed-chunk-14-1.png
 </button>
 </p>
-<div id="fig-unnamed-chunk-13-1" class="collapse">
+<div id="fig-unnamed-chunk-14-1" class="collapse">
 <div class="table-responsive">
 <table class="table table-condensed table-hover">
 <thead>
@@ -2647,46 +3157,13 @@ Date
 <tbody>
 <tr>
 <td>
-<a href="https://github.com/cfcforever/Test/blob/483ea7e73692d046b00befcefe30acb46cccc48a/docs/figure/machine_learning.Rmd/unnamed-chunk-13-1.png" target="_blank">483ea7e</a>
+<a href="https://github.com/cfcforever/Test/blob/483ea7e73692d046b00befcefe30acb46cccc48a/docs/figure/machine_learning.Rmd/unnamed-chunk-14-1.png" target="_blank">483ea7e</a>
 </td>
 <td>
 cfcforever
 </td>
 <td>
 2021-11-01
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/2c4b0ea80335ae15e4f4111f6799213cfa720707/docs/figure/machine_learning.Rmd/unnamed-chunk-13-1.png" target="_blank">2c4b0ea</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2021-10-19
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/521a8d535d60f26e5166a03d22d80dab6bc113aa/docs/figure/machine_learning.Rmd/unnamed-chunk-13-1.png" target="_blank">521a8d5</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2021-10-18
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/81375a6a3e64813d531f44298dfb5dcbd04c2405/docs/figure/machine_learning.Rmd/unnamed-chunk-13-1.png" target="_blank">81375a6</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2021-10-04
 </td>
 </tr>
 </tbody>
@@ -2833,13 +3310,13 @@ kable(dist) %&gt;%
   geom_path(data=dd[k:(k+dk),], aes(x=x,y=y), col=&quot;red&quot;) + 
   coord_equal(ratio = 1, xlim = range(dd$x), ylim = range(dd$y))
 p</code></pre>
-<p><img src="figure/machine_learning.Rmd/unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/machine_learning.Rmd/unnamed-chunk-15-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-14-1">
-Past versions of unnamed-chunk-14-1.png
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-15-1">
+Past versions of unnamed-chunk-15-1.png
 </button>
 </p>
-<div id="fig-unnamed-chunk-14-1" class="collapse">
+<div id="fig-unnamed-chunk-15-1" class="collapse">
 <div class="table-responsive">
 <table class="table table-condensed table-hover">
 <thead>
@@ -2858,7 +3335,7 @@ Date
 <tbody>
 <tr>
 <td>
-<a href="https://github.com/cfcforever/Test/blob/483ea7e73692d046b00befcefe30acb46cccc48a/docs/figure/machine_learning.Rmd/unnamed-chunk-14-1.png" target="_blank">483ea7e</a>
+<a href="https://github.com/cfcforever/Test/blob/483ea7e73692d046b00befcefe30acb46cccc48a/docs/figure/machine_learning.Rmd/unnamed-chunk-15-1.png" target="_blank">483ea7e</a>
 </td>
 <td>
 cfcforever
@@ -3011,13 +3488,13 @@ kable(dist) %&gt;%
   geom_path(data=dd[k:(k+dk),], aes(x=x,y=y), col=&quot;red&quot;) + 
   coord_equal(ratio = 1, xlim = range(dd$x), ylim = range(dd$y))
 p</code></pre>
-<p><img src="figure/machine_learning.Rmd/unnamed-chunk-15-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/machine_learning.Rmd/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-15-1">
-Past versions of unnamed-chunk-15-1.png
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-16-1">
+Past versions of unnamed-chunk-16-1.png
 </button>
 </p>
-<div id="fig-unnamed-chunk-15-1" class="collapse">
+<div id="fig-unnamed-chunk-16-1" class="collapse">
 <div class="table-responsive">
 <table class="table table-condensed table-hover">
 <thead>
@@ -3036,7 +3513,7 @@ Date
 <tbody>
 <tr>
 <td>
-<a href="https://github.com/cfcforever/Test/blob/483ea7e73692d046b00befcefe30acb46cccc48a/docs/figure/machine_learning.Rmd/unnamed-chunk-15-1.png" target="_blank">483ea7e</a>
+<a href="https://github.com/cfcforever/Test/blob/483ea7e73692d046b00befcefe30acb46cccc48a/docs/figure/machine_learning.Rmd/unnamed-chunk-16-1.png" target="_blank">483ea7e</a>
 </td>
 <td>
 cfcforever
@@ -3277,44 +3754,7 @@ kable(dist) %&gt;%
   geom_path(data=dd[k:(k+dk),], aes(x=x,y=y), col=&quot;red&quot;) + 
   coord_equal(ratio = 1, xlim = range(dd$x), ylim = range(dd$y))
 p</code></pre>
-<p><img src="figure/machine_learning.Rmd/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-16-1">
-Past versions of unnamed-chunk-16-1.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-16-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/483ea7e73692d046b00befcefe30acb46cccc48a/docs/figure/machine_learning.Rmd/unnamed-chunk-16-1.png" target="_blank">483ea7e</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2021-11-01
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+<p><img src="figure/machine_learning.Rmd/unnamed-chunk-17-1.png" width="672" style="display: block; margin: auto;" /></p>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
