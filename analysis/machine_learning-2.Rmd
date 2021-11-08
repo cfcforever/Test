@@ -68,7 +68,7 @@ cat("number of points to consider as moving:", nb_fix, "which presents",
     nb_mov, "/", nb_all, "=", round(nb_mov/nb_all*100, 2), "% of all points", "\n")
 ```
 
-## case study
+## case study{.tabset .tabset-pills}
 ### case 1
 ```{r}
 k = order(data$stab, decreasing = T)[1]
