@@ -1,0 +1,152 @@
+---
+title: "Machine learning method - case study"
+# author: "cfcforever"
+# date: ""
+output: 
+  workflowr::wflow_html:
+    code_folding: hide
+editor_options:
+  chunk_output_type: console
+---
+
+```{r include=FALSE}
+source("code/packages_and_functions.R")
+```
+
+
+# load model
+```{r}
+load("data/Stabiliseur/ML/ML_model_with_10_points.RData")
+```
+
+# load data 
+```{r}
+cat("data: 2021-11-07 between 9H and 10H")
+data <- read.csv2("data/json/2021-11-07/0da6.csv")
+data = data %>%
+  filter(H==9)
+```
+
+## plot all data
+```{r}
+q <- ggplot(data, aes(x=x,y=y)) + theme_bw() +
+  geom_point() + 
+  coord_fixed(ratio=1)
+print(q)
+```
+
+
+# using the model
+```{r}
+data$consec = NA
+data$stab = NA
+for (k in 1:(nrow(data)-9)){
+  td = data$timediff[k:(k+9)]
+  if (all(td>=0.19) & all(td<=0.21)){
+    data$consec[k] = T
+    temp = as.numeric(dist(data[k:(k+9), c("x","y")]))
+    data$stab[k] = predict(ir, temp)
+  }else{
+    data$consec[k] = F
+  }
+}
+```
+
+
+## general analysis
+```{r}
+nb_all = sum(data$consec, na.rm = T)
+nb_fix = sum(data$stab<=0.5, na.rm = T)
+nb_mov = nb_all - nb_fix
+
+cat("number of points to validate:", nb_all, "\n")
+
+cat("number of points to consider as fixed:", nb_fix, "which presents", 
+    nb_fix, "/", nb_all, "=", round(nb_fix/nb_all*100, 2), "% of all points", "\n")
+
+cat("number of points to consider as moving:", nb_fix, "which presents", 
+    nb_mov, "/", nb_all, "=", round(nb_mov/nb_all*100, 2), "% of all points", "\n")
+```
+
+## case study{.tabset .tabset-pills}
+### case 1
+```{r}
+k = order(data$stab, decreasing = T)[1]
+dk = 9
+
+cat("the point", k, "is moving with confidence", data$stab[k], "\n")
+
+dist = round(as.matrix(dist(data[k:(k+dk),c("x","y")])), 3)
+kable(dist) %>%
+  kable_styling(bootstrap_options = "striped", full_width = F)
+
+p <- ggplot() + theme_bw() +
+  geom_point(data=data[k:(k+dk),], aes(x=x, y=y), col="red") + 
+  geom_text(data=data[k:(k+dk),], aes(x=x, y=y, label=k:(k+dk), vjust=-0.5), size=3) + 
+  geom_path(data=data[k:(k+dk),], aes(x=x,y=y), col="red") + 
+  coord_equal(ratio = 1, xlim = range(data$x), ylim = range(data$y))
+p
+```
+
+
+### case 2
+```{r}
+k = order(data$stab, decreasing = T)[2]
+dk = 9
+
+cat("the point", k, "is moving with confidence", data$stab[k], "\n")
+
+dist = round(as.matrix(dist(data[k:(k+dk),c("x","y")])), 3)
+kable(dist) %>%
+  kable_styling(bootstrap_options = "striped", full_width = F)
+
+p <- ggplot() + theme_bw() +
+  geom_point(data=data[k:(k+dk),], aes(x=x, y=y), col="red") + 
+  geom_text(data=data[k:(k+dk),], aes(x=x, y=y, label=k:(k+dk), vjust=-0.5), size=3) + 
+  geom_path(data=data[k:(k+dk),], aes(x=x,y=y), col="red") + 
+  coord_equal(ratio = 1, xlim = range(data$x), ylim = range(data$y))
+p
+```
+
+
+### case 3
+```{r}
+k = order(data$stab, decreasing = T)[3]
+dk = 9
+
+cat("the point", k, "is moving with confidence", data$stab[k], "\n")
+
+dist = round(as.matrix(dist(data[k:(k+dk),c("x","y")])), 3)
+kable(dist) %>%
+  kable_styling(bootstrap_options = "striped", full_width = F)
+
+p <- ggplot() + theme_bw() +
+  geom_point(data=data[k:(k+dk),], aes(x=x, y=y), col="red") + 
+  geom_text(data=data[k:(k+dk),], aes(x=x, y=y, label=k:(k+dk), vjust=-0.5), size=3) + 
+  geom_path(data=data[k:(k+dk),], aes(x=x,y=y), col="red") + 
+  coord_equal(ratio = 1, xlim = range(data$x), ylim = range(data$y))
+p
+```
+
+
+### case 4
+```{r}
+k = order(data$stab, decreasing = T)[8]
+dk = 9
+
+cat("the point", k, "is moving with confidence", data$stab[k], "\n")
+
+dist = round(as.matrix(dist(data[k:(k+dk),c("x","y")])), 3)
+kable(dist) %>%
+  kable_styling(bootstrap_options = "striped", full_width = F)
+
+p <- ggplot() + theme_bw() +
+  geom_point(data=data[k:(k+dk),], aes(x=x, y=y), col="red") + 
+  geom_text(data=data[k:(k+dk),], aes(x=x, y=y, label=k:(k+dk), vjust=-0.5), size=3) + 
+  geom_path(data=data[k:(k+dk),], aes(x=x,y=y), col="red") + 
+  coord_equal(ratio = 1, xlim = range(data$x), ylim = range(data$y))
+p
+```
+
+
+

@@ -1,0 +1,2678 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Machine learning method - case study</title>
+
+<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/master/img/reproducible.png">
+<!-- Add a small amount of space between sections. -->
+<style type="text/css">
+div.section {
+  padding-top: 12px;
+}
+</style>
+
+
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Test</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="daily_results.html">Daily results</a>
+</li>
+<li>
+  <a href="signal_quality.html">Signal quality</a>
+</li>
+<li>
+  <a href="indoor_path.html">Indoor path</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Stabilization
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="machine_learning.html">Machine Learning</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="about.html">About</a>
+</li>
+<li>
+  <a href="license.html">License</a>
+</li>
+<li>
+  <a href="https://github.com/cfcforever/Test">
+    <span class="fa fa-github"></span>
+     
+    Source code
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">Machine learning method - case study</h1>
+
+</div>
+
+
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+</button>
+</p>
+<div id="workflowr-report" class="collapse">
+<ul class="nav nav-tabs">
+<li class="active">
+<a data-toggle="tab" href="#summary">Summary</a>
+</li>
+<li>
+<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> </a>
+</li>
+<li>
+<a data-toggle="tab" href="#versions">Past versions</a>
+</li>
+</ul>
+<div class="tab-content">
+<div id="summary" class="tab-pane fade in active">
+<p>
+<strong>Last updated:</strong> 2021-11-08
+</p>
+<p>
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
+</p>
+<p>
+<strong>Knit directory:</strong> <code>Test/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
+</p>
+<p>
+This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis was created with <a
+  href="https://github.com/jdblischak/workflowr">workflowr</a> (version 1.6.2). The <em>Checks</em> tab describes the reproducibility checks that were applied when the results were created. The <em>Past versions</em> tab lists the development history.
+</p>
+<hr>
+</div>
+<div id="checks" class="tab-pane fade">
+<div id="workflowr-checks" class="panel-group">
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date </a>
+</p>
+</div>
+<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongempty"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Environment:</strong> empty </a>
+</p>
+</div>
+<div id="strongEnvironmentstrongempty" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! The global environment was empty. Objects defined in the global environment can affect the analysis in your R Markdown file in unknown ways. For reproduciblity it’s best to always run the code in an empty environment.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed20210926code"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Seed:</strong> <code>set.seed(20210926)</code> </a>
+</p>
+</div>
+<div id="strongSeedstrongcodesetseed20210926code" class="panel-collapse collapse">
+<div class="panel-body">
+<p>The command <code>set.seed(20210926)</code> was run prior to running the code in the R Markdown file. Setting a seed ensures that any results that rely on randomness, e.g. subsampling or permutations, are reproducible.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSessioninformationstrongrecorded"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Session information:</strong> recorded </a>
+</p>
+</div>
+<div id="strongSessioninformationstrongrecorded" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Recording the operating system, R version, and package versions is critical for reproducibility.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Cache:</strong> none </a>
+</p>
+</div>
+<div id="strongCachestrongnone" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Nice! There were no cached chunks for this analysis, so you can be confident that you successfully produced the results during this run.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongFilepathsstrongrelative"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>File paths:</strong> relative </a>
+</p>
+</div>
+<div id="strongFilepathsstrongrelative" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Using relative paths to the files within your workflowr project makes it easier to run your code on other machines.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree8243dcf8679b820f464a13f7b0c2de4daedfb8b1targetblank8243dcfa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/8243dcf8679b820f464a13f7b0c2de4daedfb8b1" target="_blank">8243dcf</a> </a>
+</p>
+</div>
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree8243dcf8679b820f464a13f7b0c2de4daedfb8b1targetblank8243dcfa" class="panel-collapse collapse">
+<div class="panel-body">
+<p>
+Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
+</p>
+<p>
+The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/8243dcf8679b820f464a13f7b0c2de4daedfb8b1" target="_blank">8243dcf</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+</p>
+<p>
+Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
+</p>
+<pre><code>
+Ignored files:
+    Ignored:    .DS_Store
+    Ignored:    .Rhistory
+    Ignored:    .Rproj.user/
+    Ignored:    analysis/.DS_Store
+    Ignored:    data/.DS_Store
+    Ignored:    data/Stabiliseur/
+    Ignored:    data/json/
+    Ignored:    data/plan/
+    Ignored:    data/stab/.DS_Store
+    Ignored:    figure/
+    Ignored:    workflowr.R
+
+</code></pre>
+<p>
+Note that any generated files, e.g. HTML, png, CSS, etc., are not included in this status report because it is ok for generated content to have uncommitted changes.
+</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div id="versions" class="tab-pane fade">
+
+<p>
+These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/machine_learning-2.Rmd</code>) and HTML (<code>docs/machine_learning-2.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
+</p>
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+File
+</th>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+<th>
+Message
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/8243dcf8679b820f464a13f7b0c2de4daedfb8b1/analysis/machine_learning-2.Rmd" target="_blank">8243dcf</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-08
+</td>
+<td>
+add new content
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cfcforever/Test/c20ac26b512abf7d3a74092e3b7440ee3ac88b02/docs/machine_learning-2.html" target="_blank">c20ac26</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-08
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/14dfa03c4c4f22bab89afed9af169fa2620e54c5/analysis/machine_learning-2.Rmd" target="_blank">14dfa03</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-08
+</td>
+<td>
+add new content
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cfcforever/Test/6e92073b80ff67a5c36fd2ddebf828d2b4454289/docs/machine_learning-2.html" target="_blank">6e92073</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-08
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/8b94767f8cacd850d222eff14b0b130377b4575a/analysis/machine_learning-2.Rmd" target="_blank">8b94767</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-08
+</td>
+<td>
+add new content
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div id="load-model" class="section level1">
+<h1>load model</h1>
+<pre class="r"><code>load(&quot;data/Stabiliseur/ML/ML_model_with_10_points.RData&quot;)</code></pre>
+</div>
+<div id="load-data" class="section level1">
+<h1>load data</h1>
+<pre class="r"><code>cat(&quot;data: 2021-11-07 between 9H and 10H&quot;)</code></pre>
+<pre><code>data: 2021-11-07 between 9H and 10H</code></pre>
+<pre class="r"><code>data &lt;- read.csv2(&quot;data/json/2021-11-07/0da6.csv&quot;)
+data = data %&gt;%
+  filter(H==9)</code></pre>
+<div id="plot-all-data" class="section level2">
+<h2>plot all data</h2>
+<pre class="r"><code>q &lt;- ggplot(data, aes(x=x,y=y)) + theme_bw() +
+  geom_point() + 
+  coord_fixed(ratio=1)
+print(q)</code></pre>
+<p><img src="figure/machine_learning-2.Rmd/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-4-1">
+Past versions of unnamed-chunk-4-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-4-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/c20ac26b512abf7d3a74092e3b7440ee3ac88b02/docs/figure/machine_learning-2.Rmd/unnamed-chunk-4-1.png" target="_blank">c20ac26</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-08
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div id="using-the-model" class="section level1">
+<h1>using the model</h1>
+<pre class="r"><code>data$consec = NA
+data$stab = NA
+for (k in 1:(nrow(data)-9)){
+  td = data$timediff[k:(k+9)]
+  if (all(td&gt;=0.19) &amp; all(td&lt;=0.21)){
+    data$consec[k] = T
+    temp = as.numeric(dist(data[k:(k+9), c(&quot;x&quot;,&quot;y&quot;)]))
+    data$stab[k] = predict(ir, temp)
+  }else{
+    data$consec[k] = F
+  }
+}</code></pre>
+<div id="general-analysis" class="section level2">
+<h2>general analysis</h2>
+<pre class="r"><code>nb_all = sum(data$consec, na.rm = T)
+nb_fix = sum(data$stab&lt;=0.5, na.rm = T)
+nb_mov = nb_all - nb_fix
+
+cat(&quot;number of points to validate:&quot;, nb_all, &quot;\n&quot;)</code></pre>
+<pre><code>number of points to validate: 17147 </code></pre>
+<pre class="r"><code>cat(&quot;number of points to consider as fixed:&quot;, nb_fix, &quot;which presents&quot;, 
+    nb_fix, &quot;/&quot;, nb_all, &quot;=&quot;, round(nb_fix/nb_all*100, 2), &quot;% of all points&quot;, &quot;\n&quot;)</code></pre>
+<pre><code>number of points to consider as fixed: 11549 which presents 11549 / 17147 = 67.35 % of all points </code></pre>
+<pre class="r"><code>cat(&quot;number of points to consider as moving:&quot;, nb_fix, &quot;which presents&quot;, 
+    nb_mov, &quot;/&quot;, nb_all, &quot;=&quot;, round(nb_mov/nb_all*100, 2), &quot;% of all points&quot;, &quot;\n&quot;)</code></pre>
+<pre><code>number of points to consider as moving: 11549 which presents 5598 / 17147 = 32.65 % of all points </code></pre>
+</div>
+<div id="case-study" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">case study</h2>
+<div id="case-1" class="section level3">
+<h3>case 1</h3>
+<pre class="r"><code>k = order(data$stab, decreasing = T)[1]
+dk = 9
+
+cat(&quot;the point&quot;, k, &quot;is moving with confidence&quot;, data$stab[k], &quot;\n&quot;)</code></pre>
+<pre><code>the point 6287 is moving with confidence 0.9999985 </code></pre>
+<pre class="r"><code>dist = round(as.matrix(dist(data[k:(k+dk),c(&quot;x&quot;,&quot;y&quot;)])), 3)
+kable(dist) %&gt;%
+  kable_styling(bootstrap_options = &quot;striped&quot;, full_width = F)</code></pre>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+6287
+</th>
+<th style="text-align:right;">
+6288
+</th>
+<th style="text-align:right;">
+6289
+</th>
+<th style="text-align:right;">
+6290
+</th>
+<th style="text-align:right;">
+6291
+</th>
+<th style="text-align:right;">
+6292
+</th>
+<th style="text-align:right;">
+6293
+</th>
+<th style="text-align:right;">
+6294
+</th>
+<th style="text-align:right;">
+6295
+</th>
+<th style="text-align:right;">
+6296
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+6287
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.184
+</td>
+<td style="text-align:right;">
+0.379
+</td>
+<td style="text-align:right;">
+0.164
+</td>
+<td style="text-align:right;">
+0.977
+</td>
+<td style="text-align:right;">
+1.426
+</td>
+<td style="text-align:right;">
+1.632
+</td>
+<td style="text-align:right;">
+1.699
+</td>
+<td style="text-align:right;">
+2.135
+</td>
+<td style="text-align:right;">
+2.975
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6288
+</td>
+<td style="text-align:right;">
+0.184
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.563
+</td>
+<td style="text-align:right;">
+0.345
+</td>
+<td style="text-align:right;">
+1.146
+</td>
+<td style="text-align:right;">
+1.592
+</td>
+<td style="text-align:right;">
+1.797
+</td>
+<td style="text-align:right;">
+1.842
+</td>
+<td style="text-align:right;">
+2.258
+</td>
+<td style="text-align:right;">
+3.083
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6289
+</td>
+<td style="text-align:right;">
+0.379
+</td>
+<td style="text-align:right;">
+0.563
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.231
+</td>
+<td style="text-align:right;">
+0.675
+</td>
+<td style="text-align:right;">
+1.120
+</td>
+<td style="text-align:right;">
+1.324
+</td>
+<td style="text-align:right;">
+1.456
+</td>
+<td style="text-align:right;">
+1.933
+</td>
+<td style="text-align:right;">
+2.802
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6290
+</td>
+<td style="text-align:right;">
+0.164
+</td>
+<td style="text-align:right;">
+0.345
+</td>
+<td style="text-align:right;">
+0.231
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.817
+</td>
+<td style="text-align:right;">
+1.267
+</td>
+<td style="text-align:right;">
+1.473
+</td>
+<td style="text-align:right;">
+1.553
+</td>
+<td style="text-align:right;">
+2.001
+</td>
+<td style="text-align:right;">
+2.852
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6291
+</td>
+<td style="text-align:right;">
+0.977
+</td>
+<td style="text-align:right;">
+1.146
+</td>
+<td style="text-align:right;">
+0.675
+</td>
+<td style="text-align:right;">
+0.817
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.450
+</td>
+<td style="text-align:right;">
+0.656
+</td>
+<td style="text-align:right;">
+0.798
+</td>
+<td style="text-align:right;">
+1.300
+</td>
+<td style="text-align:right;">
+2.180
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6292
+</td>
+<td style="text-align:right;">
+1.426
+</td>
+<td style="text-align:right;">
+1.592
+</td>
+<td style="text-align:right;">
+1.120
+</td>
+<td style="text-align:right;">
+1.267
+</td>
+<td style="text-align:right;">
+0.450
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.206
+</td>
+<td style="text-align:right;">
+0.459
+</td>
+<td style="text-align:right;">
+0.975
+</td>
+<td style="text-align:right;">
+1.845
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6293
+</td>
+<td style="text-align:right;">
+1.632
+</td>
+<td style="text-align:right;">
+1.797
+</td>
+<td style="text-align:right;">
+1.324
+</td>
+<td style="text-align:right;">
+1.473
+</td>
+<td style="text-align:right;">
+0.656
+</td>
+<td style="text-align:right;">
+0.206
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.396
+</td>
+<td style="text-align:right;">
+0.872
+</td>
+<td style="text-align:right;">
+1.715
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6294
+</td>
+<td style="text-align:right;">
+1.699
+</td>
+<td style="text-align:right;">
+1.842
+</td>
+<td style="text-align:right;">
+1.456
+</td>
+<td style="text-align:right;">
+1.553
+</td>
+<td style="text-align:right;">
+0.798
+</td>
+<td style="text-align:right;">
+0.459
+</td>
+<td style="text-align:right;">
+0.396
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.520
+</td>
+<td style="text-align:right;">
+1.397
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6295
+</td>
+<td style="text-align:right;">
+2.135
+</td>
+<td style="text-align:right;">
+2.258
+</td>
+<td style="text-align:right;">
+1.933
+</td>
+<td style="text-align:right;">
+2.001
+</td>
+<td style="text-align:right;">
+1.300
+</td>
+<td style="text-align:right;">
+0.975
+</td>
+<td style="text-align:right;">
+0.872
+</td>
+<td style="text-align:right;">
+0.520
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.881
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6296
+</td>
+<td style="text-align:right;">
+2.975
+</td>
+<td style="text-align:right;">
+3.083
+</td>
+<td style="text-align:right;">
+2.802
+</td>
+<td style="text-align:right;">
+2.852
+</td>
+<td style="text-align:right;">
+2.180
+</td>
+<td style="text-align:right;">
+1.845
+</td>
+<td style="text-align:right;">
+1.715
+</td>
+<td style="text-align:right;">
+1.397
+</td>
+<td style="text-align:right;">
+0.881
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>p &lt;- ggplot() + theme_bw() +
+  geom_point(data=data[k:(k+dk),], aes(x=x, y=y), col=&quot;red&quot;) + 
+  geom_text(data=data[k:(k+dk),], aes(x=x, y=y, label=k:(k+dk), vjust=-0.5), size=3) + 
+  geom_path(data=data[k:(k+dk),], aes(x=x,y=y), col=&quot;red&quot;) + 
+  coord_equal(ratio = 1, xlim = range(data$x), ylim = range(data$y))
+p</code></pre>
+<p><img src="figure/machine_learning-2.Rmd/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-7-1">
+Past versions of unnamed-chunk-7-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-7-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/c20ac26b512abf7d3a74092e3b7440ee3ac88b02/docs/figure/machine_learning-2.Rmd/unnamed-chunk-7-1.png" target="_blank">c20ac26</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-08
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="case-2" class="section level3">
+<h3>case 2</h3>
+<pre class="r"><code>k = order(data$stab, decreasing = T)[2]
+dk = 9
+
+cat(&quot;the point&quot;, k, &quot;is moving with confidence&quot;, data$stab[k], &quot;\n&quot;)</code></pre>
+<pre><code>the point 3067 is moving with confidence 0.9999985 </code></pre>
+<pre class="r"><code>dist = round(as.matrix(dist(data[k:(k+dk),c(&quot;x&quot;,&quot;y&quot;)])), 3)
+kable(dist) %&gt;%
+  kable_styling(bootstrap_options = &quot;striped&quot;, full_width = F)</code></pre>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+3067
+</th>
+<th style="text-align:right;">
+3068
+</th>
+<th style="text-align:right;">
+3069
+</th>
+<th style="text-align:right;">
+3070
+</th>
+<th style="text-align:right;">
+3071
+</th>
+<th style="text-align:right;">
+3072
+</th>
+<th style="text-align:right;">
+3073
+</th>
+<th style="text-align:right;">
+3074
+</th>
+<th style="text-align:right;">
+3075
+</th>
+<th style="text-align:right;">
+3076
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+3067
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.709
+</td>
+<td style="text-align:right;">
+1.259
+</td>
+<td style="text-align:right;">
+2.101
+</td>
+<td style="text-align:right;">
+2.831
+</td>
+<td style="text-align:right;">
+2.948
+</td>
+<td style="text-align:right;">
+3.090
+</td>
+<td style="text-align:right;">
+3.210
+</td>
+<td style="text-align:right;">
+3.305
+</td>
+<td style="text-align:right;">
+3.362
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3068
+</td>
+<td style="text-align:right;">
+0.709
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.550
+</td>
+<td style="text-align:right;">
+1.392
+</td>
+<td style="text-align:right;">
+2.123
+</td>
+<td style="text-align:right;">
+2.239
+</td>
+<td style="text-align:right;">
+2.381
+</td>
+<td style="text-align:right;">
+2.501
+</td>
+<td style="text-align:right;">
+2.596
+</td>
+<td style="text-align:right;">
+2.653
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3069
+</td>
+<td style="text-align:right;">
+1.259
+</td>
+<td style="text-align:right;">
+0.550
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.842
+</td>
+<td style="text-align:right;">
+1.573
+</td>
+<td style="text-align:right;">
+1.689
+</td>
+<td style="text-align:right;">
+1.831
+</td>
+<td style="text-align:right;">
+1.951
+</td>
+<td style="text-align:right;">
+2.046
+</td>
+<td style="text-align:right;">
+2.103
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3070
+</td>
+<td style="text-align:right;">
+2.101
+</td>
+<td style="text-align:right;">
+1.392
+</td>
+<td style="text-align:right;">
+0.842
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.731
+</td>
+<td style="text-align:right;">
+0.848
+</td>
+<td style="text-align:right;">
+0.990
+</td>
+<td style="text-align:right;">
+1.111
+</td>
+<td style="text-align:right;">
+1.206
+</td>
+<td style="text-align:right;">
+1.263
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3071
+</td>
+<td style="text-align:right;">
+2.831
+</td>
+<td style="text-align:right;">
+2.123
+</td>
+<td style="text-align:right;">
+1.573
+</td>
+<td style="text-align:right;">
+0.731
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.122
+</td>
+<td style="text-align:right;">
+0.264
+</td>
+<td style="text-align:right;">
+0.385
+</td>
+<td style="text-align:right;">
+0.479
+</td>
+<td style="text-align:right;">
+0.537
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3072
+</td>
+<td style="text-align:right;">
+2.948
+</td>
+<td style="text-align:right;">
+2.239
+</td>
+<td style="text-align:right;">
+1.689
+</td>
+<td style="text-align:right;">
+0.848
+</td>
+<td style="text-align:right;">
+0.122
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.143
+</td>
+<td style="text-align:right;">
+0.264
+</td>
+<td style="text-align:right;">
+0.358
+</td>
+<td style="text-align:right;">
+0.416
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3073
+</td>
+<td style="text-align:right;">
+3.090
+</td>
+<td style="text-align:right;">
+2.381
+</td>
+<td style="text-align:right;">
+1.831
+</td>
+<td style="text-align:right;">
+0.990
+</td>
+<td style="text-align:right;">
+0.264
+</td>
+<td style="text-align:right;">
+0.143
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.121
+</td>
+<td style="text-align:right;">
+0.215
+</td>
+<td style="text-align:right;">
+0.273
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3074
+</td>
+<td style="text-align:right;">
+3.210
+</td>
+<td style="text-align:right;">
+2.501
+</td>
+<td style="text-align:right;">
+1.951
+</td>
+<td style="text-align:right;">
+1.111
+</td>
+<td style="text-align:right;">
+0.385
+</td>
+<td style="text-align:right;">
+0.264
+</td>
+<td style="text-align:right;">
+0.121
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.095
+</td>
+<td style="text-align:right;">
+0.152
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3075
+</td>
+<td style="text-align:right;">
+3.305
+</td>
+<td style="text-align:right;">
+2.596
+</td>
+<td style="text-align:right;">
+2.046
+</td>
+<td style="text-align:right;">
+1.206
+</td>
+<td style="text-align:right;">
+0.479
+</td>
+<td style="text-align:right;">
+0.358
+</td>
+<td style="text-align:right;">
+0.215
+</td>
+<td style="text-align:right;">
+0.095
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.058
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3076
+</td>
+<td style="text-align:right;">
+3.362
+</td>
+<td style="text-align:right;">
+2.653
+</td>
+<td style="text-align:right;">
+2.103
+</td>
+<td style="text-align:right;">
+1.263
+</td>
+<td style="text-align:right;">
+0.537
+</td>
+<td style="text-align:right;">
+0.416
+</td>
+<td style="text-align:right;">
+0.273
+</td>
+<td style="text-align:right;">
+0.152
+</td>
+<td style="text-align:right;">
+0.058
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>p &lt;- ggplot() + theme_bw() +
+  geom_point(data=data[k:(k+dk),], aes(x=x, y=y), col=&quot;red&quot;) + 
+  geom_text(data=data[k:(k+dk),], aes(x=x, y=y, label=k:(k+dk), vjust=-0.5), size=3) + 
+  geom_path(data=data[k:(k+dk),], aes(x=x,y=y), col=&quot;red&quot;) + 
+  coord_equal(ratio = 1, xlim = range(data$x), ylim = range(data$y))
+p</code></pre>
+<p><img src="figure/machine_learning-2.Rmd/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-8-1">
+Past versions of unnamed-chunk-8-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-8-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/c20ac26b512abf7d3a74092e3b7440ee3ac88b02/docs/figure/machine_learning-2.Rmd/unnamed-chunk-8-1.png" target="_blank">c20ac26</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-08
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="case-3" class="section level3">
+<h3>case 3</h3>
+<pre class="r"><code>k = order(data$stab, decreasing = T)[3]
+dk = 9
+
+cat(&quot;the point&quot;, k, &quot;is moving with confidence&quot;, data$stab[k], &quot;\n&quot;)</code></pre>
+<pre><code>the point 6288 is moving with confidence 0.9999985 </code></pre>
+<pre class="r"><code>dist = round(as.matrix(dist(data[k:(k+dk),c(&quot;x&quot;,&quot;y&quot;)])), 3)
+kable(dist) %&gt;%
+  kable_styling(bootstrap_options = &quot;striped&quot;, full_width = F)</code></pre>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+6288
+</th>
+<th style="text-align:right;">
+6289
+</th>
+<th style="text-align:right;">
+6290
+</th>
+<th style="text-align:right;">
+6291
+</th>
+<th style="text-align:right;">
+6292
+</th>
+<th style="text-align:right;">
+6293
+</th>
+<th style="text-align:right;">
+6294
+</th>
+<th style="text-align:right;">
+6295
+</th>
+<th style="text-align:right;">
+6296
+</th>
+<th style="text-align:right;">
+6297
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+6288
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.563
+</td>
+<td style="text-align:right;">
+0.345
+</td>
+<td style="text-align:right;">
+1.146
+</td>
+<td style="text-align:right;">
+1.592
+</td>
+<td style="text-align:right;">
+1.797
+</td>
+<td style="text-align:right;">
+1.842
+</td>
+<td style="text-align:right;">
+2.258
+</td>
+<td style="text-align:right;">
+3.083
+</td>
+<td style="text-align:right;">
+2.244
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6289
+</td>
+<td style="text-align:right;">
+0.563
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.231
+</td>
+<td style="text-align:right;">
+0.675
+</td>
+<td style="text-align:right;">
+1.120
+</td>
+<td style="text-align:right;">
+1.324
+</td>
+<td style="text-align:right;">
+1.456
+</td>
+<td style="text-align:right;">
+1.933
+</td>
+<td style="text-align:right;">
+2.802
+</td>
+<td style="text-align:right;">
+2.000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6290
+</td>
+<td style="text-align:right;">
+0.345
+</td>
+<td style="text-align:right;">
+0.231
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.817
+</td>
+<td style="text-align:right;">
+1.267
+</td>
+<td style="text-align:right;">
+1.473
+</td>
+<td style="text-align:right;">
+1.553
+</td>
+<td style="text-align:right;">
+2.001
+</td>
+<td style="text-align:right;">
+2.852
+</td>
+<td style="text-align:right;">
+2.029
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6291
+</td>
+<td style="text-align:right;">
+1.146
+</td>
+<td style="text-align:right;">
+0.675
+</td>
+<td style="text-align:right;">
+0.817
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.450
+</td>
+<td style="text-align:right;">
+0.656
+</td>
+<td style="text-align:right;">
+0.798
+</td>
+<td style="text-align:right;">
+1.300
+</td>
+<td style="text-align:right;">
+2.180
+</td>
+<td style="text-align:right;">
+1.429
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6292
+</td>
+<td style="text-align:right;">
+1.592
+</td>
+<td style="text-align:right;">
+1.120
+</td>
+<td style="text-align:right;">
+1.267
+</td>
+<td style="text-align:right;">
+0.450
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.206
+</td>
+<td style="text-align:right;">
+0.459
+</td>
+<td style="text-align:right;">
+0.975
+</td>
+<td style="text-align:right;">
+1.845
+</td>
+<td style="text-align:right;">
+1.192
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6293
+</td>
+<td style="text-align:right;">
+1.797
+</td>
+<td style="text-align:right;">
+1.324
+</td>
+<td style="text-align:right;">
+1.473
+</td>
+<td style="text-align:right;">
+0.656
+</td>
+<td style="text-align:right;">
+0.206
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.396
+</td>
+<td style="text-align:right;">
+0.872
+</td>
+<td style="text-align:right;">
+1.715
+</td>
+<td style="text-align:right;">
+1.136
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6294
+</td>
+<td style="text-align:right;">
+1.842
+</td>
+<td style="text-align:right;">
+1.456
+</td>
+<td style="text-align:right;">
+1.553
+</td>
+<td style="text-align:right;">
+0.798
+</td>
+<td style="text-align:right;">
+0.459
+</td>
+<td style="text-align:right;">
+0.396
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.520
+</td>
+<td style="text-align:right;">
+1.397
+</td>
+<td style="text-align:right;">
+0.744
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6295
+</td>
+<td style="text-align:right;">
+2.258
+</td>
+<td style="text-align:right;">
+1.933
+</td>
+<td style="text-align:right;">
+2.001
+</td>
+<td style="text-align:right;">
+1.300
+</td>
+<td style="text-align:right;">
+0.975
+</td>
+<td style="text-align:right;">
+0.872
+</td>
+<td style="text-align:right;">
+0.520
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.881
+</td>
+<td style="text-align:right;">
+0.352
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6296
+</td>
+<td style="text-align:right;">
+3.083
+</td>
+<td style="text-align:right;">
+2.802
+</td>
+<td style="text-align:right;">
+2.852
+</td>
+<td style="text-align:right;">
+2.180
+</td>
+<td style="text-align:right;">
+1.845
+</td>
+<td style="text-align:right;">
+1.715
+</td>
+<td style="text-align:right;">
+1.397
+</td>
+<td style="text-align:right;">
+0.881
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.845
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6297
+</td>
+<td style="text-align:right;">
+2.244
+</td>
+<td style="text-align:right;">
+2.000
+</td>
+<td style="text-align:right;">
+2.029
+</td>
+<td style="text-align:right;">
+1.429
+</td>
+<td style="text-align:right;">
+1.192
+</td>
+<td style="text-align:right;">
+1.136
+</td>
+<td style="text-align:right;">
+0.744
+</td>
+<td style="text-align:right;">
+0.352
+</td>
+<td style="text-align:right;">
+0.845
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>p &lt;- ggplot() + theme_bw() +
+  geom_point(data=data[k:(k+dk),], aes(x=x, y=y), col=&quot;red&quot;) + 
+  geom_text(data=data[k:(k+dk),], aes(x=x, y=y, label=k:(k+dk), vjust=-0.5), size=3) + 
+  geom_path(data=data[k:(k+dk),], aes(x=x,y=y), col=&quot;red&quot;) + 
+  coord_equal(ratio = 1, xlim = range(data$x), ylim = range(data$y))
+p</code></pre>
+<p><img src="figure/machine_learning-2.Rmd/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-9-1">
+Past versions of unnamed-chunk-9-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-9-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/c20ac26b512abf7d3a74092e3b7440ee3ac88b02/docs/figure/machine_learning-2.Rmd/unnamed-chunk-9-1.png" target="_blank">c20ac26</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-08
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="case-4" class="section level3">
+<h3>case 4</h3>
+<pre class="r"><code>k = order(data$stab, decreasing = T)[8]
+dk = 9
+
+cat(&quot;the point&quot;, k, &quot;is moving with confidence&quot;, data$stab[k], &quot;\n&quot;)</code></pre>
+<pre><code>the point 6296 is moving with confidence 0.9999985 </code></pre>
+<pre class="r"><code>dist = round(as.matrix(dist(data[k:(k+dk),c(&quot;x&quot;,&quot;y&quot;)])), 3)
+kable(dist) %&gt;%
+  kable_styling(bootstrap_options = &quot;striped&quot;, full_width = F)</code></pre>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+6296
+</th>
+<th style="text-align:right;">
+6297
+</th>
+<th style="text-align:right;">
+6298
+</th>
+<th style="text-align:right;">
+6299
+</th>
+<th style="text-align:right;">
+6300
+</th>
+<th style="text-align:right;">
+6301
+</th>
+<th style="text-align:right;">
+6302
+</th>
+<th style="text-align:right;">
+6303
+</th>
+<th style="text-align:right;">
+6304
+</th>
+<th style="text-align:right;">
+6305
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+6296
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.845
+</td>
+<td style="text-align:right;">
+1.127
+</td>
+<td style="text-align:right;">
+1.441
+</td>
+<td style="text-align:right;">
+1.754
+</td>
+<td style="text-align:right;">
+1.682
+</td>
+<td style="text-align:right;">
+2.059
+</td>
+<td style="text-align:right;">
+2.383
+</td>
+<td style="text-align:right;">
+2.700
+</td>
+<td style="text-align:right;">
+2.927
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6297
+</td>
+<td style="text-align:right;">
+0.845
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.292
+</td>
+<td style="text-align:right;">
+0.651
+</td>
+<td style="text-align:right;">
+0.919
+</td>
+<td style="text-align:right;">
+0.839
+</td>
+<td style="text-align:right;">
+1.214
+</td>
+<td style="text-align:right;">
+1.538
+</td>
+<td style="text-align:right;">
+1.855
+</td>
+<td style="text-align:right;">
+2.082
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6298
+</td>
+<td style="text-align:right;">
+1.127
+</td>
+<td style="text-align:right;">
+0.292
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.508
+</td>
+<td style="text-align:right;">
+0.682
+</td>
+<td style="text-align:right;">
+0.581
+</td>
+<td style="text-align:right;">
+0.944
+</td>
+<td style="text-align:right;">
+1.262
+</td>
+<td style="text-align:right;">
+1.578
+</td>
+<td style="text-align:right;">
+1.803
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6299
+</td>
+<td style="text-align:right;">
+1.441
+</td>
+<td style="text-align:right;">
+0.651
+</td>
+<td style="text-align:right;">
+0.508
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.368
+</td>
+<td style="text-align:right;">
+0.380
+</td>
+<td style="text-align:right;">
+0.721
+</td>
+<td style="text-align:right;">
+1.037
+</td>
+<td style="text-align:right;">
+1.346
+</td>
+<td style="text-align:right;">
+1.573
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6300
+</td>
+<td style="text-align:right;">
+1.754
+</td>
+<td style="text-align:right;">
+0.919
+</td>
+<td style="text-align:right;">
+0.682
+</td>
+<td style="text-align:right;">
+0.368
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.135
+</td>
+<td style="text-align:right;">
+0.354
+</td>
+<td style="text-align:right;">
+0.670
+</td>
+<td style="text-align:right;">
+0.982
+</td>
+<td style="text-align:right;">
+1.210
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6301
+</td>
+<td style="text-align:right;">
+1.682
+</td>
+<td style="text-align:right;">
+0.839
+</td>
+<td style="text-align:right;">
+0.581
+</td>
+<td style="text-align:right;">
+0.380
+</td>
+<td style="text-align:right;">
+0.135
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.380
+</td>
+<td style="text-align:right;">
+0.707
+</td>
+<td style="text-align:right;">
+1.024
+</td>
+<td style="text-align:right;">
+1.252
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6302
+</td>
+<td style="text-align:right;">
+2.059
+</td>
+<td style="text-align:right;">
+1.214
+</td>
+<td style="text-align:right;">
+0.944
+</td>
+<td style="text-align:right;">
+0.721
+</td>
+<td style="text-align:right;">
+0.354
+</td>
+<td style="text-align:right;">
+0.380
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.326
+</td>
+<td style="text-align:right;">
+0.644
+</td>
+<td style="text-align:right;">
+0.872
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6303
+</td>
+<td style="text-align:right;">
+2.383
+</td>
+<td style="text-align:right;">
+1.538
+</td>
+<td style="text-align:right;">
+1.262
+</td>
+<td style="text-align:right;">
+1.037
+</td>
+<td style="text-align:right;">
+0.670
+</td>
+<td style="text-align:right;">
+0.707
+</td>
+<td style="text-align:right;">
+0.326
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.318
+</td>
+<td style="text-align:right;">
+0.546
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6304
+</td>
+<td style="text-align:right;">
+2.700
+</td>
+<td style="text-align:right;">
+1.855
+</td>
+<td style="text-align:right;">
+1.578
+</td>
+<td style="text-align:right;">
+1.346
+</td>
+<td style="text-align:right;">
+0.982
+</td>
+<td style="text-align:right;">
+1.024
+</td>
+<td style="text-align:right;">
+0.644
+</td>
+<td style="text-align:right;">
+0.318
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.228
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6305
+</td>
+<td style="text-align:right;">
+2.927
+</td>
+<td style="text-align:right;">
+2.082
+</td>
+<td style="text-align:right;">
+1.803
+</td>
+<td style="text-align:right;">
+1.573
+</td>
+<td style="text-align:right;">
+1.210
+</td>
+<td style="text-align:right;">
+1.252
+</td>
+<td style="text-align:right;">
+0.872
+</td>
+<td style="text-align:right;">
+0.546
+</td>
+<td style="text-align:right;">
+0.228
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>p &lt;- ggplot() + theme_bw() +
+  geom_point(data=data[k:(k+dk),], aes(x=x, y=y), col=&quot;red&quot;) + 
+  geom_text(data=data[k:(k+dk),], aes(x=x, y=y, label=k:(k+dk), vjust=-0.5), size=3) + 
+  geom_path(data=data[k:(k+dk),], aes(x=x,y=y), col=&quot;red&quot;) + 
+  coord_equal(ratio = 1, xlim = range(data$x), ylim = range(data$y))
+p</code></pre>
+<p><img src="figure/machine_learning-2.Rmd/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-1">
+Past versions of unnamed-chunk-10-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-10-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/c20ac26b512abf7d3a74092e3b7440ee3ac88b02/docs/figure/machine_learning-2.Rmd/unnamed-chunk-10-1.png" target="_blank">c20ac26</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-08
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
+<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Session information
+</button>
+</p>
+<div id="workflowr-sessioninfo" class="collapse">
+<pre class="r"><code>sessionInfo()</code></pre>
+<pre><code>R version 4.0.2 (2020-06-22)
+Platform: x86_64-apple-darwin17.0 (64-bit)
+Running under: macOS Catalina 10.15.7
+
+Matrix products: default
+BLAS:   /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRblas.dylib
+LAPACK: /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRlapack.dylib
+
+locale:
+[1] fr_FR.UTF-8/fr_FR.UTF-8/fr_FR.UTF-8/C/fr_FR.UTF-8/fr_FR.UTF-8
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] scales_1.1.1     DT_0.17          readxl_1.3.1     lubridate_1.7.10
+ [5] dplyr_1.0.6      nnet_7.3-14      kableExtra_1.1.0 rjson_0.2.20    
+ [9] cowplot_1.1.0    gifski_0.8.6     gganimate_1.0.7  ggplot2_3.3.3   
+[13] workflowr_1.6.2 
+
+loaded via a namespace (and not attached):
+ [1] progress_1.2.2    tidyselect_1.1.0  xfun_0.25         purrr_0.3.4      
+ [5] colorspace_1.4-1  vctrs_0.3.8       generics_0.1.0    viridisLite_0.3.0
+ [9] htmltools_0.5.0   yaml_2.2.1        utf8_1.1.4        rlang_0.4.11     
+[13] later_1.1.0.1     pillar_1.6.0      glue_1.4.1        withr_2.4.2      
+[17] DBI_1.1.1         tweenr_1.0.1      lifecycle_1.0.0   stringr_1.4.0    
+[21] cellranger_1.1.0  munsell_0.5.0     gtable_0.3.0      rvest_1.0.0      
+[25] htmlwidgets_1.5.1 evaluate_0.14     labeling_0.3      knitr_1.33       
+[29] httpuv_1.5.4      fansi_0.4.1       highr_0.8         Rcpp_1.0.5       
+[33] readr_1.4.0       promises_1.1.1    backports_1.1.8   webshot_0.5.2    
+[37] farver_2.0.3      fs_1.5.0          hms_1.0.0         digest_0.6.25    
+[41] stringi_1.4.6     grid_4.0.2        rprojroot_1.3-2   tools_4.0.2      
+[45] magrittr_2.0.1    tibble_3.1.1      crayon_1.4.1      whisker_0.4      
+[49] pkgconfig_2.0.3   ellipsis_0.3.1    xml2_1.3.2        prettyunits_1.1.1
+[53] httr_1.4.2        rstudioapi_0.13   assertthat_0.2.1  rmarkdown_2.10   
+[57] R6_2.4.1          git2r_0.28.0      compiler_4.0.2   </code></pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<!-- Adjust MathJax settings so that all math formulae are shown using
+TeX fonts only; see
+http://docs.mathjax.org/en/latest/configuration.html.  This will make
+the presentation more consistent at the cost of the webpage sometimes
+taking slightly longer to load. Note that this only works because the
+footer is added to webpages before the MathJax javascript. -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
