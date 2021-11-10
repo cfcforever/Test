@@ -27,7 +27,8 @@ datatable(m, escape = FALSE, options = list(pageLength = 5))
 
 # Tests
 ```{r}
-m = matrix(c("2021-10-19", "Ludovic, Germain", paste0('<a href="https://cfcforever.github.io/Test/2021-10-19-Test.html">', '2021-10-19-Test', '</a>')), ncol = 3, byrow = T)
+m = matrix(c("2021-10-19", "Ludovic, Germain", paste0('<a href="https://cfcforever.github.io/Test/2021-10-19-Test.html">', '2021-10-19-Test', '</a>'), 
+             "2021-11-09", "tag patient", paste0('<a href="https://cfcforever.github.io/Test/tag_patient.html">', '2021-10-09-tag_patient', '</a>')), ncol = 3, byrow = T)
 colnames(m) = c('<b>Date</b>', '<b>by</b>', '<b>Report link</b>')
 
 datatable(m, escape = FALSE, options = list(pageLength = 5))
