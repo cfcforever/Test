@@ -422,7 +422,7 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2021-10-19
+<strong>Last updated:</strong> 2021-11-12
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -513,16 +513,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree42f66ae75aecd4ee1388d94b4db34139e6afe17atargetblank42f66aea"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/42f66ae75aecd4ee1388d94b4db34139e6afe17a" target="_blank">42f66ae</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree82da2aabc7cf34482ed5a05f5bd19db7e3075704targetblank82da2aaa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/82da2aabc7cf34482ed5a05f5bd19db7e3075704" target="_blank">82da2aa</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree42f66ae75aecd4ee1388d94b4db34139e6afe17atargetblank42f66aea" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree82da2aabc7cf34482ed5a05f5bd19db7e3075704targetblank82da2aaa" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/42f66ae75aecd4ee1388d94b4db34139e6afe17a" target="_blank">42f66ae</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/82da2aabc7cf34482ed5a05f5bd19db7e3075704" target="_blank">82da2aa</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -537,11 +537,9 @@ Ignored files:
     Ignored:    data/Stabiliseur/
     Ignored:    data/json/
     Ignored:    data/plan/
-    Ignored:    fig/
+    Ignored:    data/stab/.DS_Store
+    Ignored:    figure/
     Ignored:    workflowr.R
-
-Untracked files:
-    Untracked:  analysis/2021-10-19.Rmd
 
 </code></pre>
 <p>
@@ -580,6 +578,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/82da2aabc7cf34482ed5a05f5bd19db7e3075704/analysis/index.Rmd" target="_blank">82da2aa</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+<td>
+add new content
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cfcforever/Test/2c4b0ea80335ae15e4f4111f6799213cfa720707/docs/index.html" target="_blank">2c4b0ea</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-10-19
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -1338,14 +1370,14 @@ Start workflowr project.
 <p>Welcome to my research website.</p>
 <div id="tags-and-labels" class="section level1">
 <h1>Tags and labels</h1>
-<pre class="r"><code>names_tag &lt;- read.table(file = &quot;data/tag_names_20210924.txt&quot;, header = T, sep = &quot;\t&quot;)
+<pre class="r"><code>names_tag &lt;- read.table(file = &quot;data/tag_names_20211109.txt&quot;, header = T, sep = &quot;\t&quot;)
 
 # kable(names_tag) %&gt;%
 #   kable_styling(bootstrap_options = &quot;striped&quot;, full_width = F)
 
 datatable(names_tag, class = &#39;cell-border stripe&#39;, options = list(pageLength = nrow(names_tag)))</code></pre>
 <div id="htmlwidget-173e29cf4123579084a6" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-173e29cf4123579084a6">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18"],["2a51","0da6","2f7b","2a73","2f40","2f77","2b9c","0d82","29ed","2c57","28e9","2e8d","0baf","0db4","2dd9","19ab","28d2","2e55"],["Bladder","Brancard1","Brancard2","Brancard3","Brancard4","Brancard polytrauma1","Brancard polytrauma2","Chariot de soins1","Chariot de soins2","Dynamap1","Dynamap2","Dynamap3","Electro-cardiogramme","Fauteuil roulant1","Fauteuil roulant2","Tag fixe","Ordi mobile","Scope mobile"],["BLA","BRA1","BRA2","BRA3","BRA4","BRP1","BRP2","CDS1","CDS2","DYN1","DYN2","DYN3","ELC","FAU1","FAU2","FIX","ORD","SCO"]],"container":"<table class=\"cell-border stripe\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>id<\/th>\n      <th>Matériel<\/th>\n      <th>label<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":18,"order":[],"autoWidth":false,"orderClasses":false,"columnDefs":[{"orderable":false,"targets":0}],"lengthMenu":[10,18,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-173e29cf4123579084a6">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19"],["2a51","0da6","2f7b","2a73","2f40","2f77","2b9c","0d82","29ed","2c57","28e9","2e8d","0baf","0db4","28d2","2e55","cf31","8718","58b2"],["Bladder","Brancard1","Brancard2","Brancard3","Brancard4","Brancard polytrauma1","Brancard polytrauma2","Chariot de soins1","Chariot de soins2","Dynamap1","Dynamap2","Dynamap3","Electro-cardiogramme","Fauteuil roulant","Ordi mobile","Scope mobile","tag_patient1","tag_patient2","tag_patient3"],["BLA","BRA1","BRA2","BRA3","BRA4","BRP1","BRP2","CDS1","CDS2","DYN1","DYN2","DYN3","ELC","FAU","ORD","SCO","TAG1","TAG2","TAG3"]],"container":"<table class=\"cell-border stripe\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>id<\/th>\n      <th>Matériel<\/th>\n      <th>label<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":19,"order":[],"autoWidth":false,"orderClasses":false,"columnDefs":[{"orderable":false,"targets":0}],"lengthMenu":[10,19,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
