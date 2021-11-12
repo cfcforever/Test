@@ -42,7 +42,7 @@ dat = cbind.data.frame(dat, convert_date(dat$record_timestamp))
 dat$x = as.numeric(dat$x)
 dat$y = as.numeric(dat$y)
 
-names_tag <- read.table(file = "data/tag_names_20210924.txt", header = T, sep = "\t")
+names_tag <- read.table(file = "data/tag_names_20211109.txt", header = T, sep = "\t")
 names_tag = names_tag[names_tag$id%in%tagId, ]
 
 tagId = names_tag$id
@@ -196,7 +196,7 @@ for (k in 1:nb_tag){
 
 # plot by hour {.tabset .tabset-pills}
 ```{r results='asis'}
-names_tag_all <- read.table(file = "data/tag_names_20210924.txt", header = T, sep = "\t")
+names_tag_all <- read.table(file = "data/tag_names_20211109.txt", header = T, sep = "\t")
 nb_tag_all = nrow(names_tag_all)
 
 temp1 = read.csv2(paste0("data/json/2021-11-01/position.csv"))
