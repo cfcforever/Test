@@ -37,7 +37,6 @@
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
@@ -507,16 +506,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreecc6baf3085c05e2a03b7fa85b1ee8be9151c900atargetblankcc6baf3a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/cc6baf3085c05e2a03b7fa85b1ee8be9151c900a" target="_blank">cc6baf3</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree93e4c86e756319e163deb29251a0ce743e6a8999targetblank93e4c86a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/93e4c86e756319e163deb29251a0ce743e6a8999" target="_blank">93e4c86</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreecc6baf3085c05e2a03b7fa85b1ee8be9151c900atargetblankcc6baf3a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree93e4c86e756319e163deb29251a0ce743e6a8999targetblank93e4c86a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/cc6baf3085c05e2a03b7fa85b1ee8be9151c900a" target="_blank">cc6baf3</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/93e4c86e756319e163deb29251a0ce743e6a8999" target="_blank">93e4c86</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -526,12 +525,16 @@ Ignored files:
     Ignored:    .DS_Store
     Ignored:    .Rhistory
     Ignored:    .Rproj.user/
-    Ignored:    data/.DS_Store
+    Ignored:    analysis/.DS_Store
     Ignored:    data/Stabiliseur/
     Ignored:    data/json/
     Ignored:    data/plan/
+    Ignored:    data/stab/.DS_Store
     Ignored:    figure/
     Ignored:    workflowr.R
+
+Unstaged changes:
+    Modified:   data/tag_names_20211109.txt
 
 </code></pre>
 <p>
@@ -570,6 +573,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cfcforever/Test/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/2021-11-11.html" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -738,6 +758,29 @@ DYN3
 0.97
 </td>
 </tr>
+<tr>
+<td style="text-align:left;">
+19ab
+</td>
+<td style="text-align:left;">
+FIX
+</td>
+<td style="text-align:left;">
+2021-11-11 00:00:00
+</td>
+<td style="text-align:left;">
+2021-11-11 23:59:59
+</td>
+<td style="text-align:right;">
+414487
+</td>
+<td style="text-align:right;">
+94792
+</td>
+<td style="text-align:right;">
+0.77
+</td>
+</tr>
 </tbody>
 </table>
 <pre class="r"><code>list_tag = lapply(list_tag, function(x){cbind(x, data.frame(diff_ts = c(0, x$record_timestamp[-1]-x$record_timestamp[-nrow(x)])))})
@@ -880,6 +923,47 @@ DYN3
 21451.605
 </td>
 </tr>
+<tr>
+<td style="text-align:left;">
+19ab
+</td>
+<td style="text-align:left;">
+FIX
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+96.400
+</td>
+</tr>
 </tbody>
 </table>
 <div id="plot-with-nas" class="section level3">
@@ -895,6 +979,43 @@ p &lt;- ggplot(dat) + theme_bw() +
   labs(x = &quot;hour&quot;, y = &quot;&quot;, title = today)
 print(p)</code></pre>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-6-1">
+Past versions of unnamed-chunk-6-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-6-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-6-1.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="plot-without-nas" class="section level3">
 <h3>plot without NAs</h3>
@@ -904,7 +1025,7 @@ cat(&quot;if x_na = y_na:&quot;, identical(x_na, y_na), &quot;\n&quot;)</code></
 <pre><code>if x_na = y_na: TRUE </code></pre>
 <pre class="r"><code>cat(&quot;number of NA positions:&quot;, length(x_na), &quot;/&quot;, length(tagId_seq), &quot;(=&quot;, 
     length(x_na)/length(tagId_seq)*100, &quot;%)&quot;, &quot;\n&quot;)</code></pre>
-<pre><code>number of NA positions: 11723 / 871388 (= 1.345325 %) </code></pre>
+<pre><code>number of NA positions: 106515 / 871388 (= 12.2236 %) </code></pre>
 <pre class="r"><code>if (length(x_na)!=0){
   dat = dat[-x_na,]
 }</code></pre>
@@ -919,6 +1040,43 @@ p &lt;- ggplot(dat) + theme_bw() +
   labs(x = &quot;hour&quot;, y = &quot;&quot;, title = today)
 print(p)</code></pre>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-8-1">
+Past versions of unnamed-chunk-8-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-8-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-8-1.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code>list_tag &lt;- split(dat, dat$tag)
 
 for (tag in names(list_tag)){
@@ -959,10 +1117,88 @@ dat = do.call(rbind.data.frame, list_tag)</code></pre>
 <div id="bra1" class="section level2">
 <h2>BRA1</h2>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-11-1">
+Past versions of unnamed-chunk-11-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-11-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-11-1.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="dyn3" class="section level2">
 <h2>DYN3</h2>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-11-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-11-2">
+Past versions of unnamed-chunk-11-2.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-11-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-11-2.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="fix" class="section level2">
+<h2>FIX</h2>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-11-3.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="plot-by-hour" class="section level1 tabset tabset-pills">
@@ -1095,98 +1331,986 @@ for (k in 1:nb_tag_all){
 <div id="section-24" class="section level3">
 <h3>00</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-1">
+Past versions of unnamed-chunk-12-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-1.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-25" class="section level3">
 <h3>01</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-2">
+Past versions of unnamed-chunk-12-2.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-2.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-26" class="section level3">
 <h3>02</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-3.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-3">
+Past versions of unnamed-chunk-12-3.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-3" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-3.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-27" class="section level3">
 <h3>03</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-4.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-4">
+Past versions of unnamed-chunk-12-4.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-4" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-4.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-28" class="section level3">
 <h3>04</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-5.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-5">
+Past versions of unnamed-chunk-12-5.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-5" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-5.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-29" class="section level3">
 <h3>05</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-6.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-6">
+Past versions of unnamed-chunk-12-6.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-6" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-6.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-30" class="section level3">
 <h3>06</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-7.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-7">
+Past versions of unnamed-chunk-12-7.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-7" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-7.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-31" class="section level3">
 <h3>07</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-8.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-8">
+Past versions of unnamed-chunk-12-8.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-8" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-8.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-32" class="section level3">
 <h3>08</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-9.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-9">
+Past versions of unnamed-chunk-12-9.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-9" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-9.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-33" class="section level3">
 <h3>09</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-10.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-10">
+Past versions of unnamed-chunk-12-10.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-10" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-10.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-34" class="section level3">
 <h3>10</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-11.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-11">
+Past versions of unnamed-chunk-12-11.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-11" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-11.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-35" class="section level3">
 <h3>11</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-12.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-12">
+Past versions of unnamed-chunk-12-12.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-12" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-12.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-36" class="section level3">
 <h3>12</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-13.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-13">
+Past versions of unnamed-chunk-12-13.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-13" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-13.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-37" class="section level3">
 <h3>13</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-14.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-14">
+Past versions of unnamed-chunk-12-14.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-14" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-14.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-38" class="section level3">
 <h3>14</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-15.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-15">
+Past versions of unnamed-chunk-12-15.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-15" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-15.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-39" class="section level3">
 <h3>15</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-16.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-16">
+Past versions of unnamed-chunk-12-16.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-16" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-16.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-40" class="section level3">
 <h3>16</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-17.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-17">
+Past versions of unnamed-chunk-12-17.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-17" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-17.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-41" class="section level3">
 <h3>17</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-18.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-18">
+Past versions of unnamed-chunk-12-18.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-18" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-18.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-42" class="section level3">
 <h3>18</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-19.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-19">
+Past versions of unnamed-chunk-12-19.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-19" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-19.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-43" class="section level3">
 <h3>19</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-20.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-20">
+Past versions of unnamed-chunk-12-20.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-20" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-20.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-44" class="section level3">
 <h3>20</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-21.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-21">
+Past versions of unnamed-chunk-12-21.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-21" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-21.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-45" class="section level3">
 <h3>21</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-22.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-22">
+Past versions of unnamed-chunk-12-22.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-22" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-22.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-46" class="section level3">
 <h3>22</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-23.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-23">
+Past versions of unnamed-chunk-12-23.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-23" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-23.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-47" class="section level3">
 <h3>23</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-24.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-24">
+Past versions of unnamed-chunk-12-24.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-24" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-24.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div id="bra2" class="section level2 tabset tabset-pills">
@@ -1494,98 +2618,986 @@ for (k in 1:nb_tag_all){
 <div id="section-144" class="section level3">
 <h3>00</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-25.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-25">
+Past versions of unnamed-chunk-12-25.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-25" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-25.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-145" class="section level3">
 <h3>01</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-26.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-26">
+Past versions of unnamed-chunk-12-26.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-26" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-26.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-146" class="section level3">
 <h3>02</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-27.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-27">
+Past versions of unnamed-chunk-12-27.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-27" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-27.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-147" class="section level3">
 <h3>03</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-28.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-28">
+Past versions of unnamed-chunk-12-28.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-28" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-28.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-148" class="section level3">
 <h3>04</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-29.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-29">
+Past versions of unnamed-chunk-12-29.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-29" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-29.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-149" class="section level3">
 <h3>05</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-30.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-30">
+Past versions of unnamed-chunk-12-30.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-30" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-30.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-150" class="section level3">
 <h3>06</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-31.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-31">
+Past versions of unnamed-chunk-12-31.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-31" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-31.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-151" class="section level3">
 <h3>07</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-32.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-32">
+Past versions of unnamed-chunk-12-32.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-32" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-32.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-152" class="section level3">
 <h3>08</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-33.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-33">
+Past versions of unnamed-chunk-12-33.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-33" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-33.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-153" class="section level3">
 <h3>09</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-34.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-34">
+Past versions of unnamed-chunk-12-34.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-34" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-34.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-154" class="section level3">
 <h3>10</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-35.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-35">
+Past versions of unnamed-chunk-12-35.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-35" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-35.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-155" class="section level3">
 <h3>11</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-36.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-36">
+Past versions of unnamed-chunk-12-36.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-36" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-36.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-156" class="section level3">
 <h3>12</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-37.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-37">
+Past versions of unnamed-chunk-12-37.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-37" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-37.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-157" class="section level3">
 <h3>13</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-38.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-38">
+Past versions of unnamed-chunk-12-38.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-38" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-38.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-158" class="section level3">
 <h3>14</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-39.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-39">
+Past versions of unnamed-chunk-12-39.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-39" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-39.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-159" class="section level3">
 <h3>15</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-40.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-40">
+Past versions of unnamed-chunk-12-40.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-40" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-40.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-160" class="section level3">
 <h3>16</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-41.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-41">
+Past versions of unnamed-chunk-12-41.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-41" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-41.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-161" class="section level3">
 <h3>17</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-42.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-42">
+Past versions of unnamed-chunk-12-42.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-42" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-42.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-162" class="section level3">
 <h3>18</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-43.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-43">
+Past versions of unnamed-chunk-12-43.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-43" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-43.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-163" class="section level3">
 <h3>19</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-44.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-44">
+Past versions of unnamed-chunk-12-44.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-44" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-44.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-164" class="section level3">
 <h3>20</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-45.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-45">
+Past versions of unnamed-chunk-12-45.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-45" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-45.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-165" class="section level3">
 <h3>21</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-46.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-46">
+Past versions of unnamed-chunk-12-46.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-46" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-46.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-166" class="section level3">
 <h3>22</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-47.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-47">
+Past versions of unnamed-chunk-12-47.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-47" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-47.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-167" class="section level3">
 <h3>23</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-48.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-48">
+Past versions of unnamed-chunk-12-48.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-48" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-48.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div id="cds1" class="section level2 tabset tabset-pills">
@@ -1893,98 +3905,986 @@ for (k in 1:nb_tag_all){
 <div id="section-264" class="section level3">
 <h3>00</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-49.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-49">
+Past versions of unnamed-chunk-12-49.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-49" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-49.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-265" class="section level3">
 <h3>01</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-50.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-50">
+Past versions of unnamed-chunk-12-50.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-50" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-50.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-266" class="section level3">
 <h3>02</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-51.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-51">
+Past versions of unnamed-chunk-12-51.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-51" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-51.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-267" class="section level3">
 <h3>03</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-52.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-52">
+Past versions of unnamed-chunk-12-52.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-52" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-52.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-268" class="section level3">
 <h3>04</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-53.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-53">
+Past versions of unnamed-chunk-12-53.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-53" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-53.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-269" class="section level3">
 <h3>05</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-54.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-54">
+Past versions of unnamed-chunk-12-54.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-54" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-54.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-270" class="section level3">
 <h3>06</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-55.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-55">
+Past versions of unnamed-chunk-12-55.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-55" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-55.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-271" class="section level3">
 <h3>07</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-56.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-56">
+Past versions of unnamed-chunk-12-56.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-56" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-56.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-272" class="section level3">
 <h3>08</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-57.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-57">
+Past versions of unnamed-chunk-12-57.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-57" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-57.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-273" class="section level3">
 <h3>09</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-58.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-58">
+Past versions of unnamed-chunk-12-58.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-58" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-58.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-274" class="section level3">
 <h3>10</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-59.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-59">
+Past versions of unnamed-chunk-12-59.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-59" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-59.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-275" class="section level3">
 <h3>11</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-60.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-60">
+Past versions of unnamed-chunk-12-60.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-60" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-60.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-276" class="section level3">
 <h3>12</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-61.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-61">
+Past versions of unnamed-chunk-12-61.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-61" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-61.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-277" class="section level3">
 <h3>13</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-62.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-62">
+Past versions of unnamed-chunk-12-62.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-62" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-62.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-278" class="section level3">
 <h3>14</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-63.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-63">
+Past versions of unnamed-chunk-12-63.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-63" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-63.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-279" class="section level3">
 <h3>15</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-64.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-64">
+Past versions of unnamed-chunk-12-64.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-64" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-64.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-280" class="section level3">
 <h3>16</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-65.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-65">
+Past versions of unnamed-chunk-12-65.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-65" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-65.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-281" class="section level3">
 <h3>17</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-66.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-66">
+Past versions of unnamed-chunk-12-66.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-66" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-66.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-282" class="section level3">
 <h3>18</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-67.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-67">
+Past versions of unnamed-chunk-12-67.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-67" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-67.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-283" class="section level3">
 <h3>19</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-68.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-68">
+Past versions of unnamed-chunk-12-68.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-68" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-68.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-284" class="section level3">
 <h3>20</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-69.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-69">
+Past versions of unnamed-chunk-12-69.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-69" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-69.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-285" class="section level3">
 <h3>21</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-70.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-70">
+Past versions of unnamed-chunk-12-70.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-70" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-70.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-286" class="section level3">
 <h3>22</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-71.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-71">
+Past versions of unnamed-chunk-12-71.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-71" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-71.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-287" class="section level3">
 <h3>23</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-72.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-72">
+Past versions of unnamed-chunk-12-72.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-72" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-72.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div id="elc" class="section level2 tabset tabset-pills">
@@ -2062,8 +4962,8 @@ for (k in 1:nb_tag_all){
 <h3>23</h3>
 </div>
 </div>
-<div id="fau" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">FAU</h2>
+<div id="fau1" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">FAU1</h2>
 <div id="section-312" class="section level3">
 <h3>00</h3>
 </div>
@@ -2137,8 +5037,8 @@ for (k in 1:nb_tag_all){
 <h3>23</h3>
 </div>
 </div>
-<div id="ord" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">ORD</h2>
+<div id="fau2" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">FAU2</h2>
 <div id="section-336" class="section level3">
 <h3>00</h3>
 </div>
@@ -2212,184 +5112,1072 @@ for (k in 1:nb_tag_all){
 <h3>23</h3>
 </div>
 </div>
-<div id="sco" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">SCO</h2>
+<div id="fix-1" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">FIX</h2>
 <div id="section-360" class="section level3">
 <h3>00</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-73.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-73">
+Past versions of unnamed-chunk-12-73.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-73" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-73.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-361" class="section level3">
 <h3>01</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-74.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-74">
+Past versions of unnamed-chunk-12-74.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-74" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-74.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-362" class="section level3">
 <h3>02</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-75.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-75">
+Past versions of unnamed-chunk-12-75.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-75" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-75.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-363" class="section level3">
 <h3>03</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-76.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-76">
+Past versions of unnamed-chunk-12-76.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-76" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-76.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-364" class="section level3">
 <h3>04</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-77.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-77">
+Past versions of unnamed-chunk-12-77.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-77" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-77.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-365" class="section level3">
 <h3>05</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-78.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-78">
+Past versions of unnamed-chunk-12-78.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-78" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-78.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-366" class="section level3">
 <h3>06</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-79.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-79">
+Past versions of unnamed-chunk-12-79.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-79" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-79.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-367" class="section level3">
 <h3>07</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-80.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-80">
+Past versions of unnamed-chunk-12-80.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-80" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-80.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-368" class="section level3">
 <h3>08</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-81.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-81">
+Past versions of unnamed-chunk-12-81.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-81" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-81.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-369" class="section level3">
 <h3>09</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-82.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-82">
+Past versions of unnamed-chunk-12-82.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-82" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-82.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-370" class="section level3">
 <h3>10</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-83.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-83">
+Past versions of unnamed-chunk-12-83.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-83" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-83.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-371" class="section level3">
 <h3>11</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-84.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-84">
+Past versions of unnamed-chunk-12-84.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-84" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-84.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-372" class="section level3">
 <h3>12</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-85.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-85">
+Past versions of unnamed-chunk-12-85.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-85" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-85.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-373" class="section level3">
 <h3>13</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-86.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-86">
+Past versions of unnamed-chunk-12-86.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-86" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-86.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-374" class="section level3">
 <h3>14</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-87.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-87">
+Past versions of unnamed-chunk-12-87.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-87" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-87.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-375" class="section level3">
 <h3>15</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-88.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-88">
+Past versions of unnamed-chunk-12-88.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-88" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-88.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-376" class="section level3">
 <h3>16</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-89.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-89">
+Past versions of unnamed-chunk-12-89.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-89" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-89.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-377" class="section level3">
 <h3>17</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-90.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-90">
+Past versions of unnamed-chunk-12-90.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-90" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-90.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-378" class="section level3">
 <h3>18</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-91.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-91">
+Past versions of unnamed-chunk-12-91.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-91" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-91.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-379" class="section level3">
 <h3>19</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-92.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-92">
+Past versions of unnamed-chunk-12-92.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-92" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-92.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-380" class="section level3">
 <h3>20</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-93.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-93">
+Past versions of unnamed-chunk-12-93.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-93" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-93.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-381" class="section level3">
 <h3>21</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-94.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-94">
+Past versions of unnamed-chunk-12-94.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-94" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-94.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-382" class="section level3">
 <h3>22</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-95.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-95">
+Past versions of unnamed-chunk-12-95.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-95" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-95.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-383" class="section level3">
 <h3>23</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-96.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-96">
+Past versions of unnamed-chunk-12-96.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-96" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-96.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-<div id="tag1" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">TAG1</h2>
+</div>
+</div>
+<div id="ord" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">ORD</h2>
 <div id="section-384" class="section level3">
 <h3>00</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-73.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-385" class="section level3">
 <h3>01</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-74.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-386" class="section level3">
 <h3>02</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-75.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-387" class="section level3">
 <h3>03</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-76.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-388" class="section level3">
 <h3>04</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-77.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-389" class="section level3">
 <h3>05</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-78.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-390" class="section level3">
 <h3>06</h3>
 </div>
 <div id="section-391" class="section level3">
 <h3>07</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-79.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-392" class="section level3">
 <h3>08</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-80.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-393" class="section level3">
 <h3>09</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-81.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-394" class="section level3">
 <h3>10</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-82.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-395" class="section level3">
 <h3>11</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-83.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-396" class="section level3">
 <h3>12</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-84.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-397" class="section level3">
 <h3>13</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-85.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-398" class="section level3">
 <h3>14</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-86.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-399" class="section level3">
 <h3>15</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-87.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-400" class="section level3">
 <h3>16</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-88.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-401" class="section level3">
 <h3>17</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-89.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-402" class="section level3">
 <h3>18</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-90.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-403" class="section level3">
 <h3>19</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-91.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-404" class="section level3">
 <h3>20</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-92.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-405" class="section level3">
 <h3>21</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-93.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-406" class="section level3">
 <h3>22</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-94.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-407" class="section level3">
 <h3>23</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-95.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 </div>
-<div id="tag2" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">TAG2</h2>
+<div id="sco" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">SCO</h2>
 <div id="section-408" class="section level3">
 <h3>00</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-96.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-409" class="section level3">
 <h3>01</h3>
@@ -2432,137 +6220,1384 @@ for (k in 1:nb_tag_all){
 </div>
 <div id="section-422" class="section level3">
 <h3>14</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-97.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-423" class="section level3">
 <h3>15</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-98.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-424" class="section level3">
 <h3>16</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-99.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-425" class="section level3">
 <h3>17</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-100.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-426" class="section level3">
 <h3>18</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-101.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-427" class="section level3">
 <h3>19</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-102.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-428" class="section level3">
 <h3>20</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-103.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-429" class="section level3">
 <h3>21</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-104.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-430" class="section level3">
 <h3>22</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-105.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-431" class="section level3">
 <h3>23</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-106.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 </div>
-<div id="tag3" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">TAG3</h2>
+<div id="ide" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">IDE</h2>
 <div id="section-432" class="section level3">
 <h3>00</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-107.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-97.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-97">
+Past versions of unnamed-chunk-12-97.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-97" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-97.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-433" class="section level3">
 <h3>01</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-108.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-98.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-98">
+Past versions of unnamed-chunk-12-98.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-98" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-98.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-434" class="section level3">
 <h3>02</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-99.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-99">
+Past versions of unnamed-chunk-12-99.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-99" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-99.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-435" class="section level3">
 <h3>03</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-100.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-100">
+Past versions of unnamed-chunk-12-100.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-100" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-100.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-436" class="section level3">
 <h3>04</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-101.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-101">
+Past versions of unnamed-chunk-12-101.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-101" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-101.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-437" class="section level3">
 <h3>05</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-102.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-102">
+Past versions of unnamed-chunk-12-102.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-102" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-102.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-438" class="section level3">
 <h3>06</h3>
 </div>
 <div id="section-439" class="section level3">
 <h3>07</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-109.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-103.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-103">
+Past versions of unnamed-chunk-12-103.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-103" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-103.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-440" class="section level3">
 <h3>08</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-110.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-104.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-104">
+Past versions of unnamed-chunk-12-104.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-104" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-104.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-441" class="section level3">
 <h3>09</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-111.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-105.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-105">
+Past versions of unnamed-chunk-12-105.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-105" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-105.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-442" class="section level3">
 <h3>10</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-112.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-106.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-106">
+Past versions of unnamed-chunk-12-106.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-106" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-106.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-443" class="section level3">
 <h3>11</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-113.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-107.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-107">
+Past versions of unnamed-chunk-12-107.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-107" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-107.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-444" class="section level3">
 <h3>12</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-114.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-108.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-108">
+Past versions of unnamed-chunk-12-108.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-108" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-108.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-445" class="section level3">
 <h3>13</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-115.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-109.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-109">
+Past versions of unnamed-chunk-12-109.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-109" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-109.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-446" class="section level3">
 <h3>14</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-116.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-110.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-110">
+Past versions of unnamed-chunk-12-110.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-110" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-110.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-447" class="section level3">
 <h3>15</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-117.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-111.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-111">
+Past versions of unnamed-chunk-12-111.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-111" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-111.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-448" class="section level3">
 <h3>16</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-118.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-112.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-112">
+Past versions of unnamed-chunk-12-112.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-112" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-112.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-449" class="section level3">
 <h3>17</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-119.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-113.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-113">
+Past versions of unnamed-chunk-12-113.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-113" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-113.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-450" class="section level3">
 <h3>18</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-120.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-114.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-114">
+Past versions of unnamed-chunk-12-114.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-114" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-114.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-451" class="section level3">
 <h3>19</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-121.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-115.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-115">
+Past versions of unnamed-chunk-12-115.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-115" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-115.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-452" class="section level3">
 <h3>20</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-122.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-116.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-116">
+Past versions of unnamed-chunk-12-116.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-116" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-116.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-453" class="section level3">
 <h3>21</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-123.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-117.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-117">
+Past versions of unnamed-chunk-12-117.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-117" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-117.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-454" class="section level3">
 <h3>22</h3>
-<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-124.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-118.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-118">
+Past versions of unnamed-chunk-12-118.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-118" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-118.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="section-455" class="section level3">
 <h3>23</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-119.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-119">
+Past versions of unnamed-chunk-12-119.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-119" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-119.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div id="medc" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">MEDC</h2>
+<div id="section-456" class="section level3">
+<h3>00</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-120.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-120">
+Past versions of unnamed-chunk-12-120.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-120" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-120.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="section-457" class="section level3">
+<h3>01</h3>
+</div>
+<div id="section-458" class="section level3">
+<h3>02</h3>
+</div>
+<div id="section-459" class="section level3">
+<h3>03</h3>
+</div>
+<div id="section-460" class="section level3">
+<h3>04</h3>
+</div>
+<div id="section-461" class="section level3">
+<h3>05</h3>
+</div>
+<div id="section-462" class="section level3">
+<h3>06</h3>
+</div>
+<div id="section-463" class="section level3">
+<h3>07</h3>
+</div>
+<div id="section-464" class="section level3">
+<h3>08</h3>
+</div>
+<div id="section-465" class="section level3">
+<h3>09</h3>
+</div>
+<div id="section-466" class="section level3">
+<h3>10</h3>
+</div>
+<div id="section-467" class="section level3">
+<h3>11</h3>
+</div>
+<div id="section-468" class="section level3">
+<h3>12</h3>
+</div>
+<div id="section-469" class="section level3">
+<h3>13</h3>
+</div>
+<div id="section-470" class="section level3">
+<h3>14</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-121.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-121">
+Past versions of unnamed-chunk-12-121.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-121" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-121.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="section-471" class="section level3">
+<h3>15</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-122.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-122">
+Past versions of unnamed-chunk-12-122.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-122" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-122.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="section-472" class="section level3">
+<h3>16</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-123.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-123">
+Past versions of unnamed-chunk-12-123.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-123" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-123.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="section-473" class="section level3">
+<h3>17</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-124.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-124">
+Past versions of unnamed-chunk-12-124.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-124" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-124.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="section-474" class="section level3">
+<h3>18</h3>
 <p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-125.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-125">
+Past versions of unnamed-chunk-12-125.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-125" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/98c9e942b170a113be04a404fb4d0c7eab30b1f9/docs/figure/2021-11-11.Rmd/unnamed-chunk-12-125.png" target="_blank">98c9e94</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-11-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="section-475" class="section level3">
+<h3>19</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-126.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-476" class="section level3">
+<h3>20</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-127.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-477" class="section level3">
+<h3>21</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-128.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-478" class="section level3">
+<h3>22</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-129.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-479" class="section level3">
+<h3>23</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-130.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="meda" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">MEDA</h2>
+<div id="section-480" class="section level3">
+<h3>00</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-131.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-481" class="section level3">
+<h3>01</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-132.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-482" class="section level3">
+<h3>02</h3>
+</div>
+<div id="section-483" class="section level3">
+<h3>03</h3>
+</div>
+<div id="section-484" class="section level3">
+<h3>04</h3>
+</div>
+<div id="section-485" class="section level3">
+<h3>05</h3>
+</div>
+<div id="section-486" class="section level3">
+<h3>06</h3>
+</div>
+<div id="section-487" class="section level3">
+<h3>07</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-133.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-488" class="section level3">
+<h3>08</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-134.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-489" class="section level3">
+<h3>09</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-135.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-490" class="section level3">
+<h3>10</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-136.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-491" class="section level3">
+<h3>11</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-137.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-492" class="section level3">
+<h3>12</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-138.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-493" class="section level3">
+<h3>13</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-139.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-494" class="section level3">
+<h3>14</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-140.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-495" class="section level3">
+<h3>15</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-141.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-496" class="section level3">
+<h3>16</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-142.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-497" class="section level3">
+<h3>17</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-143.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-498" class="section level3">
+<h3>18</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-144.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-499" class="section level3">
+<h3>19</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-145.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-500" class="section level3">
+<h3>20</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-146.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-501" class="section level3">
+<h3>21</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-147.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-502" class="section level3">
+<h3>22</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-148.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-503" class="section level3">
+<h3>23</h3>
+<p><img src="figure/2021-11-11.Rmd/unnamed-chunk-12-149.png" width="672" style="display: block; margin: auto;" /></p>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -2571,43 +7606,42 @@ for (k in 1:nb_tag_all){
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
 <pre class="r"><code>sessionInfo()</code></pre>
-<pre><code>R version 4.0.5 (2021-03-31)
+<pre><code>R version 4.0.2 (2020-06-22)
 Platform: x86_64-apple-darwin17.0 (64-bit)
-Running under: macOS Big Sur 10.16
+Running under: macOS Catalina 10.15.7
 
 Matrix products: default
 BLAS:   /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRblas.dylib
 LAPACK: /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRlapack.dylib
 
 locale:
-[1] zh_CN.UTF-8/zh_CN.UTF-8/zh_CN.UTF-8/C/zh_CN.UTF-8/zh_CN.UTF-8
+[1] fr_FR.UTF-8/fr_FR.UTF-8/fr_FR.UTF-8/C/fr_FR.UTF-8/fr_FR.UTF-8
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] scales_1.1.1     DT_0.19          readxl_1.3.1     lubridate_1.7.10
- [5] dplyr_1.0.5      nnet_7.3-15      kableExtra_1.3.4 rjson_0.2.20    
- [9] cowplot_1.1.1    gifski_1.4.3-1   gganimate_1.0.7  ggplot2_3.3.5   
+ [1] scales_1.1.1     DT_0.17          readxl_1.3.1     lubridate_1.7.10
+ [5] dplyr_1.0.6      nnet_7.3-14      kableExtra_1.1.0 rjson_0.2.20    
+ [9] cowplot_1.1.0    gifski_0.8.6     gganimate_1.0.7  ggplot2_3.3.3   
 [13] workflowr_1.6.2 
 
 loaded via a namespace (and not attached):
- [1] progress_1.2.2    tidyselect_1.1.0  xfun_0.22         bslib_0.2.4      
- [5] purrr_0.3.4       colorspace_2.0-0  vctrs_0.3.7       generics_0.1.0   
- [9] viridisLite_0.4.0 htmltools_0.5.1.1 yaml_2.2.1        utf8_1.2.1       
-[13] rlang_0.4.10      jquerylib_0.1.3   later_1.1.0.1     pillar_1.6.0     
-[17] glue_1.4.2        withr_2.4.1       tweenr_1.0.2      lifecycle_1.0.0  
-[21] stringr_1.4.0     cellranger_1.1.0  munsell_0.5.0     gtable_0.3.0     
-[25] rvest_1.0.0       htmlwidgets_1.5.3 evaluate_0.14     labeling_0.4.2   
-[29] knitr_1.32        httpuv_1.5.5      fansi_0.4.2       highr_0.8        
-[33] Rcpp_1.0.7        promises_1.2.0.1  webshot_0.5.2     jsonlite_1.7.2   
-[37] systemfonts_1.0.1 farver_2.1.0      fs_1.5.0          hms_1.0.0        
-[41] digest_0.6.27     stringi_1.5.3     grid_4.0.5        rprojroot_2.0.2  
-[45] tools_4.0.5       magrittr_2.0.1    sass_0.3.1        tibble_3.1.0     
-[49] crayon_1.4.1      whisker_0.4       pkgconfig_2.0.3   ellipsis_0.3.1   
-[53] xml2_1.3.2        prettyunits_1.1.1 svglite_2.0.0     rmarkdown_2.10   
-[57] httr_1.4.2        rstudioapi_0.13   R6_2.5.0          git2r_0.28.0     
-[61] compiler_4.0.5   </code></pre>
+ [1] progress_1.2.2    tidyselect_1.1.0  xfun_0.25         purrr_0.3.4      
+ [5] colorspace_1.4-1  vctrs_0.3.8       generics_0.1.0    viridisLite_0.3.0
+ [9] htmltools_0.5.0   yaml_2.2.1        utf8_1.1.4        rlang_0.4.11     
+[13] later_1.1.0.1     pillar_1.6.0      glue_1.4.1        withr_2.4.2      
+[17] DBI_1.1.1         tweenr_1.0.1      lifecycle_1.0.0   stringr_1.4.0    
+[21] cellranger_1.1.0  munsell_0.5.0     gtable_0.3.0      rvest_1.0.0      
+[25] htmlwidgets_1.5.1 evaluate_0.14     labeling_0.3      knitr_1.33       
+[29] httpuv_1.5.4      fansi_0.4.1       highr_0.8         Rcpp_1.0.5       
+[33] readr_1.4.0       promises_1.1.1    backports_1.1.8   webshot_0.5.2    
+[37] farver_2.0.3      fs_1.5.0          hms_1.0.0         digest_0.6.25    
+[41] stringi_1.4.6     grid_4.0.2        rprojroot_1.3-2   tools_4.0.2      
+[45] magrittr_2.0.1    tibble_3.1.1      crayon_1.4.1      whisker_0.4      
+[49] pkgconfig_2.0.3   ellipsis_0.3.1    xml2_1.3.2        prettyunits_1.1.1
+[53] httr_1.4.2        rstudioapi_0.13   assertthat_0.2.1  rmarkdown_2.10   
+[57] R6_2.4.1          git2r_0.28.0      compiler_4.0.2   </code></pre>
 </div>
 </div>
 </div>
