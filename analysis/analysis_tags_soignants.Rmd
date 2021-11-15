@@ -125,6 +125,11 @@ cat("quantile of distances between the last point before the stop and the first 
 kable(table_quantile1) %>%
   kable_styling(bootstrap_options = "striped", full_width = T)
 
+table_quantile1 = rbind(table_quantile1, NA)
+for (i in 1:ncol(table_quantile1)){
+  table_quantile1[2,i] = which.min(abs(dist1 - as.numeric(table_quantile1[1,i])))
+}
+
 nq = 10
 table_quantile2 = matrix(round(quantile(dist2, 0:10/10),3), nrow = 1, ncol = nq+1)
 colnames(table_quantile2) = paste0(c(0:10)/10*100, "%")
@@ -134,10 +139,11 @@ kable(table_quantile2) %>%
 ```
 
 ```{r results='asis'}
-for (k in 1:10){
+for (k in 1:ncol(table_quantile1)){
   cat("\n")
-  cat("### ", "case", k, "\n")
-  tagr = list_tagr[[nr[k]]]
+  cat("### ", colnames(table_quantile1)[k], "\n")
+  j = table_quantile1[2,k]
+  tagr = list_tagr[[nr[j]]]
 
   kable(tagr) %>%
     kable_styling(bootstrap_options = "striped", full_width = T)
@@ -191,6 +197,11 @@ cat("quantile of distances between the last point before the stop and the first 
 kable(table_quantile1) %>%
   kable_styling(bootstrap_options = "striped", full_width = T)
 
+table_quantile1 = rbind(table_quantile1, NA)
+for (i in 1:ncol(table_quantile1)){
+  table_quantile1[2,i] = which.min(abs(dist1 - as.numeric(table_quantile1[1,i])))
+}
+
 nq = 10
 table_quantile2 = matrix(round(quantile(dist2, 0:10/10),3), nrow = 1, ncol = nq+1)
 colnames(table_quantile2) = paste0(c(0:10)/10*100, "%")
@@ -200,10 +211,11 @@ kable(table_quantile2) %>%
 ```
 
 ```{r results='asis'}
-for (k in 1:10){
+for (k in 1:ncol(table_quantile1)){
   cat("\n")
-  cat("### ", "case", k, "\n")
-  tagr = list_tagr[[nr[k]]]
+  cat("### ", colnames(table_quantile1)[k], "\n")
+  j = table_quantile1[2,k]
+  tagr = list_tagr[[nr[j]]]
 
   kable(tagr) %>%
     kable_styling(bootstrap_options = "striped", full_width = T)
@@ -257,6 +269,11 @@ cat("quantile of distances between the last point before the stop and the first 
 kable(table_quantile1) %>%
   kable_styling(bootstrap_options = "striped", full_width = T)
 
+table_quantile1 = rbind(table_quantile1, NA)
+for (i in 1:ncol(table_quantile1)){
+  table_quantile1[2,i] = which.min(abs(dist1 - as.numeric(table_quantile1[1,i])))
+}
+
 nq = 10
 table_quantile2 = matrix(round(quantile(dist2, 0:10/10),3), nrow = 1, ncol = nq+1)
 colnames(table_quantile2) = paste0(c(0:10)/10*100, "%")
@@ -266,10 +283,11 @@ kable(table_quantile2) %>%
 ```
 
 ```{r results='asis'}
-for (k in 1:10){
+for (k in 1:ncol(table_quantile1)){
   cat("\n")
-  cat("### ", "case", k, "\n")
-  tagr = list_tagr[[nr[k]]]
+  cat("### ", colnames(table_quantile1)[k], "\n")
+  j = table_quantile1[2,k]
+  tagr = list_tagr[[nr[j]]]
 
   kable(tagr) %>%
     kable_styling(bootstrap_options = "striped", full_width = T)
@@ -285,8 +303,4 @@ for (k in 1:10){
   cat("\n")
 }
 ```
-
-
-
-
 
