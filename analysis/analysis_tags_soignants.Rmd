@@ -93,6 +93,7 @@ kable(table_diff_ts) %>%
 ```{r}
 tag = tagId[1]
 dat_tag = list_tag[tag][[1]]
+dat_tag = dat_tag[dat_tag$diff_ts>0.1,]
 rownames(dat_tag) = 1:nrow(dat_tag)
 
 rows_sel = which(dat_tag$diff_ts>10)[-1]
@@ -145,8 +146,8 @@ for (k in 1:ncol(table_quantile1)){
   j = table_quantile1[2,k]
   tagr = list_tagr[[nr[j]]]
 
-  kable(tagr) %>%
-    kable_styling(bootstrap_options = "striped", full_width = T)
+  print(kable(tagr) %>%
+    kable_styling(bootstrap_options = "striped", full_width = T))
 
   q <- p + 
     geom_point(data = tagr[1:3,], aes(x=x,y=y, col = "1-before"), size = 0.5) + 
@@ -159,12 +160,14 @@ for (k in 1:ncol(table_quantile1)){
   cat("\n")
 }
 ```
+
 
 
 ## `r tagId[2]` {.tabset .tabset-pills}
 ```{r}
 tag = tagId[2]
 dat_tag = list_tag[tag][[1]]
+dat_tag = dat_tag[dat_tag$diff_ts>0.1,]
 rownames(dat_tag) = 1:nrow(dat_tag)
 
 rows_sel = which(dat_tag$diff_ts>10)[-1]
@@ -217,8 +220,8 @@ for (k in 1:ncol(table_quantile1)){
   j = table_quantile1[2,k]
   tagr = list_tagr[[nr[j]]]
 
-  kable(tagr) %>%
-    kable_styling(bootstrap_options = "striped", full_width = T)
+  print(kable(tagr) %>%
+    kable_styling(bootstrap_options = "striped", full_width = T))
 
   q <- p + 
     geom_point(data = tagr[1:3,], aes(x=x,y=y, col = "1-before"), size = 0.5) + 
@@ -231,12 +234,14 @@ for (k in 1:ncol(table_quantile1)){
   cat("\n")
 }
 ```
+
 
 
 ## `r tagId[3]` {.tabset .tabset-pills}
 ```{r}
 tag = tagId[3]
 dat_tag = list_tag[tag][[1]]
+dat_tag = dat_tag[dat_tag$diff_ts>0.1,]
 rownames(dat_tag) = 1:nrow(dat_tag)
 
 rows_sel = which(dat_tag$diff_ts>10)[-1]
@@ -289,8 +294,8 @@ for (k in 1:ncol(table_quantile1)){
   j = table_quantile1[2,k]
   tagr = list_tagr[[nr[j]]]
 
-  kable(tagr) %>%
-    kable_styling(bootstrap_options = "striped", full_width = T)
+  print(kable(tagr) %>%
+    kable_styling(bootstrap_options = "striped", full_width = T))
 
   q <- p + 
     geom_point(data = tagr[1:3,], aes(x=x,y=y, col = "1-before"), size = 0.5) + 
@@ -303,4 +308,5 @@ for (k in 1:ncol(table_quantile1)){
   cat("\n")
 }
 ```
+
 
