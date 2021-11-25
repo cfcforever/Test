@@ -1,0 +1,25 @@
+id	Matériel	label
+2a51	Bladder	BLA
+0da6	Brancard1	BRA1
+2f7b	Brancard2	BRA2
+2a73	Brancard3	BRA3
+2f40	Brancard4	BRA4
+2f77	Brancard polytrauma1	BRP1
+2b9c	Brancard polytrauma2	BRP2
+0d82	Chariot de soins1	CDS1
+29ed	Chariot de soins2	CDS2
+2c57	Dynamap1	DYN1
+28e9	Dynamap2	DYN2
+2e8d	Dynamap3	DYN3
+0baf	Electro-cardiogramme	ELC
+0db4	Fauteuil roulant1	FAU1
+2dd9	Fauteuil roulant2	FAU2
+19ab	Tag fixe	FIX
+28d2	Ordi mobile	ORD
+2e55	Scope mobile	SCO
+cf31	tag_IDE	IDE
+8718	med_chef	MEDC
+58b2	med_adjoint	MEDA
+D9B7	tag_soignant1	TS1
+C901	tag_soignant2	TS2
+DA0C	tag_soignant3	TS3
