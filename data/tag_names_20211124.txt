@@ -20,6 +20,6 @@ id	Matériel	label
 cf31	tag_IDE	IDE
 8718	med_chef	MEDC
 58b2	med_adjoint	MEDA
-D9B7	tag_soignant1	TS1
-C901	tag_soignant2	TS2
-DA0C	tag_soignant3	TS3
+d9b7	tag_soignant1	TS1
+c901	tag_soignant2	TS2
+da0c	tag_soignant3	TS3
