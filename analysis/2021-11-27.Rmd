@@ -199,7 +199,7 @@ for (k in 1:nb_tag){
 names_tag_all <- read.table(file = "data/tag_names_20211124.txt", header = T, sep = "\t")
 nb_tag_all = nrow(names_tag_all)
 
-date_sel = as.Date(1:9, origin = "2021-11-18")
+date_sel = rev(as.Date(0:(-8), origin = "2021-11-27"))
 
 temp1 = read.csv2(paste0("data/json/", date_sel[1], "/position.csv"))
 temp1 = temp1 %>% filter(tag %in% names_tag_all$id)
