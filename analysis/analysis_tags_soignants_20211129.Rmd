@@ -1,0 +1,17 @@
+---
+title: "analysis - tags soignants"
+# author: "cfcforever"
+# date: ""
+output: 
+  workflowr::wflow_html:
+    code_folding: hide
+editor_options:
+  chunk_output_type: console
+---
+
+```{r include=FALSE}
+source("code/packages_and_functions.R")
+load("data/plan/plan_firminy.RData")
+```
+
+
