@@ -15,3 +15,137 @@ load("data/plan/plan_firminy.RData")
 ```
 
 
+# load data.json
+```{r}
+tagId = c("d9b7", "c901", "da0c")
+nb_tag = length(tagId)
+
+today = "2021-11-25"
+json_data = fromJSON(file = paste0("data/json/", today, "/position.json"))
+
+dat <- data.frame(tag = unlist(lapply(json_data, function(x){x["tag_id"][[1]]})),
+                  x = unlist(lapply(json_data, function(x){x["x"][[1]]})),
+                  y = unlist(lapply(json_data, function(x){x["y"][[1]]})),
+                  record_timestamp = unlist(lapply(json_data, function(x){x["record_timestamp"][[1]]})))
+dat = dat[order(dat$record_timestamp),]
+dat = cbind.data.frame(dat, convert_date(dat$record_timestamp))
+dat$x = as.numeric(dat$x)/100
+dat$y = as.numeric(dat$y)/100
+
+list_tag <- split(dat, dat$tag)
+list_tag = list_tag[tagId]
+
+list_tag = lapply(list_tag, function(x){
+  x$diff_ts = c(0, x$record_timestamp[-1]-x$record_timestamp[-nrow(x)])
+  x = x[c(1,which(x$diff_ts>=0.1)),]
+})
+```
+
+
+# analysis by tag{.tabset .tabset-pills}
+## `r tagId[1]` {.tabset .tabset-pills}
+```{r}
+tag = tagId[1]
+dat_tag = list_tag[tag][[1]]
+rownames(dat_tag) = 1:nrow(dat_tag)
+
+rows_sel = which(dat_tag$diff_ts>5)
+nr = c()
+nd = c()
+ns = c()
+for (k in 1:length(rows_sel)){
+  ki = rows_sel[k]
+  s = dat_tag[(ki-1):ki,c("x","y")]
+  if (sum(is.na(s))==0){
+    nr = c(nr, ki)
+    ns = c(ns, dat_tag$diff_ts[ki])
+    d = dist(s)
+    nd = c(nd, d)
+  }
+}
+cat(length(nr), "situations to be investigated for the tag", tag, "\n")
+
+nq = 10
+table_quantile1 = matrix(round(quantile(nd, 0:10/10),3), nrow = 1, ncol = nq+1)
+colnames(table_quantile1) = paste0(c(0:10)/10*100, "%")
+cat("quantile of distances between the last point before the stop and the first point after the stop", "\n")
+kable(table_quantile1) %>%
+  kable_styling(bootstrap_options = "striped", full_width = T)
+
+table_output = data.frame(diff_ts = ns, dist = nd)
+table_output = table_output[order(table_output$dist, decreasing = T),]
+kable(table_output) %>%
+  kable_styling(bootstrap_options = "striped", full_width = T)
+```
+
+
+## `r tagId[2]` {.tabset .tabset-pills}
+```{r}
+tag = tagId[2]
+dat_tag = list_tag[tag][[1]]
+rownames(dat_tag) = 1:nrow(dat_tag)
+
+rows_sel = which(dat_tag$diff_ts>5)
+nr = c()
+nd = c()
+ns = c()
+for (k in 1:length(rows_sel)){
+  ki = rows_sel[k]
+  s = dat_tag[(ki-1):ki,c("x","y")]
+  if (sum(is.na(s))==0){
+    nr = c(nr, ki)
+    ns = c(ns, dat_tag$diff_ts[ki])
+    d = dist(s)
+    nd = c(nd, d)
+  }
+}
+cat(length(nr), "situations to be investigated for the tag", tag, "\n")
+
+nq = 10
+table_quantile1 = matrix(round(quantile(nd, 0:10/10),3), nrow = 1, ncol = nq+1)
+colnames(table_quantile1) = paste0(c(0:10)/10*100, "%")
+cat("quantile of distances between the last point before the stop and the first point after the stop", "\n")
+kable(table_quantile1) %>%
+  kable_styling(bootstrap_options = "striped", full_width = T)
+
+table_output = data.frame(diff_ts = ns, dist = nd)
+table_output = table_output[order(table_output$dist, decreasing = T),]
+kable(table_output) %>%
+  kable_styling(bootstrap_options = "striped", full_width = T)
+```
+
+
+## `r tagId[3]` {.tabset .tabset-pills}
+```{r}
+tag = tagId[3]
+dat_tag = list_tag[tag][[1]]
+rownames(dat_tag) = 1:nrow(dat_tag)
+
+rows_sel = which(dat_tag$diff_ts>5)
+nr = c()
+nd = c()
+ns = c()
+for (k in 1:length(rows_sel)){
+  ki = rows_sel[k]
+  s = dat_tag[(ki-1):ki,c("x","y")]
+  if (sum(is.na(s))==0){
+    nr = c(nr, ki)
+    ns = c(ns, dat_tag$diff_ts[ki])
+    d = dist(s)
+    nd = c(nd, d)
+  }
+}
+cat(length(nr), "situations to be investigated for the tag", tag, "\n")
+
+nq = 10
+table_quantile1 = matrix(round(quantile(nd, 0:10/10),3), nrow = 1, ncol = nq+1)
+colnames(table_quantile1) = paste0(c(0:10)/10*100, "%")
+cat("quantile of distances between the last point before the stop and the first point after the stop", "\n")
+kable(table_quantile1) %>%
+  kable_styling(bootstrap_options = "striped", full_width = T)
+
+table_output = data.frame(diff_ts = ns, dist = nd)
+table_output = table_output[order(table_output$dist, decreasing = T),]
+kable(table_output) %>%
+  kable_styling(bootstrap_options = "striped", full_width = T)
+```
