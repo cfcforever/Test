@@ -53,6 +53,10 @@ dat$label = factor(dat$tag, levels = names_tag$id, labels = names_tag$label)
 dat$tagn = as.numeric(factor(dat$tag, levels = names_tag$id, labels = 1:nb_tag))
 
 list_tag <- split(dat, dat$tag)
+list_tag = lapply(list_tag, function(x){
+  x$diff_ts = c(0, x$record_timestamp[-1]-x$record_timestamp[-nrow(x)])
+  x = x[c(1,which(x$diff_ts>=0.1)),]
+})
 ```
 
 
@@ -90,8 +94,6 @@ kable(table_tag) %>%
 
 
 ```{r}
-list_tag = lapply(list_tag, function(x){cbind(x, data.frame(diff_ts = c(0, x$record_timestamp[-1]-x$record_timestamp[-nrow(x)])))})
-
 nq = 10
 table_diff_ts = matrix(NA, nrow = nb_tag, ncol = nq+1)
 colnames(table_diff_ts) = paste0(c(0:10)/10*100, "%")
@@ -103,6 +105,38 @@ for (k in 1:nb_tag){
 table_diff_ts = cbind.data.frame(label = names_tag$label, table_diff_ts)
 
 kable(table_diff_ts) %>%
+  kable_styling(bootstrap_options = "striped", full_width = T)
+```
+
+
+```{r}
+nq = 10
+table_sensibility = matrix(NA, nrow = nb_tag, ncol = nq+1)
+colnames(table_sensibility) = paste0(c(0:10)/10*100, "%")
+rownames(table_sensibility) = tagId
+for (k in 1:nb_tag){
+  tag = tagId[k]
+  dat_tag = list_tag[[k]]
+  
+  rows_sel = which(dat_tag$diff_ts>5)
+  nr = c()
+  nd = c()
+  ns = c()
+  for (i in 1:length(rows_sel)){
+    ki = rows_sel[i]
+    s = dat_tag[(ki-1):ki,c("x","y")]
+    if (sum(is.na(s))==0){
+      nr = c(nr, ki)
+      ns = c(ns, dat_tag$diff_ts[ki])
+      d = dist(s)/100
+      nd = c(nd, d)
+    }
+  }
+  table_sensibility[k,] = matrix(round(quantile(nd, 0:10/10),3), nrow = 1, ncol = nq+1)
+}
+table_sensibility = cbind.data.frame(label = names_tag$label, table_sensibility)
+
+kable(table_sensibility) %>%
   kable_styling(bootstrap_options = "striped", full_width = T)
 ```
 
