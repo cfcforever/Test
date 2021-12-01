@@ -13,8 +13,8 @@
 
 <title>2021-11-30</title>
 
-<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -507,16 +507,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree273152600582dba2e7b5084d83284445fb0491b9targetblank2731526a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/273152600582dba2e7b5084d83284445fb0491b9" target="_blank">2731526</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreec23f4c4905394d39540e400204dd55578e1fc3a5targetblankc23f4c4a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/c23f4c4905394d39540e400204dd55578e1fc3a5" target="_blank">c23f4c4</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree273152600582dba2e7b5084d83284445fb0491b9targetblank2731526a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreec23f4c4905394d39540e400204dd55578e1fc3a5targetblankc23f4c4a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/273152600582dba2e7b5084d83284445fb0491b9" target="_blank">2731526</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/c23f4c4905394d39540e400204dd55578e1fc3a5" target="_blank">c23f4c4</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -526,10 +526,12 @@ Ignored files:
     Ignored:    .DS_Store
     Ignored:    .Rhistory
     Ignored:    .Rproj.user/
+    Ignored:    analysis/.DS_Store
     Ignored:    data/.DS_Store
     Ignored:    data/Stabiliseur/
     Ignored:    data/json/
     Ignored:    data/plan/
+    Ignored:    data/stab/.DS_Store
     Ignored:    figure/
     Ignored:    workflowr.R
 
@@ -570,6 +572,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/c23f4c4905394d39540e400204dd55578e1fc3a5/analysis/2021-11-30.Rmd" target="_blank">c23f4c4</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-12-01
+</td>
+<td>
+add new analysis
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cfcforever/Test/4aa3f0ff03797dbba7e3d1e39e8890b23d49ff22/docs/2021-11-30.html" target="_blank">4aa3f0f</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-12-01
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -634,7 +670,11 @@ dat = dat[dat$tag%in%tagId,]
 dat$label = factor(dat$tag, levels = names_tag$id, labels = names_tag$label)
 dat$tagn = as.numeric(factor(dat$tag, levels = names_tag$id, labels = 1:nb_tag))
 
-list_tag &lt;- split(dat, dat$tag)</code></pre>
+list_tag &lt;- split(dat, dat$tag)
+list_tag = lapply(list_tag, function(x){
+  x$diff_ts = c(0, x$record_timestamp[-1]-x$record_timestamp[-nrow(x)])
+  x = x[c(1,which(x$diff_ts&gt;=0.1)),]
+})</code></pre>
 <div id="quality-of-collecting-data" class="section level2">
 <h2>quality of collecting data</h2>
 <pre class="r"><code>table_tag &lt;- data.frame(tag = names_tag$id, label = names_tag$label)
@@ -706,7 +746,7 @@ BRA2
 2021-11-30 21:48:52
 </td>
 <td style="text-align:right;">
-6124
+6104
 </td>
 <td style="text-align:right;">
 215
@@ -729,13 +769,13 @@ BRA4
 2021-11-30 23:41:14
 </td>
 <td style="text-align:right;">
-6487
+6419
 </td>
 <td style="text-align:right;">
-932
+931
 </td>
 <td style="text-align:right;">
-0.86
+0.85
 </td>
 </tr>
 <tr>
@@ -752,10 +792,10 @@ BRP2
 2021-11-30 21:09:47
 </td>
 <td style="text-align:right;">
-8087
+7999
 </td>
 <td style="text-align:right;">
-661
+660
 </td>
 <td style="text-align:right;">
 0.92
@@ -775,10 +815,10 @@ DYN3
 2021-11-30 23:34:29
 </td>
 <td style="text-align:right;">
-70452
+70421
 </td>
 <td style="text-align:right;">
-7754
+7752
 </td>
 <td style="text-align:right;">
 0.89
@@ -798,10 +838,10 @@ FIX
 2021-11-30 23:59:59
 </td>
 <td style="text-align:right;">
-429692
+429601
 </td>
 <td style="text-align:right;">
-75909
+75820
 </td>
 <td style="text-align:right;">
 0.82
@@ -821,10 +861,10 @@ TS1
 2021-11-30 23:56:00
 </td>
 <td style="text-align:right;">
-24963
+24664
 </td>
 <td style="text-align:right;">
-6012
+5964
 </td>
 <td style="text-align:right;">
 0.76
@@ -844,10 +884,10 @@ TS3
 2021-11-30 23:59:59
 </td>
 <td style="text-align:right;">
-97166
+96852
 </td>
 <td style="text-align:right;">
-14086
+14039
 </td>
 <td style="text-align:right;">
 0.86
@@ -855,9 +895,7 @@ TS3
 </tr>
 </tbody>
 </table>
-<pre class="r"><code>list_tag = lapply(list_tag, function(x){cbind(x, data.frame(diff_ts = c(0, x$record_timestamp[-1]-x$record_timestamp[-nrow(x)])))})
-
-nq = 10
+<pre class="r"><code>nq = 10
 table_diff_ts = matrix(NA, nrow = nb_tag, ncol = nq+1)
 colnames(table_diff_ts) = paste0(c(0:10)/10*100, &quot;%&quot;)
 rownames(table_diff_ts) = tagId
@@ -921,7 +959,7 @@ label
 BRA2
 </td>
 <td style="text-align:right;">
-0
+0.150
 </td>
 <td style="text-align:right;">
 0.199
@@ -962,7 +1000,7 @@ BRA2
 BRA4
 </td>
 <td style="text-align:right;">
-0
+0.151
 </td>
 <td style="text-align:right;">
 0.199
@@ -1003,7 +1041,7 @@ BRA4
 BRP2
 </td>
 <td style="text-align:right;">
-0
+0.149
 </td>
 <td style="text-align:right;">
 0.199
@@ -1044,7 +1082,7 @@ BRP2
 DYN3
 </td>
 <td style="text-align:right;">
-0
+0.149
 </td>
 <td style="text-align:right;">
 0.199
@@ -1085,7 +1123,7 @@ DYN3
 FIX
 </td>
 <td style="text-align:right;">
-0
+0.149
 </td>
 <td style="text-align:right;">
 0.199
@@ -1126,7 +1164,7 @@ d9b7
 TS1
 </td>
 <td style="text-align:right;">
-0
+0.143
 </td>
 <td style="text-align:right;">
 0.199
@@ -1167,7 +1205,7 @@ da0c
 TS3
 </td>
 <td style="text-align:right;">
-0
+0.142
 </td>
 <td style="text-align:right;">
 0.199
@@ -1202,6 +1240,367 @@ TS3
 </tr>
 </tbody>
 </table>
+<pre class="r"><code>nq = 10
+table_sensibility = matrix(NA, nrow = nb_tag, ncol = nq+1)
+colnames(table_sensibility) = paste0(c(0:10)/10*100, &quot;%&quot;)
+rownames(table_sensibility) = tagId
+for (k in 1:nb_tag){
+  tag = tagId[k]
+  dat_tag = list_tag[[k]]
+  
+  rows_sel = which(dat_tag$diff_ts&gt;5)
+  nr = c()
+  nd = c()
+  ns = c()
+  for (i in 1:length(rows_sel)){
+    ki = rows_sel[i]
+    s = dat_tag[(ki-1):ki,c(&quot;x&quot;,&quot;y&quot;)]
+    if (sum(is.na(s))==0){
+      nr = c(nr, ki)
+      ns = c(ns, dat_tag$diff_ts[ki])
+      d = dist(s)/100
+      nd = c(nd, d)
+    }
+  }
+  table_sensibility[k,] = matrix(round(quantile(nd, 0:10/10),3), nrow = 1, ncol = nq+1)
+}
+table_sensibility = cbind.data.frame(label = names_tag$label, table_sensibility)
+
+kable(table_sensibility) %&gt;%
+  kable_styling(bootstrap_options = &quot;striped&quot;, full_width = T)</code></pre>
+<table class="table table-striped" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+label
+</th>
+<th style="text-align:right;">
+0%
+</th>
+<th style="text-align:right;">
+10%
+</th>
+<th style="text-align:right;">
+20%
+</th>
+<th style="text-align:right;">
+30%
+</th>
+<th style="text-align:right;">
+40%
+</th>
+<th style="text-align:right;">
+50%
+</th>
+<th style="text-align:right;">
+60%
+</th>
+<th style="text-align:right;">
+70%
+</th>
+<th style="text-align:right;">
+80%
+</th>
+<th style="text-align:right;">
+90%
+</th>
+<th style="text-align:right;">
+100%
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+2f7b
+</td>
+<td style="text-align:left;">
+BRA2
+</td>
+<td style="text-align:right;">
+0.010
+</td>
+<td style="text-align:right;">
+0.010
+</td>
+<td style="text-align:right;">
+0.010
+</td>
+<td style="text-align:right;">
+0.010
+</td>
+<td style="text-align:right;">
+0.010
+</td>
+<td style="text-align:right;">
+0.010
+</td>
+<td style="text-align:right;">
+0.010
+</td>
+<td style="text-align:right;">
+0.010
+</td>
+<td style="text-align:right;">
+0.010
+</td>
+<td style="text-align:right;">
+0.010
+</td>
+<td style="text-align:right;">
+0.010
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2f40
+</td>
+<td style="text-align:left;">
+BRA4
+</td>
+<td style="text-align:right;">
+0.032
+</td>
+<td style="text-align:right;">
+0.334
+</td>
+<td style="text-align:right;">
+0.502
+</td>
+<td style="text-align:right;">
+0.733
+</td>
+<td style="text-align:right;">
+0.874
+</td>
+<td style="text-align:right;">
+1.063
+</td>
+<td style="text-align:right;">
+1.679
+</td>
+<td style="text-align:right;">
+2.814
+</td>
+<td style="text-align:right;">
+5.167
+</td>
+<td style="text-align:right;">
+6.508
+</td>
+<td style="text-align:right;">
+23.123
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2b9c
+</td>
+<td style="text-align:left;">
+BRP2
+</td>
+<td style="text-align:right;">
+0.020
+</td>
+<td style="text-align:right;">
+0.047
+</td>
+<td style="text-align:right;">
+0.075
+</td>
+<td style="text-align:right;">
+0.142
+</td>
+<td style="text-align:right;">
+0.202
+</td>
+<td style="text-align:right;">
+0.265
+</td>
+<td style="text-align:right;">
+0.438
+</td>
+<td style="text-align:right;">
+0.557
+</td>
+<td style="text-align:right;">
+0.638
+</td>
+<td style="text-align:right;">
+0.973
+</td>
+<td style="text-align:right;">
+2.521
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2e8d
+</td>
+<td style="text-align:left;">
+DYN3
+</td>
+<td style="text-align:right;">
+0.022
+</td>
+<td style="text-align:right;">
+0.134
+</td>
+<td style="text-align:right;">
+0.420
+</td>
+<td style="text-align:right;">
+0.552
+</td>
+<td style="text-align:right;">
+0.750
+</td>
+<td style="text-align:right;">
+0.908
+</td>
+<td style="text-align:right;">
+1.379
+</td>
+<td style="text-align:right;">
+1.914
+</td>
+<td style="text-align:right;">
+3.431
+</td>
+<td style="text-align:right;">
+5.010
+</td>
+<td style="text-align:right;">
+11.706
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+19ab
+</td>
+<td style="text-align:left;">
+FIX
+</td>
+<td style="text-align:right;">
+0.022
+</td>
+<td style="text-align:right;">
+0.061
+</td>
+<td style="text-align:right;">
+0.100
+</td>
+<td style="text-align:right;">
+0.156
+</td>
+<td style="text-align:right;">
+0.211
+</td>
+<td style="text-align:right;">
+0.322
+</td>
+<td style="text-align:right;">
+0.395
+</td>
+<td style="text-align:right;">
+0.458
+</td>
+<td style="text-align:right;">
+0.679
+</td>
+<td style="text-align:right;">
+1.470
+</td>
+<td style="text-align:right;">
+3.697
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+d9b7
+</td>
+<td style="text-align:left;">
+TS1
+</td>
+<td style="text-align:right;">
+0.010
+</td>
+<td style="text-align:right;">
+0.256
+</td>
+<td style="text-align:right;">
+0.521
+</td>
+<td style="text-align:right;">
+0.935
+</td>
+<td style="text-align:right;">
+1.466
+</td>
+<td style="text-align:right;">
+1.866
+</td>
+<td style="text-align:right;">
+2.323
+</td>
+<td style="text-align:right;">
+3.561
+</td>
+<td style="text-align:right;">
+5.659
+</td>
+<td style="text-align:right;">
+8.625
+</td>
+<td style="text-align:right;">
+18.478
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+da0c
+</td>
+<td style="text-align:left;">
+TS3
+</td>
+<td style="text-align:right;">
+0.020
+</td>
+<td style="text-align:right;">
+0.219
+</td>
+<td style="text-align:right;">
+0.457
+</td>
+<td style="text-align:right;">
+0.633
+</td>
+<td style="text-align:right;">
+0.850
+</td>
+<td style="text-align:right;">
+1.133
+</td>
+<td style="text-align:right;">
+1.544
+</td>
+<td style="text-align:right;">
+2.052
+</td>
+<td style="text-align:right;">
+3.135
+</td>
+<td style="text-align:right;">
+7.725
+</td>
+<td style="text-align:right;">
+34.950
+</td>
+</tr>
+</tbody>
+</table>
 <div id="plot-with-nas" class="section level3">
 <h3>plot with NAs</h3>
 <pre class="r"><code>timestamp_breaks = as.numeric(as.POSIXct(paste0(today, &quot; &quot;, sprintf(&quot;%02d&quot;, 0:23), &quot;:00:00 CEST&quot;))) + 3600*7
@@ -1214,7 +1613,7 @@ p &lt;- ggplot(dat) + theme_bw() +
   theme(legend.position = &quot;None&quot;) +
   labs(x = &quot;hour&quot;, y = &quot;&quot;, title = today)
 print(p)</code></pre>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="plot-without-nas" class="section level3">
 <h3>plot without NAs</h3>
@@ -1238,7 +1637,7 @@ p &lt;- ggplot(dat) + theme_bw() +
   theme(legend.position = &quot;None&quot;) +
   labs(x = &quot;hour&quot;, y = &quot;&quot;, title = today)
 print(p)</code></pre>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" /></p>
 <pre class="r"><code>list_tag &lt;- split(dat, dat$tag)
 
 for (tag in names(list_tag)){
@@ -1278,31 +1677,290 @@ dat = do.call(rbind.data.frame, list_tag)</code></pre>
 }</code></pre>
 <div id="bra2" class="section level2">
 <h2>BRA2</h2>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-1">
+Past versions of unnamed-chunk-12-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/4aa3f0ff03797dbba7e3d1e39e8890b23d49ff22/docs/figure/2021-11-30.Rmd/unnamed-chunk-12-1.png" target="_blank">4aa3f0f</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-12-01
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="bra4" class="section level2">
 <h2>BRA4</h2>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-11-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-2">
+Past versions of unnamed-chunk-12-2.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/4aa3f0ff03797dbba7e3d1e39e8890b23d49ff22/docs/figure/2021-11-30.Rmd/unnamed-chunk-12-2.png" target="_blank">4aa3f0f</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-12-01
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="brp2" class="section level2">
 <h2>BRP2</h2>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-11-3.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-3.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-3">
+Past versions of unnamed-chunk-12-3.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-3" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/4aa3f0ff03797dbba7e3d1e39e8890b23d49ff22/docs/figure/2021-11-30.Rmd/unnamed-chunk-12-3.png" target="_blank">4aa3f0f</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-12-01
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="dyn3" class="section level2">
 <h2>DYN3</h2>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-11-4.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-4.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-4">
+Past versions of unnamed-chunk-12-4.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-4" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/4aa3f0ff03797dbba7e3d1e39e8890b23d49ff22/docs/figure/2021-11-30.Rmd/unnamed-chunk-12-4.png" target="_blank">4aa3f0f</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-12-01
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="fix" class="section level2">
 <h2>FIX</h2>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-11-5.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-5.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-5">
+Past versions of unnamed-chunk-12-5.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-5" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/4aa3f0ff03797dbba7e3d1e39e8890b23d49ff22/docs/figure/2021-11-30.Rmd/unnamed-chunk-12-5.png" target="_blank">4aa3f0f</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-12-01
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="ts1" class="section level2">
 <h2>TS1</h2>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-11-6.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-6.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-6">
+Past versions of unnamed-chunk-12-6.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-6" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/4aa3f0ff03797dbba7e3d1e39e8890b23d49ff22/docs/figure/2021-11-30.Rmd/unnamed-chunk-12-6.png" target="_blank">4aa3f0f</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-12-01
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="ts3" class="section level2">
 <h2>TS3</h2>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-11-7.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-7.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-7">
+Past versions of unnamed-chunk-12-7.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-7" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/4aa3f0ff03797dbba7e3d1e39e8890b23d49ff22/docs/figure/2021-11-30.Rmd/unnamed-chunk-12-7.png" target="_blank">4aa3f0f</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-12-01
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div id="plot-by-hour" class="section level1 tabset tabset-pills">
@@ -1511,99 +2169,99 @@ for (k in 1:nb_tag_all){
 <h2 class="tabset tabset-pills">BRA2</h2>
 <div id="section-48" class="section level3">
 <h3>00</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-49" class="section level3">
 <h3>01</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-2.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-50" class="section level3">
 <h3>02</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-3.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-3.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-51" class="section level3">
 <h3>03</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-4.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-4.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-52" class="section level3">
 <h3>04</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-5.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-5.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-53" class="section level3">
 <h3>05</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-6.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-6.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-54" class="section level3">
 <h3>06</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-7.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-7.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-55" class="section level3">
 <h3>07</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-8.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-8.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-56" class="section level3">
 <h3>08</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-9.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-9.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-57" class="section level3">
 <h3>09</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-10.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-10.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-58" class="section level3">
 <h3>10</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-11.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-11.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-59" class="section level3">
 <h3>11</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-12.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-12.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-60" class="section level3">
 <h3>12</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-13.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-13.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-61" class="section level3">
 <h3>13</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-14.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-14.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-62" class="section level3">
 <h3>14</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-15.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-15.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-63" class="section level3">
 <h3>15</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-16.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-16.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-64" class="section level3">
 <h3>16</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-17.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-17.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-65" class="section level3">
 <h3>17</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-18.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-18.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-66" class="section level3">
 <h3>18</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-19.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-19.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-67" class="section level3">
 <h3>19</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-20.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-20.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-68" class="section level3">
 <h3>20</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-21.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-21.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-69" class="section level3">
 <h3>21</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-22.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-22.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-70" class="section level3">
 <h3>22</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-23.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-23.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-71" class="section level3">
 <h3>23</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-24.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-24.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="bra3" class="section level2 tabset tabset-pills">
@@ -1685,15 +2343,15 @@ for (k in 1:nb_tag_all){
 <h2 class="tabset tabset-pills">BRA4</h2>
 <div id="section-96" class="section level3">
 <h3>00</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-25.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-25.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-97" class="section level3">
 <h3>01</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-26.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-26.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-98" class="section level3">
 <h3>02</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-27.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-27.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-99" class="section level3">
 <h3>03</h3>
@@ -1706,74 +2364,74 @@ for (k in 1:nb_tag_all){
 </div>
 <div id="section-102" class="section level3">
 <h3>06</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-28.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-28.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-103" class="section level3">
 <h3>07</h3>
 </div>
 <div id="section-104" class="section level3">
 <h3>08</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-29.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-29.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-105" class="section level3">
 <h3>09</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-30.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-30.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-106" class="section level3">
 <h3>10</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-31.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-31.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-107" class="section level3">
 <h3>11</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-32.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-32.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-108" class="section level3">
 <h3>12</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-33.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-33.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-109" class="section level3">
 <h3>13</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-34.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-34.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-110" class="section level3">
 <h3>14</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-35.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-35.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-111" class="section level3">
 <h3>15</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-36.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-36.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-112" class="section level3">
 <h3>16</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-37.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-37.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-113" class="section level3">
 <h3>17</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-38.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-38.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-114" class="section level3">
 <h3>18</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-39.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-39.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-115" class="section level3">
 <h3>19</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-40.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-40.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-116" class="section level3">
 <h3>20</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-41.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-41.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-117" class="section level3">
 <h3>21</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-42.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-42.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-118" class="section level3">
 <h3>22</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-43.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-43.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-119" class="section level3">
 <h3>23</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-44.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-44.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="brp1" class="section level2 tabset tabset-pills">
@@ -1825,7 +2483,7 @@ for (k in 1:nb_tag_all){
 </div>
 <div id="section-135" class="section level3">
 <h3>15</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-45.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-45.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-136" class="section level3">
 <h3>16</h3>
@@ -1856,98 +2514,98 @@ for (k in 1:nb_tag_all){
 <h2 class="tabset tabset-pills">BRP2</h2>
 <div id="section-144" class="section level3">
 <h3>00</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-46.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-46.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-145" class="section level3">
 <h3>01</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-47.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-47.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-146" class="section level3">
 <h3>02</h3>
 </div>
 <div id="section-147" class="section level3">
 <h3>03</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-48.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-48.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-148" class="section level3">
 <h3>04</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-49.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-49.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-149" class="section level3">
 <h3>05</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-50.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-50.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-150" class="section level3">
 <h3>06</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-51.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-51.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-151" class="section level3">
 <h3>07</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-52.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-52.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-152" class="section level3">
 <h3>08</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-53.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-53.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-153" class="section level3">
 <h3>09</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-54.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-54.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-154" class="section level3">
 <h3>10</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-55.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-55.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-155" class="section level3">
 <h3>11</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-56.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-56.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-156" class="section level3">
 <h3>12</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-57.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-57.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-157" class="section level3">
 <h3>13</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-58.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-58.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-158" class="section level3">
 <h3>14</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-59.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-59.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-159" class="section level3">
 <h3>15</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-60.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-60.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-160" class="section level3">
 <h3>16</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-61.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-61.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-161" class="section level3">
 <h3>17</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-62.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-62.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-162" class="section level3">
 <h3>18</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-63.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-63.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-163" class="section level3">
 <h3>19</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-64.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-64.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-164" class="section level3">
 <h3>20</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-65.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-65.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-165" class="section level3">
 <h3>21</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-66.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-66.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-166" class="section level3">
 <h3>22</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-67.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-67.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-167" class="section level3">
 <h3>23</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-68.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-68.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="cds1" class="section level2 tabset tabset-pills">
@@ -2254,99 +2912,99 @@ for (k in 1:nb_tag_all){
 <h2 class="tabset tabset-pills">DYN3</h2>
 <div id="section-264" class="section level3">
 <h3>00</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-69.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-69.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-265" class="section level3">
 <h3>01</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-70.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-70.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-266" class="section level3">
 <h3>02</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-71.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-71.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-267" class="section level3">
 <h3>03</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-72.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-72.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-268" class="section level3">
 <h3>04</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-73.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-73.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-269" class="section level3">
 <h3>05</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-74.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-74.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-270" class="section level3">
 <h3>06</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-75.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-75.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-271" class="section level3">
 <h3>07</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-76.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-76.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-272" class="section level3">
 <h3>08</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-77.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-77.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-273" class="section level3">
 <h3>09</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-78.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-78.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-274" class="section level3">
 <h3>10</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-79.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-79.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-275" class="section level3">
 <h3>11</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-80.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-80.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-276" class="section level3">
 <h3>12</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-81.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-81.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-277" class="section level3">
 <h3>13</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-82.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-82.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-278" class="section level3">
 <h3>14</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-83.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-83.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-279" class="section level3">
 <h3>15</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-84.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-84.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-280" class="section level3">
 <h3>16</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-85.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-85.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-281" class="section level3">
 <h3>17</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-86.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-86.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-282" class="section level3">
 <h3>18</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-87.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-87.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-283" class="section level3">
 <h3>19</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-88.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-88.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-284" class="section level3">
 <h3>20</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-89.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-89.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-285" class="section level3">
 <h3>21</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-90.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-90.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-286" class="section level3">
 <h3>22</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-91.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-91.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-287" class="section level3">
 <h3>23</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-92.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-92.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="elc" class="section level2 tabset tabset-pills">
@@ -2578,99 +3236,99 @@ for (k in 1:nb_tag_all){
 <h2 class="tabset tabset-pills">FIX</h2>
 <div id="section-360" class="section level3">
 <h3>00</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-93.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-93.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-361" class="section level3">
 <h3>01</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-94.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-94.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-362" class="section level3">
 <h3>02</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-95.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-95.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-363" class="section level3">
 <h3>03</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-96.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-96.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-364" class="section level3">
 <h3>04</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-97.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-97.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-365" class="section level3">
 <h3>05</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-98.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-98.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-366" class="section level3">
 <h3>06</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-99.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-99.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-367" class="section level3">
 <h3>07</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-100.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-100.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-368" class="section level3">
 <h3>08</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-101.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-101.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-369" class="section level3">
 <h3>09</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-102.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-102.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-370" class="section level3">
 <h3>10</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-103.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-103.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-371" class="section level3">
 <h3>11</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-104.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-104.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-372" class="section level3">
 <h3>12</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-105.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-105.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-373" class="section level3">
 <h3>13</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-106.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-106.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-374" class="section level3">
 <h3>14</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-107.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-107.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-375" class="section level3">
 <h3>15</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-108.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-108.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-376" class="section level3">
 <h3>16</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-109.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-109.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-377" class="section level3">
 <h3>17</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-110.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-110.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-378" class="section level3">
 <h3>18</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-111.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-111.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-379" class="section level3">
 <h3>19</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-112.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-112.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-380" class="section level3">
 <h3>20</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-113.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-113.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-381" class="section level3">
 <h3>21</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-114.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-114.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-382" class="section level3">
 <h3>22</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-115.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-115.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-383" class="section level3">
 <h3>23</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-116.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-116.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="ord" class="section level2 tabset tabset-pills">
@@ -2851,14 +3509,14 @@ for (k in 1:nb_tag_all){
 </div>
 <div id="section-440" class="section level3">
 <h3>08</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-117.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-117.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-441" class="section level3">
 <h3>09</h3>
 </div>
 <div id="section-442" class="section level3">
 <h3>10</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-118.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-118.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-443" class="section level3">
 <h3>11</h3>
@@ -2871,18 +3529,18 @@ for (k in 1:nb_tag_all){
 </div>
 <div id="section-446" class="section level3">
 <h3>14</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-119.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-119.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-447" class="section level3">
 <h3>15</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-120.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-120.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-448" class="section level3">
 <h3>16</h3>
 </div>
 <div id="section-449" class="section level3">
 <h3>17</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-121.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-121.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-450" class="section level3">
 <h3>18</h3>
@@ -3087,59 +3745,59 @@ for (k in 1:nb_tag_all){
 </div>
 <div id="section-514" class="section level3">
 <h3>10</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-122.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-122.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-515" class="section level3">
 <h3>11</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-123.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-123.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-516" class="section level3">
 <h3>12</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-124.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-124.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-517" class="section level3">
 <h3>13</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-125.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-125.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-518" class="section level3">
 <h3>14</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-126.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-126.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-519" class="section level3">
 <h3>15</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-127.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-127.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-520" class="section level3">
 <h3>16</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-128.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-128.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-521" class="section level3">
 <h3>17</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-129.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-129.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-522" class="section level3">
 <h3>18</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-130.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-130.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-523" class="section level3">
 <h3>19</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-131.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-131.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-524" class="section level3">
 <h3>20</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-132.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-132.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-525" class="section level3">
 <h3>21</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-133.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-133.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-526" class="section level3">
 <h3>22</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-134.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-134.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-527" class="section level3">
 <h3>23</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-135.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-135.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="ts2" class="section level2 tabset tabset-pills">
@@ -3167,51 +3825,51 @@ for (k in 1:nb_tag_all){
 </div>
 <div id="section-535" class="section level3">
 <h3>07</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-136.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-136.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-536" class="section level3">
 <h3>08</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-137.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-137.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-537" class="section level3">
 <h3>09</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-138.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-138.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-538" class="section level3">
 <h3>10</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-139.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-139.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-539" class="section level3">
 <h3>11</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-140.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-140.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-540" class="section level3">
 <h3>12</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-141.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-141.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-541" class="section level3">
 <h3>13</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-142.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-142.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-542" class="section level3">
 <h3>14</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-143.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-143.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-543" class="section level3">
 <h3>15</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-144.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-144.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-544" class="section level3">
 <h3>16</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-145.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-145.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-545" class="section level3">
 <h3>17</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-146.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-146.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-546" class="section level3">
 <h3>18</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-147.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-147.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-547" class="section level3">
 <h3>19</h3>
@@ -3233,98 +3891,98 @@ for (k in 1:nb_tag_all){
 <h2 class="tabset tabset-pills">TS3</h2>
 <div id="section-552" class="section level3">
 <h3>00</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-148.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-148.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-553" class="section level3">
 <h3>01</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-149.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-149.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-554" class="section level3">
 <h3>02</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-150.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-150.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-555" class="section level3">
 <h3>03</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-151.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-151.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-556" class="section level3">
 <h3>04</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-152.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-152.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-557" class="section level3">
 <h3>05</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-153.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-153.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-558" class="section level3">
 <h3>06</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-154.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-154.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-559" class="section level3">
 <h3>07</h3>
 </div>
 <div id="section-560" class="section level3">
 <h3>08</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-155.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-155.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-561" class="section level3">
 <h3>09</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-156.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-156.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-562" class="section level3">
 <h3>10</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-157.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-157.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-563" class="section level3">
 <h3>11</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-158.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-158.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-564" class="section level3">
 <h3>12</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-159.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-159.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-565" class="section level3">
 <h3>13</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-160.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-160.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-566" class="section level3">
 <h3>14</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-161.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-161.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-567" class="section level3">
 <h3>15</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-162.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-162.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-568" class="section level3">
 <h3>16</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-163.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-163.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-569" class="section level3">
 <h3>17</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-164.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-164.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-570" class="section level3">
 <h3>18</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-165.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-165.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-571" class="section level3">
 <h3>19</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-166.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-166.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-572" class="section level3">
 <h3>20</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-167.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-167.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-573" class="section level3">
 <h3>21</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-168.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-168.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-574" class="section level3">
 <h3>22</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-169.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-169.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-575" class="section level3">
 <h3>23</h3>
-<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-12-170.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2021-11-30.Rmd/unnamed-chunk-13-170.png" width="672" style="display: block; margin: auto;" /></p>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -3333,43 +3991,42 @@ for (k in 1:nb_tag_all){
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
 <pre class="r"><code>sessionInfo()</code></pre>
-<pre><code>R version 4.0.5 (2021-03-31)
+<pre><code>R version 4.1.2 (2021-11-01)
 Platform: x86_64-apple-darwin17.0 (64-bit)
-Running under: macOS Big Sur 10.16
+Running under: macOS Catalina 10.15.7
 
 Matrix products: default
-BLAS:   /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRblas.dylib
-LAPACK: /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRlapack.dylib
+BLAS:   /Library/Frameworks/R.framework/Versions/4.1/Resources/lib/libRblas.0.dylib
+LAPACK: /Library/Frameworks/R.framework/Versions/4.1/Resources/lib/libRlapack.dylib
 
 locale:
-[1] zh_CN.UTF-8/zh_CN.UTF-8/zh_CN.UTF-8/C/zh_CN.UTF-8/zh_CN.UTF-8
+[1] fr_FR.UTF-8/fr_FR.UTF-8/fr_FR.UTF-8/C/fr_FR.UTF-8/fr_FR.UTF-8
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] scales_1.1.1     DT_0.19          readxl_1.3.1     lubridate_1.7.10
- [5] dplyr_1.0.5      nnet_7.3-15      kableExtra_1.3.4 rjson_0.2.20    
+ [1] scales_1.1.1     DT_0.20          readxl_1.3.1     lubridate_1.8.0 
+ [5] dplyr_1.0.7      nnet_7.3-16      kableExtra_1.3.4 rjson_0.2.20    
  [9] cowplot_1.1.1    gifski_1.4.3-1   gganimate_1.0.7  ggplot2_3.3.5   
 [13] workflowr_1.6.2 
 
 loaded via a namespace (and not attached):
- [1] progress_1.2.2    tidyselect_1.1.0  xfun_0.22         bslib_0.2.4      
- [5] purrr_0.3.4       colorspace_2.0-0  vctrs_0.3.7       generics_0.1.0   
- [9] viridisLite_0.4.0 htmltools_0.5.1.1 yaml_2.2.1        utf8_1.2.1       
-[13] rlang_0.4.10      jquerylib_0.1.3   later_1.1.0.1     pillar_1.6.0     
-[17] glue_1.4.2        withr_2.4.1       tweenr_1.0.2      lifecycle_1.0.0  
-[21] stringr_1.4.0     cellranger_1.1.0  munsell_0.5.0     gtable_0.3.0     
-[25] rvest_1.0.0       htmlwidgets_1.5.3 evaluate_0.14     labeling_0.4.2   
-[29] knitr_1.32        httpuv_1.5.5      fansi_0.4.2       highr_0.8        
-[33] Rcpp_1.0.7        promises_1.2.0.1  webshot_0.5.2     jsonlite_1.7.2   
-[37] systemfonts_1.0.1 farver_2.1.0      fs_1.5.0          hms_1.0.0        
-[41] digest_0.6.27     stringi_1.5.3     grid_4.0.5        rprojroot_2.0.2  
-[45] tools_4.0.5       magrittr_2.0.1    sass_0.3.1        tibble_3.1.0     
-[49] crayon_1.4.1      whisker_0.4       pkgconfig_2.0.3   ellipsis_0.3.1   
-[53] xml2_1.3.2        prettyunits_1.1.1 svglite_2.0.0     rmarkdown_2.10   
-[57] httr_1.4.2        rstudioapi_0.13   R6_2.5.0          git2r_0.28.0     
-[61] compiler_4.0.5   </code></pre>
+ [1] Rcpp_1.0.7        svglite_2.0.0     prettyunits_1.1.1 rprojroot_2.0.2  
+ [5] digest_0.6.28     utf8_1.2.2        R6_2.5.1          cellranger_1.1.0 
+ [9] evaluate_0.14     httr_1.4.2        highr_0.9         pillar_1.6.4     
+[13] rlang_0.4.12      progress_1.2.2    rstudioapi_0.13   whisker_0.4      
+[17] jquerylib_0.1.4   rmarkdown_2.11    labeling_0.4.2    webshot_0.5.2    
+[21] stringr_1.4.0     htmlwidgets_1.5.4 munsell_0.5.0     compiler_4.1.2   
+[25] httpuv_1.6.3      xfun_0.28         pkgconfig_2.0.3   systemfonts_1.0.3
+[29] htmltools_0.5.2   tidyselect_1.1.1  tibble_3.1.6      fansi_0.5.0      
+[33] viridisLite_0.4.0 crayon_1.4.2      withr_2.4.2       later_1.3.0      
+[37] grid_4.1.2        gtable_0.3.0      lifecycle_1.0.1   git2r_0.28.0     
+[41] magrittr_2.0.1    stringi_1.7.5     farver_2.1.0      fs_1.5.0         
+[45] promises_1.2.0.1  xml2_1.3.2        ellipsis_0.3.2    generics_0.1.1   
+[49] vctrs_0.3.8       tools_4.1.2       glue_1.5.0        tweenr_1.0.2     
+[53] purrr_0.3.4       hms_1.1.1         fastmap_1.1.0     yaml_2.2.1       
+[57] colorspace_2.0-2  rvest_1.0.2       knitr_1.36       </code></pre>
 </div>
 </div>
 </div>
