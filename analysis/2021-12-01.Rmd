@@ -5,6 +5,7 @@ title: "2021-12-01"
 output: 
   workflowr::wflow_html:
     code_folding: hide
+    number_sections: true
 editor_options:
   chunk_output_type: console
 ---
