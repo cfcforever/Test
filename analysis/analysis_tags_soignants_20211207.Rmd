@@ -1,0 +1,88 @@
+---
+title: "analysis - tags soignants"
+# author: "cfcforever"
+# date: ""
+output: 
+  workflowr::wflow_html:
+    code_folding: hide
+editor_options:
+  chunk_output_type: console
+---
+
+```{r include=FALSE}
+source("code/packages_and_functions.R")
+load("data/plan/plan_firminy.RData")
+```
+
+
+```{r}
+tagId = c("d9b7", "c901", "da0c")
+nb_tag = length(tagId)
+tag_label = c("TS1", "TS2", "TS3")
+
+days = as.Date(0, origin = "2021-11-24")
+
+output1 = as.data.frame(matrix(NA, ncol = nb_tag, nrow = length(days)))
+rownames(output1) = days
+colnames(output1) = tagId
+
+output2 = as.data.frame(matrix(NA, ncol = nb_tag, nrow = length(days)))
+rownames(output2) = days
+colnames(output2) = tagId
+
+output3 = as.data.frame(matrix(NA, ncol = nb_tag, nrow = length(days)))
+rownames(output3) = days
+colnames(output3) = tagId
+
+for (k in 1:length(days)){
+  json_data = fromJSON(file = paste0("data/json/", days[k], "/position.json"))
+  dat <- data.frame(tag = unlist(lapply(json_data, function(x){x["tag_id"][[1]]})),
+                    x = unlist(lapply(json_data, function(x){x["x"][[1]]})),
+                    y = unlist(lapply(json_data, function(x){x["y"][[1]]})),
+                    record_timestamp = unlist(lapply(json_data, function(x){x["record_timestamp"][[1]]})))
+  # dat = dat[dat$tag_id %in% tagId, ]
+  # dat = dat[order(dat$record_timestamp),]
+  # dat = cbind.data.frame(dat, convert_date(dat$record_timestamp))
+  dat$x = as.numeric(dat$x)/100
+  dat$y = as.numeric(dat$y)/100
+  
+  for (t in tagId){
+    output1[k,t] = sum(dat$tag==t)
+    output2[k,t] = sum(!is.na(dat$x[dat$tag==t]))
+    if (output1[k,t] != 0){
+      output3[k,t] = output2[k,t]/output1[k,t]
+    }
+  }
+  rm(json_data, dat)
+  gc()
+}
+```
+
+
+```{r}
+total = data.frame(matrix(colSums(output1), nrow = 1))
+colnames(total) = colnames(output1)
+rownames(total)  = 'total'
+output1 = rbind(output1, total)
+
+cat("synthèse avec les NAs:")
+kable(output1) %>%
+  kable_styling(bootstrap_options = "striped", full_width = T)
+
+
+total = data.frame(matrix(colSums(output2), nrow = 1))
+colnames(total) = colnames(output2)
+rownames(total)  = 'total'
+output2 = rbind(output2, total)
+
+cat("synthèse sans les NAs:")
+kable(output2) %>%
+  kable_styling(bootstrap_options = "striped", full_width = T)
+```
+
+
+
+
+
+
+
