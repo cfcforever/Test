@@ -20,7 +20,7 @@ tagId = c("d9b7", "c901", "da0c")
 nb_tag = length(tagId)
 tag_label = c("TS1", "TS2", "TS3")
 
-days = as.Date(0, origin = "2021-11-24")
+days = as.Date(0:12, origin = "2021-11-24")
 
 output1 = as.data.frame(matrix(NA, ncol = nb_tag, nrow = length(days)))
 rownames(output1) = days
@@ -77,6 +77,11 @@ output2 = rbind(output2, total)
 
 cat("synthèse sans les NAs:")
 kable(output2) %>%
+  kable_styling(bootstrap_options = "striped", full_width = T)
+
+
+cat("synthèse sur les percentages des non-NAs:")
+kable(output3) %>%
   kable_styling(bootstrap_options = "striped", full_width = T)
 ```
 
