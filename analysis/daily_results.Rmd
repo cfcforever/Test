@@ -15,7 +15,7 @@ source("code/packages_and_functions.R")
 
 # Daily report
 ```{r}
-today = "2021-12-14"
+today = "2021-12-15"
 days = rev(seq(as.Date("2021-09-25"),to=as.Date(today),by='1 day'))
 
 m = matrix(paste0('<a href="https://cfcforever.github.io/Test/', days, '.html">', days, '</a>'), nrow = length(days))
