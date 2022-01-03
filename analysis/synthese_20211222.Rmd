@@ -1,0 +1,56 @@
+---
+title: "2022-01-02"
+# author: "cfcforever"
+# date: ""
+output: 
+  workflowr::wflow_html:
+    code_folding: hide
+editor_options:
+  chunk_output_type: console
+---
+
+```{r include=FALSE}
+source("code/packages_and_functions.R")
+```
+
+
+```{r eval=FALSE, include=FALSE}
+today = "2022-01-02"
+days = seq(as.Date("2021-12-22"),to=as.Date(today),by='1 day')
+
+list_output = vector("list", length(days))
+names(list_output) = days
+for (k in 1:length(days)){
+  day = days[k]
+  data = read.csv2(paste0("data/json/", day, "/position.csv"))
+  list_tag <- split(data, data$tag)
+  output = data.frame(tag = names(list_tag))
+  output$number = lapply(list_tag, nrow)
+  output$date = day
+  list_output[[k]] = output
+  print(day)
+}
+save(list_output, file = "data/json/list_output.RData")
+```
+
+
+```{r}
+load("data/json/list_output.RData")
+output = do.call(rbind, list_output)
+
+tagId = unique(output$tag)
+days = unique(output$date)
+
+table = as.data.frame(matrix(NA, nrow = length(tagId), ncol = length(days)))
+colnames(table) = days
+rownames(table) = tagId
+for (i in 1:nrow(output)){
+  table[which(tagId==output$tag[i]), which(days==output$date[i])] = output$number[i]
+}
+
+DT::datatable(table, options = list(pageLength = 36))
+```
+
+
+
+
