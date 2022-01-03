@@ -16,7 +16,7 @@ source("code/packages_and_functions.R")
 
 # load data.json
 ```{r}
-today = "2021-12-22"
+today = "2022-01-02"
 cat("data on:", today, "\n")
 
 json_data = fromJSON(file = paste0("data/json/", today, "/position.json"))
