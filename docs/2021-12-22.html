@@ -13,8 +13,8 @@
 
 <title>2021-12-22</title>
 
-<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -416,7 +416,7 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2021-12-23
+<strong>Last updated:</strong> 2022-01-03
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -507,16 +507,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree05b55bb898ecbc686300d5b4a9e54173f48ae533targetblank05b55bba"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/05b55bb898ecbc686300d5b4a9e54173f48ae533" target="_blank">05b55bb</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree095b58d17e44a90ad6798e67478536b16eaaf0c3targetblank095b58da"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/095b58d17e44a90ad6798e67478536b16eaaf0c3" target="_blank">095b58d</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree05b55bb898ecbc686300d5b4a9e54173f48ae533targetblank05b55bba" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree095b58d17e44a90ad6798e67478536b16eaaf0c3targetblank095b58da" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/05b55bb898ecbc686300d5b4a9e54173f48ae533" target="_blank">05b55bb</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/095b58d17e44a90ad6798e67478536b16eaaf0c3" target="_blank">095b58d</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -526,12 +526,20 @@ Ignored files:
     Ignored:    .DS_Store
     Ignored:    .Rhistory
     Ignored:    .Rproj.user/
+    Ignored:    analysis/.DS_Store
     Ignored:    data/.DS_Store
     Ignored:    data/Stabiliseur/
     Ignored:    data/json/
     Ignored:    data/plan/
+    Ignored:    data/stab/.DS_Store
     Ignored:    figure/
     Ignored:    workflowr.R
+
+Untracked files:
+    Untracked:  data/Inventaire Tags - Firminy - 2022.xlsx
+
+Unstaged changes:
+    Modified:   code/packages_and_functions.R
 
 </code></pre>
 <p>
@@ -570,6 +578,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/095b58d17e44a90ad6798e67478536b16eaaf0c3/analysis/2021-12-22.Rmd" target="_blank">095b58d</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-01-03
+</td>
+<td>
+add new analysis
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cfcforever/Test/0c350270f4c50afdbd08af082b4f89e9f71b4e3b/docs/2021-12-22.html" target="_blank">0c35027</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-12-23
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -630,15 +672,14 @@ dat = cbind.data.frame(dat, convert_date(dat$record_timestamp))
 dat$x = as.numeric(dat$x)
 dat$y = as.numeric(dat$y)
 
-names_tag &lt;- read.table(file = &quot;data/tag_names_20211124.txt&quot;, header = T, sep = &quot;\t&quot;)
-names_tag = names_tag[names_tag$id%in%tagId, ]
+names_tag &lt;- read.xlsx(&quot;data/Inventaire Tags - Firminy - 2022.xlsx&quot;)
+names_tag = names_tag %&gt;% filter(Identifiant %in% tagId)
 
-tagId = names_tag$id
+tagId = names_tag$Identifiant
 nb_tag = length(tagId)
 
-dat = dat[dat$tag%in%tagId,]
-dat$label = factor(dat$tag, levels = names_tag$id, labels = names_tag$label)
-dat$tagn = as.numeric(factor(dat$tag, levels = names_tag$id, labels = 1:nb_tag))
+dat$type = factor(dat$tag, levels = names_tag$Identifiant, labels = names_tag$Type.de.tag)
+dat$tagn = as.numeric(factor(dat$tag, levels = names_tag$Identifiant, labels = 1:nb_tag))
 
 list_tag &lt;- split(dat, dat$tag)
 list_tag = lapply(list_tag, function(x){
@@ -649,7 +690,7 @@ list_tag = lapply(list_tag, function(x){
 <h2>quality of collecting data</h2>
 <div id="statistics-of-collecting-data" class="section level3">
 <h3>statistics of collecting data</h3>
-<pre class="r"><code>table_tag &lt;- data.frame(tag = names_tag$id, label = names_tag$label)
+<pre class="r"><code>table_tag &lt;- data.frame(tag = names_tag$Identifiant, label = names_tag$Type.de.tag)
 table_tag$first_record = NA
 table_tag$last_record = NA
 table_tag$number = NA
@@ -706,10 +747,700 @@ ratio_non_NA
 <tbody>
 <tr>
 <td style="text-align:left;">
+4586
+</td>
+<td style="text-align:left;">
+Nominatif
+</td>
+<td style="text-align:left;">
+2021-12-22 09:27:34
+</td>
+<td style="text-align:left;">
+2021-12-22 10:40:51
+</td>
+<td style="text-align:right;">
+2107
+</td>
+<td style="text-align:right;">
+1405
+</td>
+<td style="text-align:right;">
+0.33
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3721
+</td>
+<td style="text-align:left;">
+Nominatif
+</td>
+<td style="text-align:left;">
+2021-12-22 09:27:33
+</td>
+<td style="text-align:left;">
+2021-12-22 10:40:51
+</td>
+<td style="text-align:right;">
+2330
+</td>
+<td style="text-align:right;">
+1638
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+460b
+</td>
+<td style="text-align:left;">
+Agent d’accueil
+</td>
+<td style="text-align:left;">
+2021-12-22 09:27:33
+</td>
+<td style="text-align:left;">
+2021-12-22 19:31:00
+</td>
+<td style="text-align:right;">
+3104
+</td>
+<td style="text-align:right;">
+1118
+</td>
+<td style="text-align:right;">
+0.64
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+67cf
+</td>
+<td style="text-align:left;">
+Agent d’accueil
+</td>
+<td style="text-align:left;">
+2021-12-22 09:27:34
+</td>
+<td style="text-align:left;">
+2021-12-22 21:22:11
+</td>
+<td style="text-align:right;">
+4239
+</td>
+<td style="text-align:right;">
+1271
+</td>
+<td style="text-align:right;">
+0.70
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4258
+</td>
+<td style="text-align:left;">
+Agent de service hospitalier
+</td>
+<td style="text-align:left;">
+2021-12-22 09:27:34
+</td>
+<td style="text-align:left;">
+2021-12-22 17:15:52
+</td>
+<td style="text-align:right;">
+8211
+</td>
+<td style="text-align:right;">
+1425
+</td>
+<td style="text-align:right;">
+0.83
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2e56
+</td>
+<td style="text-align:left;">
+Agent de service hospitalier
+</td>
+<td style="text-align:left;">
+2021-12-22 09:27:33
+</td>
+<td style="text-align:left;">
+2021-12-22 19:31:00
+</td>
+<td style="text-align:right;">
+6440
+</td>
+<td style="text-align:right;">
+2299
+</td>
+<td style="text-align:right;">
+0.64
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4288
+</td>
+<td style="text-align:left;">
+Brancardier
+</td>
+<td style="text-align:left;">
+2021-12-22 09:27:35
+</td>
+<td style="text-align:left;">
+2021-12-22 19:19:55
+</td>
+<td style="text-align:right;">
+29540
+</td>
+<td style="text-align:right;">
+5122
+</td>
+<td style="text-align:right;">
+0.83
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+424f
+</td>
+<td style="text-align:left;">
+Brancardier
+</td>
+<td style="text-align:left;">
+2021-12-22 09:27:33
+</td>
+<td style="text-align:left;">
+2021-12-22 23:03:33
+</td>
+<td style="text-align:right;">
+12061
+</td>
+<td style="text-align:right;">
+3054
+</td>
+<td style="text-align:right;">
+0.75
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4585
+</td>
+<td style="text-align:left;">
+Brancardier
+</td>
+<td style="text-align:left;">
+2021-12-22 09:27:31
+</td>
+<td style="text-align:left;">
+2021-12-22 19:43:04
+</td>
+<td style="text-align:right;">
+5148
+</td>
+<td style="text-align:right;">
+2266
+</td>
+<td style="text-align:right;">
+0.56
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4596
+</td>
+<td style="text-align:left;">
+Medecin
+</td>
+<td style="text-align:left;">
+2021-12-22 09:27:33
+</td>
+<td style="text-align:left;">
+2021-12-22 23:58:34
+</td>
+<td style="text-align:right;">
+80207
+</td>
+<td style="text-align:right;">
+12240
+</td>
+<td style="text-align:right;">
+0.85
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+181b
+</td>
+<td style="text-align:left;">
+Medecin
+</td>
+<td style="text-align:left;">
+2021-12-22 09:27:32
+</td>
+<td style="text-align:left;">
+2021-12-22 10:57:01
+</td>
+<td style="text-align:right;">
+1703
+</td>
+<td style="text-align:right;">
+1345
+</td>
+<td style="text-align:right;">
+0.21
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3722
+</td>
+<td style="text-align:left;">
+Medecin
+</td>
+<td style="text-align:left;">
+2021-12-22 09:27:33
+</td>
+<td style="text-align:left;">
+2021-12-22 13:02:03
+</td>
+<td style="text-align:right;">
+9480
+</td>
+<td style="text-align:right;">
+3505
+</td>
+<td style="text-align:right;">
+0.63
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3719
+</td>
+<td style="text-align:left;">
+Medecin
+</td>
+<td style="text-align:left;">
+2021-12-22 09:27:34
+</td>
+<td style="text-align:left;">
+2021-12-22 10:57:01
+</td>
+<td style="text-align:right;">
+1626
+</td>
+<td style="text-align:right;">
+1081
+</td>
+<td style="text-align:right;">
+0.34
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4273
+</td>
+<td style="text-align:left;">
+Medecin
+</td>
+<td style="text-align:left;">
+2021-12-22 09:27:34
+</td>
+<td style="text-align:left;">
+2021-12-22 10:57:01
+</td>
+<td style="text-align:right;">
+1615
+</td>
+<td style="text-align:right;">
+939
+</td>
+<td style="text-align:right;">
+0.42
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+436d
+</td>
+<td style="text-align:left;">
+Medecin
+</td>
+<td style="text-align:left;">
+2021-12-22 09:27:33
+</td>
+<td style="text-align:left;">
+2021-12-22 23:57:45
+</td>
+<td style="text-align:right;">
+104050
+</td>
+<td style="text-align:right;">
+15648
+</td>
+<td style="text-align:right;">
+0.85
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+14bc
+</td>
+<td style="text-align:left;">
+Medecin
+</td>
+<td style="text-align:left;">
+2021-12-22 09:27:33
+</td>
+<td style="text-align:left;">
+2021-12-22 18:06:34
+</td>
+<td style="text-align:right;">
+48875
+</td>
+<td style="text-align:right;">
+12191
+</td>
+<td style="text-align:right;">
+0.75
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+468c
+</td>
+<td style="text-align:left;">
+Infirmiere
+</td>
+<td style="text-align:left;">
+2021-12-22 09:27:33
+</td>
+<td style="text-align:left;">
+2021-12-22 22:11:36
+</td>
+<td style="text-align:right;">
+110696
+</td>
+<td style="text-align:right;">
+11797
+</td>
+<td style="text-align:right;">
+0.89
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4f2e
+</td>
+<td style="text-align:left;">
+Infirmiere
+</td>
+<td style="text-align:left;">
+2021-12-22 09:27:34
+</td>
+<td style="text-align:left;">
+2021-12-22 23:42:17
+</td>
+<td style="text-align:right;">
+42082
+</td>
+<td style="text-align:right;">
+12513
+</td>
+<td style="text-align:right;">
+0.70
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+38d7
+</td>
+<td style="text-align:left;">
+Infirmiere
+</td>
+<td style="text-align:left;">
+2021-12-22 09:27:33
+</td>
+<td style="text-align:left;">
+2021-12-22 23:54:40
+</td>
+<td style="text-align:right;">
+79653
+</td>
+<td style="text-align:right;">
+14698
+</td>
+<td style="text-align:right;">
+0.82
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4592
+</td>
+<td style="text-align:left;">
+Infirmiere
+</td>
+<td style="text-align:left;">
+2021-12-22 09:27:33
+</td>
+<td style="text-align:left;">
+2021-12-22 12:36:16
+</td>
+<td style="text-align:right;">
+18896
+</td>
+<td style="text-align:right;">
+3868
+</td>
+<td style="text-align:right;">
+0.80
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4584
+</td>
+<td style="text-align:left;">
+Infirmiere
+</td>
+<td style="text-align:left;">
+2021-12-22 09:27:33
+</td>
+<td style="text-align:left;">
+2021-12-22 23:59:59
+</td>
+<td style="text-align:right;">
+114641
+</td>
+<td style="text-align:right;">
+21912
+</td>
+<td style="text-align:right;">
+0.81
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+36fb
+</td>
+<td style="text-align:left;">
+Infirmiere
+</td>
+<td style="text-align:left;">
+2021-12-22 09:27:34
+</td>
+<td style="text-align:left;">
+2021-12-22 23:59:10
+</td>
+<td style="text-align:right;">
+110511
+</td>
+<td style="text-align:right;">
+13155
+</td>
+<td style="text-align:right;">
+0.88
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+11d2
+</td>
+<td style="text-align:left;">
+Aide soignant
+</td>
+<td style="text-align:left;">
+2021-12-22 09:27:34
+</td>
+<td style="text-align:left;">
+2021-12-22 23:58:02
+</td>
+<td style="text-align:right;">
+52014
+</td>
+<td style="text-align:right;">
+7530
+</td>
+<td style="text-align:right;">
+0.86
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1a04
+</td>
+<td style="text-align:left;">
+Aide soignant
+</td>
+<td style="text-align:left;">
+2021-12-22 09:27:33
+</td>
+<td style="text-align:left;">
+2021-12-22 19:22:46
+</td>
+<td style="text-align:right;">
+33998
+</td>
+<td style="text-align:right;">
+2963
+</td>
+<td style="text-align:right;">
+0.91
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1a0a
+</td>
+<td style="text-align:left;">
+Aide soignant
+</td>
+<td style="text-align:left;">
+2021-12-22 09:27:33
+</td>
+<td style="text-align:left;">
+2021-12-22 19:22:28
+</td>
+<td style="text-align:right;">
+29894
+</td>
+<td style="text-align:right;">
+4591
+</td>
+<td style="text-align:right;">
+0.85
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+44e0
+</td>
+<td style="text-align:left;">
+Materiel
+</td>
+<td style="text-align:left;">
+2021-12-22 09:27:33
+</td>
+<td style="text-align:left;">
+2021-12-22 20:59:00
+</td>
+<td style="text-align:right;">
+8647
+</td>
+<td style="text-align:right;">
+1122
+</td>
+<td style="text-align:right;">
+0.87
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1a10
+</td>
+<td style="text-align:left;">
+Materiel
+</td>
+<td style="text-align:left;">
+2021-12-22 09:27:33
+</td>
+<td style="text-align:left;">
+2021-12-22 20:06:26
+</td>
+<td style="text-align:right;">
+5992
+</td>
+<td style="text-align:right;">
+1172
+</td>
+<td style="text-align:right;">
+0.80
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+373f
+</td>
+<td style="text-align:left;">
+Materiel
+</td>
+<td style="text-align:left;">
+2021-12-22 09:27:33
+</td>
+<td style="text-align:left;">
+2021-12-22 23:29:24
+</td>
+<td style="text-align:right;">
+11479
+</td>
+<td style="text-align:right;">
+982
+</td>
+<td style="text-align:right;">
+0.91
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3906
+</td>
+<td style="text-align:left;">
+Materiel
+</td>
+<td style="text-align:left;">
+2021-12-22 09:27:34
+</td>
+<td style="text-align:left;">
+2021-12-22 12:25:32
+</td>
+<td style="text-align:right;">
+2875
+</td>
+<td style="text-align:right;">
+903
+</td>
+<td style="text-align:right;">
+0.69
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+44c5
+</td>
+<td style="text-align:left;">
+Materiel
+</td>
+<td style="text-align:left;">
+2021-12-22 09:27:34
+</td>
+<td style="text-align:left;">
+2021-12-22 23:24:51
+</td>
+<td style="text-align:right;">
+10057
+</td>
+<td style="text-align:right;">
+1366
+</td>
+<td style="text-align:right;">
+0.86
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 2f7b
 </td>
 <td style="text-align:left;">
-BRA2
+Brancard2
 </td>
 <td style="text-align:left;">
 2021-12-22 00:00:25
@@ -732,7 +1463,7 @@ BRA2
 2f40
 </td>
 <td style="text-align:left;">
-BRA4
+Brancard4
 </td>
 <td style="text-align:left;">
 2021-12-22 00:37:54
@@ -755,7 +1486,7 @@ BRA4
 2b9c
 </td>
 <td style="text-align:left;">
-BRP2
+Brancard polytrauma2
 </td>
 <td style="text-align:left;">
 2021-12-22 11:18:34
@@ -778,7 +1509,7 @@ BRP2
 19ab
 </td>
 <td style="text-align:left;">
-FIX
+Tag fixe
 </td>
 <td style="text-align:left;">
 2021-12-22 00:00:00
@@ -801,7 +1532,7 @@ FIX
 cf31
 </td>
 <td style="text-align:left;">
-IDE
+tag_IDE
 </td>
 <td style="text-align:left;">
 2021-12-22 10:40:54
@@ -832,7 +1563,7 @@ for (k in 1:nb_tag){
   tag = tagId[k]
   table_diff_ts[k,] = round(quantile(list_tag[tag][[1]]$diff_ts[-1], c(0:10)/10), 3)
 }
-table_diff_ts = cbind.data.frame(label = names_tag$label, table_diff_ts)
+table_diff_ts = cbind.data.frame(label = names_tag$Type.de.tag, table_diff_ts)
 
 kable(table_diff_ts) %&gt;%
   kable_styling(bootstrap_options = &quot;striped&quot;, full_width = T)</code></pre>
@@ -882,13 +1613,259 @@ label
 <tbody>
 <tr>
 <td style="text-align:left;">
-2f7b
+4586
 </td>
 <td style="text-align:left;">
-BRA2
+Nominatif
 </td>
 <td style="text-align:right;">
-0.149
+0.145
+</td>
+<td style="text-align:right;">
+0.190
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+0.243
+</td>
+<td style="text-align:right;">
+2107.044
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3721
+</td>
+<td style="text-align:left;">
+Nominatif
+</td>
+<td style="text-align:right;">
+0.146
+</td>
+<td style="text-align:right;">
+0.196
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+0.242
+</td>
+<td style="text-align:right;">
+2106.300
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+460b
+</td>
+<td style="text-align:left;">
+Agent d’accueil
+</td>
+<td style="text-align:right;">
+0.141
+</td>
+<td style="text-align:right;">
+0.196
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+0.243
+</td>
+<td style="text-align:right;">
+21624.602
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+67cf
+</td>
+<td style="text-align:left;">
+Agent d’accueil
+</td>
+<td style="text-align:right;">
+0.141
+</td>
+<td style="text-align:right;">
+0.198
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+0.242
+</td>
+<td style="text-align:right;">
+13662.316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4258
+</td>
+<td style="text-align:left;">
+Agent de service hospitalier
+</td>
+<td style="text-align:right;">
+0.138
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+5039.854
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2e56
+</td>
+<td style="text-align:left;">
+Agent de service hospitalier
+</td>
+<td style="text-align:right;">
+0.145
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+0.204
+</td>
+<td style="text-align:right;">
+8112.505
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4288
+</td>
+<td style="text-align:left;">
+Brancardier
+</td>
+<td style="text-align:right;">
+0.141
 </td>
 <td style="text-align:right;">
 0.199
@@ -909,27 +1886,27 @@ BRA2
 0.2
 </td>
 <td style="text-align:right;">
-0.2
-</td>
-<td style="text-align:right;">
 0.200
 </td>
 <td style="text-align:right;">
 0.201
 </td>
 <td style="text-align:right;">
-23766.305
+0.202
+</td>
+<td style="text-align:right;">
+4179.004
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-2f40
+424f
 </td>
 <td style="text-align:left;">
-BRA4
+Brancardier
 </td>
 <td style="text-align:right;">
-0.149
+0.145
 </td>
 <td style="text-align:right;">
 0.199
@@ -950,7 +1927,7 @@ BRA4
 0.2
 </td>
 <td style="text-align:right;">
-0.2
+0.200
 </td>
 <td style="text-align:right;">
 0.201
@@ -959,27 +1936,24 @@ BRA4
 0.201
 </td>
 <td style="text-align:right;">
-31284.294
+5983.287
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-2b9c
+4585
 </td>
 <td style="text-align:left;">
-BRP2
+Brancardier
 </td>
 <td style="text-align:right;">
-0.150
+0.143
 </td>
 <td style="text-align:right;">
 0.199
 </td>
 <td style="text-align:right;">
-0.200
-</td>
-<td style="text-align:right;">
-0.2
+0.199
 </td>
 <td style="text-align:right;">
 0.2
@@ -1000,15 +1974,18 @@ BRP2
 0.201
 </td>
 <td style="text-align:right;">
-6244.697
+0.201
+</td>
+<td style="text-align:right;">
+17873.501
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-19ab
+4596
 </td>
 <td style="text-align:left;">
-FIX
+Medecin
 </td>
 <td style="text-align:right;">
 0.140
@@ -1032,7 +2009,991 @@ FIX
 0.2
 </td>
 <td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+2234.405
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+181b
+</td>
+<td style="text-align:left;">
+Medecin
+</td>
+<td style="text-align:right;">
+0.145
+</td>
+<td style="text-align:right;">
+0.196
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
 0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+0.203
+</td>
+<td style="text-align:right;">
+0.250
+</td>
+<td style="text-align:right;">
+1150.101
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3722
+</td>
+<td style="text-align:left;">
+Medecin
+</td>
+<td style="text-align:right;">
+0.144
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+1077.294
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3719
+</td>
+<td style="text-align:left;">
+Medecin
+</td>
+<td style="text-align:right;">
+0.146
+</td>
+<td style="text-align:right;">
+0.161
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+0.202
+</td>
+<td style="text-align:right;">
+0.243
+</td>
+<td style="text-align:right;">
+1639.601
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4273
+</td>
+<td style="text-align:left;">
+Medecin
+</td>
+<td style="text-align:right;">
+0.145
+</td>
+<td style="text-align:right;">
+0.189
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+0.243
+</td>
+<td style="text-align:right;">
+0.399
+</td>
+<td style="text-align:right;">
+1149.946
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+436d
+</td>
+<td style="text-align:left;">
+Medecin
+</td>
+<td style="text-align:right;">
+0.139
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+3489.205
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+14bc
+</td>
+<td style="text-align:left;">
+Medecin
+</td>
+<td style="text-align:right;">
+0.142
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+2325.709
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+468c
+</td>
+<td style="text-align:left;">
+Infirmiere
+</td>
+<td style="text-align:right;">
+0.140
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+1049.307
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4f2e
+</td>
+<td style="text-align:left;">
+Infirmiere
+</td>
+<td style="text-align:right;">
+0.129
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+0.241
+</td>
+<td style="text-align:right;">
+4522.606
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+38d7
+</td>
+<td style="text-align:left;">
+Infirmiere
+</td>
+<td style="text-align:right;">
+0.135
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+4838.946
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4592
+</td>
+<td style="text-align:left;">
+Infirmiere
+</td>
+<td style="text-align:right;">
+0.144
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+848.799
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4584
+</td>
+<td style="text-align:left;">
+Infirmiere
+</td>
+<td style="text-align:right;">
+0.136
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+1858.102
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+36fb
+</td>
+<td style="text-align:left;">
+Infirmiere
+</td>
+<td style="text-align:right;">
+0.136
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+2057.101
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+11d2
+</td>
+<td style="text-align:left;">
+Aide soignant
+</td>
+<td style="text-align:right;">
+0.127
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+4922.945
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1a04
+</td>
+<td style="text-align:left;">
+Aide soignant
+</td>
+<td style="text-align:right;">
+0.119
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+0.202
+</td>
+<td style="text-align:right;">
+4922.902
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1a0a
+</td>
+<td style="text-align:left;">
+Aide soignant
+</td>
+<td style="text-align:right;">
+0.144
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+0.202
+</td>
+<td style="text-align:right;">
+6268.442
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+44e0
+</td>
+<td style="text-align:left;">
+Materiel
+</td>
+<td style="text-align:right;">
+0.145
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+8804.197
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1a10
+</td>
+<td style="text-align:left;">
+Materiel
+</td>
+<td style="text-align:right;">
+0.145
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+0.202
+</td>
+<td style="text-align:right;">
+18345.036
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+373f
+</td>
+<td style="text-align:left;">
+Materiel
+</td>
+<td style="text-align:right;">
+0.143
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+9896.106
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3906
+</td>
+<td style="text-align:left;">
+Materiel
+</td>
+<td style="text-align:right;">
+0.144
+</td>
+<td style="text-align:right;">
+0.157
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+0.245
+</td>
+<td style="text-align:right;">
+3806.586
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+44c5
+</td>
+<td style="text-align:left;">
+Materiel
+</td>
+<td style="text-align:right;">
+0.143
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+12627.998
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2f7b
+</td>
+<td style="text-align:left;">
+Brancard2
+</td>
+<td style="text-align:right;">
+0.149
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+23766.305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2f40
+</td>
+<td style="text-align:left;">
+Brancard4
+</td>
+<td style="text-align:right;">
+0.149
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+31284.294
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2b9c
+</td>
+<td style="text-align:left;">
+Brancard polytrauma2
+</td>
+<td style="text-align:right;">
+0.150
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+6244.697
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+19ab
+</td>
+<td style="text-align:left;">
+Tag fixe
+</td>
+<td style="text-align:right;">
+0.140
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.200
 </td>
 <td style="text-align:right;">
 0.200
@@ -1049,7 +3010,7 @@ FIX
 cf31
 </td>
 <td style="text-align:left;">
-IDE
+tag_IDE
 </td>
 <td style="text-align:right;">
 0.957
@@ -1073,7 +3034,7 @@ IDE
 1.0
 </td>
 <td style="text-align:right;">
-1.0
+1.000
 </td>
 <td style="text-align:right;">
 1.000
@@ -1118,7 +3079,7 @@ for (k in 1:nb_tag){
     table_sensibility[k,] = matrix(c(0, rep(NA, nq+1)), nrow = 1, ncol = nq+2)
   }
 }
-table_sensibility = cbind.data.frame(label = names_tag$label, table_sensibility)
+table_sensibility = cbind.data.frame(label = names_tag$Type.de.tag, table_sensibility)
 
 kable(table_sensibility) %&gt;%
   kable_styling(bootstrap_options = &quot;striped&quot;, full_width = T)</code></pre>
@@ -1171,10 +3132,142 @@ number
 <tbody>
 <tr>
 <td style="text-align:left;">
-2f7b
+4586
 </td>
 <td style="text-align:left;">
-BRA2
+Nominatif
+</td>
+<td style="text-align:right;">
+126
+</td>
+<td style="text-align:right;">
+0.010
+</td>
+<td style="text-align:right;">
+0.188
+</td>
+<td style="text-align:right;">
+0.297
+</td>
+<td style="text-align:right;">
+0.430
+</td>
+<td style="text-align:right;">
+0.554
+</td>
+<td style="text-align:right;">
+0.666
+</td>
+<td style="text-align:right;">
+1.003
+</td>
+<td style="text-align:right;">
+1.651
+</td>
+<td style="text-align:right;">
+3.198
+</td>
+<td style="text-align:right;">
+7.985
+</td>
+<td style="text-align:right;">
+32.991
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3721
+</td>
+<td style="text-align:left;">
+Nominatif
+</td>
+<td style="text-align:right;">
+107
+</td>
+<td style="text-align:right;">
+0.114
+</td>
+<td style="text-align:right;">
+0.347
+</td>
+<td style="text-align:right;">
+0.545
+</td>
+<td style="text-align:right;">
+0.682
+</td>
+<td style="text-align:right;">
+0.985
+</td>
+<td style="text-align:right;">
+1.196
+</td>
+<td style="text-align:right;">
+1.425
+</td>
+<td style="text-align:right;">
+1.989
+</td>
+<td style="text-align:right;">
+2.862
+</td>
+<td style="text-align:right;">
+10.147
+</td>
+<td style="text-align:right;">
+41.294
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+460b
+</td>
+<td style="text-align:left;">
+Agent d’accueil
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+67cf
+</td>
+<td style="text-align:left;">
+Agent d’accueil
 </td>
 <td style="text-align:right;">
 5
@@ -1215,10 +3308,142 @@ BRA2
 </tr>
 <tr>
 <td style="text-align:left;">
-2f40
+4258
 </td>
 <td style="text-align:left;">
-BRA4
+Agent de service hospitalier
+</td>
+<td style="text-align:right;">
+111
+</td>
+<td style="text-align:right;">
+0.010
+</td>
+<td style="text-align:right;">
+0.171
+</td>
+<td style="text-align:right;">
+0.280
+</td>
+<td style="text-align:right;">
+0.340
+</td>
+<td style="text-align:right;">
+0.422
+</td>
+<td style="text-align:right;">
+0.510
+</td>
+<td style="text-align:right;">
+0.574
+</td>
+<td style="text-align:right;">
+0.665
+</td>
+<td style="text-align:right;">
+0.877
+</td>
+<td style="text-align:right;">
+1.040
+</td>
+<td style="text-align:right;">
+13.720
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2e56
+</td>
+<td style="text-align:left;">
+Agent de service hospitalier
+</td>
+<td style="text-align:right;">
+90
+</td>
+<td style="text-align:right;">
+0.010
+</td>
+<td style="text-align:right;">
+0.140
+</td>
+<td style="text-align:right;">
+0.270
+</td>
+<td style="text-align:right;">
+0.329
+</td>
+<td style="text-align:right;">
+0.405
+</td>
+<td style="text-align:right;">
+0.513
+</td>
+<td style="text-align:right;">
+0.619
+</td>
+<td style="text-align:right;">
+0.846
+</td>
+<td style="text-align:right;">
+1.152
+</td>
+<td style="text-align:right;">
+1.628
+</td>
+<td style="text-align:right;">
+13.098
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4288
+</td>
+<td style="text-align:left;">
+Brancardier
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+0.032
+</td>
+<td style="text-align:right;">
+0.063
+</td>
+<td style="text-align:right;">
+0.350
+</td>
+<td style="text-align:right;">
+0.668
+</td>
+<td style="text-align:right;">
+0.745
+</td>
+<td style="text-align:right;">
+0.897
+</td>
+<td style="text-align:right;">
+1.725
+</td>
+<td style="text-align:right;">
+5.682
+</td>
+<td style="text-align:right;">
+6.739
+</td>
+<td style="text-align:right;">
+9.296
+</td>
+<td style="text-align:right;">
+13.214
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+424f
+</td>
+<td style="text-align:left;">
+Brancardier
 </td>
 <td style="text-align:right;">
 35
@@ -1259,10 +3484,54 @@ BRA4
 </tr>
 <tr>
 <td style="text-align:left;">
-2b9c
+4585
 </td>
 <td style="text-align:left;">
-BRP2
+Brancardier
+</td>
+<td style="text-align:right;">
+23
+</td>
+<td style="text-align:right;">
+0.058
+</td>
+<td style="text-align:right;">
+0.141
+</td>
+<td style="text-align:right;">
+0.218
+</td>
+<td style="text-align:right;">
+0.259
+</td>
+<td style="text-align:right;">
+0.377
+</td>
+<td style="text-align:right;">
+0.483
+</td>
+<td style="text-align:right;">
+0.569
+</td>
+<td style="text-align:right;">
+0.747
+</td>
+<td style="text-align:right;">
+1.313
+</td>
+<td style="text-align:right;">
+2.863
+</td>
+<td style="text-align:right;">
+7.552
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4596
+</td>
+<td style="text-align:left;">
+Medecin
 </td>
 <td style="text-align:right;">
 33
@@ -1303,10 +3572,10 @@ BRP2
 </tr>
 <tr>
 <td style="text-align:left;">
-19ab
+181b
 </td>
 <td style="text-align:left;">
-FIX
+Medecin
 </td>
 <td style="text-align:right;">
 44
@@ -1347,10 +3616,1022 @@ FIX
 </tr>
 <tr>
 <td style="text-align:left;">
+3722
+</td>
+<td style="text-align:left;">
+Medecin
+</td>
+<td style="text-align:right;">
+204
+</td>
+<td style="text-align:right;">
+0.036
+</td>
+<td style="text-align:right;">
+0.272
+</td>
+<td style="text-align:right;">
+0.629
+</td>
+<td style="text-align:right;">
+1.094
+</td>
+<td style="text-align:right;">
+1.698
+</td>
+<td style="text-align:right;">
+2.321
+</td>
+<td style="text-align:right;">
+3.217
+</td>
+<td style="text-align:right;">
+5.132
+</td>
+<td style="text-align:right;">
+8.215
+</td>
+<td style="text-align:right;">
+15.311
+</td>
+<td style="text-align:right;">
+37.318
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3719
+</td>
+<td style="text-align:left;">
+Medecin
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0.120
+</td>
+<td style="text-align:right;">
+0.158
+</td>
+<td style="text-align:right;">
+0.195
+</td>
+<td style="text-align:right;">
+0.233
+</td>
+<td style="text-align:right;">
+0.270
+</td>
+<td style="text-align:right;">
+0.307
+</td>
+<td style="text-align:right;">
+0.345
+</td>
+<td style="text-align:right;">
+0.382
+</td>
+<td style="text-align:right;">
+0.419
+</td>
+<td style="text-align:right;">
+0.457
+</td>
+<td style="text-align:right;">
+0.494
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4273
+</td>
+<td style="text-align:left;">
+Medecin
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+436d
+</td>
+<td style="text-align:left;">
+Medecin
+</td>
+<td style="text-align:right;">
+17
+</td>
+<td style="text-align:right;">
+0.522
+</td>
+<td style="text-align:right;">
+0.628
+</td>
+<td style="text-align:right;">
+0.944
+</td>
+<td style="text-align:right;">
+1.042
+</td>
+<td style="text-align:right;">
+1.479
+</td>
+<td style="text-align:right;">
+1.889
+</td>
+<td style="text-align:right;">
+3.564
+</td>
+<td style="text-align:right;">
+6.314
+</td>
+<td style="text-align:right;">
+8.852
+</td>
+<td style="text-align:right;">
+13.941
+</td>
+<td style="text-align:right;">
+23.300
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+14bc
+</td>
+<td style="text-align:left;">
+Medecin
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:right;">
+0.020
+</td>
+<td style="text-align:right;">
+0.028
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.386
+</td>
+<td style="text-align:right;">
+0.612
+</td>
+<td style="text-align:right;">
+0.814
+</td>
+<td style="text-align:right;">
+1.219
+</td>
+<td style="text-align:right;">
+1.859
+</td>
+<td style="text-align:right;">
+2.327
+</td>
+<td style="text-align:right;">
+3.553
+</td>
+<td style="text-align:right;">
+9.968
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+468c
+</td>
+<td style="text-align:left;">
+Infirmiere
+</td>
+<td style="text-align:right;">
+159
+</td>
+<td style="text-align:right;">
+0.010
+</td>
+<td style="text-align:right;">
+0.161
+</td>
+<td style="text-align:right;">
+0.269
+</td>
+<td style="text-align:right;">
+0.366
+</td>
+<td style="text-align:right;">
+0.476
+</td>
+<td style="text-align:right;">
+0.590
+</td>
+<td style="text-align:right;">
+0.769
+</td>
+<td style="text-align:right;">
+1.135
+</td>
+<td style="text-align:right;">
+1.928
+</td>
+<td style="text-align:right;">
+3.500
+</td>
+<td style="text-align:right;">
+33.139
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4f2e
+</td>
+<td style="text-align:left;">
+Infirmiere
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+0.300
+</td>
+<td style="text-align:right;">
+0.628
+</td>
+<td style="text-align:right;">
+0.956
+</td>
+<td style="text-align:right;">
+1.232
+</td>
+<td style="text-align:right;">
+1.456
+</td>
+<td style="text-align:right;">
+1.679
+</td>
+<td style="text-align:right;">
+2.626
+</td>
+<td style="text-align:right;">
+3.573
+</td>
+<td style="text-align:right;">
+12.476
+</td>
+<td style="text-align:right;">
+29.336
+</td>
+<td style="text-align:right;">
+46.196
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+38d7
+</td>
+<td style="text-align:left;">
+Infirmiere
+</td>
+<td style="text-align:right;">
+34
+</td>
+<td style="text-align:right;">
+0.010
+</td>
+<td style="text-align:right;">
+0.025
+</td>
+<td style="text-align:right;">
+0.104
+</td>
+<td style="text-align:right;">
+0.273
+</td>
+<td style="text-align:right;">
+0.477
+</td>
+<td style="text-align:right;">
+0.836
+</td>
+<td style="text-align:right;">
+1.031
+</td>
+<td style="text-align:right;">
+1.199
+</td>
+<td style="text-align:right;">
+1.777
+</td>
+<td style="text-align:right;">
+3.957
+</td>
+<td style="text-align:right;">
+11.940
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4592
+</td>
+<td style="text-align:left;">
+Infirmiere
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+0.028
+</td>
+<td style="text-align:right;">
+0.042
+</td>
+<td style="text-align:right;">
+0.196
+</td>
+<td style="text-align:right;">
+0.301
+</td>
+<td style="text-align:right;">
+0.442
+</td>
+<td style="text-align:right;">
+0.608
+</td>
+<td style="text-align:right;">
+0.865
+</td>
+<td style="text-align:right;">
+1.114
+</td>
+<td style="text-align:right;">
+1.388
+</td>
+<td style="text-align:right;">
+1.948
+</td>
+<td style="text-align:right;">
+9.037
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4584
+</td>
+<td style="text-align:left;">
+Infirmiere
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0.472
+</td>
+<td style="text-align:right;">
+0.488
+</td>
+<td style="text-align:right;">
+0.504
+</td>
+<td style="text-align:right;">
+0.519
+</td>
+<td style="text-align:right;">
+0.535
+</td>
+<td style="text-align:right;">
+0.551
+</td>
+<td style="text-align:right;">
+0.567
+</td>
+<td style="text-align:right;">
+0.583
+</td>
+<td style="text-align:right;">
+0.599
+</td>
+<td style="text-align:right;">
+0.615
+</td>
+<td style="text-align:right;">
+0.631
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+36fb
+</td>
+<td style="text-align:left;">
+Infirmiere
+</td>
+<td style="text-align:right;">
+88
+</td>
+<td style="text-align:right;">
+0.041
+</td>
+<td style="text-align:right;">
+0.189
+</td>
+<td style="text-align:right;">
+0.422
+</td>
+<td style="text-align:right;">
+0.586
+</td>
+<td style="text-align:right;">
+0.963
+</td>
+<td style="text-align:right;">
+1.320
+</td>
+<td style="text-align:right;">
+2.715
+</td>
+<td style="text-align:right;">
+4.627
+</td>
+<td style="text-align:right;">
+8.260
+</td>
+<td style="text-align:right;">
+13.631
+</td>
+<td style="text-align:right;">
+25.113
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+11d2
+</td>
+<td style="text-align:left;">
+Aide soignant
+</td>
+<td style="text-align:right;">
+184
+</td>
+<td style="text-align:right;">
+0.010
+</td>
+<td style="text-align:right;">
+0.101
+</td>
+<td style="text-align:right;">
+0.219
+</td>
+<td style="text-align:right;">
+0.513
+</td>
+<td style="text-align:right;">
+0.790
+</td>
+<td style="text-align:right;">
+1.255
+</td>
+<td style="text-align:right;">
+1.941
+</td>
+<td style="text-align:right;">
+2.750
+</td>
+<td style="text-align:right;">
+4.320
+</td>
+<td style="text-align:right;">
+8.890
+</td>
+<td style="text-align:right;">
+35.148
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1a04
+</td>
+<td style="text-align:left;">
+Aide soignant
+</td>
+<td style="text-align:right;">
+32
+</td>
+<td style="text-align:right;">
+0.014
+</td>
+<td style="text-align:right;">
+0.288
+</td>
+<td style="text-align:right;">
+0.411
+</td>
+<td style="text-align:right;">
+0.527
+</td>
+<td style="text-align:right;">
+0.730
+</td>
+<td style="text-align:right;">
+1.169
+</td>
+<td style="text-align:right;">
+1.771
+</td>
+<td style="text-align:right;">
+2.196
+</td>
+<td style="text-align:right;">
+4.524
+</td>
+<td style="text-align:right;">
+7.722
+</td>
+<td style="text-align:right;">
+18.888
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1a0a
+</td>
+<td style="text-align:left;">
+Aide soignant
+</td>
+<td style="text-align:right;">
+31
+</td>
+<td style="text-align:right;">
+0.036
+</td>
+<td style="text-align:right;">
+0.095
+</td>
+<td style="text-align:right;">
+0.152
+</td>
+<td style="text-align:right;">
+0.302
+</td>
+<td style="text-align:right;">
+0.341
+</td>
+<td style="text-align:right;">
+0.864
+</td>
+<td style="text-align:right;">
+1.172
+</td>
+<td style="text-align:right;">
+1.597
+</td>
+<td style="text-align:right;">
+3.602
+</td>
+<td style="text-align:right;">
+6.813
+</td>
+<td style="text-align:right;">
+13.642
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+44e0
+</td>
+<td style="text-align:left;">
+Materiel
+</td>
+<td style="text-align:right;">
+186
+</td>
+<td style="text-align:right;">
+0.032
+</td>
+<td style="text-align:right;">
+0.283
+</td>
+<td style="text-align:right;">
+0.510
+</td>
+<td style="text-align:right;">
+0.723
+</td>
+<td style="text-align:right;">
+1.072
+</td>
+<td style="text-align:right;">
+1.441
+</td>
+<td style="text-align:right;">
+2.190
+</td>
+<td style="text-align:right;">
+3.056
+</td>
+<td style="text-align:right;">
+4.438
+</td>
+<td style="text-align:right;">
+10.049
+</td>
+<td style="text-align:right;">
+25.634
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1a10
+</td>
+<td style="text-align:left;">
+Materiel
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+0.263
+</td>
+<td style="text-align:right;">
+0.284
+</td>
+<td style="text-align:right;">
+0.358
+</td>
+<td style="text-align:right;">
+0.386
+</td>
+<td style="text-align:right;">
+0.822
+</td>
+<td style="text-align:right;">
+1.626
+</td>
+<td style="text-align:right;">
+3.266
+</td>
+<td style="text-align:right;">
+5.797
+</td>
+<td style="text-align:right;">
+8.972
+</td>
+<td style="text-align:right;">
+15.899
+</td>
+<td style="text-align:right;">
+34.986
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+373f
+</td>
+<td style="text-align:left;">
+Materiel
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0.170
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.229
+</td>
+<td style="text-align:right;">
+0.259
+</td>
+<td style="text-align:right;">
+0.288
+</td>
+<td style="text-align:right;">
+0.318
+</td>
+<td style="text-align:right;">
+0.347
+</td>
+<td style="text-align:right;">
+0.377
+</td>
+<td style="text-align:right;">
+0.406
+</td>
+<td style="text-align:right;">
+0.436
+</td>
+<td style="text-align:right;">
+0.465
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3906
+</td>
+<td style="text-align:left;">
+Materiel
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+0.127
+</td>
+<td style="text-align:right;">
+0.441
+</td>
+<td style="text-align:right;">
+2.067
+</td>
+<td style="text-align:right;">
+2.616
+</td>
+<td style="text-align:right;">
+2.749
+</td>
+<td style="text-align:right;">
+3.523
+</td>
+<td style="text-align:right;">
+4.560
+</td>
+<td style="text-align:right;">
+7.773
+</td>
+<td style="text-align:right;">
+9.726
+</td>
+<td style="text-align:right;">
+12.241
+</td>
+<td style="text-align:right;">
+23.509
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+44c5
+</td>
+<td style="text-align:left;">
+Materiel
+</td>
+<td style="text-align:right;">
+209
+</td>
+<td style="text-align:right;">
+0.020
+</td>
+<td style="text-align:right;">
+0.177
+</td>
+<td style="text-align:right;">
+0.345
+</td>
+<td style="text-align:right;">
+0.525
+</td>
+<td style="text-align:right;">
+0.673
+</td>
+<td style="text-align:right;">
+0.888
+</td>
+<td style="text-align:right;">
+1.166
+</td>
+<td style="text-align:right;">
+1.707
+</td>
+<td style="text-align:right;">
+2.712
+</td>
+<td style="text-align:right;">
+6.641
+</td>
+<td style="text-align:right;">
+29.449
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2f7b
+</td>
+<td style="text-align:left;">
+Brancard2
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+0.085
+</td>
+<td style="text-align:right;">
+0.099
+</td>
+<td style="text-align:right;">
+0.146
+</td>
+<td style="text-align:right;">
+0.262
+</td>
+<td style="text-align:right;">
+0.308
+</td>
+<td style="text-align:right;">
+0.320
+</td>
+<td style="text-align:right;">
+0.329
+</td>
+<td style="text-align:right;">
+0.373
+</td>
+<td style="text-align:right;">
+0.485
+</td>
+<td style="text-align:right;">
+0.725
+</td>
+<td style="text-align:right;">
+1.029
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2f40
+</td>
+<td style="text-align:left;">
+Brancard4
+</td>
+<td style="text-align:right;">
+192
+</td>
+<td style="text-align:right;">
+0.090
+</td>
+<td style="text-align:right;">
+0.336
+</td>
+<td style="text-align:right;">
+0.515
+</td>
+<td style="text-align:right;">
+0.774
+</td>
+<td style="text-align:right;">
+1.321
+</td>
+<td style="text-align:right;">
+2.114
+</td>
+<td style="text-align:right;">
+3.084
+</td>
+<td style="text-align:right;">
+3.957
+</td>
+<td style="text-align:right;">
+5.499
+</td>
+<td style="text-align:right;">
+11.494
+</td>
+<td style="text-align:right;">
+51.377
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2b9c
+</td>
+<td style="text-align:left;">
+Brancard polytrauma2
+</td>
+<td style="text-align:right;">
+84
+</td>
+<td style="text-align:right;">
+0.030
+</td>
+<td style="text-align:right;">
+0.147
+</td>
+<td style="text-align:right;">
+0.198
+</td>
+<td style="text-align:right;">
+0.420
+</td>
+<td style="text-align:right;">
+0.507
+</td>
+<td style="text-align:right;">
+0.619
+</td>
+<td style="text-align:right;">
+0.899
+</td>
+<td style="text-align:right;">
+1.085
+</td>
+<td style="text-align:right;">
+1.415
+</td>
+<td style="text-align:right;">
+3.138
+</td>
+<td style="text-align:right;">
+28.451
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+19ab
+</td>
+<td style="text-align:left;">
+Tag fixe
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+0.297
+</td>
+<td style="text-align:right;">
+0.866
+</td>
+<td style="text-align:right;">
+0.891
+</td>
+<td style="text-align:right;">
+0.934
+</td>
+<td style="text-align:right;">
+0.998
+</td>
+<td style="text-align:right;">
+1.055
+</td>
+<td style="text-align:right;">
+1.080
+</td>
+<td style="text-align:right;">
+1.246
+</td>
+<td style="text-align:right;">
+1.349
+</td>
+<td style="text-align:right;">
+1.572
+</td>
+<td style="text-align:right;">
+1.731
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 cf31
 </td>
 <td style="text-align:left;">
-IDE
+tag_IDE
 </td>
 <td style="text-align:right;">
 0
@@ -1398,13 +4679,50 @@ NA
 p &lt;- ggplot(dat) + theme_bw() + 
   geom_point(aes(x=record_timestamp, y=tagn, col=tagn), size=0.5) +
   scale_x_continuous(breaks = timestamp_breaks, labels = 0:23) +
-  scale_y_continuous(breaks = 1:nb_tag, labels = names_tag$label) + 
+  scale_y_continuous(breaks = 1:nb_tag, labels = names_tag$Type.de.tag) + 
   scale_color_gradientn(colours = hue_pal()(nb_tag)) + 
   coord_cartesian(xlim = c(timestamp_breaks[1], timestamp_breaks[23]+3600)) +
   theme(legend.position = &quot;None&quot;) +
   labs(x = &quot;hour&quot;, y = &quot;&quot;, title = today)
 print(p)</code></pre>
 <p><img src="figure/2021-12-22.Rmd/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-7-1">
+Past versions of unnamed-chunk-7-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-7-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/0c350270f4c50afdbd08af082b4f89e9f71b4e3b/docs/figure/2021-12-22.Rmd/unnamed-chunk-7-1.png" target="_blank">0c35027</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2021-12-23
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="plot-without-nas" class="section level3">
 <h3>plot without NAs</h3>
@@ -1414,21 +4732,10 @@ cat(&quot;if x_na = y_na:&quot;, identical(x_na, y_na), &quot;\n&quot;)</code></
 <pre><code>if x_na = y_na: TRUE </code></pre>
 <pre class="r"><code>cat(&quot;number of NA positions:&quot;, length(x_na), &quot;/&quot;, length(tagId_seq), &quot;(=&quot;, 
     length(x_na)/length(tagId_seq)*100, &quot;%)&quot;, &quot;\n&quot;)</code></pre>
-<pre><code>number of NA positions: 153182 / 1392184 (= 11.003 %) </code></pre>
+<pre><code>number of NA positions: 318872 / 1392184 (= 22.90444 %) </code></pre>
 <pre class="r"><code>if (length(x_na)!=0){
   dat = dat[-x_na,]
 }</code></pre>
-<pre class="r"><code>timestamp_breaks = as.numeric(as.POSIXct(paste0(today, &quot; &quot;, sprintf(&quot;%02d&quot;, 0:23), &quot;:00:00 CEST&quot;))) + 3600*7
-p &lt;- ggplot(dat) + theme_bw() + 
-  geom_point(aes(x=record_timestamp, y=tagn, col=tagn), size=0.5) +
-  scale_x_continuous(breaks = timestamp_breaks, labels = 0:23) +
-  scale_y_continuous(breaks = 1:nb_tag, labels = names_tag$label) + 
-  scale_color_gradientn(colours = hue_pal()(nb_tag)) + 
-  coord_cartesian(xlim = c(timestamp_breaks[1], timestamp_breaks[23]+3600)) +
-  theme(legend.position = &quot;None&quot;) +
-  labs(x = &quot;hour&quot;, y = &quot;&quot;, title = today)
-print(p)</code></pre>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" /></p>
 <pre class="r"><code>list_tag &lt;- split(dat, dat$tag)
 
 for (tag in names(list_tag)){
@@ -1450,1993 +4757,161 @@ dat = do.call(rbind.data.frame, list_tag)</code></pre>
 <h1 class="tabset tabset-pills">plot</h1>
 <pre class="r"><code>load(&quot;data/plan/plan_firminy.RData&quot;)</code></pre>
 <pre class="r"><code>for (k in 1:nb_tag){
-  tag = names_tag$id[k]
-  label = names_tag$label[k]
+  tag = names_tag$Identifiant[k]
+  type = names_tag$Type.de.tag[k]
   cat(&quot;\n&quot;)
-  cat(&quot;## &quot;, label, &quot;\n&quot;)
+  cat(&quot;## &quot;, tag, &quot;-&quot;, type, &quot;\n&quot;)
   dd = list_tag[tag][[1]]
   if (!is.null(dd)){
     q &lt;- p + 
-      geom_point(data = dd, aes(x=x,y=y), col=&quot;red&quot;, size = 1) +
-      coord_equal(ratio = 1, xlim = c(-20,20), ylim = c(-30,30)) + 
-      labs(x = &quot;&quot;, y = &quot;&quot;, title = paste0(tag, &quot; - &quot;, names_tag$Matériel[names_tag$id==tag]))
+      geom_point(data = dd, aes(x=x,y=y), col=&quot;red&quot;, size = 0.5) +
+      coord_equal(ratio = 1, xlim = c(-20,20), ylim = c(-35,35)) + 
+      labs(x = &quot;&quot;, y = &quot;&quot;, title = paste0(tag, &quot; - &quot;, names_tag$Type.de.tag[names_tag$Identifiant==tag]))
     print(q)
   }else{
     cat(&quot;NO DATA for plot!!&quot;)
   }
   cat(&quot;\n&quot;)
 }</code></pre>
-<div id="bra2" class="section level2">
-<h2>BRA2</h2>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div id="nominatif" class="section level2">
+<h2>4586 - Nominatif</h2>
+<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
-<div id="bra4" class="section level2">
-<h2>BRA4</h2>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-12-2.png" width="672" style="display: block; margin: auto;" /></p>
+<div id="nominatif-1" class="section level2">
+<h2>3721 - Nominatif</h2>
+<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-11-2.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
-<div id="brp2" class="section level2">
-<h2>BRP2</h2>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-12-3.png" width="672" style="display: block; margin: auto;" /></p>
+<div id="b---agent-daccueil" class="section level2">
+<h2>460b - Agent d’accueil</h2>
+<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-11-3.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
-<div id="fix" class="section level2">
-<h2>FIX</h2>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-12-4.png" width="672" style="display: block; margin: auto;" /></p>
+<div id="cf---agent-daccueil" class="section level2">
+<h2>67cf - Agent d’accueil</h2>
+<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-11-4.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
-<div id="ide" class="section level2">
-<h2>IDE</h2>
+<div id="agent-de-service-hospitalier" class="section level2">
+<h2>4258 - Agent de service hospitalier</h2>
+<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-11-5.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="e56---agent-de-service-hospitalier" class="section level2">
+<h2>2e56 - Agent de service hospitalier</h2>
+<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-11-6.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="brancardier" class="section level2">
+<h2>4288 - Brancardier</h2>
+<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-11-7.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="f---brancardier" class="section level2">
+<h2>424f - Brancardier</h2>
+<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-11-8.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="brancardier-1" class="section level2">
+<h2>4585 - Brancardier</h2>
+<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-11-9.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="medecin" class="section level2">
+<h2>4596 - Medecin</h2>
+<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-11-10.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="b---medecin" class="section level2">
+<h2>181b - Medecin</h2>
+<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-11-11.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="medecin-1" class="section level2">
+<h2>3722 - Medecin</h2>
+<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-11-12.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="medecin-2" class="section level2">
+<h2>3719 - Medecin</h2>
+<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-11-13.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="medecin-3" class="section level2">
+<h2>4273 - Medecin</h2>
+<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-11-14.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="d---medecin" class="section level2">
+<h2>436d - Medecin</h2>
+<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-11-15.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="bc---medecin" class="section level2">
+<h2>14bc - Medecin</h2>
+<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-11-16.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="c---infirmiere" class="section level2">
+<h2>468c - Infirmiere</h2>
+<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-11-17.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="f2e---infirmiere" class="section level2">
+<h2>4f2e - Infirmiere</h2>
+<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-11-18.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="d7---infirmiere" class="section level2">
+<h2>38d7 - Infirmiere</h2>
+<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-11-19.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="infirmiere" class="section level2">
+<h2>4592 - Infirmiere</h2>
+<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-11-20.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="infirmiere-1" class="section level2">
+<h2>4584 - Infirmiere</h2>
+<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-11-21.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="fb---infirmiere" class="section level2">
+<h2>36fb - Infirmiere</h2>
+<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-11-22.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="d2---aide-soignant" class="section level2">
+<h2>11d2 - Aide soignant</h2>
+<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-11-23.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="a04---aide-soignant" class="section level2">
+<h2>1a04 - Aide soignant</h2>
+<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-11-24.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="a0a---aide-soignant" class="section level2">
+<h2>1a0a - Aide soignant</h2>
+<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-11-25.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="e0---materiel" class="section level2">
+<h2>44e0 - Materiel</h2>
+<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-11-26.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="a10---materiel" class="section level2">
+<h2>1a10 - Materiel</h2>
+<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-11-27.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="f---materiel" class="section level2">
+<h2>373f - Materiel</h2>
+<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-11-28.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="materiel" class="section level2">
+<h2>3906 - Materiel</h2>
+<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-11-29.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="c5---materiel" class="section level2">
+<h2>44c5 - Materiel</h2>
+<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-11-30.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="f7b---brancard2" class="section level2">
+<h2>2f7b - Brancard2</h2>
+<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-11-31.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="f40---brancard4" class="section level2">
+<h2>2f40 - Brancard4</h2>
+<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-11-32.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="b9c---brancard-polytrauma2" class="section level2">
+<h2>2b9c - Brancard polytrauma2</h2>
+<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-11-33.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="ab---tag-fixe" class="section level2">
+<h2>19ab - Tag fixe</h2>
+<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-11-34.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="cf31---tag_ide" class="section level2">
+<h2>cf31 - tag_IDE</h2>
 <p>NO DATA for plot!!</p>
-</div>
-</div>
-<div id="plot-by-hour" class="section level1 tabset tabset-pills">
-<h1 class="tabset tabset-pills">plot by hour</h1>
-<pre class="r"><code>names_tag_all &lt;- read.table(file = &quot;data/tag_names_20211124.txt&quot;, header = T, sep = &quot;\t&quot;)
-nb_tag_all = nrow(names_tag_all)
-
-date_sel = rev(as.Date(0:(-8), origin = today))
-
-temp1 = read.csv2(paste0(&quot;data/json/&quot;, date_sel[1], &quot;/position.csv&quot;))
-temp1 = temp1 %&gt;% filter(tag %in% names_tag_all$id)
-temp2 = read.csv2(paste0(&quot;data/json/&quot;, date_sel[2], &quot;/position.csv&quot;))
-temp2 = temp2 %&gt;% filter(tag %in% names_tag_all$id)
-temp3 = read.csv2(paste0(&quot;data/json/&quot;, date_sel[3], &quot;/position.csv&quot;))
-temp3 = temp3 %&gt;% filter(tag %in% names_tag_all$id)
-temp4 = read.csv2(paste0(&quot;data/json/&quot;, date_sel[4], &quot;/position.csv&quot;))
-temp4 = temp4 %&gt;% filter(tag %in% names_tag_all$id)
-temp5 = read.csv2(paste0(&quot;data/json/&quot;, date_sel[5], &quot;/position.csv&quot;))
-temp5 = temp5 %&gt;% filter(tag %in% names_tag_all$id)
-temp6 = read.csv2(paste0(&quot;data/json/&quot;, date_sel[6], &quot;/position.csv&quot;))
-temp6 = temp6 %&gt;% filter(tag %in% names_tag_all$id)
-temp7 = read.csv2(paste0(&quot;data/json/&quot;, date_sel[7], &quot;/position.csv&quot;))
-temp7 = temp7 %&gt;% filter(tag %in% names_tag_all$id)
-temp8 = read.csv2(paste0(&quot;data/json/&quot;, date_sel[8], &quot;/position.csv&quot;))
-temp8 = temp8 %&gt;% filter(tag %in% names_tag_all$id)
-temp9 = read.csv2(paste0(&quot;data/json/&quot;, date_sel[9], &quot;/position.csv&quot;))
-temp9 = temp9 %&gt;% filter(tag %in% names_tag_all$id)
-
-temp_tag = do.call(rbind.data.frame, list(temp1,temp2,temp3,temp4,temp5,temp6,temp7,temp8,temp9))
-temp_tag$date = as.Date(temp_tag$date, format = &quot;%Y-%m-%d&quot;)
-
-for (k in 1:nb_tag_all){
-  tag = names_tag_all$id[k]
-  label = names_tag_all$label[k]
-  cat(&quot;\n&quot;)
-  cat(&quot;## &quot;, label, &quot; {.tabset .tabset-pills}&quot;, &quot;\n&quot;)
-  for (hour in sprintf(&quot;%02d&quot;, 0:23)){
-    cat(&quot;\n&quot;)
-    cat(&quot;### &quot;, hour, &quot;\n&quot;)
-    temp_tag_hour = temp_tag[temp_tag$tag==tag,] %&gt;%
-      filter(H==as.numeric(hour))
-    if (nrow(temp_tag_hour)!=0){
-      q &lt;- p + 
-        geom_point(data = temp_tag_hour, aes(x=x, y=y), col = &quot;red&quot;, size = 0.5) +
-        coord_equal(ratio = 1, xlim = c(-20,20), ylim = c(-30,30)) + 
-        facet_wrap(~date, ncol = 3) +
-        labs(x = &quot;&quot;, y = &quot;&quot;)
-      print(q)
-      # ggsave(paste0(&quot;figure/0da6_2021_09_&quot;, day, &quot;_&quot;, hour, &quot;.png&quot;), width = 5, height = 9)
-    }
-    cat(&quot;\n&quot;)
-  }
-  cat(&quot;\n&quot;)
-}</code></pre>
-<div id="bla" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">BLA</h2>
-<div id="section" class="section level3">
-<h3>00</h3>
-</div>
-<div id="section-1" class="section level3">
-<h3>01</h3>
-</div>
-<div id="section-2" class="section level3">
-<h3>02</h3>
-</div>
-<div id="section-3" class="section level3">
-<h3>03</h3>
-</div>
-<div id="section-4" class="section level3">
-<h3>04</h3>
-</div>
-<div id="section-5" class="section level3">
-<h3>05</h3>
-</div>
-<div id="section-6" class="section level3">
-<h3>06</h3>
-</div>
-<div id="section-7" class="section level3">
-<h3>07</h3>
-</div>
-<div id="section-8" class="section level3">
-<h3>08</h3>
-</div>
-<div id="section-9" class="section level3">
-<h3>09</h3>
-</div>
-<div id="section-10" class="section level3">
-<h3>10</h3>
-</div>
-<div id="section-11" class="section level3">
-<h3>11</h3>
-</div>
-<div id="section-12" class="section level3">
-<h3>12</h3>
-</div>
-<div id="section-13" class="section level3">
-<h3>13</h3>
-</div>
-<div id="section-14" class="section level3">
-<h3>14</h3>
-</div>
-<div id="section-15" class="section level3">
-<h3>15</h3>
-</div>
-<div id="section-16" class="section level3">
-<h3>16</h3>
-</div>
-<div id="section-17" class="section level3">
-<h3>17</h3>
-</div>
-<div id="section-18" class="section level3">
-<h3>18</h3>
-</div>
-<div id="section-19" class="section level3">
-<h3>19</h3>
-</div>
-<div id="section-20" class="section level3">
-<h3>20</h3>
-</div>
-<div id="section-21" class="section level3">
-<h3>21</h3>
-</div>
-<div id="section-22" class="section level3">
-<h3>22</h3>
-</div>
-<div id="section-23" class="section level3">
-<h3>23</h3>
-</div>
-</div>
-<div id="bra1" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">BRA1</h2>
-<div id="section-24" class="section level3">
-<h3>00</h3>
-</div>
-<div id="section-25" class="section level3">
-<h3>01</h3>
-</div>
-<div id="section-26" class="section level3">
-<h3>02</h3>
-</div>
-<div id="section-27" class="section level3">
-<h3>03</h3>
-</div>
-<div id="section-28" class="section level3">
-<h3>04</h3>
-</div>
-<div id="section-29" class="section level3">
-<h3>05</h3>
-</div>
-<div id="section-30" class="section level3">
-<h3>06</h3>
-</div>
-<div id="section-31" class="section level3">
-<h3>07</h3>
-</div>
-<div id="section-32" class="section level3">
-<h3>08</h3>
-</div>
-<div id="section-33" class="section level3">
-<h3>09</h3>
-</div>
-<div id="section-34" class="section level3">
-<h3>10</h3>
-</div>
-<div id="section-35" class="section level3">
-<h3>11</h3>
-</div>
-<div id="section-36" class="section level3">
-<h3>12</h3>
-</div>
-<div id="section-37" class="section level3">
-<h3>13</h3>
-</div>
-<div id="section-38" class="section level3">
-<h3>14</h3>
-</div>
-<div id="section-39" class="section level3">
-<h3>15</h3>
-</div>
-<div id="section-40" class="section level3">
-<h3>16</h3>
-</div>
-<div id="section-41" class="section level3">
-<h3>17</h3>
-</div>
-<div id="section-42" class="section level3">
-<h3>18</h3>
-</div>
-<div id="section-43" class="section level3">
-<h3>19</h3>
-</div>
-<div id="section-44" class="section level3">
-<h3>20</h3>
-</div>
-<div id="section-45" class="section level3">
-<h3>21</h3>
-</div>
-<div id="section-46" class="section level3">
-<h3>22</h3>
-</div>
-<div id="section-47" class="section level3">
-<h3>23</h3>
-</div>
-</div>
-<div id="bra2-1" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">BRA2</h2>
-<div id="section-48" class="section level3">
-<h3>00</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-49" class="section level3">
-<h3>01</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-2.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-50" class="section level3">
-<h3>02</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-3.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-51" class="section level3">
-<h3>03</h3>
-</div>
-<div id="section-52" class="section level3">
-<h3>04</h3>
-</div>
-<div id="section-53" class="section level3">
-<h3>05</h3>
-</div>
-<div id="section-54" class="section level3">
-<h3>06</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-4.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-55" class="section level3">
-<h3>07</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-5.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-56" class="section level3">
-<h3>08</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-6.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-57" class="section level3">
-<h3>09</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-7.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-58" class="section level3">
-<h3>10</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-8.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-59" class="section level3">
-<h3>11</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-9.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-60" class="section level3">
-<h3>12</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-10.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-61" class="section level3">
-<h3>13</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-11.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-62" class="section level3">
-<h3>14</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-12.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-63" class="section level3">
-<h3>15</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-13.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-64" class="section level3">
-<h3>16</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-14.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-65" class="section level3">
-<h3>17</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-15.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-66" class="section level3">
-<h3>18</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-16.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-67" class="section level3">
-<h3>19</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-17.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-68" class="section level3">
-<h3>20</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-18.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-69" class="section level3">
-<h3>21</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-19.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-70" class="section level3">
-<h3>22</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-20.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-71" class="section level3">
-<h3>23</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-21.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-</div>
-<div id="bra3" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">BRA3</h2>
-<div id="section-72" class="section level3">
-<h3>00</h3>
-</div>
-<div id="section-73" class="section level3">
-<h3>01</h3>
-</div>
-<div id="section-74" class="section level3">
-<h3>02</h3>
-</div>
-<div id="section-75" class="section level3">
-<h3>03</h3>
-</div>
-<div id="section-76" class="section level3">
-<h3>04</h3>
-</div>
-<div id="section-77" class="section level3">
-<h3>05</h3>
-</div>
-<div id="section-78" class="section level3">
-<h3>06</h3>
-</div>
-<div id="section-79" class="section level3">
-<h3>07</h3>
-</div>
-<div id="section-80" class="section level3">
-<h3>08</h3>
-</div>
-<div id="section-81" class="section level3">
-<h3>09</h3>
-</div>
-<div id="section-82" class="section level3">
-<h3>10</h3>
-</div>
-<div id="section-83" class="section level3">
-<h3>11</h3>
-</div>
-<div id="section-84" class="section level3">
-<h3>12</h3>
-</div>
-<div id="section-85" class="section level3">
-<h3>13</h3>
-</div>
-<div id="section-86" class="section level3">
-<h3>14</h3>
-</div>
-<div id="section-87" class="section level3">
-<h3>15</h3>
-</div>
-<div id="section-88" class="section level3">
-<h3>16</h3>
-</div>
-<div id="section-89" class="section level3">
-<h3>17</h3>
-</div>
-<div id="section-90" class="section level3">
-<h3>18</h3>
-</div>
-<div id="section-91" class="section level3">
-<h3>19</h3>
-</div>
-<div id="section-92" class="section level3">
-<h3>20</h3>
-</div>
-<div id="section-93" class="section level3">
-<h3>21</h3>
-</div>
-<div id="section-94" class="section level3">
-<h3>22</h3>
-</div>
-<div id="section-95" class="section level3">
-<h3>23</h3>
-</div>
-</div>
-<div id="bra4-1" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">BRA4</h2>
-<div id="section-96" class="section level3">
-<h3>00</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-22.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-97" class="section level3">
-<h3>01</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-23.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-98" class="section level3">
-<h3>02</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-24.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-99" class="section level3">
-<h3>03</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-25.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-100" class="section level3">
-<h3>04</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-26.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-101" class="section level3">
-<h3>05</h3>
-</div>
-<div id="section-102" class="section level3">
-<h3>06</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-27.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-103" class="section level3">
-<h3>07</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-28.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-104" class="section level3">
-<h3>08</h3>
-</div>
-<div id="section-105" class="section level3">
-<h3>09</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-29.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-106" class="section level3">
-<h3>10</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-30.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-107" class="section level3">
-<h3>11</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-31.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-108" class="section level3">
-<h3>12</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-32.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-109" class="section level3">
-<h3>13</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-33.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-110" class="section level3">
-<h3>14</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-34.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-111" class="section level3">
-<h3>15</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-35.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-112" class="section level3">
-<h3>16</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-36.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-113" class="section level3">
-<h3>17</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-37.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-114" class="section level3">
-<h3>18</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-38.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-115" class="section level3">
-<h3>19</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-39.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-116" class="section level3">
-<h3>20</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-40.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-117" class="section level3">
-<h3>21</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-41.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-118" class="section level3">
-<h3>22</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-42.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-119" class="section level3">
-<h3>23</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-43.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-</div>
-<div id="brp1" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">BRP1</h2>
-<div id="section-120" class="section level3">
-<h3>00</h3>
-</div>
-<div id="section-121" class="section level3">
-<h3>01</h3>
-</div>
-<div id="section-122" class="section level3">
-<h3>02</h3>
-</div>
-<div id="section-123" class="section level3">
-<h3>03</h3>
-</div>
-<div id="section-124" class="section level3">
-<h3>04</h3>
-</div>
-<div id="section-125" class="section level3">
-<h3>05</h3>
-</div>
-<div id="section-126" class="section level3">
-<h3>06</h3>
-</div>
-<div id="section-127" class="section level3">
-<h3>07</h3>
-</div>
-<div id="section-128" class="section level3">
-<h3>08</h3>
-</div>
-<div id="section-129" class="section level3">
-<h3>09</h3>
-</div>
-<div id="section-130" class="section level3">
-<h3>10</h3>
-</div>
-<div id="section-131" class="section level3">
-<h3>11</h3>
-</div>
-<div id="section-132" class="section level3">
-<h3>12</h3>
-</div>
-<div id="section-133" class="section level3">
-<h3>13</h3>
-</div>
-<div id="section-134" class="section level3">
-<h3>14</h3>
-</div>
-<div id="section-135" class="section level3">
-<h3>15</h3>
-</div>
-<div id="section-136" class="section level3">
-<h3>16</h3>
-</div>
-<div id="section-137" class="section level3">
-<h3>17</h3>
-</div>
-<div id="section-138" class="section level3">
-<h3>18</h3>
-</div>
-<div id="section-139" class="section level3">
-<h3>19</h3>
-</div>
-<div id="section-140" class="section level3">
-<h3>20</h3>
-</div>
-<div id="section-141" class="section level3">
-<h3>21</h3>
-</div>
-<div id="section-142" class="section level3">
-<h3>22</h3>
-</div>
-<div id="section-143" class="section level3">
-<h3>23</h3>
-</div>
-</div>
-<div id="brp2-1" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">BRP2</h2>
-<div id="section-144" class="section level3">
-<h3>00</h3>
-</div>
-<div id="section-145" class="section level3">
-<h3>01</h3>
-</div>
-<div id="section-146" class="section level3">
-<h3>02</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-44.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-147" class="section level3">
-<h3>03</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-45.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-148" class="section level3">
-<h3>04</h3>
-</div>
-<div id="section-149" class="section level3">
-<h3>05</h3>
-</div>
-<div id="section-150" class="section level3">
-<h3>06</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-46.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-151" class="section level3">
-<h3>07</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-47.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-152" class="section level3">
-<h3>08</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-48.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-153" class="section level3">
-<h3>09</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-49.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-154" class="section level3">
-<h3>10</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-50.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-155" class="section level3">
-<h3>11</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-51.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-156" class="section level3">
-<h3>12</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-52.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-157" class="section level3">
-<h3>13</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-53.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-158" class="section level3">
-<h3>14</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-54.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-159" class="section level3">
-<h3>15</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-55.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-160" class="section level3">
-<h3>16</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-56.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-161" class="section level3">
-<h3>17</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-57.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-162" class="section level3">
-<h3>18</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-58.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-163" class="section level3">
-<h3>19</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-59.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-164" class="section level3">
-<h3>20</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-60.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-165" class="section level3">
-<h3>21</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-61.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-166" class="section level3">
-<h3>22</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-62.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-167" class="section level3">
-<h3>23</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-63.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-</div>
-<div id="cds1" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">CDS1</h2>
-<div id="section-168" class="section level3">
-<h3>00</h3>
-</div>
-<div id="section-169" class="section level3">
-<h3>01</h3>
-</div>
-<div id="section-170" class="section level3">
-<h3>02</h3>
-</div>
-<div id="section-171" class="section level3">
-<h3>03</h3>
-</div>
-<div id="section-172" class="section level3">
-<h3>04</h3>
-</div>
-<div id="section-173" class="section level3">
-<h3>05</h3>
-</div>
-<div id="section-174" class="section level3">
-<h3>06</h3>
-</div>
-<div id="section-175" class="section level3">
-<h3>07</h3>
-</div>
-<div id="section-176" class="section level3">
-<h3>08</h3>
-</div>
-<div id="section-177" class="section level3">
-<h3>09</h3>
-</div>
-<div id="section-178" class="section level3">
-<h3>10</h3>
-</div>
-<div id="section-179" class="section level3">
-<h3>11</h3>
-</div>
-<div id="section-180" class="section level3">
-<h3>12</h3>
-</div>
-<div id="section-181" class="section level3">
-<h3>13</h3>
-</div>
-<div id="section-182" class="section level3">
-<h3>14</h3>
-</div>
-<div id="section-183" class="section level3">
-<h3>15</h3>
-</div>
-<div id="section-184" class="section level3">
-<h3>16</h3>
-</div>
-<div id="section-185" class="section level3">
-<h3>17</h3>
-</div>
-<div id="section-186" class="section level3">
-<h3>18</h3>
-</div>
-<div id="section-187" class="section level3">
-<h3>19</h3>
-</div>
-<div id="section-188" class="section level3">
-<h3>20</h3>
-</div>
-<div id="section-189" class="section level3">
-<h3>21</h3>
-</div>
-<div id="section-190" class="section level3">
-<h3>22</h3>
-</div>
-<div id="section-191" class="section level3">
-<h3>23</h3>
-</div>
-</div>
-<div id="cds2" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">CDS2</h2>
-<div id="section-192" class="section level3">
-<h3>00</h3>
-</div>
-<div id="section-193" class="section level3">
-<h3>01</h3>
-</div>
-<div id="section-194" class="section level3">
-<h3>02</h3>
-</div>
-<div id="section-195" class="section level3">
-<h3>03</h3>
-</div>
-<div id="section-196" class="section level3">
-<h3>04</h3>
-</div>
-<div id="section-197" class="section level3">
-<h3>05</h3>
-</div>
-<div id="section-198" class="section level3">
-<h3>06</h3>
-</div>
-<div id="section-199" class="section level3">
-<h3>07</h3>
-</div>
-<div id="section-200" class="section level3">
-<h3>08</h3>
-</div>
-<div id="section-201" class="section level3">
-<h3>09</h3>
-</div>
-<div id="section-202" class="section level3">
-<h3>10</h3>
-</div>
-<div id="section-203" class="section level3">
-<h3>11</h3>
-</div>
-<div id="section-204" class="section level3">
-<h3>12</h3>
-</div>
-<div id="section-205" class="section level3">
-<h3>13</h3>
-</div>
-<div id="section-206" class="section level3">
-<h3>14</h3>
-</div>
-<div id="section-207" class="section level3">
-<h3>15</h3>
-</div>
-<div id="section-208" class="section level3">
-<h3>16</h3>
-</div>
-<div id="section-209" class="section level3">
-<h3>17</h3>
-</div>
-<div id="section-210" class="section level3">
-<h3>18</h3>
-</div>
-<div id="section-211" class="section level3">
-<h3>19</h3>
-</div>
-<div id="section-212" class="section level3">
-<h3>20</h3>
-</div>
-<div id="section-213" class="section level3">
-<h3>21</h3>
-</div>
-<div id="section-214" class="section level3">
-<h3>22</h3>
-</div>
-<div id="section-215" class="section level3">
-<h3>23</h3>
-</div>
-</div>
-<div id="dyn1" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">DYN1</h2>
-<div id="section-216" class="section level3">
-<h3>00</h3>
-</div>
-<div id="section-217" class="section level3">
-<h3>01</h3>
-</div>
-<div id="section-218" class="section level3">
-<h3>02</h3>
-</div>
-<div id="section-219" class="section level3">
-<h3>03</h3>
-</div>
-<div id="section-220" class="section level3">
-<h3>04</h3>
-</div>
-<div id="section-221" class="section level3">
-<h3>05</h3>
-</div>
-<div id="section-222" class="section level3">
-<h3>06</h3>
-</div>
-<div id="section-223" class="section level3">
-<h3>07</h3>
-</div>
-<div id="section-224" class="section level3">
-<h3>08</h3>
-</div>
-<div id="section-225" class="section level3">
-<h3>09</h3>
-</div>
-<div id="section-226" class="section level3">
-<h3>10</h3>
-</div>
-<div id="section-227" class="section level3">
-<h3>11</h3>
-</div>
-<div id="section-228" class="section level3">
-<h3>12</h3>
-</div>
-<div id="section-229" class="section level3">
-<h3>13</h3>
-</div>
-<div id="section-230" class="section level3">
-<h3>14</h3>
-</div>
-<div id="section-231" class="section level3">
-<h3>15</h3>
-</div>
-<div id="section-232" class="section level3">
-<h3>16</h3>
-</div>
-<div id="section-233" class="section level3">
-<h3>17</h3>
-</div>
-<div id="section-234" class="section level3">
-<h3>18</h3>
-</div>
-<div id="section-235" class="section level3">
-<h3>19</h3>
-</div>
-<div id="section-236" class="section level3">
-<h3>20</h3>
-</div>
-<div id="section-237" class="section level3">
-<h3>21</h3>
-</div>
-<div id="section-238" class="section level3">
-<h3>22</h3>
-</div>
-<div id="section-239" class="section level3">
-<h3>23</h3>
-</div>
-</div>
-<div id="dyn2" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">DYN2</h2>
-<div id="section-240" class="section level3">
-<h3>00</h3>
-</div>
-<div id="section-241" class="section level3">
-<h3>01</h3>
-</div>
-<div id="section-242" class="section level3">
-<h3>02</h3>
-</div>
-<div id="section-243" class="section level3">
-<h3>03</h3>
-</div>
-<div id="section-244" class="section level3">
-<h3>04</h3>
-</div>
-<div id="section-245" class="section level3">
-<h3>05</h3>
-</div>
-<div id="section-246" class="section level3">
-<h3>06</h3>
-</div>
-<div id="section-247" class="section level3">
-<h3>07</h3>
-</div>
-<div id="section-248" class="section level3">
-<h3>08</h3>
-</div>
-<div id="section-249" class="section level3">
-<h3>09</h3>
-</div>
-<div id="section-250" class="section level3">
-<h3>10</h3>
-</div>
-<div id="section-251" class="section level3">
-<h3>11</h3>
-</div>
-<div id="section-252" class="section level3">
-<h3>12</h3>
-</div>
-<div id="section-253" class="section level3">
-<h3>13</h3>
-</div>
-<div id="section-254" class="section level3">
-<h3>14</h3>
-</div>
-<div id="section-255" class="section level3">
-<h3>15</h3>
-</div>
-<div id="section-256" class="section level3">
-<h3>16</h3>
-</div>
-<div id="section-257" class="section level3">
-<h3>17</h3>
-</div>
-<div id="section-258" class="section level3">
-<h3>18</h3>
-</div>
-<div id="section-259" class="section level3">
-<h3>19</h3>
-</div>
-<div id="section-260" class="section level3">
-<h3>20</h3>
-</div>
-<div id="section-261" class="section level3">
-<h3>21</h3>
-</div>
-<div id="section-262" class="section level3">
-<h3>22</h3>
-</div>
-<div id="section-263" class="section level3">
-<h3>23</h3>
-</div>
-</div>
-<div id="dyn3" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">DYN3</h2>
-<div id="section-264" class="section level3">
-<h3>00</h3>
-</div>
-<div id="section-265" class="section level3">
-<h3>01</h3>
-</div>
-<div id="section-266" class="section level3">
-<h3>02</h3>
-</div>
-<div id="section-267" class="section level3">
-<h3>03</h3>
-</div>
-<div id="section-268" class="section level3">
-<h3>04</h3>
-</div>
-<div id="section-269" class="section level3">
-<h3>05</h3>
-</div>
-<div id="section-270" class="section level3">
-<h3>06</h3>
-</div>
-<div id="section-271" class="section level3">
-<h3>07</h3>
-</div>
-<div id="section-272" class="section level3">
-<h3>08</h3>
-</div>
-<div id="section-273" class="section level3">
-<h3>09</h3>
-</div>
-<div id="section-274" class="section level3">
-<h3>10</h3>
-</div>
-<div id="section-275" class="section level3">
-<h3>11</h3>
-</div>
-<div id="section-276" class="section level3">
-<h3>12</h3>
-</div>
-<div id="section-277" class="section level3">
-<h3>13</h3>
-</div>
-<div id="section-278" class="section level3">
-<h3>14</h3>
-</div>
-<div id="section-279" class="section level3">
-<h3>15</h3>
-</div>
-<div id="section-280" class="section level3">
-<h3>16</h3>
-</div>
-<div id="section-281" class="section level3">
-<h3>17</h3>
-</div>
-<div id="section-282" class="section level3">
-<h3>18</h3>
-</div>
-<div id="section-283" class="section level3">
-<h3>19</h3>
-</div>
-<div id="section-284" class="section level3">
-<h3>20</h3>
-</div>
-<div id="section-285" class="section level3">
-<h3>21</h3>
-</div>
-<div id="section-286" class="section level3">
-<h3>22</h3>
-</div>
-<div id="section-287" class="section level3">
-<h3>23</h3>
-</div>
-</div>
-<div id="elc" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">ELC</h2>
-<div id="section-288" class="section level3">
-<h3>00</h3>
-</div>
-<div id="section-289" class="section level3">
-<h3>01</h3>
-</div>
-<div id="section-290" class="section level3">
-<h3>02</h3>
-</div>
-<div id="section-291" class="section level3">
-<h3>03</h3>
-</div>
-<div id="section-292" class="section level3">
-<h3>04</h3>
-</div>
-<div id="section-293" class="section level3">
-<h3>05</h3>
-</div>
-<div id="section-294" class="section level3">
-<h3>06</h3>
-</div>
-<div id="section-295" class="section level3">
-<h3>07</h3>
-</div>
-<div id="section-296" class="section level3">
-<h3>08</h3>
-</div>
-<div id="section-297" class="section level3">
-<h3>09</h3>
-</div>
-<div id="section-298" class="section level3">
-<h3>10</h3>
-</div>
-<div id="section-299" class="section level3">
-<h3>11</h3>
-</div>
-<div id="section-300" class="section level3">
-<h3>12</h3>
-</div>
-<div id="section-301" class="section level3">
-<h3>13</h3>
-</div>
-<div id="section-302" class="section level3">
-<h3>14</h3>
-</div>
-<div id="section-303" class="section level3">
-<h3>15</h3>
-</div>
-<div id="section-304" class="section level3">
-<h3>16</h3>
-</div>
-<div id="section-305" class="section level3">
-<h3>17</h3>
-</div>
-<div id="section-306" class="section level3">
-<h3>18</h3>
-</div>
-<div id="section-307" class="section level3">
-<h3>19</h3>
-</div>
-<div id="section-308" class="section level3">
-<h3>20</h3>
-</div>
-<div id="section-309" class="section level3">
-<h3>21</h3>
-</div>
-<div id="section-310" class="section level3">
-<h3>22</h3>
-</div>
-<div id="section-311" class="section level3">
-<h3>23</h3>
-</div>
-</div>
-<div id="fau1" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">FAU1</h2>
-<div id="section-312" class="section level3">
-<h3>00</h3>
-</div>
-<div id="section-313" class="section level3">
-<h3>01</h3>
-</div>
-<div id="section-314" class="section level3">
-<h3>02</h3>
-</div>
-<div id="section-315" class="section level3">
-<h3>03</h3>
-</div>
-<div id="section-316" class="section level3">
-<h3>04</h3>
-</div>
-<div id="section-317" class="section level3">
-<h3>05</h3>
-</div>
-<div id="section-318" class="section level3">
-<h3>06</h3>
-</div>
-<div id="section-319" class="section level3">
-<h3>07</h3>
-</div>
-<div id="section-320" class="section level3">
-<h3>08</h3>
-</div>
-<div id="section-321" class="section level3">
-<h3>09</h3>
-</div>
-<div id="section-322" class="section level3">
-<h3>10</h3>
-</div>
-<div id="section-323" class="section level3">
-<h3>11</h3>
-</div>
-<div id="section-324" class="section level3">
-<h3>12</h3>
-</div>
-<div id="section-325" class="section level3">
-<h3>13</h3>
-</div>
-<div id="section-326" class="section level3">
-<h3>14</h3>
-</div>
-<div id="section-327" class="section level3">
-<h3>15</h3>
-</div>
-<div id="section-328" class="section level3">
-<h3>16</h3>
-</div>
-<div id="section-329" class="section level3">
-<h3>17</h3>
-</div>
-<div id="section-330" class="section level3">
-<h3>18</h3>
-</div>
-<div id="section-331" class="section level3">
-<h3>19</h3>
-</div>
-<div id="section-332" class="section level3">
-<h3>20</h3>
-</div>
-<div id="section-333" class="section level3">
-<h3>21</h3>
-</div>
-<div id="section-334" class="section level3">
-<h3>22</h3>
-</div>
-<div id="section-335" class="section level3">
-<h3>23</h3>
-</div>
-</div>
-<div id="fau2" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">FAU2</h2>
-<div id="section-336" class="section level3">
-<h3>00</h3>
-</div>
-<div id="section-337" class="section level3">
-<h3>01</h3>
-</div>
-<div id="section-338" class="section level3">
-<h3>02</h3>
-</div>
-<div id="section-339" class="section level3">
-<h3>03</h3>
-</div>
-<div id="section-340" class="section level3">
-<h3>04</h3>
-</div>
-<div id="section-341" class="section level3">
-<h3>05</h3>
-</div>
-<div id="section-342" class="section level3">
-<h3>06</h3>
-</div>
-<div id="section-343" class="section level3">
-<h3>07</h3>
-</div>
-<div id="section-344" class="section level3">
-<h3>08</h3>
-</div>
-<div id="section-345" class="section level3">
-<h3>09</h3>
-</div>
-<div id="section-346" class="section level3">
-<h3>10</h3>
-</div>
-<div id="section-347" class="section level3">
-<h3>11</h3>
-</div>
-<div id="section-348" class="section level3">
-<h3>12</h3>
-</div>
-<div id="section-349" class="section level3">
-<h3>13</h3>
-</div>
-<div id="section-350" class="section level3">
-<h3>14</h3>
-</div>
-<div id="section-351" class="section level3">
-<h3>15</h3>
-</div>
-<div id="section-352" class="section level3">
-<h3>16</h3>
-</div>
-<div id="section-353" class="section level3">
-<h3>17</h3>
-</div>
-<div id="section-354" class="section level3">
-<h3>18</h3>
-</div>
-<div id="section-355" class="section level3">
-<h3>19</h3>
-</div>
-<div id="section-356" class="section level3">
-<h3>20</h3>
-</div>
-<div id="section-357" class="section level3">
-<h3>21</h3>
-</div>
-<div id="section-358" class="section level3">
-<h3>22</h3>
-</div>
-<div id="section-359" class="section level3">
-<h3>23</h3>
-</div>
-</div>
-<div id="fix-1" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">FIX</h2>
-<div id="section-360" class="section level3">
-<h3>00</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-64.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-361" class="section level3">
-<h3>01</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-65.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-362" class="section level3">
-<h3>02</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-66.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-363" class="section level3">
-<h3>03</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-67.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-364" class="section level3">
-<h3>04</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-68.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-365" class="section level3">
-<h3>05</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-69.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-366" class="section level3">
-<h3>06</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-70.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-367" class="section level3">
-<h3>07</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-71.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-368" class="section level3">
-<h3>08</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-72.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-369" class="section level3">
-<h3>09</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-73.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-370" class="section level3">
-<h3>10</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-74.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-371" class="section level3">
-<h3>11</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-75.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-372" class="section level3">
-<h3>12</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-76.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-373" class="section level3">
-<h3>13</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-77.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-374" class="section level3">
-<h3>14</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-78.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-375" class="section level3">
-<h3>15</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-79.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-376" class="section level3">
-<h3>16</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-80.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-377" class="section level3">
-<h3>17</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-81.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-378" class="section level3">
-<h3>18</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-82.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-379" class="section level3">
-<h3>19</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-83.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-380" class="section level3">
-<h3>20</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-84.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-381" class="section level3">
-<h3>21</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-85.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-382" class="section level3">
-<h3>22</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-86.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-383" class="section level3">
-<h3>23</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-87.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-</div>
-<div id="ord" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">ORD</h2>
-<div id="section-384" class="section level3">
-<h3>00</h3>
-</div>
-<div id="section-385" class="section level3">
-<h3>01</h3>
-</div>
-<div id="section-386" class="section level3">
-<h3>02</h3>
-</div>
-<div id="section-387" class="section level3">
-<h3>03</h3>
-</div>
-<div id="section-388" class="section level3">
-<h3>04</h3>
-</div>
-<div id="section-389" class="section level3">
-<h3>05</h3>
-</div>
-<div id="section-390" class="section level3">
-<h3>06</h3>
-</div>
-<div id="section-391" class="section level3">
-<h3>07</h3>
-</div>
-<div id="section-392" class="section level3">
-<h3>08</h3>
-</div>
-<div id="section-393" class="section level3">
-<h3>09</h3>
-</div>
-<div id="section-394" class="section level3">
-<h3>10</h3>
-</div>
-<div id="section-395" class="section level3">
-<h3>11</h3>
-</div>
-<div id="section-396" class="section level3">
-<h3>12</h3>
-</div>
-<div id="section-397" class="section level3">
-<h3>13</h3>
-</div>
-<div id="section-398" class="section level3">
-<h3>14</h3>
-</div>
-<div id="section-399" class="section level3">
-<h3>15</h3>
-</div>
-<div id="section-400" class="section level3">
-<h3>16</h3>
-</div>
-<div id="section-401" class="section level3">
-<h3>17</h3>
-</div>
-<div id="section-402" class="section level3">
-<h3>18</h3>
-</div>
-<div id="section-403" class="section level3">
-<h3>19</h3>
-</div>
-<div id="section-404" class="section level3">
-<h3>20</h3>
-</div>
-<div id="section-405" class="section level3">
-<h3>21</h3>
-</div>
-<div id="section-406" class="section level3">
-<h3>22</h3>
-</div>
-<div id="section-407" class="section level3">
-<h3>23</h3>
-</div>
-</div>
-<div id="sco" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">SCO</h2>
-<div id="section-408" class="section level3">
-<h3>00</h3>
-</div>
-<div id="section-409" class="section level3">
-<h3>01</h3>
-</div>
-<div id="section-410" class="section level3">
-<h3>02</h3>
-</div>
-<div id="section-411" class="section level3">
-<h3>03</h3>
-</div>
-<div id="section-412" class="section level3">
-<h3>04</h3>
-</div>
-<div id="section-413" class="section level3">
-<h3>05</h3>
-</div>
-<div id="section-414" class="section level3">
-<h3>06</h3>
-</div>
-<div id="section-415" class="section level3">
-<h3>07</h3>
-</div>
-<div id="section-416" class="section level3">
-<h3>08</h3>
-</div>
-<div id="section-417" class="section level3">
-<h3>09</h3>
-</div>
-<div id="section-418" class="section level3">
-<h3>10</h3>
-</div>
-<div id="section-419" class="section level3">
-<h3>11</h3>
-</div>
-<div id="section-420" class="section level3">
-<h3>12</h3>
-</div>
-<div id="section-421" class="section level3">
-<h3>13</h3>
-</div>
-<div id="section-422" class="section level3">
-<h3>14</h3>
-</div>
-<div id="section-423" class="section level3">
-<h3>15</h3>
-</div>
-<div id="section-424" class="section level3">
-<h3>16</h3>
-</div>
-<div id="section-425" class="section level3">
-<h3>17</h3>
-</div>
-<div id="section-426" class="section level3">
-<h3>18</h3>
-</div>
-<div id="section-427" class="section level3">
-<h3>19</h3>
-</div>
-<div id="section-428" class="section level3">
-<h3>20</h3>
-</div>
-<div id="section-429" class="section level3">
-<h3>21</h3>
-</div>
-<div id="section-430" class="section level3">
-<h3>22</h3>
-</div>
-<div id="section-431" class="section level3">
-<h3>23</h3>
-</div>
-</div>
-<div id="ide-1" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">IDE</h2>
-<div id="section-432" class="section level3">
-<h3>00</h3>
-</div>
-<div id="section-433" class="section level3">
-<h3>01</h3>
-</div>
-<div id="section-434" class="section level3">
-<h3>02</h3>
-</div>
-<div id="section-435" class="section level3">
-<h3>03</h3>
-</div>
-<div id="section-436" class="section level3">
-<h3>04</h3>
-</div>
-<div id="section-437" class="section level3">
-<h3>05</h3>
-</div>
-<div id="section-438" class="section level3">
-<h3>06</h3>
-</div>
-<div id="section-439" class="section level3">
-<h3>07</h3>
-</div>
-<div id="section-440" class="section level3">
-<h3>08</h3>
-</div>
-<div id="section-441" class="section level3">
-<h3>09</h3>
-</div>
-<div id="section-442" class="section level3">
-<h3>10</h3>
-</div>
-<div id="section-443" class="section level3">
-<h3>11</h3>
-</div>
-<div id="section-444" class="section level3">
-<h3>12</h3>
-</div>
-<div id="section-445" class="section level3">
-<h3>13</h3>
-</div>
-<div id="section-446" class="section level3">
-<h3>14</h3>
-</div>
-<div id="section-447" class="section level3">
-<h3>15</h3>
-</div>
-<div id="section-448" class="section level3">
-<h3>16</h3>
-</div>
-<div id="section-449" class="section level3">
-<h3>17</h3>
-</div>
-<div id="section-450" class="section level3">
-<h3>18</h3>
-</div>
-<div id="section-451" class="section level3">
-<h3>19</h3>
-</div>
-<div id="section-452" class="section level3">
-<h3>20</h3>
-</div>
-<div id="section-453" class="section level3">
-<h3>21</h3>
-</div>
-<div id="section-454" class="section level3">
-<h3>22</h3>
-</div>
-<div id="section-455" class="section level3">
-<h3>23</h3>
-</div>
-</div>
-<div id="medc" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">MEDC</h2>
-<div id="section-456" class="section level3">
-<h3>00</h3>
-</div>
-<div id="section-457" class="section level3">
-<h3>01</h3>
-</div>
-<div id="section-458" class="section level3">
-<h3>02</h3>
-</div>
-<div id="section-459" class="section level3">
-<h3>03</h3>
-</div>
-<div id="section-460" class="section level3">
-<h3>04</h3>
-</div>
-<div id="section-461" class="section level3">
-<h3>05</h3>
-</div>
-<div id="section-462" class="section level3">
-<h3>06</h3>
-</div>
-<div id="section-463" class="section level3">
-<h3>07</h3>
-</div>
-<div id="section-464" class="section level3">
-<h3>08</h3>
-</div>
-<div id="section-465" class="section level3">
-<h3>09</h3>
-</div>
-<div id="section-466" class="section level3">
-<h3>10</h3>
-</div>
-<div id="section-467" class="section level3">
-<h3>11</h3>
-</div>
-<div id="section-468" class="section level3">
-<h3>12</h3>
-</div>
-<div id="section-469" class="section level3">
-<h3>13</h3>
-</div>
-<div id="section-470" class="section level3">
-<h3>14</h3>
-</div>
-<div id="section-471" class="section level3">
-<h3>15</h3>
-</div>
-<div id="section-472" class="section level3">
-<h3>16</h3>
-</div>
-<div id="section-473" class="section level3">
-<h3>17</h3>
-</div>
-<div id="section-474" class="section level3">
-<h3>18</h3>
-</div>
-<div id="section-475" class="section level3">
-<h3>19</h3>
-</div>
-<div id="section-476" class="section level3">
-<h3>20</h3>
-</div>
-<div id="section-477" class="section level3">
-<h3>21</h3>
-</div>
-<div id="section-478" class="section level3">
-<h3>22</h3>
-</div>
-<div id="section-479" class="section level3">
-<h3>23</h3>
-</div>
-</div>
-<div id="meda" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">MEDA</h2>
-<div id="section-480" class="section level3">
-<h3>00</h3>
-</div>
-<div id="section-481" class="section level3">
-<h3>01</h3>
-</div>
-<div id="section-482" class="section level3">
-<h3>02</h3>
-</div>
-<div id="section-483" class="section level3">
-<h3>03</h3>
-</div>
-<div id="section-484" class="section level3">
-<h3>04</h3>
-</div>
-<div id="section-485" class="section level3">
-<h3>05</h3>
-</div>
-<div id="section-486" class="section level3">
-<h3>06</h3>
-</div>
-<div id="section-487" class="section level3">
-<h3>07</h3>
-</div>
-<div id="section-488" class="section level3">
-<h3>08</h3>
-</div>
-<div id="section-489" class="section level3">
-<h3>09</h3>
-</div>
-<div id="section-490" class="section level3">
-<h3>10</h3>
-</div>
-<div id="section-491" class="section level3">
-<h3>11</h3>
-</div>
-<div id="section-492" class="section level3">
-<h3>12</h3>
-</div>
-<div id="section-493" class="section level3">
-<h3>13</h3>
-</div>
-<div id="section-494" class="section level3">
-<h3>14</h3>
-</div>
-<div id="section-495" class="section level3">
-<h3>15</h3>
-</div>
-<div id="section-496" class="section level3">
-<h3>16</h3>
-</div>
-<div id="section-497" class="section level3">
-<h3>17</h3>
-</div>
-<div id="section-498" class="section level3">
-<h3>18</h3>
-</div>
-<div id="section-499" class="section level3">
-<h3>19</h3>
-</div>
-<div id="section-500" class="section level3">
-<h3>20</h3>
-</div>
-<div id="section-501" class="section level3">
-<h3>21</h3>
-</div>
-<div id="section-502" class="section level3">
-<h3>22</h3>
-</div>
-<div id="section-503" class="section level3">
-<h3>23</h3>
-</div>
-</div>
-<div id="ts1" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">TS1</h2>
-<div id="section-504" class="section level3">
-<h3>00</h3>
-</div>
-<div id="section-505" class="section level3">
-<h3>01</h3>
-</div>
-<div id="section-506" class="section level3">
-<h3>02</h3>
-</div>
-<div id="section-507" class="section level3">
-<h3>03</h3>
-</div>
-<div id="section-508" class="section level3">
-<h3>04</h3>
-</div>
-<div id="section-509" class="section level3">
-<h3>05</h3>
-</div>
-<div id="section-510" class="section level3">
-<h3>06</h3>
-</div>
-<div id="section-511" class="section level3">
-<h3>07</h3>
-</div>
-<div id="section-512" class="section level3">
-<h3>08</h3>
-</div>
-<div id="section-513" class="section level3">
-<h3>09</h3>
-</div>
-<div id="section-514" class="section level3">
-<h3>10</h3>
-</div>
-<div id="section-515" class="section level3">
-<h3>11</h3>
-</div>
-<div id="section-516" class="section level3">
-<h3>12</h3>
-</div>
-<div id="section-517" class="section level3">
-<h3>13</h3>
-</div>
-<div id="section-518" class="section level3">
-<h3>14</h3>
-</div>
-<div id="section-519" class="section level3">
-<h3>15</h3>
-</div>
-<div id="section-520" class="section level3">
-<h3>16</h3>
-</div>
-<div id="section-521" class="section level3">
-<h3>17</h3>
-</div>
-<div id="section-522" class="section level3">
-<h3>18</h3>
-</div>
-<div id="section-523" class="section level3">
-<h3>19</h3>
-</div>
-<div id="section-524" class="section level3">
-<h3>20</h3>
-</div>
-<div id="section-525" class="section level3">
-<h3>21</h3>
-</div>
-<div id="section-526" class="section level3">
-<h3>22</h3>
-</div>
-<div id="section-527" class="section level3">
-<h3>23</h3>
-</div>
-</div>
-<div id="ts2" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">TS2</h2>
-<div id="section-528" class="section level3">
-<h3>00</h3>
-</div>
-<div id="section-529" class="section level3">
-<h3>01</h3>
-</div>
-<div id="section-530" class="section level3">
-<h3>02</h3>
-</div>
-<div id="section-531" class="section level3">
-<h3>03</h3>
-</div>
-<div id="section-532" class="section level3">
-<h3>04</h3>
-</div>
-<div id="section-533" class="section level3">
-<h3>05</h3>
-</div>
-<div id="section-534" class="section level3">
-<h3>06</h3>
-</div>
-<div id="section-535" class="section level3">
-<h3>07</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-88.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-536" class="section level3">
-<h3>08</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-89.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-537" class="section level3">
-<h3>09</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-90.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-538" class="section level3">
-<h3>10</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-91.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-539" class="section level3">
-<h3>11</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-92.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-540" class="section level3">
-<h3>12</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-93.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-541" class="section level3">
-<h3>13</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-94.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-542" class="section level3">
-<h3>14</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-95.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-543" class="section level3">
-<h3>15</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-96.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-544" class="section level3">
-<h3>16</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-97.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-545" class="section level3">
-<h3>17</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-98.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-546" class="section level3">
-<h3>18</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-99.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-547" class="section level3">
-<h3>19</h3>
-<p><img src="figure/2021-12-22.Rmd/unnamed-chunk-13-100.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="section-548" class="section level3">
-<h3>20</h3>
-</div>
-<div id="section-549" class="section level3">
-<h3>21</h3>
-</div>
-<div id="section-550" class="section level3">
-<h3>22</h3>
-</div>
-<div id="section-551" class="section level3">
-<h3>23</h3>
-</div>
-</div>
-<div id="ts3" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">TS3</h2>
-<div id="section-552" class="section level3">
-<h3>00</h3>
-</div>
-<div id="section-553" class="section level3">
-<h3>01</h3>
-</div>
-<div id="section-554" class="section level3">
-<h3>02</h3>
-</div>
-<div id="section-555" class="section level3">
-<h3>03</h3>
-</div>
-<div id="section-556" class="section level3">
-<h3>04</h3>
-</div>
-<div id="section-557" class="section level3">
-<h3>05</h3>
-</div>
-<div id="section-558" class="section level3">
-<h3>06</h3>
-</div>
-<div id="section-559" class="section level3">
-<h3>07</h3>
-</div>
-<div id="section-560" class="section level3">
-<h3>08</h3>
-</div>
-<div id="section-561" class="section level3">
-<h3>09</h3>
-</div>
-<div id="section-562" class="section level3">
-<h3>10</h3>
-</div>
-<div id="section-563" class="section level3">
-<h3>11</h3>
-</div>
-<div id="section-564" class="section level3">
-<h3>12</h3>
-</div>
-<div id="section-565" class="section level3">
-<h3>13</h3>
-</div>
-<div id="section-566" class="section level3">
-<h3>14</h3>
-</div>
-<div id="section-567" class="section level3">
-<h3>15</h3>
-</div>
-<div id="section-568" class="section level3">
-<h3>16</h3>
-</div>
-<div id="section-569" class="section level3">
-<h3>17</h3>
-</div>
-<div id="section-570" class="section level3">
-<h3>18</h3>
-</div>
-<div id="section-571" class="section level3">
-<h3>19</h3>
-</div>
-<div id="section-572" class="section level3">
-<h3>20</h3>
-</div>
-<div id="section-573" class="section level3">
-<h3>21</h3>
-</div>
-<div id="section-574" class="section level3">
-<h3>22</h3>
-</div>
-<div id="section-575" class="section level3">
-<h3>23</h3>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -3445,44 +4920,42 @@ for (k in 1:nb_tag_all){
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
 <pre class="r"><code>sessionInfo()</code></pre>
-<pre><code>R version 4.0.5 (2021-03-31)
+<pre><code>R version 4.1.2 (2021-11-01)
 Platform: x86_64-apple-darwin17.0 (64-bit)
-Running under: macOS Big Sur 10.16
+Running under: macOS Catalina 10.15.7
 
 Matrix products: default
-BLAS:   /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRblas.dylib
-LAPACK: /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRlapack.dylib
+BLAS:   /Library/Frameworks/R.framework/Versions/4.1/Resources/lib/libRblas.0.dylib
+LAPACK: /Library/Frameworks/R.framework/Versions/4.1/Resources/lib/libRlapack.dylib
 
 locale:
-[1] zh_CN.UTF-8/zh_CN.UTF-8/zh_CN.UTF-8/C/zh_CN.UTF-8/zh_CN.UTF-8
+[1] fr_FR.UTF-8/fr_FR.UTF-8/fr_FR.UTF-8/C/fr_FR.UTF-8/fr_FR.UTF-8
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] scales_1.1.1     DT_0.19          readxl_1.3.1     lubridate_1.7.10
- [5] dplyr_1.0.5      nnet_7.3-15      kableExtra_1.3.4 rjson_0.2.20    
- [9] cowplot_1.1.1    gifski_1.4.3-1   gganimate_1.0.7  ggplot2_3.3.5   
-[13] workflowr_1.6.2 
+ [1] openxlsx_4.2.4   scales_1.1.1     DT_0.20          readxl_1.3.1    
+ [5] lubridate_1.8.0  dplyr_1.0.7      nnet_7.3-16      kableExtra_1.3.4
+ [9] rjson_0.2.20     cowplot_1.1.1    gifski_1.4.3-1   gganimate_1.0.7 
+[13] ggplot2_3.3.5    workflowr_1.6.2 
 
 loaded via a namespace (and not attached):
- [1] progress_1.2.2    tidyselect_1.1.0  xfun_0.22         bslib_0.2.4      
- [5] purrr_0.3.4       colorspace_2.0-0  vctrs_0.3.7       generics_0.1.0   
- [9] viridisLite_0.4.0 htmltools_0.5.1.1 yaml_2.2.1        utf8_1.2.1       
-[13] rlang_0.4.10      jquerylib_0.1.3   later_1.1.0.1     pillar_1.6.0     
-[17] glue_1.4.2        withr_2.4.1       tweenr_1.0.2      lifecycle_1.0.0  
-[21] stringr_1.4.0     cellranger_1.1.0  munsell_0.5.0     gtable_0.3.0     
-[25] rvest_1.0.0       htmlwidgets_1.5.3 evaluate_0.14     labeling_0.4.2   
-[29] knitr_1.32        httpuv_1.5.5      fansi_0.4.2       highr_0.8        
-[33] Rcpp_1.0.7        promises_1.2.0.1  webshot_0.5.2     jsonlite_1.7.2   
-[37] systemfonts_1.0.1 farver_2.1.0      fs_1.5.0          hms_1.0.0        
-[41] digest_0.6.27     stringi_1.5.3     grid_4.0.5        rprojroot_2.0.2  
-[45] tools_4.0.5       magrittr_2.0.1    sass_0.3.1        tibble_3.1.0     
-[49] crayon_1.4.1      whisker_0.4       pkgconfig_2.0.3   ellipsis_0.3.1   
-[53] xml2_1.3.2        prettyunits_1.1.1 svglite_2.0.0     rmarkdown_2.10   
-[57] httr_1.4.2        rstudioapi_0.13   R6_2.5.0          git2r_0.28.0     
-[61] compiler_4.0.5   </code></pre>
-</div>
+ [1] Rcpp_1.0.7        svglite_2.0.0     prettyunits_1.1.1 rprojroot_2.0.2  
+ [5] digest_0.6.28     utf8_1.2.2        R6_2.5.1          cellranger_1.1.0 
+ [9] evaluate_0.14     highr_0.9         httr_1.4.2        pillar_1.6.4     
+[13] rlang_0.4.12      progress_1.2.2    rstudioapi_0.13   whisker_0.4      
+[17] jquerylib_0.1.4   rmarkdown_2.11    labeling_0.4.2    webshot_0.5.2    
+[21] stringr_1.4.0     htmlwidgets_1.5.4 munsell_0.5.0     compiler_4.1.2   
+[25] httpuv_1.6.3      xfun_0.28         pkgconfig_2.0.3   systemfonts_1.0.3
+[29] htmltools_0.5.2   tidyselect_1.1.1  tibble_3.1.6      fansi_0.5.0      
+[33] viridisLite_0.4.0 crayon_1.4.2      withr_2.4.2       later_1.3.0      
+[37] grid_4.1.2        gtable_0.3.0      lifecycle_1.0.1   git2r_0.28.0     
+[41] magrittr_2.0.1    zip_2.2.0         stringi_1.7.5     farver_2.1.0     
+[45] fs_1.5.0          promises_1.2.0.1  xml2_1.3.2        ellipsis_0.3.2   
+[49] generics_0.1.1    vctrs_0.3.8       tools_4.1.2       glue_1.5.0       
+[53] tweenr_1.0.2      purrr_0.3.4       hms_1.1.1         fastmap_1.1.0    
+[57] yaml_2.2.1        colorspace_2.0-2  rvest_1.0.2       knitr_1.36       </code></pre>
 </div>
 </div>
 </div>
