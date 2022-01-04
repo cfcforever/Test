@@ -63,7 +63,7 @@ for (i in 1:nrow(output)){
 }
 
 table = cbind(data.frame(type = names_tag$Type.de.tag), table)
-datatable(table, options = list(pageLength = nrow(table)))
+datatable(table, editable = F, extensions = 'Buttons', options = list(pageLength = nrow(table), dom = 'Bfrtip'))
 ```
 
 
