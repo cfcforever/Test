@@ -12,6 +12,11 @@ editor_options:
 source("code/packages_and_functions.R")
 ```
 
+# Summary report
+This is the summary report for the data since 2021/12/22.
+
+[summary report](https://cfcforever.github.io/Test/synthese_20211222.html)
+
 
 # Daily report
 ```{r}
@@ -23,12 +28,6 @@ colnames(m) = c('<b>Date</b>')
 
 datatable(m, escape = FALSE, options = list(pageLength = 5))
 ```
-
-
-## Summary report
-This is the summary report for the data since 2021/12/22.
-
-[summary report](https://https://cfcforever.github.io/Test/synthese_20211222.html)
 
 
 # Daily report (old version)
