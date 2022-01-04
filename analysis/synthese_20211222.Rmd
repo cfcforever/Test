@@ -36,7 +36,7 @@ save(list_output, file = "output/list_output.RData")
 
 ```{r}
 load("output/list_output.RData")
-{
+if (F){
   today = "2022-01-03"
   data = read.csv2(paste0("data/json/", today, "/position.csv"))
   list_tag <- split(data, data$tag)
@@ -49,6 +49,10 @@ load("output/list_output.RData")
 output = do.call(rbind, list_output)
 
 tagId = unique(output$tag)
+names_tag = read.xlsx("data/Inventaire Tags - Firminy - 2022.xlsx")
+names_tag = names_tag %>% filter(Identifiant %in% tagId)
+names_tag = names_tag[order(match(names_tag$Identifiant, tagId)), ]
+
 days = unique(output$date)
 
 table = as.data.frame(matrix(NA, nrow = length(tagId), ncol = length(days)))
@@ -58,7 +62,8 @@ for (i in 1:nrow(output)){
   table[which(tagId==output$tag[i]), which(days==output$date[i])] = output$number[i]
 }
 
-DT::datatable(table, options = list(pageLength = 36))
+table = cbind(data.frame(type = names_tag$Type.de.tag), table)
+datatable(table, options = list(pageLength = nrow(table)))
 ```
 
 
