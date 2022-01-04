@@ -30,12 +30,22 @@ for (k in 1:length(days)){
   list_output[[k]] = output
   print(day)
 }
-save(list_output, file = "data/json/list_output.RData")
+save(list_output, file = "output/list_output.RData")
 ```
 
 
 ```{r}
-load("data/json/list_output.RData")
+load("output/list_output.RData")
+{
+  today = "2022-01-03"
+  data = read.csv2(paste0("data/json/", today, "/position.csv"))
+  list_tag <- split(data, data$tag)
+  output = data.frame(tag = names(list_tag))
+  output$number = lapply(list_tag, nrow)
+  output$date = today
+  list_output[[today]] = output
+  save(list_output, file = "output/list_output.RData")
+}
 output = do.call(rbind, list_output)
 
 tagId = unique(output$tag)
