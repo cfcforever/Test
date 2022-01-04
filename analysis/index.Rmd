@@ -17,7 +17,7 @@ source("code/packages_and_functions.R")
 
 # Tags and labels
 ```{r}
-names_tag <- read.table(file = "data/tag_names_20211124.txt", header = T, sep = "\t")
+names_tag <- read.xlsx("data/Inventaire Tags - Firminy - 2022.xlsx")
 
 # kable(names_tag) %>%
 #   kable_styling(bootstrap_options = "striped", full_width = F)
