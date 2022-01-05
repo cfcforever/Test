@@ -11,6 +11,8 @@ editor_options:
 
 ```{r include=FALSE}
 source("code/packages_and_functions.R")
+day0 = "2021-12-22"
+today = "2022-01-04"
 ```
 
 
@@ -34,10 +36,10 @@ save(list_output, file = "output/list_output.RData")
 ```
 
 
+# general presentation
 ```{r}
 load("output/list_output.RData")
-if (T){
-  today = "2022-01-04"
+if (!any(names(list_output)==today)){
   data = read.csv2(paste0("data/json/", today, "/position.csv"))
   list_tag <- split(data, data$tag)
   output = data.frame(tag = names(list_tag))
@@ -66,6 +68,16 @@ table = cbind(data.frame(type = names_tag$Type.de.tag), table)
 datatable(table, editable = F, extensions = 'Buttons', options = list(pageLength = nrow(table), dom = 'Bfrtip'))
 ```
 
+
+
+# general statistics
+```{r}
+table_general = data.frame(date = days)
+table_general$number_tag = as.numeric(lapply(list_output, function(x){nrow(x)}))
+table_general$number_data = as.numeric(lapply(list_output, function(x){sum(as.numeric(x$number))}))
+
+datatable(table_general, editable = F, extensions = 'Buttons', options = list(pageLength = 20, dom = 'Bfrtip'))
+```
 
 
 
