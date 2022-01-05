@@ -1,5 +1,5 @@
 ---
-title: "2022-01-02"
+title: "Summary report between 2021-12-22 and 2022-01-04"
 # author: "cfcforever"
 # date: ""
 output: 
@@ -36,8 +36,8 @@ save(list_output, file = "output/list_output.RData")
 
 ```{r}
 load("output/list_output.RData")
-if (F){
-  today = "2022-01-03"
+if (T){
+  today = "2022-01-04"
   data = read.csv2(paste0("data/json/", today, "/position.csv"))
   list_tag <- split(data, data$tag)
   output = data.frame(tag = names(list_tag))
