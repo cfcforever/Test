@@ -217,3 +217,54 @@ for (k in 1:nb_tag){
   cat("\n")
 }
 ```
+
+
+# brancard {.tabset .tabset-pills}
+```{r results='asis', fig.width=18, fig.height=20}
+data <- read.csv2(file = paste0("data/json/", today, "/position.csv"))
+tags = unique(data$tag)
+
+names_tag = read.xlsx("data/Inventaire Tags - Firminy - 2022.xlsx")
+
+tags_mat = names_tag %>% filter(Type.de.tag=="Materiel" & Identifiant %in% tags)
+tags_per = names_tag %>% filter((!Type.de.tag=="Materiel") & Identifiant %in% tags)
+
+data_mat = data %>% filter(tag %in% tags_mat$Identifiant)
+data_per = data %>% filter(tag %in% tags_per$Identifiant)
+
+for (i in 1:nrow(tags_mat)){
+# for (i in 1:1){  
+  m  = tags_mat$Identifiant[i]
+  ml = tags_mat$Type.de.tag[i]
+  cat("\n")
+  cat("## ", ml, "(", m, ")", " {.tabset .tabset-pills}", "\n")
+  for (j in 1:nrow(tags_per)){
+  # for (j in 1:1){
+    
+    n  = tags_per$Identifiant[j]
+    nl = tags_per$Type.de.tag[j]
+    
+    cat("\n")
+    cat("### ", nl, "(", n, ")", "\n")
+    data_mat = data[data$tag==m,]
+    data_mat$type = "materiel"
+    data_per = data[data$tag==n,]
+    data_per$type = "personnel"
+    
+    data_plot = rbind.data.frame(data_mat, data_per)
+    data_plot$type = factor(data_plot$type, levels = c("materiel", "personnel"))
+    data_plot$H = factor(data_plot$H, levels = c(0:23))
+    
+    q = p + theme_bw() +
+      geom_point(data = data_plot, aes(x=x, y=y, col=type)) +
+      coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+      scale_color_manual(values = c("red","blue")) +
+      labs(x = "", y = "", title = paste0(ml, " (", m, ") - ", nl, " (", n, ")")) + 
+      facet_wrap(~H, nrow = 4, drop = F)
+    print(q)
+    ggsave(filename = paste0("fig/brancard/", today, "/", m, "_", n, ".png"), width = 3*6, height = 5*4)
+    cat("\n")
+  }
+  cat("\n")
+}
+```
