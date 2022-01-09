@@ -256,12 +256,12 @@ for (i in 1:nrow(tags_mat)){
     data_plot$H = factor(data_plot$H, levels = c(0:23))
     
     q = p + theme_bw() +
-      geom_point(data = data_plot, aes(x=x, y=y, col=type)) +
+      geom_point(data = data_plot, aes(x=x, y=y, col=type), na.rm = T) +
       coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
       scale_color_manual(values = c("red","blue")) +
       labs(x = "", y = "", title = paste0(ml, " (", m, ") - ", nl, " (", n, ")")) + 
       facet_wrap(~H, nrow = 4, drop = F)
-    suppressWarnings(print(q))
+    print(q)
     ggsave(filename = paste0("fig/brancard/", today, "/", m, "_", n, ".png"), width = 3*6, height = 5*4)
     cat("\n")
   }
