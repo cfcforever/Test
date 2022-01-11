@@ -519,16 +519,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree21c5cca290b305efe0ed678fa20d8c977bab682etargetblank21c5ccaa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/21c5cca290b305efe0ed678fa20d8c977bab682e" target="_blank">21c5cca</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreeb071a8716002835358ece2fc2532eb72875584a3targetblankb071a87a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/b071a8716002835358ece2fc2532eb72875584a3" target="_blank">b071a87</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree21c5cca290b305efe0ed678fa20d8c977bab682etargetblank21c5ccaa" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreeb071a8716002835358ece2fc2532eb72875584a3targetblankb071a87a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/21c5cca290b305efe0ed678fa20d8c977bab682e" target="_blank">21c5cca</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/b071a8716002835358ece2fc2532eb72875584a3" target="_blank">b071a87</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -547,6 +547,7 @@ Ignored files:
     Ignored:    workflowr.R
 
 Unstaged changes:
+    Modified:   data/Inventaire Tags - Firminy - 2022.xlsx
     Modified:   output/list_output.RData
 
 </code></pre>
@@ -586,6 +587,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/b071a8716002835358ece2fc2532eb72875584a3/analysis/synthese_20211222.Rmd" target="_blank">b071a87</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-01-11
+</td>
+<td>
+add new content
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cfcforever/Test/a706b71d4207a362b472f2865e26fb215895b4ef/docs/synthese_20211222.html" target="_blank">a706b71</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-01-11
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1072,12 +1107,12 @@ tag_general$daily_average = NA
 for (k in 1:nrow(tag_general)){
   tag_general$number_days[k] = sum(output$tag == tag_general$id[k])
   tag_general$number_data[k] = sum(unlist(output[which(output$tag == tag_general$id[k]), &quot;number&quot;]))
-  tag_general$daily_average[k] = tag_general$number_data[k]/tag_general$number_days[k]
+  tag_general$daily_average[k] = round(tag_general$number_data[k]/tag_general$number_days[k])
 }
 
 datatable(tag_general, editable = F, extensions = &#39;Buttons&#39;, options = list(pageLength = 20, dom = &#39;Bfrtip&#39;))</code></pre>
 <div id="htmlwidget-368799869750b53b68db" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-368799869750b53b68db">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36"],["11d2","14bc","181b","19ab","1a04","1a0a","1a10","2b9c","2e56","2f40","2f7b","36fb","3719","3721","3722","373f","38d7","3906","424f","4258","4273","4288","436d","44c5","44e0","4584","4585","4586","4592","4596","460b","468c","4f2e","67cf","cf31","c901"],["Aide soignant","Medecin","Medecin","Tag fixe","Aide soignant","Aide soignant","brancard","brancard","brancard","brancard","brancard","Soignant","Medecin","Catherine","Medecin","brancard","Soignant","echographe","brancard","brancard","Medecin","Antoine","Medecin","brancard","brancard","Soignant","brancard","Francois","Soignant","Medecin","brancard","Soignant","Soignant","brancard","Medecin","Soignant"],[10,19,20,20,15,19,6,20,20,20,20,13,20,18,12,20,16,17,15,20,12,17,20,2,20,7,20,9,1,20,19,9,7,20,1,11],[819865,625234,284589,8447341,1040895,940028,48065,95001,204978,96255,261144,1376549,277825,349464,119439,179819,1633751,14962,117427,124563,104425,216271,600199,17780,160421,750288,158656,134070,18960,419158,88549,395982,488795,136074,97,105088],[81986.5,32907.0526315789,14229.45,422367.05,69393,49475.1578947368,8010.83333333333,4750.05,10248.9,4812.75,13057.2,105888.384615385,13891.25,19414.6666666667,9953.25,8990.95,102109.4375,880.117647058824,7828.46666666667,6228.15,8702.08333333333,12721.8235294118,30009.95,8890,8021.05,107184,7932.8,14896.6666666667,18960,20957.9,4660.47368421053,43998,69827.8571428571,6803.7,97,9553.45454545455]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>id<\/th>\n      <th>label<\/th>\n      <th>number_days<\/th>\n      <th>number_data<\/th>\n      <th>daily_average<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"dom":"Bfrtip","columnDefs":[{"className":"dt-right","targets":[3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,20,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-368799869750b53b68db">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36"],["11d2","14bc","181b","19ab","1a04","1a0a","1a10","2b9c","2e56","2f40","2f7b","36fb","3719","3721","3722","373f","38d7","3906","424f","4258","4273","4288","436d","44c5","44e0","4584","4585","4586","4592","4596","460b","468c","4f2e","67cf","cf31","c901"],["Aide soignant","Medecin","Medecin","Tag fixe","Aide soignant","Aide soignant","brancard","brancard","brancard","brancard","brancard","Soignant","Medecin","Catherine","Medecin","brancard","Soignant","echographe","brancard","brancard","Medecin","Antoine","Medecin","brancard","brancard","Soignant","brancard","Francois","Soignant","Medecin","brancard","Soignant","Soignant","brancard","Medecin","Soignant"],[10,19,20,20,15,19,6,20,20,20,20,13,20,18,12,20,16,17,15,20,12,17,20,2,20,7,20,9,1,20,19,9,7,20,1,11],[819865,625234,284589,8447341,1040895,940028,48065,95001,204978,96255,261144,1376549,277825,349464,119439,179819,1633751,14962,117427,124563,104425,216271,600199,17780,160421,750288,158656,134070,18960,419158,88549,395982,488795,136074,97,105088],[81986,32907,14229,422367,69393,49475,8011,4750,10249,4813,13057,105888,13891,19415,9953,8991,102109,880,7828,6228,8702,12722,30010,8890,8021,107184,7933,14897,18960,20958,4660,43998,69828,6804,97,9553]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>id<\/th>\n      <th>label<\/th>\n      <th>number_days<\/th>\n      <th>number_data<\/th>\n      <th>daily_average<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"dom":"Bfrtip","columnDefs":[{"className":"dt-right","targets":[3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,20,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
