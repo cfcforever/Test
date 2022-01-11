@@ -48,7 +48,7 @@ if (!any(names(list_output)==today)){
   list_output[[today]] = output
   save(list_output, file = "output/list_output.RData")
 }
-output = do.call(rbind, list_output)
+output = do.call(rbind.data.frame, list_output)
 
 tagId = unique(output$tag)
 names_tag = read.xlsx("data/Inventaire Tags - Firminy - 2022.xlsx")
@@ -64,13 +64,15 @@ for (i in 1:nrow(output)){
   table[which(tagId==output$tag[i]), which(days==output$date[i])] = output$number[i]
 }
 
-table = cbind(data.frame(type = names_tag$Type.de.tag), table)
+table = cbind(data.frame(type = names_tag$affectation), table)
 datatable(table, editable = F, extensions = 'Buttons', options = list(pageLength = nrow(table), dom = 'Bfrtip'))
 ```
 
 
 
 # general statistics
+
+## daily statistics
 ```{r}
 table_general = data.frame(date = days)
 table_general$number_tag = as.numeric(lapply(list_output, function(x){nrow(x)}))
@@ -80,4 +82,18 @@ datatable(table_general, editable = F, extensions = 'Buttons', options = list(pa
 ```
 
 
+## tag statistics
+```{r}
+tag_general = data.frame(id = names_tag$Identifiant, label = names_tag$affectation)
+tag_general$number_days = NA
+tag_general$number_data = NA
+tag_general$daily_average = NA
+for (k in 1:nrow(tag_general)){
+  tag_general$number_days[k] = sum(output$tag == tag_general$id[k])
+  tag_general$number_data[k] = sum(unlist(output[which(output$tag == tag_general$id[k]), "number"]))
+  tag_general$daily_average[k] = tag_general$number_data[k]/tag_general$number_days[k]
+}
+
+datatable(tag_general, editable = F, extensions = 'Buttons', options = list(pageLength = 20, dom = 'Bfrtip'))
+```
 
