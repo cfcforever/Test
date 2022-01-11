@@ -91,7 +91,7 @@ tag_general$daily_average = NA
 for (k in 1:nrow(tag_general)){
   tag_general$number_days[k] = sum(output$tag == tag_general$id[k])
   tag_general$number_data[k] = sum(unlist(output[which(output$tag == tag_general$id[k]), "number"]))
-  tag_general$daily_average[k] = tag_general$number_data[k]/tag_general$number_days[k]
+  tag_general$daily_average[k] = round(tag_general$number_data[k]/tag_general$number_days[k])
 }
 
 datatable(tag_general, editable = F, extensions = 'Buttons', options = list(pageLength = 20, dom = 'Bfrtip'))
