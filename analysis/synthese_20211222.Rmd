@@ -18,7 +18,7 @@ cat("data on:", today, "\n")
 
 
 ```{r eval=FALSE, include=FALSE}
-today = "2022-01-02"
+today = "2022-01-15"
 days = seq(as.Date("2021-12-22"),to=as.Date(today),by='1 day')
 
 list_output = vector("list", length(days))
