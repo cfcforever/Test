@@ -59,7 +59,7 @@ names_tag = names_tag[order(match(names_tag$Identifiant, tagId)), ]
 days = unique(output$date)
 
 table = as.data.frame(matrix(NA, nrow = length(tagId), ncol = length(days)))
-colnames(table) = days
+colnames(table) = rev(days)
 rownames(table) = tagId
 for (i in 1:nrow(output)){
   table[which(tagId==output$tag[i]), which(days==output$date[i])] = output$number[i]
