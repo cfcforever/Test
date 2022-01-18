@@ -18,7 +18,7 @@ cat("data on:", today, "\n")
 
 
 ```{r eval=FALSE, include=FALSE}
-today = "2022-01-15"
+today = "2022-01-16"
 days = seq(as.Date("2021-12-22"),to=as.Date(today),by='1 day')
 
 list_output = vector("list", length(days))
@@ -59,13 +59,14 @@ names_tag = names_tag[order(match(names_tag$Identifiant, tagId)), ]
 days = unique(output$date)
 
 table = as.data.frame(matrix(NA, nrow = length(tagId), ncol = length(days)))
-colnames(table) = rev(days)
+colnames(table) = days
 rownames(table) = tagId
 for (i in 1:nrow(output)){
   table[which(tagId==output$tag[i]), which(days==output$date[i])] = output$number[i]
 }
-
 table = cbind(data.frame(type = names_tag$affectation), table)
+
+table = table[,ncol(table):1]
 datatable(table, editable = F, extensions = 'Buttons', options = list(pageLength = nrow(table), dom = 'Bfrtip'))
 ```
 
