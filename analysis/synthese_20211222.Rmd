@@ -12,7 +12,7 @@ editor_options:
 ```{r include=FALSE}
 source("code/packages_and_functions.R")
 day0 = "2021-12-22"
-today = "2022-01-22"
+today = "2022-01-23"
 cat("data on:", today, "\n")
 ```
 
@@ -66,7 +66,7 @@ for (i in 1:nrow(output)){
 }
 table = cbind(data.frame(type = names_tag$affectation), table)
 
-table = table[,ncol(table):1]
+table = table[,c(1,ncol(table):2)]
 datatable(table, editable = F, extensions = 'Buttons', options = list(pageLength = nrow(table), dom = 'Bfrtip'))
 ```
 
