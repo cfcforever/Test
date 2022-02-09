@@ -507,16 +507,16 @@ This reproducible <a href="https://rmarkdown.rstudio.com">R Markdown</a> analysi
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreeac2f48d35f8565b3453237fc160912c603f280f6targetblankac2f48da"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/ac2f48d35f8565b3453237fc160912c603f280f6" target="_blank">ac2f48d</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreea82dcdb0ab5d63f0b713bc08d7b28abc01cfd838targetblanka82dcdba"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/a82dcdb0ab5d63f0b713bc08d7b28abc01cfd838" target="_blank">a82dcdb</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreeac2f48d35f8565b3453237fc160912c603f280f6targetblankac2f48da" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreea82dcdb0ab5d63f0b713bc08d7b28abc01cfd838targetblanka82dcdba" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/ac2f48d35f8565b3453237fc160912c603f280f6" target="_blank">ac2f48d</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/a82dcdb0ab5d63f0b713bc08d7b28abc01cfd838" target="_blank">a82dcdb</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -529,9 +529,14 @@ Ignored files:
     Ignored:    data/Stabiliseur/
     Ignored:    data/json/
     Ignored:    data/plan/
-    Ignored:    fig/brancard/
     Ignored:    figure/
     Ignored:    workflowr.R
+
+Unstaged changes:
+    Modified:   .gitignore
+    Deleted:    fig/0daa_20211019_1128_1130.gif
+    Deleted:    fig/0daa_20211019_1135_1137.gif
+    Deleted:    fig/0daa_20211019_1138_1140.gif
 
 </code></pre>
 <p>
@@ -570,6 +575,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/a82dcdb0ab5d63f0b713bc08d7b28abc01cfd838/analysis/2022-02-06.Rmd" target="_blank">a82dcdb</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-09
+</td>
+<td>
+add new content
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cfcforever/Test/e13d2304b7040651767ec5c03c3e3bfe580a5c16/docs/2022-02-06.html" target="_blank">e13d230</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-09
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -4530,6 +4569,7 @@ for (i in 1:nrow(tags)){
   
   data_plot = data[data$tag==m,]
   data_plot$H = factor(data_plot$H, levels = c(0:23))
+  data_plot$H = factor(data_plot$H, levels = c(0:23), labels = paste0(0:23, &quot;H - &quot;, table(data_plot$H)))
     
   q = p + theme_bw() +
     geom_point(data = data_plot, aes(x=x, y=y), col=&quot;red&quot;, na.rm = T) +
@@ -4564,6 +4604,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/e13d2304b7040651767ec5c03c3e3bfe580a5c16/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-1.png" target="_blank">e13d230</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-09
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/1d5bf93ece1f296f5425bbd9cd277217bcf3ae28/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-1.png" target="_blank">1d5bf93</a>
@@ -4607,6 +4658,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/cfcforever/Test/blob/e13d2304b7040651767ec5c03c3e3bfe580a5c16/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-2.png" target="_blank">e13d230</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-09
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/cfcforever/Test/blob/1d5bf93ece1f296f5425bbd9cd277217bcf3ae28/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-2.png" target="_blank">1d5bf93</a>
 </td>
 <td>
@@ -4646,6 +4708,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/e13d2304b7040651767ec5c03c3e3bfe580a5c16/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-3.png" target="_blank">e13d230</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-09
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/1d5bf93ece1f296f5425bbd9cd277217bcf3ae28/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-3.png" target="_blank">1d5bf93</a>
@@ -4689,6 +4762,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/cfcforever/Test/blob/e13d2304b7040651767ec5c03c3e3bfe580a5c16/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-4.png" target="_blank">e13d230</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-09
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/cfcforever/Test/blob/1d5bf93ece1f296f5425bbd9cd277217bcf3ae28/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-4.png" target="_blank">1d5bf93</a>
 </td>
 <td>
@@ -4728,6 +4812,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/e13d2304b7040651767ec5c03c3e3bfe580a5c16/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-5.png" target="_blank">e13d230</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-09
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/1d5bf93ece1f296f5425bbd9cd277217bcf3ae28/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-5.png" target="_blank">1d5bf93</a>
@@ -4771,6 +4866,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/cfcforever/Test/blob/e13d2304b7040651767ec5c03c3e3bfe580a5c16/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-6.png" target="_blank">e13d230</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-09
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/cfcforever/Test/blob/1d5bf93ece1f296f5425bbd9cd277217bcf3ae28/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-6.png" target="_blank">1d5bf93</a>
 </td>
 <td>
@@ -4810,6 +4916,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/e13d2304b7040651767ec5c03c3e3bfe580a5c16/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-7.png" target="_blank">e13d230</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-09
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/1d5bf93ece1f296f5425bbd9cd277217bcf3ae28/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-7.png" target="_blank">1d5bf93</a>
@@ -4853,6 +4970,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/cfcforever/Test/blob/e13d2304b7040651767ec5c03c3e3bfe580a5c16/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-8.png" target="_blank">e13d230</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-09
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/cfcforever/Test/blob/1d5bf93ece1f296f5425bbd9cd277217bcf3ae28/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-8.png" target="_blank">1d5bf93</a>
 </td>
 <td>
@@ -4892,6 +5020,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/e13d2304b7040651767ec5c03c3e3bfe580a5c16/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-9.png" target="_blank">e13d230</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-09
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/1d5bf93ece1f296f5425bbd9cd277217bcf3ae28/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-9.png" target="_blank">1d5bf93</a>
@@ -4935,6 +5074,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/cfcforever/Test/blob/e13d2304b7040651767ec5c03c3e3bfe580a5c16/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-10.png" target="_blank">e13d230</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-09
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/cfcforever/Test/blob/1d5bf93ece1f296f5425bbd9cd277217bcf3ae28/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-10.png" target="_blank">1d5bf93</a>
 </td>
 <td>
@@ -4974,6 +5124,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/e13d2304b7040651767ec5c03c3e3bfe580a5c16/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-11.png" target="_blank">e13d230</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-09
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/1d5bf93ece1f296f5425bbd9cd277217bcf3ae28/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-11.png" target="_blank">1d5bf93</a>
@@ -5017,6 +5178,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/cfcforever/Test/blob/e13d2304b7040651767ec5c03c3e3bfe580a5c16/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-12.png" target="_blank">e13d230</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-09
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/cfcforever/Test/blob/1d5bf93ece1f296f5425bbd9cd277217bcf3ae28/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-12.png" target="_blank">1d5bf93</a>
 </td>
 <td>
@@ -5056,6 +5228,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/e13d2304b7040651767ec5c03c3e3bfe580a5c16/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-13.png" target="_blank">e13d230</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-09
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/1d5bf93ece1f296f5425bbd9cd277217bcf3ae28/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-13.png" target="_blank">1d5bf93</a>
@@ -5099,6 +5282,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/cfcforever/Test/blob/e13d2304b7040651767ec5c03c3e3bfe580a5c16/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-14.png" target="_blank">e13d230</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-09
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/cfcforever/Test/blob/1d5bf93ece1f296f5425bbd9cd277217bcf3ae28/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-14.png" target="_blank">1d5bf93</a>
 </td>
 <td>
@@ -5138,6 +5332,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/e13d2304b7040651767ec5c03c3e3bfe580a5c16/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-15.png" target="_blank">e13d230</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-09
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/1d5bf93ece1f296f5425bbd9cd277217bcf3ae28/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-15.png" target="_blank">1d5bf93</a>
@@ -5181,6 +5386,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/cfcforever/Test/blob/e13d2304b7040651767ec5c03c3e3bfe580a5c16/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-16.png" target="_blank">e13d230</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-09
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/cfcforever/Test/blob/1d5bf93ece1f296f5425bbd9cd277217bcf3ae28/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-16.png" target="_blank">1d5bf93</a>
 </td>
 <td>
@@ -5220,6 +5436,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/e13d2304b7040651767ec5c03c3e3bfe580a5c16/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-17.png" target="_blank">e13d230</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-09
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/1d5bf93ece1f296f5425bbd9cd277217bcf3ae28/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-17.png" target="_blank">1d5bf93</a>
@@ -5263,6 +5490,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/cfcforever/Test/blob/e13d2304b7040651767ec5c03c3e3bfe580a5c16/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-18.png" target="_blank">e13d230</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-09
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/cfcforever/Test/blob/1d5bf93ece1f296f5425bbd9cd277217bcf3ae28/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-18.png" target="_blank">1d5bf93</a>
 </td>
 <td>
@@ -5302,6 +5540,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/e13d2304b7040651767ec5c03c3e3bfe580a5c16/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-19.png" target="_blank">e13d230</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-09
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/1d5bf93ece1f296f5425bbd9cd277217bcf3ae28/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-19.png" target="_blank">1d5bf93</a>
@@ -5345,6 +5594,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/cfcforever/Test/blob/e13d2304b7040651767ec5c03c3e3bfe580a5c16/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-20.png" target="_blank">e13d230</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-09
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/cfcforever/Test/blob/1d5bf93ece1f296f5425bbd9cd277217bcf3ae28/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-20.png" target="_blank">1d5bf93</a>
 </td>
 <td>
@@ -5384,6 +5644,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/e13d2304b7040651767ec5c03c3e3bfe580a5c16/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-21.png" target="_blank">e13d230</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-09
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/1d5bf93ece1f296f5425bbd9cd277217bcf3ae28/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-21.png" target="_blank">1d5bf93</a>
@@ -5427,6 +5698,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/cfcforever/Test/blob/e13d2304b7040651767ec5c03c3e3bfe580a5c16/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-22.png" target="_blank">e13d230</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-09
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/cfcforever/Test/blob/1d5bf93ece1f296f5425bbd9cd277217bcf3ae28/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-22.png" target="_blank">1d5bf93</a>
 </td>
 <td>
@@ -5466,6 +5748,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/e13d2304b7040651767ec5c03c3e3bfe580a5c16/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-23.png" target="_blank">e13d230</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-09
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/1d5bf93ece1f296f5425bbd9cd277217bcf3ae28/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-23.png" target="_blank">1d5bf93</a>
@@ -5509,6 +5802,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/cfcforever/Test/blob/e13d2304b7040651767ec5c03c3e3bfe580a5c16/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-24.png" target="_blank">e13d230</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-09
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/cfcforever/Test/blob/1d5bf93ece1f296f5425bbd9cd277217bcf3ae28/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-24.png" target="_blank">1d5bf93</a>
 </td>
 <td>
@@ -5548,6 +5852,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/e13d2304b7040651767ec5c03c3e3bfe580a5c16/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-25.png" target="_blank">e13d230</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-09
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/1d5bf93ece1f296f5425bbd9cd277217bcf3ae28/docs/figure/2022-02-06.Rmd/unnamed-chunk-12-25.png" target="_blank">1d5bf93</a>
