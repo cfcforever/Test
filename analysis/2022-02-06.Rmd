@@ -55,6 +55,7 @@ list_tag = lapply(list_tag, function(x){
   x$diff_ts = c(0, x$record_timestamp[-1]-x$record_timestamp[-nrow(x)])
   x = x[c(1,which(x$diff_ts>=0.1)),]
 })
+# list_tag = list_tag[match(tagId, names(list_tag))]
 ```
 
 
@@ -117,7 +118,7 @@ colnames(table_sensibility) = c("number", paste0(c(0:10)/10*100, "%"))
 rownames(table_sensibility) = tagId
 for (k in 1:nb_tag){
   tag = tagId[k]
-  dat_tag = list_tag[[k]]
+  dat_tag = list_tag[tag][[1]]
   
   rows_sel = which(dat_tag$diff_ts>5)
   if (length(rows_sel)>=1){
