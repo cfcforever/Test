@@ -55,7 +55,6 @@ list_tag = lapply(list_tag, function(x){
   x$diff_ts = c(0, x$record_timestamp[-1]-x$record_timestamp[-nrow(x)])
   x = x[c(1,which(x$diff_ts>=0.1)),]
 })
-# list_tag = list_tag[match(tagId, names(list_tag))]
 ```
 
 
@@ -219,56 +218,30 @@ for (k in 1:nb_tag){
 
 
 
-# brancard {.tabset .tabset-pills}
+# hourly plot {.tabset .tabset-pills}
 ```{r results='asis', fig.height=20, fig.width=18}
-if (!dir.exists(paste0("fig/brancard/", today))){
-  dir.create(paste0("fig/brancard/", today))
-}
-
 data <- read.csv2(file = paste0("data/json/", today, "/position.csv"))
 tags = unique(data$tag)
 
 names_tag = read.xlsx("data/Inventaire Tags - Firminy - 2022.xlsx")
 
-tags_mat = names_tag %>% filter(Type=="Materiel" & Identifiant %in% tags)
-tags_per = names_tag %>% filter(Type=="Personnel" & Identifiant %in% tags)
+tags = names_tag %>% filter(Identifiant %in% tags)
 
-data_mat = data %>% filter(tag %in% tags_mat$Identifiant)
-data_per = data %>% filter(tag %in% tags_per$Identifiant)
-
-for (i in 1:nrow(tags_mat)){
-# for (i in 1:1){  
-  m  = tags_mat$Identifiant[i]
-  ml = tags_mat$affectation[i]
+for (i in 1:nrow(tags)){
+  m  = tags$Identifiant[i]
+  ml = tags$affectation[i]
   cat("\n")
   cat("## ", ml, "(", m, ")", " {.tabset .tabset-pills}", "\n")
-  for (j in 1:nrow(tags_per)){
-  # for (j in 1:1){
+  
+  data_plot = data[data$tag==m,]
+  data_plot$H = factor(data_plot$H, levels = c(0:23))
     
-    n  = tags_per$Identifiant[j]
-    nl = tags_per$affectation[j]
-    
-    cat("\n")
-    cat("### ", nl, "(", n, ")", "\n")
-    data_mat = data[data$tag==m,]
-    data_mat$type = "materiel"
-    data_per = data[data$tag==n,]
-    data_per$type = "personnel"
-    
-    data_plot = rbind.data.frame(data_mat, data_per)
-    data_plot$type = factor(data_plot$type, levels = c("materiel", "personnel"))
-    data_plot$H = factor(data_plot$H, levels = c(0:23))
-    
-    q = p + theme_bw() +
-      geom_point(data = data_plot, aes(x=x, y=y, col=type), na.rm = T) +
-      coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
-      scale_color_manual(values = c("red","blue")) +
-      labs(x = "", y = "", title = paste0(ml, " (", m, ") - ", nl, " (", n, ")")) + 
-      facet_wrap(~H, nrow = 4, drop = F)
-    print(q)
-    ggsave(filename = paste0("fig/brancard/", today, "/", m, "_", n, ".png"), width = 3*6, height = 5*4)
-    cat("\n")
-  }
+  q = p + theme_bw() +
+    geom_point(data = data_plot, aes(x=x, y=y), col="red", na.rm = T) +
+    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+    labs(x = "", y = "", title = paste0(ml, " (", m, ")")) + 
+    facet_wrap(~H, nrow = 4, drop = F)
+  print(q)
   cat("\n")
 }
 ```
