@@ -1,0 +1,248 @@
+---
+title: "2022-02-08"
+# author: "cfcforever"
+# date: ""
+output: 
+  workflowr::wflow_html:
+    code_folding: hide
+editor_options:
+  chunk_output_type: console
+---
+
+```{r include=FALSE}
+source("code/packages_and_functions.R")
+```
+
+
+# load data.json
+```{r}
+today = "2022-02-08"
+cat("data on:", today, "\n")
+
+json_data = fromJSON(file = paste0("data/json/", today, "/position.json"))
+cat("Total collected positions: ", length(json_data), "\n")
+
+tagId_seq = unlist(lapply(json_data, function(x){x["tag_id"][[1]]}))
+tagId = unique(tagId_seq)
+nb_tag = length(tagId)
+
+cat(nb_tag, "Tags are: ", tagId, "\n")
+```
+
+
+# general analysis
+```{r}
+dat <- data.frame(tag = unlist(lapply(json_data, function(x){x["tag_id"][[1]]})),
+                  x = unlist(lapply(json_data, function(x){x["x"][[1]]})),
+                  y = unlist(lapply(json_data, function(x){x["y"][[1]]})),
+                  record_timestamp = unlist(lapply(json_data, function(x){x["record_timestamp"][[1]]})))
+dat = dat[order(dat$record_timestamp),]
+dat = cbind.data.frame(dat, convert_date(dat$record_timestamp))
+dat$x = as.numeric(dat$x)
+dat$y = as.numeric(dat$y)
+
+names_tag <- read.xlsx("data/Inventaire Tags - Firminy - 2022.xlsx")
+names_tag = names_tag %>% filter(Identifiant %in% tagId)
+
+tagId = names_tag$Identifiant
+nb_tag = length(tagId)
+
+dat$label = factor(dat$tag, levels = names_tag$Identifiant, labels = names_tag$affectation)
+dat$tagn = as.numeric(factor(dat$tag, levels = names_tag$Identifiant, labels = 1:nb_tag))
+
+list_tag <- split(dat, dat$tag)
+list_tag = lapply(list_tag, function(x){
+  x$diff_ts = c(0, x$record_timestamp[-1]-x$record_timestamp[-nrow(x)])
+  x = x[c(1,which(x$diff_ts>=0.1)),]
+})
+```
+
+
+## quality of collecting data
+### statistics of collecting data
+```{r}
+table_tag <- data.frame(tag = names_tag$Identifiant, label = names_tag$affectation)
+table_tag$first_record = NA
+table_tag$last_record = NA
+table_tag$number = NA
+table_tag$number_NA = NA
+table_tag$ratio_non_NA = NA
+# table_tag$freq_1Q = NA
+# table_tag$freq_median = NA
+# table_tag$freq_3Q = NA
+
+
+for (k in 1:nb_tag){
+  tag = table_tag$tag[k]
+  temp = list_tag[tag][[1]]
+  temp$diff_ts = c(0, temp$record_timestamp[-1]-temp$record_timestamp[-nrow(temp)])
+  
+  table_tag$first_record[k] = head(as.character(temp$date),1)
+  table_tag$last_record[k] = tail(as.character(temp$date),1)
+  table_tag$number[k] = nrow(temp)
+  table_tag$number_NA[k] = sum(is.na(temp$x))
+  table_tag$ratio_non_NA[k] = round(1-table_tag$number_NA[k]/table_tag$number[k],2)
+  # table_tag$freq_1Q[k] = round(quantile(temp$diff_ts, 0.25), 3)
+  # table_tag$freq_median[k] = round(quantile(temp$diff_ts, 0.5), 3)
+  # table_tag$freq_3Q[k] = round(quantile(temp$diff_ts, 0.75), 3)
+}
+
+kable(table_tag) %>%
+  kable_styling(bootstrap_options = "striped", full_width = T)
+```
+
+
+### frequncy check of collecting data 
+```{r}
+nq = 10
+table_diff_ts = matrix(NA, nrow = nb_tag, ncol = nq+1)
+colnames(table_diff_ts) = paste0(c(0:10)/10*100, "%")
+rownames(table_diff_ts) = tagId
+for (k in 1:nb_tag){
+  tag = tagId[k]
+  table_diff_ts[k,] = round(quantile(list_tag[tag][[1]]$diff_ts[-1], c(0:10)/10), 3)
+}
+table_diff_ts = cbind.data.frame(label = names_tag$affectation, table_diff_ts)
+
+kable(table_diff_ts) %>%
+  kable_styling(bootstrap_options = "striped", full_width = T)
+```
+
+
+### sensibility check of collecting data 
+```{r}
+nq = 10
+table_sensibility = matrix(NA, nrow = nb_tag, ncol = nq+2)
+colnames(table_sensibility) = c("number", paste0(c(0:10)/10*100, "%"))
+rownames(table_sensibility) = tagId
+for (k in 1:nb_tag){
+  tag = tagId[k]
+  dat_tag = list_tag[tag][[1]]
+  
+  rows_sel = which(dat_tag$diff_ts>5)
+  if (length(rows_sel)>=1){
+    nr = c()
+    nd = c()
+    ns = c()
+    for (i in 1:length(rows_sel)){
+      ki = rows_sel[i]
+      s = dat_tag[(ki-1):ki,c("x","y")]
+      if (sum(is.na(s))==0){
+        nr = c(nr, ki)
+        ns = c(ns, dat_tag$diff_ts[ki])
+        d = dist(s)/100
+        nd = c(nd, d)
+      }
+    }
+    table_sensibility[k,] = matrix(c(length(nd), round(quantile(nd, 0:10/10),3)), nrow = 1, ncol = nq+2)
+  }else{
+    table_sensibility[k,] = matrix(c(0, rep(NA, nq+1)), nrow = 1, ncol = nq+2)
+  }
+}
+table_sensibility = cbind.data.frame(label = names_tag$affectation, table_sensibility)
+
+kable(table_sensibility) %>%
+  kable_styling(bootstrap_options = "striped", full_width = T)
+```
+
+
+### plot with NAs
+```{r fig.width=11, fig.height=7}
+timestamp_breaks = as.numeric(as.POSIXct(paste0(today, " ", sprintf("%02d", 0:23), ":00:00 CEST"))) + 3600*7
+p <- ggplot(dat) + theme_bw() + 
+  geom_point(aes(x=record_timestamp, y=tagn, col=tagn), size=0.5) +
+  scale_x_continuous(breaks = timestamp_breaks, labels = 0:23) +
+  scale_y_continuous(breaks = 1:nb_tag, labels = paste0(names_tag$affectation, "-", names_tag$Identifiant)) + 
+  scale_color_gradientn(colours = hue_pal()(nb_tag)) + 
+  coord_cartesian(xlim = c(timestamp_breaks[1], timestamp_breaks[23]+3600)) +
+  theme(legend.position = "None") +
+  labs(x = "hour", y = "", title = today)
+print(p)
+```
+
+
+### number NAs
+```{r}
+x_na = which(is.na(dat$x))
+y_na = which(is.na(dat$y))
+cat("if x_na = y_na:", identical(x_na, y_na), "\n")
+cat("number of NA positions:", length(x_na), "/", length(tagId_seq), "(=", 
+    length(x_na)/length(tagId_seq)*100, "%)", "\n")
+if (length(x_na)!=0){
+  dat = dat[-x_na,]
+}
+```
+
+```{r}
+list_tag <- split(dat, dat$tag)
+
+for (tag in names(list_tag)){
+  if (!is.null(list_tag[tag][[1]])){
+    dd = list_tag[tag][[1]]
+    dd[,c("x","y")] = dd[,c("x","y")]/100
+    rownames(dd) = 1:nrow(dd)
+    dd$num = 1:nrow(dd)
+    dd$timediff = c(0, dd$record_timestamp[-1] - dd$record_timestamp[-nrow(dd)])
+    
+    list_tag[tag][[1]] = dd
+  }
+}
+dat = do.call(rbind.data.frame, list_tag)
+```
+
+
+# plot {.tabset .tabset-pills}
+```{r}
+load("data/plan/plan_firminy.RData")
+```
+
+```{r results='asis'}
+for (k in 1:nb_tag){
+  tag = names_tag$Identifiant[k]
+  type = names_tag$affectation[k]
+  cat("\n")
+  cat("## ", tag, "-", type, "\n")
+  dd = list_tag[tag][[1]]
+  if (!is.null(dd)){
+    q <- p + 
+      geom_point(data = dd, aes(x=x,y=y), col="red", size = 0.5) +
+      coord_equal(ratio = 1, xlim = c(-20,20), ylim = c(-35,35)) + 
+      labs(x = "", y = "", title = paste0(tag, " - ", names_tag$affectation[names_tag$Identifiant==tag]))
+    print(q)
+  }else{
+    cat("NO DATA for plot!!")
+  }
+  cat("\n")
+}
+```
+
+
+
+# hourly plot {.tabset .tabset-pills}
+```{r results='asis', fig.height=20, fig.width=18}
+data <- read.csv2(file = paste0("data/json/", today, "/position.csv"))
+tags = unique(data$tag)
+
+names_tag = read.xlsx("data/Inventaire Tags - Firminy - 2022.xlsx")
+
+tags = names_tag %>% filter(Identifiant %in% tags)
+
+for (i in 1:nrow(tags)){
+  m  = tags$Identifiant[i]
+  ml = tags$affectation[i]
+  cat("\n")
+  cat("## ", ml, "(", m, ")", " {.tabset .tabset-pills}", "\n")
+  
+  data_plot = data[data$tag==m,]
+  data_plot$H = factor(data_plot$H, levels = c(0:23))
+  data_plot$H = factor(data_plot$H, levels = c(0:23), labels = paste0(0:23, "H - ", table(data_plot$H[is.na(data_plot$x)]), " (NA) /", table(data_plot$H), " (Total)"))
+    
+  q = p + theme_bw() +
+    geom_point(data = data_plot, aes(x=x, y=y), col="red", na.rm = T) +
+    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+    labs(x = "", y = "", title = paste0(ml, " (", m, ")")) + 
+    facet_wrap(~H, nrow = 4, drop = F)
+  print(q)
+  cat("\n")
+}
+```
