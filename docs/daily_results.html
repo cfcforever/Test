@@ -422,7 +422,7 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2022-02-09
+<strong>Last updated:</strong> 2022-02-11
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -513,16 +513,16 @@ This reproducible <a href="https://rmarkdown.rstudio.com">R Markdown</a> analysi
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree4f190ed77291a8d534132e103e19d4db29ad7931targetblank4f190eda"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/4f190ed77291a8d534132e103e19d4db29ad7931" target="_blank">4f190ed</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreeb4d92600c911d32661c4ab386af927a2e6714f22targetblankb4d9260a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/b4d92600c911d32661c4ab386af927a2e6714f22" target="_blank">b4d9260</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree4f190ed77291a8d534132e103e19d4db29ad7931targetblank4f190eda" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreeb4d92600c911d32661c4ab386af927a2e6714f22targetblankb4d9260a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/4f190ed77291a8d534132e103e19d4db29ad7931" target="_blank">4f190ed</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/b4d92600c911d32661c4ab386af927a2e6714f22" target="_blank">b4d9260</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -535,7 +535,6 @@ Ignored files:
     Ignored:    data/Stabiliseur/
     Ignored:    data/json/
     Ignored:    data/plan/
-    Ignored:    fig/brancard/
     Ignored:    figure/
     Ignored:    workflowr.R
 
@@ -576,6 +575,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/b4d92600c911d32661c4ab386af927a2e6714f22/analysis/daily_results.Rmd" target="_blank">b4d9260</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-11
+</td>
+<td>
+some changes
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cfcforever/Test/be8efed6bb7b64bfb72f2c567e566d5b7bae4852/docs/daily_results.html" target="_blank">be8efed</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-09
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -5299,7 +5332,7 @@ add new analysis
 </div>
 <div id="daily-report" class="section level1">
 <h1>Daily report</h1>
-<pre class="r"><code>today = &quot;2022-02-06&quot;
+<pre class="r"><code>today = &quot;2022-02-07&quot;
 days = rev(seq(as.Date(&quot;2021-12-22&quot;),to=as.Date(today),by=&#39;1 day&#39;))
 
 m = matrix(paste0(&#39;&lt;a href=&quot;https://cfcforever.github.io/Test/&#39;, days, &#39;.html&quot;&gt;&#39;, days, &#39;&lt;/a&gt;&#39;), nrow = length(days))
@@ -5307,7 +5340,7 @@ colnames(m) = c(&#39;&lt;b&gt;Date&lt;/b&gt;&#39;)
 
 datatable(m, escape = FALSE, options = list(pageLength = 5))</code></pre>
 <div id="htmlwidget-173e29cf4123579084a6" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-173e29cf4123579084a6">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"https://cfcforever.github.io/Test/2022-02-06.html\">2022-02-06<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-02-05.html\">2022-02-05<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-02-04.html\">2022-02-04<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-02-03.html\">2022-02-03<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-02-02.html\">2022-02-02<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-02-01.html\">2022-02-01<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-31.html\">2022-01-31<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-30.html\">2022-01-30<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-29.html\">2022-01-29<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-28.html\">2022-01-28<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-27.html\">2022-01-27<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-26.html\">2022-01-26<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-25.html\">2022-01-25<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-24.html\">2022-01-24<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-23.html\">2022-01-23<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-22.html\">2022-01-22<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-21.html\">2022-01-21<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-20.html\">2022-01-20<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-19.html\">2022-01-19<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-18.html\">2022-01-18<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-17.html\">2022-01-17<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-16.html\">2022-01-16<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-15.html\">2022-01-15<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-14.html\">2022-01-14<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-13.html\">2022-01-13<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-12.html\">2022-01-12<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-11.html\">2022-01-11<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-10.html\">2022-01-10<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-09.html\">2022-01-09<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-08.html\">2022-01-08<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-07.html\">2022-01-07<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-06.html\">2022-01-06<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-05.html\">2022-01-05<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-04.html\">2022-01-04<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-03.html\">2022-01-03<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-02.html\">2022-01-02<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-01.html\">2022-01-01<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-12-31.html\">2021-12-31<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-12-30.html\">2021-12-30<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-12-29.html\">2021-12-29<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-12-28.html\">2021-12-28<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-12-27.html\">2021-12-27<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-12-26.html\">2021-12-26<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-12-25.html\">2021-12-25<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-12-24.html\">2021-12-24<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-12-23.html\">2021-12-23<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-12-22.html\">2021-12-22<\/a>"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th><b>Date<\/b><\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-173e29cf4123579084a6">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"https://cfcforever.github.io/Test/2022-02-07.html\">2022-02-07<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-02-06.html\">2022-02-06<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-02-05.html\">2022-02-05<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-02-04.html\">2022-02-04<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-02-03.html\">2022-02-03<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-02-02.html\">2022-02-02<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-02-01.html\">2022-02-01<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-31.html\">2022-01-31<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-30.html\">2022-01-30<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-29.html\">2022-01-29<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-28.html\">2022-01-28<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-27.html\">2022-01-27<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-26.html\">2022-01-26<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-25.html\">2022-01-25<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-24.html\">2022-01-24<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-23.html\">2022-01-23<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-22.html\">2022-01-22<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-21.html\">2022-01-21<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-20.html\">2022-01-20<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-19.html\">2022-01-19<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-18.html\">2022-01-18<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-17.html\">2022-01-17<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-16.html\">2022-01-16<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-15.html\">2022-01-15<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-14.html\">2022-01-14<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-13.html\">2022-01-13<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-12.html\">2022-01-12<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-11.html\">2022-01-11<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-10.html\">2022-01-10<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-09.html\">2022-01-09<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-08.html\">2022-01-08<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-07.html\">2022-01-07<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-06.html\">2022-01-06<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-05.html\">2022-01-05<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-04.html\">2022-01-04<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-03.html\">2022-01-03<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-02.html\">2022-01-02<\/a>","<a href=\"https://cfcforever.github.io/Test/2022-01-01.html\">2022-01-01<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-12-31.html\">2021-12-31<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-12-30.html\">2021-12-30<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-12-29.html\">2021-12-29<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-12-28.html\">2021-12-28<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-12-27.html\">2021-12-27<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-12-26.html\">2021-12-26<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-12-25.html\">2021-12-25<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-12-24.html\">2021-12-24<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-12-23.html\">2021-12-23<\/a>","<a href=\"https://cfcforever.github.io/Test/2021-12-22.html\">2021-12-22<\/a>"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th><b>Date<\/b><\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="daily-report-old-version" class="section level1">
 <h1>Daily report (old version)</h1>
@@ -5387,7 +5420,7 @@ loaded via a namespace (and not attached):
 [17] rstudioapi_0.13   whisker_0.4       callr_3.7.0       jquerylib_0.1.3  
 [21] rmarkdown_2.10    webshot_0.5.2     stringr_1.4.0     htmlwidgets_1.5.3
 [25] munsell_0.5.0     shiny_1.6.0       compiler_4.0.5    httpuv_1.5.5     
-[29] xfun_0.22         pkgconfig_2.0.3   systemfonts_1.0.1 htmltools_0.5.1.1
+[29] xfun_0.29         pkgconfig_2.0.3   systemfonts_1.0.1 htmltools_0.5.2  
 [33] tidyselect_1.1.0  tibble_3.1.0      fansi_0.4.2       viridisLite_0.4.0
 [37] crayon_1.4.1      withr_2.4.1       later_1.1.0.1     grid_4.0.5       
 [41] xtable_1.8-4      jsonlite_1.7.2    gtable_0.3.0      lifecycle_1.0.0  
@@ -5395,8 +5428,8 @@ loaded via a namespace (and not attached):
 [49] farver_2.1.0      fs_1.5.0          promises_1.2.0.1  xml2_1.3.2       
 [53] bslib_0.2.4       ellipsis_0.3.1    generics_0.1.0    vctrs_0.3.7      
 [57] tools_4.0.5       glue_1.4.2        tweenr_1.0.2      purrr_0.3.4      
-[61] crosstalk_1.1.1   hms_1.0.0         fastmap_1.1.0     processx_3.5.1   
-[65] yaml_2.2.1        colorspace_2.0-0  rvest_1.0.0       knitr_1.32       
+[61] crosstalk_1.1.1   hms_1.0.0         processx_3.5.1    fastmap_1.1.0    
+[65] yaml_2.2.1        colorspace_2.0-0  rvest_1.0.0       knitr_1.37       
 [69] sass_0.3.1       </code></pre>
 </div>
 </div>
