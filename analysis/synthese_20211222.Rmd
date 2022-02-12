@@ -80,6 +80,8 @@ table_general = data.frame(date = days)
 table_general$number_tag = as.numeric(lapply(list_output, function(x){nrow(x)}))
 table_general$number_data = as.numeric(lapply(list_output, function(x){sum(as.numeric(x$number))}))
 
+table_general = table_general[nrow(table_general):1,]
+
 datatable(table_general, editable = F, extensions = 'Buttons', options = list(pageLength = 20, dom = 'Bfrtip'))
 ```
 
