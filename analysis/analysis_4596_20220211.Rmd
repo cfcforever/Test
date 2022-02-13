@@ -1,0 +1,176 @@
+---
+title: "analysis-4596-20220211"
+# author: "cfcforever"
+# date: ""
+output: 
+  workflowr::wflow_html:
+    code_folding: hide
+editor_options:
+  chunk_output_type: console
+---
+
+```{r include=FALSE}
+source("code/packages_and_functions.R")
+load("data/plan/plan_firminy.RData")
+```
+
+
+# load data.json
+```{r}
+today = "2022-02-11"
+data = read.csv2("data/json/2022-02-11/4596.csv")
+```
+
+```{r eval=FALSE, include=FALSE}
+### plot to recognize the trajectories
+for (k in 1001:8377){
+  p + theme_bw() + 
+    geom_point(data = data[k,], aes(x=x,y=y), col="red") +
+    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+    labs(x="", y="", title = paste0(data$date[k]," - ",k))
+  ggsave(paste0("figure/2022-02-11/4596/",k,".png"), width = 7, height=11)
+}
+
+# stop
+k = 276:602
+p + theme_bw() + 
+    geom_point(data = data[k,], aes(x=x,y=y), col="red") +
+    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+    labs(x="", y="", 
+         title = paste0(data$date[k[1]]," - ",k[1]),
+         subtitle = paste0(data$date[k[length(k)]]," - ",k[length(k)]))
+
+
+k = 603:693
+p + theme_bw() + 
+    geom_point(data = data[k,], aes(x=x,y=y), col="red") +
+    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+    labs(x="", y="", 
+         title = paste0(data$date[k[1]]," - ",k[1]),
+         subtitle = paste0(data$date[k[length(k)]]," - ",k[length(k)]))
+
+
+k = 694:778
+p + theme_bw() + 
+    geom_point(data = data[k,], aes(x=x,y=y), col="red") +
+    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+    labs(x="", y="", 
+         title = paste0(data$date[k[1]]," - ",k[1]),
+         subtitle = paste0(data$date[k[length(k)]]," - ",k[length(k)]))
+
+
+k = 779:978
+p + theme_bw() + 
+    geom_point(data = data[k,], aes(x=x,y=y), col="red") +
+    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+    labs(x="", y="", 
+         title = paste0(data$date[k[1]]," - ",k[1]),
+         subtitle = paste0(data$date[k[length(k)]]," - ",k[length(k)]))
+
+
+k = 979:1018
+p + theme_bw() + 
+    geom_point(data = data[k,], aes(x=x,y=y), col="red") +
+    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+    labs(x="", y="", 
+         title = paste0(data$date[k[1]]," - ",k[1]),
+         subtitle = paste0(data$date[k[length(k)]]," - ",k[length(k)]))
+
+
+k = 1019:1072
+p + theme_bw() + 
+    geom_point(data = data[k,], aes(x=x,y=y), col="red") +
+    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+    labs(x="", y="", 
+         title = paste0(data$date[k[1]]," - ",k[1]),
+         subtitle = paste0(data$date[k[length(k)]]," - ",k[length(k)]))
+
+
+k = 1072:1309
+p + theme_bw() + 
+    geom_point(data = data[k,], aes(x=x,y=y), col="red") +
+    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+    labs(x="", y="", 
+         title = paste0(data$date[k[1]]," - ",k[1]),
+         subtitle = paste0(data$date[k[length(k)]]," - ",k[length(k)]))
+
+
+k = 1310:1405
+p + theme_bw() + 
+    geom_point(data = data[k,], aes(x=x,y=y), col="red") +
+    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+    labs(x="", y="", 
+         title = paste0(data$date[k[1]]," - ",k[1]),
+         subtitle = paste0(data$date[k[length(k)]]," - ",k[length(k)]))
+
+
+k = 1406:1499
+p + theme_bw() + 
+    geom_point(data = data[k,], aes(x=x,y=y), col="red") +
+    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+    labs(x="", y="", 
+         title = paste0(data$date[k[1]]," - ",k[1]),
+         subtitle = paste0(data$date[k[length(k)]]," - ",k[length(k)]))
+
+
+k = 1500:1523
+p + theme_bw() + 
+    geom_point(data = data[k,], aes(x=x,y=y), col="red") +
+    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+    labs(x="", y="", 
+         title = paste0(data$date[k[1]]," - ",k[1]),
+         subtitle = paste0(data$date[k[length(k)]]," - ",k[length(k)]))
+
+
+k = 1524:2680
+p + theme_bw() + 
+    geom_point(data = data[k,], aes(x=x,y=y), col="red") +
+    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+    labs(x="", y="", 
+         title = paste0(data$date[k[1]]," - ",k[1]),
+         subtitle = paste0(data$date[k[length(k)]]," - ",k[length(k)]))
+
+
+k = 2681:2730
+p + theme_bw() + 
+    geom_point(data = data[k,], aes(x=x,y=y), col="red") +
+    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+    labs(x="", y="", 
+         title = paste0(data$date[k[1]]," - ",k[1]),
+         subtitle = paste0(data$date[k[length(k)]]," - ",k[length(k)]))
+
+
+k = 2731:8377
+p + theme_bw() + 
+    geom_point(data = data[k,], aes(x=x,y=y), col="red") +
+    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+    labs(x="", y="", 
+         title = paste0(data$date[k[1]]," - ",k[1]),
+         subtitle = paste0(data$date[k[length(k)]]," - ",k[length(k)]))
+```
+
+
+# tests {.tabset .tabset-pills}
+## test1 - badge a bout de bras{.tabset .tabset-pills}
+### allee
+```{r}
+k = 100:188
+p + theme_bw() + 
+    geom_point(data = data[k,], aes(x=x,y=y), col="red") +
+    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+    labs(x="", y="", 
+         title = paste0(data$date[k[1]]," - ",k[1]),
+         subtitle = paste0(data$date[k[length(k)]]," - ",k[length(k)]))
+```
+
+### retour
+```{r}
+k = 189:275
+p + theme_bw() + 
+    geom_point(data = data[k,], aes(x=x,y=y), col="red") +
+    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+    labs(x="", y="", 
+         title = paste0(data$date[k[1]]," - ",k[1]),
+         subtitle = paste0(data$date[k[length(k)]]," - ",k[length(k)]))
+```
+
