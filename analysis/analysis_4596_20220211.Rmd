@@ -40,25 +40,7 @@ p + theme_bw() +
          title = paste0(data$date[k[1]]," - ",k[1]),
          subtitle = paste0(data$date[k[length(k)]]," - ",k[length(k)]))
 
-
-k = 603:693
-p + theme_bw() + 
-    geom_point(data = data[k,], aes(x=x,y=y), col="red") +
-    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
-    labs(x="", y="", 
-         title = paste0(data$date[k[1]]," - ",k[1]),
-         subtitle = paste0(data$date[k[length(k)]]," - ",k[length(k)]))
-
-
-k = 694:778
-p + theme_bw() + 
-    geom_point(data = data[k,], aes(x=x,y=y), col="red") +
-    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
-    labs(x="", y="", 
-         title = paste0(data$date[k[1]]," - ",k[1]),
-         subtitle = paste0(data$date[k[length(k)]]," - ",k[length(k)]))
-
-
+# stop
 k = 779:978
 p + theme_bw() + 
     geom_point(data = data[k,], aes(x=x,y=y), col="red") +
@@ -67,25 +49,7 @@ p + theme_bw() +
          title = paste0(data$date[k[1]]," - ",k[1]),
          subtitle = paste0(data$date[k[length(k)]]," - ",k[length(k)]))
 
-
-k = 979:1018
-p + theme_bw() + 
-    geom_point(data = data[k,], aes(x=x,y=y), col="red") +
-    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
-    labs(x="", y="", 
-         title = paste0(data$date[k[1]]," - ",k[1]),
-         subtitle = paste0(data$date[k[length(k)]]," - ",k[length(k)]))
-
-
-k = 1019:1072
-p + theme_bw() + 
-    geom_point(data = data[k,], aes(x=x,y=y), col="red") +
-    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
-    labs(x="", y="", 
-         title = paste0(data$date[k[1]]," - ",k[1]),
-         subtitle = paste0(data$date[k[length(k)]]," - ",k[length(k)]))
-
-
+# stop
 k = 1072:1309
 p + theme_bw() + 
     geom_point(data = data[k,], aes(x=x,y=y), col="red") +
@@ -94,25 +58,7 @@ p + theme_bw() +
          title = paste0(data$date[k[1]]," - ",k[1]),
          subtitle = paste0(data$date[k[length(k)]]," - ",k[length(k)]))
 
-
-k = 1310:1405
-p + theme_bw() + 
-    geom_point(data = data[k,], aes(x=x,y=y), col="red") +
-    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
-    labs(x="", y="", 
-         title = paste0(data$date[k[1]]," - ",k[1]),
-         subtitle = paste0(data$date[k[length(k)]]," - ",k[length(k)]))
-
-
-k = 1406:1499
-p + theme_bw() + 
-    geom_point(data = data[k,], aes(x=x,y=y), col="red") +
-    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
-    labs(x="", y="", 
-         title = paste0(data$date[k[1]]," - ",k[1]),
-         subtitle = paste0(data$date[k[length(k)]]," - ",k[length(k)]))
-
-
+# stop
 k = 1500:1523
 p + theme_bw() + 
     geom_point(data = data[k,], aes(x=x,y=y), col="red") +
@@ -166,6 +112,78 @@ p + theme_bw() +
 ### retour
 ```{r}
 k = 189:275
+p + theme_bw() + 
+    geom_point(data = data[k,], aes(x=x,y=y), col="red") +
+    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+    labs(x="", y="", 
+         title = paste0(data$date[k[1]]," - ",k[1]),
+         subtitle = paste0(data$date[k[length(k)]]," - ",k[length(k)]))
+```
+
+
+## test2 - badge dans la poche contre le coeur {.tabset .tabset-pills}
+### allee
+```{r}
+k = 603:693
+p + theme_bw() + 
+    geom_point(data = data[k,], aes(x=x,y=y), col="red") +
+    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+    labs(x="", y="", 
+         title = paste0(data$date[k[1]]," - ",k[1]),
+         subtitle = paste0(data$date[k[length(k)]]," - ",k[length(k)]))
+```
+
+### retour
+```{r}
+k = 694:778
+p + theme_bw() + 
+    geom_point(data = data[k,], aes(x=x,y=y), col="red") +
+    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+    labs(x="", y="", 
+         title = paste0(data$date[k[1]]," - ",k[1]),
+         subtitle = paste0(data$date[k[length(k)]]," - ",k[length(k)]))
+```
+
+
+## test3 - en courant {.tabset .tabset-pills}
+### allee
+```{r}
+k = 979:1018
+p + theme_bw() + 
+    geom_point(data = data[k,], aes(x=x,y=y), col="red") +
+    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+    labs(x="", y="", 
+         title = paste0(data$date[k[1]]," - ",k[1]),
+         subtitle = paste0(data$date[k[length(k)]]," - ",k[length(k)]))
+```
+
+### retour
+```{r}
+k = 1019:1072
+p + theme_bw() + 
+    geom_point(data = data[k,], aes(x=x,y=y), col="red") +
+    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+    labs(x="", y="", 
+         title = paste0(data$date[k[1]]," - ",k[1]),
+         subtitle = paste0(data$date[k[length(k)]]," - ",k[length(k)]))
+```
+
+
+## test4 - dans la poche comme d'habitude {.tabset .tabset-pills}
+### allee
+```{r}
+k = 1310:1405
+p + theme_bw() + 
+    geom_point(data = data[k,], aes(x=x,y=y), col="red") +
+    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+    labs(x="", y="", 
+         title = paste0(data$date[k[1]]," - ",k[1]),
+         subtitle = paste0(data$date[k[length(k)]]," - ",k[length(k)]))
+```
+
+### retour
+```{r}
+k = 1406:1499
 p + theme_bw() + 
     geom_point(data = data[k,], aes(x=x,y=y), col="red") +
     coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
