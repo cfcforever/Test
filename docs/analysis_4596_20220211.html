@@ -505,16 +505,16 @@ This reproducible <a href="https://rmarkdown.rstudio.com">R Markdown</a> analysi
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreea4e368f80207907dcf6c4f66b0cbd02a06f10ff5targetblanka4e368fa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/a4e368f80207907dcf6c4f66b0cbd02a06f10ff5" target="_blank">a4e368f</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree7ba7fe339be7fbccff64a08c9c1e3a6628ca8131targetblank7ba7fe3a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/7ba7fe339be7fbccff64a08c9c1e3a6628ca8131" target="_blank">7ba7fe3</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreea4e368f80207907dcf6c4f66b0cbd02a06f10ff5targetblanka4e368fa" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree7ba7fe339be7fbccff64a08c9c1e3a6628ca8131targetblank7ba7fe3a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/a4e368f80207907dcf6c4f66b0cbd02a06f10ff5" target="_blank">a4e368f</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/7ba7fe339be7fbccff64a08c9c1e3a6628ca8131" target="_blank">7ba7fe3</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -572,6 +572,40 @@ Message
 Rmd
 </td>
 <td>
+<a href="https://github.com/cfcforever/Test/blob/7ba7fe339be7fbccff64a08c9c1e3a6628ca8131/analysis/analysis_4596_20220211.Rmd" target="_blank">7ba7fe3</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-13
+</td>
+<td>
+add new content
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cfcforever/Test/a339c4a290d889133d28b8bceaf01925afa0bd47/docs/analysis_4596_20220211.html" target="_blank">a339c4a</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-13
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
 <a href="https://github.com/cfcforever/Test/blob/a4e368f80207907dcf6c4f66b0cbd02a06f10ff5/analysis/analysis_4596_20220211.Rmd" target="_blank">a4e368f</a>
 </td>
 <td>
@@ -623,6 +657,87 @@ p + theme_bw() +
          subtitle = paste0(data$date[k[length(k)]],&quot; - &quot;,k[length(k)]))</code></pre>
 <pre><code>Warning: Removed 12 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/analysis_4596_20220211.Rmd/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="test2---badge-dans-la-poche-contre-le-coeur" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">test2 - badge dans la poche contre le coeur</h2>
+<div id="allee-1" class="section level3">
+<h3>allee</h3>
+<pre class="r"><code>k = 603:693
+p + theme_bw() + 
+    geom_point(data = data[k,], aes(x=x,y=y), col=&quot;red&quot;) +
+    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+    labs(x=&quot;&quot;, y=&quot;&quot;, 
+         title = paste0(data$date[k[1]],&quot; - &quot;,k[1]),
+         subtitle = paste0(data$date[k[length(k)]],&quot; - &quot;,k[length(k)]))</code></pre>
+<pre><code>Warning: Removed 4 rows containing missing values (geom_point).</code></pre>
+<p><img src="figure/analysis_4596_20220211.Rmd/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="retour-1" class="section level3">
+<h3>retour</h3>
+<pre class="r"><code>k = 694:778
+p + theme_bw() + 
+    geom_point(data = data[k,], aes(x=x,y=y), col=&quot;red&quot;) +
+    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+    labs(x=&quot;&quot;, y=&quot;&quot;, 
+         title = paste0(data$date[k[1]],&quot; - &quot;,k[1]),
+         subtitle = paste0(data$date[k[length(k)]],&quot; - &quot;,k[length(k)]))</code></pre>
+<pre><code>Warning: Removed 11 rows containing missing values (geom_point).</code></pre>
+<p><img src="figure/analysis_4596_20220211.Rmd/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="test3---en-courant" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">test3 - en courant</h2>
+<div id="allee-2" class="section level3">
+<h3>allee</h3>
+<pre class="r"><code>k = 979:1018
+p + theme_bw() + 
+    geom_point(data = data[k,], aes(x=x,y=y), col=&quot;red&quot;) +
+    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+    labs(x=&quot;&quot;, y=&quot;&quot;, 
+         title = paste0(data$date[k[1]],&quot; - &quot;,k[1]),
+         subtitle = paste0(data$date[k[length(k)]],&quot; - &quot;,k[length(k)]))</code></pre>
+<pre><code>Warning: Removed 8 rows containing missing values (geom_point).</code></pre>
+<p><img src="figure/analysis_4596_20220211.Rmd/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="retour-2" class="section level3">
+<h3>retour</h3>
+<pre class="r"><code>k = 1019:1072
+p + theme_bw() + 
+    geom_point(data = data[k,], aes(x=x,y=y), col=&quot;red&quot;) +
+    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+    labs(x=&quot;&quot;, y=&quot;&quot;, 
+         title = paste0(data$date[k[1]],&quot; - &quot;,k[1]),
+         subtitle = paste0(data$date[k[length(k)]],&quot; - &quot;,k[length(k)]))</code></pre>
+<pre><code>Warning: Removed 16 rows containing missing values (geom_point).</code></pre>
+<p><img src="figure/analysis_4596_20220211.Rmd/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="test4---dans-la-poche-comme-dhabitude" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">test4 - dans la poche comme d’habitude</h2>
+<div id="allee-3" class="section level3">
+<h3>allee</h3>
+<pre class="r"><code>k = 1310:1405
+p + theme_bw() + 
+    geom_point(data = data[k,], aes(x=x,y=y), col=&quot;red&quot;) +
+    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+    labs(x=&quot;&quot;, y=&quot;&quot;, 
+         title = paste0(data$date[k[1]],&quot; - &quot;,k[1]),
+         subtitle = paste0(data$date[k[length(k)]],&quot; - &quot;,k[length(k)]))</code></pre>
+<pre><code>Warning: Removed 5 rows containing missing values (geom_point).</code></pre>
+<p><img src="figure/analysis_4596_20220211.Rmd/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="retour-3" class="section level3">
+<h3>retour</h3>
+<pre class="r"><code>k = 1406:1499
+p + theme_bw() + 
+    geom_point(data = data[k,], aes(x=x,y=y), col=&quot;red&quot;) +
+    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+    labs(x=&quot;&quot;, y=&quot;&quot;, 
+         title = paste0(data$date[k[1]],&quot; - &quot;,k[1]),
+         subtitle = paste0(data$date[k[length(k)]],&quot; - &quot;,k[length(k)]))</code></pre>
+<pre><code>Warning: Removed 2 rows containing missing values (geom_point).</code></pre>
+<p><img src="figure/analysis_4596_20220211.Rmd/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" /></p>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
