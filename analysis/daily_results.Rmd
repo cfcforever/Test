@@ -53,10 +53,17 @@ datatable(m, escape = FALSE, options = list(pageLength = 5))
 
 
 # Individual cases
+## 2022-02-10
+The tests are made by Antoine.
+
+[analysis-4596-20220211](https://cfcforever.github.io/Test/analysis_4596_20220211.html)
+
+
 ## 2021-11-29
 We want to analysis the data of three nursing tags.
 
 [analysis-tags-soignants](https://cfcforever.github.io/Test/analysis_tags_soignants_20211129.html)
+
 
 ## 2021-11-15
 We want to analysis the data of three nursing tags.
