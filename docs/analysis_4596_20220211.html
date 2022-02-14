@@ -14,7 +14,7 @@
 <title>analysis-4596-20220211</title>
 
 <script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/jquery-3.5.1/jquery-3.5.1.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -36,6 +36,18 @@
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="site_libs/datatables-binding-0.19/datatables.js"></script>
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
+<script src="site_libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
+<link href="site_libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="site_libs/selectize-0.12.0/selectize.min.js"></script>
+<link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
@@ -505,16 +517,16 @@ This reproducible <a href="https://rmarkdown.rstudio.com">R Markdown</a> analysi
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree3751e45091fa15825a6297f187e982969383ac47targetblank3751e45a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/3751e45091fa15825a6297f187e982969383ac47" target="_blank">3751e45</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreed6713a76d0299437f60eeefc17f5fbd2040409a1targetblankd6713a7a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/d6713a76d0299437f60eeefc17f5fbd2040409a1" target="_blank">d6713a7</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree3751e45091fa15825a6297f187e982969383ac47targetblank3751e45a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreed6713a76d0299437f60eeefc17f5fbd2040409a1targetblankd6713a7a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/3751e45091fa15825a6297f187e982969383ac47" target="_blank">3751e45</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/d6713a76d0299437f60eeefc17f5fbd2040409a1" target="_blank">d6713a7</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -568,6 +580,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/d6713a76d0299437f60eeefc17f5fbd2040409a1/analysis/analysis_4596_20220211.Rmd" target="_blank">d6713a7</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-14
+</td>
+<td>
+add new content
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cfcforever/Test/d0790f2ba93253960d329ecd16d71d841605b4b6/docs/analysis_4596_20220211.html" target="_blank">d0790f2</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-14
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -688,6 +734,43 @@ p + theme_bw() +
   labs(x=&quot;&quot;, y=&quot;&quot;, title = paste0(&quot;tag 4596 - &quot;, today))</code></pre>
 <pre><code>Warning: Removed 3686 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/analysis_4596_20220211.Rmd/unnamed-chunk-2-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-2-1">
+Past versions of unnamed-chunk-2-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-2-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/d0790f2ba93253960d329ecd16d71d841605b4b6/docs/figure/analysis_4596_20220211.Rmd/unnamed-chunk-2-1.png" target="_blank">d0790f2</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-14
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="tests" class="section level1 tabset tabset-pills">
 <h1 class="tabset tabset-pills">tests</h1>
@@ -1130,7 +1213,11 @@ for (k in 1:8){
   output$freq_max[k] = max(data$timediff[na:nb])
   output$dist[k] = dist(data[c(na,nb), c(&quot;x&quot;,&quot;y&quot;)])
   output$speed[k] = output$dist[k]/output$dwell[k]
-}</code></pre>
+}
+
+datatable(output, filter = &quot;top&quot;, options = list(pageLength = nrow(output)))</code></pre>
+<div id="htmlwidget-173e29cf4123579084a6" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-173e29cf4123579084a6">{"x":{"filter":"top","vertical":false,"filterHTML":"<tr>\n  <td><\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"7.80000019073486\" data-max=\"19\" data-scale=\"15\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"40\" data-max=\"96\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"2\" data-max=\"16\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"0\" data-max=\"0.198999881744385\" data-scale=\"15\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"0.200999975204468\" data-max=\"0.202000141143799\" data-scale=\"15\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"17.8680860754587\" data-max=\"19.8521862775867\" data-scale=\"14\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"1.00599890408183\" data-max=\"2.30122771253248\" data-scale=\"15\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","data":[["1","2","3","4","5","6","7","8"],["test1_aller","test1_retour","test2_aller","test2_retour","test3_aller","test3_retour","test4_aller","test5_retour"],["100","189","603","694","979","1019","1310","1406"],["188","275","693","778","1018","1072","1405","1499"],["2022-02-11 08:17:10","2022-02-11 08:17:26","2022-02-11 08:18:49","2022-02-11 08:19:07","2022-02-11 08:20:04","2022-02-11 08:20:12","2022-02-11 08:21:10","2022-02-11 08:21:29"],["2022-02-11 08:17:26","2022-02-11 08:17:43","2022-02-11 08:19:07","2022-02-11 08:19:24","2022-02-11 08:20:12","2022-02-11 08:20:23","2022-02-11 08:21:29","2022-02-11 08:21:48"],[16.6009998321533,16.7999999523163,18,16.8000001907349,7.80000019073486,10.6000001430511,19,18.5999999046326],[89,87,91,85,40,54,96,94],[2,12,4,11,8,16,5,2],[0,0,0.198999881744385,0.198999881744385,0.198999881744385,0.198999881744385,0.197999954223633,0.197999954223633],[0.201000213623047,0.201000213623047,0.200999975204468,0.201000213623047,0.200999975204468,0.200999975204468,0.202000141143799,0.202000141143799],[19.6466816536534,19.2403352361647,19.8521862775867,19.5887008247101,17.9495765966777,17.8680860754587,19.1139791775548,19.3100621438669],[1.18346375834551,1.14525805302231,1.1028992376437,1.1659940834711,2.30122771253248,1.68566847493602,1.00599890408183,1.03817538940188]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>test<\/th>\n      <th>num_start<\/th>\n      <th>num_end<\/th>\n      <th>time_start<\/th>\n      <th>time_end<\/th>\n      <th>dwell<\/th>\n      <th>count<\/th>\n      <th>na<\/th>\n      <th>freq_min<\/th>\n      <th>freq_max<\/th>\n      <th>dist<\/th>\n      <th>speed<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":8,"columnDefs":[{"className":"dt-right","targets":[6,7,8,9,10,11,12]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"orderCellsTop":true,"lengthMenu":[8,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -1162,21 +1249,22 @@ other attached packages:
 loaded via a namespace (and not attached):
  [1] Rcpp_1.0.7        svglite_2.0.0     prettyunits_1.1.1 getPass_0.2-2    
  [5] ps_1.6.0          rprojroot_2.0.2   digest_0.6.27     utf8_1.2.1       
- [9] cellranger_1.1.0  R6_2.5.0          evaluate_0.14     highr_0.8        
-[13] httr_1.4.2        pillar_1.6.0      rlang_0.4.10      progress_1.2.2   
-[17] rstudioapi_0.13   whisker_0.4       callr_3.7.0       jquerylib_0.1.3  
-[21] rmarkdown_2.10    labeling_0.4.2    webshot_0.5.2     stringr_1.4.0    
-[25] htmlwidgets_1.5.3 munsell_0.5.0     compiler_4.0.5    httpuv_1.5.5     
-[29] xfun_0.29         pkgconfig_2.0.3   systemfonts_1.0.1 htmltools_0.5.2  
-[33] tidyselect_1.1.0  tibble_3.1.0      fansi_0.4.2       viridisLite_0.4.0
-[37] crayon_1.4.1      withr_2.4.1       later_1.1.0.1     grid_4.0.5       
-[41] jsonlite_1.7.2    gtable_0.3.0      lifecycle_1.0.0   git2r_0.28.0     
-[45] magrittr_2.0.1    zip_2.2.0         stringi_1.5.3     farver_2.1.0     
-[49] fs_1.5.0          promises_1.2.0.1  xml2_1.3.2        bslib_0.2.4      
-[53] ellipsis_0.3.1    generics_0.1.0    vctrs_0.3.7       tools_4.0.5      
-[57] glue_1.4.2        tweenr_1.0.2      purrr_0.3.4       hms_1.0.0        
-[61] processx_3.5.1    fastmap_1.1.0     yaml_2.2.1        colorspace_2.0-0 
-[65] rvest_1.0.0       knitr_1.37        sass_0.3.1       </code></pre>
+ [9] mime_0.10         cellranger_1.1.0  R6_2.5.0          evaluate_0.14    
+[13] highr_0.8         httr_1.4.2        pillar_1.6.0      rlang_0.4.10     
+[17] progress_1.2.2    rstudioapi_0.13   whisker_0.4       callr_3.7.0      
+[21] jquerylib_0.1.3   rmarkdown_2.10    labeling_0.4.2    webshot_0.5.2    
+[25] stringr_1.4.0     htmlwidgets_1.5.3 munsell_0.5.0     shiny_1.6.0      
+[29] compiler_4.0.5    httpuv_1.5.5      xfun_0.29         pkgconfig_2.0.3  
+[33] systemfonts_1.0.1 htmltools_0.5.2   tidyselect_1.1.0  tibble_3.1.0     
+[37] fansi_0.4.2       viridisLite_0.4.0 crayon_1.4.1      withr_2.4.1      
+[41] later_1.1.0.1     grid_4.0.5        xtable_1.8-4      jsonlite_1.7.2   
+[45] gtable_0.3.0      lifecycle_1.0.0   git2r_0.28.0      magrittr_2.0.1   
+[49] zip_2.2.0         stringi_1.5.3     farver_2.1.0      fs_1.5.0         
+[53] promises_1.2.0.1  xml2_1.3.2        bslib_0.2.4       ellipsis_0.3.1   
+[57] generics_0.1.0    vctrs_0.3.7       tools_4.0.5       glue_1.4.2       
+[61] tweenr_1.0.2      purrr_0.3.4       crosstalk_1.1.1   hms_1.0.0        
+[65] processx_3.5.1    fastmap_1.1.0     yaml_2.2.1        colorspace_2.0-0 
+[69] rvest_1.0.0       knitr_1.37        sass_0.3.1       </code></pre>
 </div>
 </div>
 
