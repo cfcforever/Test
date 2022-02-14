@@ -226,13 +226,13 @@ output$speed = NA
 for (k in 1:8){
   na = as.numeric(output$num_start[k])
   nb = as.numeric(output$num_end[k])
-  output$dwell[k] = data$record_timestamp[nb]-data$record_timestamp[na]
+  output$dwell[k] = round(data$record_timestamp[nb]-data$record_timestamp[na],3)
   output$count[k] = nb-na+1
   output$na[k] = sum(is.na(data$x[na:nb]))
-  output$freq_min[k] = min(data$timediff[na:nb])
-  output$freq_max[k] = max(data$timediff[na:nb])
-  output$dist[k] = dist(data[c(na,nb), c("x","y")])
-  output$speed[k] = output$dist[k]/output$dwell[k]
+  output$freq_min[k] = round(min(data$timediff[na:nb]),3)
+  output$freq_max[k] = round(max(data$timediff[na:nb]),3)
+  output$dist[k] = round(dist(data[c(na,nb), c("x","y")]),3)
+  output$speed[k] = round(output$dist[k]/output$dwell[k],3)
 }
 
 datatable(output, filter = "top", options = list(pageLength = nrow(output)))
