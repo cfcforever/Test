@@ -414,7 +414,7 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2022-02-13
+<strong>Last updated:</strong> 2022-02-14
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -505,16 +505,16 @@ This reproducible <a href="https://rmarkdown.rstudio.com">R Markdown</a> analysi
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree3b2a7d9aec9868a6e6d66221d6355a05df2437e3targetblank3b2a7d9a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/3b2a7d9aec9868a6e6d66221d6355a05df2437e3" target="_blank">3b2a7d9</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree3751e45091fa15825a6297f187e982969383ac47targetblank3751e45a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/3751e45091fa15825a6297f187e982969383ac47" target="_blank">3751e45</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree3b2a7d9aec9868a6e6d66221d6355a05df2437e3targetblank3b2a7d9a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree3751e45091fa15825a6297f187e982969383ac47targetblank3751e45a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/3b2a7d9aec9868a6e6d66221d6355a05df2437e3" target="_blank">3b2a7d9</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/3751e45091fa15825a6297f187e982969383ac47" target="_blank">3751e45</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -568,6 +568,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/3751e45091fa15825a6297f187e982969383ac47/analysis/analysis_4596_20220211.Rmd" target="_blank">3751e45</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-14
+</td>
+<td>
+add new content
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cfcforever/Test/3aff7920211290988d97d08b84c32713a254a3a8/docs/analysis_4596_20220211.html" target="_blank">3aff792</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-13
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -646,14 +680,21 @@ add new content
 <div id="load-data.json" class="section level1">
 <h1>load data.json</h1>
 <pre class="r"><code>today = &quot;2022-02-11&quot;
-data = read.csv2(&quot;data/json/2022-02-11/4596.csv&quot;)</code></pre>
+data = read.csv2(&quot;data/json/2022-02-11/4596.csv&quot;)
+
+p + theme_bw() + 
+  geom_point(data = data, aes(x=x,y=y), col=&quot;red&quot;, size=0.5) +
+  coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+  labs(x=&quot;&quot;, y=&quot;&quot;, title = paste0(&quot;tag 4596 - &quot;, today))</code></pre>
+<pre><code>Warning: Removed 3686 rows containing missing values (geom_point).</code></pre>
+<p><img src="figure/analysis_4596_20220211.Rmd/unnamed-chunk-2-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="tests" class="section level1 tabset tabset-pills">
 <h1 class="tabset tabset-pills">tests</h1>
 <div id="test1---badge-a-bout-de-bras" class="section level2 tabset tabset-pills">
 <h2 class="tabset tabset-pills">test1 - badge a bout de bras</h2>
-<div id="allee" class="section level3">
-<h3>allee</h3>
+<div id="aller" class="section level3">
+<h3>aller</h3>
 <pre class="r"><code>k = 100:188
 p + theme_bw() + 
     geom_point(data = data[k,], aes(x=x,y=y), col=&quot;red&quot;) +
@@ -663,6 +704,43 @@ p + theme_bw() +
          subtitle = paste0(data$date[k[length(k)]],&quot; - &quot;,k[length(k)]))</code></pre>
 <pre><code>Warning: Removed 2 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/analysis_4596_20220211.Rmd/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-4-1">
+Past versions of unnamed-chunk-4-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-4-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/3aff7920211290988d97d08b84c32713a254a3a8/docs/figure/analysis_4596_20220211.Rmd/unnamed-chunk-4-1.png" target="_blank">3aff792</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-13
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="retour" class="section level3">
 <h3>retour</h3>
@@ -675,12 +753,49 @@ p + theme_bw() +
          subtitle = paste0(data$date[k[length(k)]],&quot; - &quot;,k[length(k)]))</code></pre>
 <pre><code>Warning: Removed 12 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/analysis_4596_20220211.Rmd/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-5-1">
+Past versions of unnamed-chunk-5-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-5-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/3aff7920211290988d97d08b84c32713a254a3a8/docs/figure/analysis_4596_20220211.Rmd/unnamed-chunk-5-1.png" target="_blank">3aff792</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-13
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div id="test2---badge-dans-la-poche-contre-le-coeur" class="section level2 tabset tabset-pills">
 <h2 class="tabset tabset-pills">test2 - badge dans la poche contre le coeur</h2>
-<div id="allee-1" class="section level3">
-<h3>allee</h3>
+<div id="aller-1" class="section level3">
+<h3>aller</h3>
 <pre class="r"><code>k = 603:693
 p + theme_bw() + 
     geom_point(data = data[k,], aes(x=x,y=y), col=&quot;red&quot;) +
@@ -690,6 +805,43 @@ p + theme_bw() +
          subtitle = paste0(data$date[k[length(k)]],&quot; - &quot;,k[length(k)]))</code></pre>
 <pre><code>Warning: Removed 4 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/analysis_4596_20220211.Rmd/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-6-1">
+Past versions of unnamed-chunk-6-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-6-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/3aff7920211290988d97d08b84c32713a254a3a8/docs/figure/analysis_4596_20220211.Rmd/unnamed-chunk-6-1.png" target="_blank">3aff792</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-13
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="retour-1" class="section level3">
 <h3>retour</h3>
@@ -702,12 +854,49 @@ p + theme_bw() +
          subtitle = paste0(data$date[k[length(k)]],&quot; - &quot;,k[length(k)]))</code></pre>
 <pre><code>Warning: Removed 11 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/analysis_4596_20220211.Rmd/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-7-1">
+Past versions of unnamed-chunk-7-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-7-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/3aff7920211290988d97d08b84c32713a254a3a8/docs/figure/analysis_4596_20220211.Rmd/unnamed-chunk-7-1.png" target="_blank">3aff792</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-13
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div id="test3---en-courant" class="section level2 tabset tabset-pills">
 <h2 class="tabset tabset-pills">test3 - en courant</h2>
-<div id="allee-2" class="section level3">
-<h3>allee</h3>
+<div id="aller-2" class="section level3">
+<h3>aller</h3>
 <pre class="r"><code>k = 979:1018
 p + theme_bw() + 
     geom_point(data = data[k,], aes(x=x,y=y), col=&quot;red&quot;) +
@@ -717,6 +906,43 @@ p + theme_bw() +
          subtitle = paste0(data$date[k[length(k)]],&quot; - &quot;,k[length(k)]))</code></pre>
 <pre><code>Warning: Removed 8 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/analysis_4596_20220211.Rmd/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-8-1">
+Past versions of unnamed-chunk-8-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-8-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/3aff7920211290988d97d08b84c32713a254a3a8/docs/figure/analysis_4596_20220211.Rmd/unnamed-chunk-8-1.png" target="_blank">3aff792</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-13
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="retour-2" class="section level3">
 <h3>retour</h3>
@@ -729,12 +955,49 @@ p + theme_bw() +
          subtitle = paste0(data$date[k[length(k)]],&quot; - &quot;,k[length(k)]))</code></pre>
 <pre><code>Warning: Removed 16 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/analysis_4596_20220211.Rmd/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-9-1">
+Past versions of unnamed-chunk-9-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-9-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/3aff7920211290988d97d08b84c32713a254a3a8/docs/figure/analysis_4596_20220211.Rmd/unnamed-chunk-9-1.png" target="_blank">3aff792</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-13
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div id="test4---dans-la-poche-comme-dhabitude" class="section level2 tabset tabset-pills">
 <h2 class="tabset tabset-pills">test4 - dans la poche comme d’habitude</h2>
-<div id="allee-3" class="section level3">
-<h3>allee</h3>
+<div id="aller-3" class="section level3">
+<h3>aller</h3>
 <pre class="r"><code>k = 1310:1405
 p + theme_bw() + 
     geom_point(data = data[k,], aes(x=x,y=y), col=&quot;red&quot;) +
@@ -744,6 +1007,43 @@ p + theme_bw() +
          subtitle = paste0(data$date[k[length(k)]],&quot; - &quot;,k[length(k)]))</code></pre>
 <pre><code>Warning: Removed 5 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/analysis_4596_20220211.Rmd/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-1">
+Past versions of unnamed-chunk-10-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-10-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/3aff7920211290988d97d08b84c32713a254a3a8/docs/figure/analysis_4596_20220211.Rmd/unnamed-chunk-10-1.png" target="_blank">3aff792</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-13
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="retour-3" class="section level3">
 <h3>retour</h3>
@@ -756,6 +1056,81 @@ p + theme_bw() +
          subtitle = paste0(data$date[k[length(k)]],&quot; - &quot;,k[length(k)]))</code></pre>
 <pre><code>Warning: Removed 2 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/analysis_4596_20220211.Rmd/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-11-1">
+Past versions of unnamed-chunk-11-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-11-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/3aff7920211290988d97d08b84c32713a254a3a8/docs/figure/analysis_4596_20220211.Rmd/unnamed-chunk-11-1.png" target="_blank">3aff792</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-02-13
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="analysis" class="section level1">
+<h1>analysis</h1>
+<pre class="r"><code>output = data.frame(matrix(NA, nrow = 8, ncol = 3))
+colnames(output) = c(&quot;test&quot;, &quot;num_start&quot;, &quot;num_end&quot;)
+
+output[1,] = c(&quot;test1_aller&quot;,100,188)
+output[2,] = c(&quot;test1_retour&quot;,189,275)
+output[3,] = c(&quot;test2_aller&quot;,603,693)
+output[4,] = c(&quot;test2_retour&quot;,694,778)
+output[5,] = c(&quot;test3_aller&quot;,979,1018)
+output[6,] = c(&quot;test3_retour&quot;,1019,1072)
+output[7,] = c(&quot;test4_aller&quot;,1310,1405)
+output[8,] = c(&quot;test5_retour&quot;,1406,1499)
+
+output$time_start = data$date[as.numeric(output$num_start)]
+output$time_end = data$date[as.numeric(output$num_end)]
+
+output$dwell = NA
+output$count = NA
+output$na = NA
+output$freq_min = NA
+output$freq_max = NA
+output$dist = NA
+output$speed = NA 
+for (k in 1:8){
+  na = as.numeric(output$num_start[k])
+  nb = as.numeric(output$num_end[k])
+  output$dwell[k] = data$record_timestamp[nb]-data$record_timestamp[na]
+  output$count[k] = nb-na+1
+  output$na[k] = sum(is.na(data$x[na:nb]))
+  output$freq_min[k] = min(data$timediff[na:nb])
+  output$freq_max[k] = max(data$timediff[na:nb])
+  output$dist[k] = dist(data[c(na,nb), c(&quot;x&quot;,&quot;y&quot;)])
+  output$speed[k] = output$dist[k]/output$dwell[k]
+}</code></pre>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -802,8 +1177,6 @@ loaded via a namespace (and not attached):
 [57] glue_1.4.2        tweenr_1.0.2      purrr_0.3.4       hms_1.0.0        
 [61] processx_3.5.1    fastmap_1.1.0     yaml_2.2.1        colorspace_2.0-0 
 [65] rvest_1.0.0       knitr_1.37        sass_0.3.1       </code></pre>
-</div>
-</div>
 </div>
 </div>
 
