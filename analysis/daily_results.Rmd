@@ -53,7 +53,7 @@ datatable(m, escape = FALSE, options = list(pageLength = 5))
 
 
 # Individual cases
-## 2022-02-10
+## 2022-02-11
 The tests are made by Antoine.
 
 [analysis-4596-20220211](https://cfcforever.github.io/Test/analysis_4596_20220211.html)
