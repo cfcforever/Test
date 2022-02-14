@@ -234,5 +234,7 @@ for (k in 1:8){
   output$dist[k] = dist(data[c(na,nb), c("x","y")])
   output$speed[k] = output$dist[k]/output$dwell[k]
 }
+
+datatable(output, filter = "top", options = list(pageLength = nrow(output)))
 ```
 
