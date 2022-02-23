@@ -1,0 +1,68 @@
+---
+title: "Antoine 2022.02.23"
+# author: "cfcforever"
+# date: ""
+output: 
+  workflowr::wflow_html:
+    code_folding: hide
+editor_options:
+  chunk_output_type: console
+---
+
+```{r include=FALSE}
+source("code/packages_and_functions.R")
+source("code/fun_convert_date.R")
+
+names_tag <- read.xlsx("data/Inventaire Tags - Firminy - 2022.xlsx")
+
+load("data/plan/plan_firminy.RData")
+```
+
+
+# 2022-02-23
+```{r}
+json_data = fromJSON(file = paste0("data/json/2022-02-23/position.json"))
+
+dat <- data.frame(tag = unlist(lapply(json_data, function(x){x["tag_id"][[1]]})),
+                  x = unlist(lapply(json_data, function(x){x["x"][[1]]})),
+                  y = unlist(lapply(json_data, function(x){x["y"][[1]]})),
+                  record_timestamp = unlist(lapply(json_data, function(x){x["record_timestamp"][[1]]})))
+dat = dat[order(dat$record_timestamp),]
+dat = cbind.data.frame(dat, convert_date(dat$record_timestamp))
+dat$x = as.numeric(dat$x)
+dat$y = as.numeric(dat$y)
+
+list_tag <- split(dat, dat$tag)
+
+data1 = list_tag[[1]]
+data1$diff_ts = c(0, data1$record_timestamp[-1]-data1$record_timestamp[-nrow(data1)])
+data1$x = data1$x/100
+data1$y = data1$y/100
+
+data2 = list_tag[[2]]
+data2$diff_ts = c(0, data2$record_timestamp[-1]-data2$record_timestamp[-nrow(data2)])
+data2$x = data2$x/100
+data2$y = data2$y/100
+
+list_data = list(data1, data2)
+data = rbind.data.frame(data1, data2)
+```
+
+
+
+## hourly plot {.tabset .tabset-pills}
+```{r results='asis', fig.height=20, fig.width=18}
+tags = unique(data$tag)
+tags = names_tag %>% filter(Identifiant %in% tags)
+
+data$H = factor(data$H, levels = c(0:23))
+
+q = p + theme_bw() +
+  geom_point(data = data, aes(x=x, y=y, col=tag), na.rm = T) +
+  coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+  labs(x = "", y = "") + 
+  facet_wrap(~H, nrow = 4, drop = F)
+print(q)
+# ggsave(filename = "fig/20220217_Antoine_hourly_plot.png", width=18, height=18)
+```
+
