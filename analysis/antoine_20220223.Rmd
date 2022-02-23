@@ -29,6 +29,7 @@ dat <- data.frame(tag = unlist(lapply(json_data, function(x){x["tag_id"][[1]]}))
                   record_timestamp = unlist(lapply(json_data, function(x){x["record_timestamp"][[1]]})))
 dat = dat[order(dat$record_timestamp),]
 dat = cbind.data.frame(dat, convert_date(dat$record_timestamp))
+dat$date = as.character(dat$date)
 dat$x = as.numeric(dat$x)
 dat$y = as.numeric(dat$y)
 
@@ -68,7 +69,7 @@ output_table$count = c(nrow(data1), nrow(data2))
 output_table$count_NA = c(sum(is.na(data1$x)), sum(is.na(data2$x)))
 output_table$NA_ratio = round(output_table$count_NA/output_table$count,2)
 output_table$time_start = c(as.character(head(data1$date,1)), as.character(head(data2$date,1)))
-output_table$time_end = c(as.numeric(tail(data1$date,1)), as.numeric(tail(data2$date,1)))
+output_table$time_end = c(as.character(tail(data1$date,1)), as.character(tail(data2$date,1)))
 
 datatable(output_table)
 ```
