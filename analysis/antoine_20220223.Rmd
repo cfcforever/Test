@@ -49,6 +49,27 @@ data = rbind.data.frame(data1, data2)
 ```
 
 
+## tag 3722
+```{r}
+datatable(data1)
+```
+
+
+## tag 5afc
+```{r}
+datatable(data2)
+```
+
+
+## general analysis
+```{r}
+output_table = data.frame(tag = unique(data$tag))
+output_table$count = c(nrow(data1), nrow(data2))
+output_table$count_NA = c(sum(is.na(data1$x)), sum(is.na(data2$x)))
+output_table$NA_ratio = round(output_table$count_NA/output_table$count,2)
+datatable(output_table)
+```
+
 
 ## hourly plot {.tabset .tabset-pills}
 ```{r results='asis', fig.height=20, fig.width=18}
