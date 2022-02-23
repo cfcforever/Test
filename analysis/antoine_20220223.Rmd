@@ -80,7 +80,7 @@ output_table$count = c(nrow(data1), nrow(data2))
 output_table$count_NA = c(sum(is.na(data1$x)), sum(is.na(data2$x)))
 output_table$NA_ratio = round(output_table$count_NA/output_table$count,2)
 output_table$time_start = c(as.character(head(data1$date,1)), as.character(head(data2$date,1)))
-output_table$time_end = c(tail(data1$date,1), tail(data2$date,1))
+output_table$time_end = c(as.numeric(tail(data1$date,1)), as.numeric(tail(data2$date,1)))
 
 datatable(output_table)
 ```
