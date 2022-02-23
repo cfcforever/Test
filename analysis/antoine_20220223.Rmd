@@ -21,13 +21,25 @@ load("data/plan/plan_firminy.RData")
 
 # 2022-02-23
 ```{r}
-json_data = fromJSON(file = paste0("data/json/2022-02-23/position.json"))
+json_data1 = fromJSON(file = paste0("data/json/2022-02-23/position.json"))
+json_data2 = fromJSON(file = paste0("data/json/2022-02-23/position2.json"))
 
-dat <- data.frame(tag = unlist(lapply(json_data, function(x){x["tag_id"][[1]]})),
-                  x = unlist(lapply(json_data, function(x){x["x"][[1]]})),
-                  y = unlist(lapply(json_data, function(x){x["y"][[1]]})),
-                  record_timestamp = unlist(lapply(json_data, function(x){x["record_timestamp"][[1]]})))
-dat = dat[order(dat$record_timestamp),]
+
+dat1 <- data.frame(tag = unlist(lapply(json_data1, function(x){x["tag_id"][[1]]})),
+                  x = unlist(lapply(json_data1, function(x){x["x"][[1]]})),
+                  y = unlist(lapply(json_data1, function(x){x["y"][[1]]})),
+                  record_timestamp = unlist(lapply(json_data1, function(x){x["record_timestamp"][[1]]})))
+dat1 = dat1[order(dat1$record_timestamp),]
+dat1 = dat1[dat1$record_timestamp<1645617170,]
+
+
+dat2 <- data.frame(tag = unlist(lapply(json_data2, function(x){x["tag_id"][[1]]})),
+                  x = unlist(lapply(json_data2, function(x){x["x"][[1]]})),
+                  y = unlist(lapply(json_data2, function(x){x["y"][[1]]})),
+                  record_timestamp = unlist(lapply(json_data2, function(x){x["record_timestamp"][[1]]})))
+
+dat = rbind(dat1, dat2)
+
 dat = cbind.data.frame(dat, convert_date(dat$record_timestamp))
 dat$x = as.numeric(dat$x)
 dat$y = as.numeric(dat$y)
@@ -67,6 +79,9 @@ output_table = data.frame(tag = unique(data$tag))
 output_table$count = c(nrow(data1), nrow(data2))
 output_table$count_NA = c(sum(is.na(data1$x)), sum(is.na(data2$x)))
 output_table$NA_ratio = round(output_table$count_NA/output_table$count,2)
+output_table$time_start = c(head(data1$date,1), head(data2$date,1))
+output_table$time_end = c(tail(data1$date,1), tail(data2$date,1))
+
 datatable(output_table)
 ```
 
