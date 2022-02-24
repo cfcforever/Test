@@ -27,6 +27,7 @@ dat <- data.frame(tag = unlist(lapply(json_data, function(x){x["tag_id"][[1]]}))
                   x = unlist(lapply(json_data, function(x){x["x"][[1]]})),
                   y = unlist(lapply(json_data, function(x){x["y"][[1]]})),
                   record_timestamp = unlist(lapply(json_data, function(x){x["record_timestamp"][[1]]})))
+dat = dat %>% filter(tag %in% c("3722","5afc"))
 dat = dat[order(dat$record_timestamp),]
 dat = cbind.data.frame(dat, convert_date(dat$record_timestamp))
 dat$date = as.character(dat$date)
