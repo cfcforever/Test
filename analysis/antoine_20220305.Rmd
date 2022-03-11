@@ -81,7 +81,7 @@ datatable(output_table)
 tags = unique(data$tag)
 tags = names_tag %>% filter(Identifiant %in% tags)
 
-data$H = factor(data$H, levels = c(0:23))
+data$H = factor(as.numeric(data$H), levels = c(0:23))
 
 q = p + theme_bw() +
   geom_point(data = data, aes(x=x, y=y, col=tag), na.rm = T) +
