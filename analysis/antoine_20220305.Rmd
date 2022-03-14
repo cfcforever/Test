@@ -125,13 +125,14 @@ for (k in 1:nt){
   if (nrow(dat1)==0){
     cat("no data for Testeur!!!", "\n")
   }else{
-    p + theme_bw() +
+    q <- p + theme_bw() +
       geom_point(data = dat1, aes(x=x, y=y, col="Testeur"), na.rm = T) +
       geom_point(data = dat2, aes(x=x, y=y, col="Antoine"), na.rm = T) +
       scale_color_manual(values = c("blue", "red")) +
       coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
       theme(legend.title = element_blank()) +
       labs(x = "", y = "", title = dat2$date[1], subtitle = dat2$date[3])
+    print(q)
   }
   cat("\n")
 }
