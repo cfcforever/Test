@@ -116,7 +116,7 @@ for (k in 1:nt){
   cat("## ", "case", k, "\n")
   t2 = order(data2$diff_dist, decreasing = T)[k]
   dat2 = data2[(t2-1):(t2+1),]
-  datatable(dat2)
+  print(tagList(datatable(dat2)))
   
   dat1 = data1 %>%
     filter(record_timestamp>=min(dat2$record_timestamp)) %>%
