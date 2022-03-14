@@ -112,7 +112,8 @@ nt = sum(data2$diff_dist>=5, na.rm = T)
 
 ```{r results='asis'}
 for (k in 1:nt){
-  cat("\n ##", "case", k, "\n")
+  cat("\n")
+  cat("## ", "case", k, "\n")
   t2 = order(data2$diff_dist, decreasing = T)[k]
   dat2 = data2[(t2-1):(t2+1),]
   datatable(dat2)
