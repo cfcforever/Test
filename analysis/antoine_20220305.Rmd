@@ -100,10 +100,38 @@ print(q)
 ```
 
 
-# loss-ratio
+# discontinued situations {.tabset .tabset-pills}
 ```{r}
 data2 = data2 %>%
   filter(record_timestamp <= max(data1$record_timestamp)) %>%
   filter(record_timestamp >= min(data1$record_timestamp))
+
+nt = sum(data2$diff_dist>=5, na.rm = T)
 ```
 
+
+```{r results='asis'}
+for (k in 1:nt){
+  cat("\n ##", "case", k, "\n")
+  t2 = order(data2$diff_dist, decreasing = T)[k]
+  dat2 = data2[(t2-1):(t2+1),]
+  datatable(dat2)
+  
+  dat1 = data1 %>%
+    filter(record_timestamp>=min(dat2$record_timestamp)) %>%
+    filter(record_timestamp<=max(dat2$record_timestamp))
+  
+  if (nrow(dat1)==0){
+    cat("no data for Testeur!!!", "\n")
+  }else{
+    p + theme_bw() +
+      geom_point(data = dat1, aes(x=x, y=y, col="Testeur"), na.rm = T) +
+      geom_point(data = dat2, aes(x=x, y=y, col="Antoine"), na.rm = T) +
+      scale_color_manual(values = c("blue", "red")) +
+      coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+      theme(legend.title = element_blank()) +
+      labs(x = "", y = "", title = dat2$date[1], subtitle = dat2$date[3])
+  }
+  cat("\n")
+}
+```
