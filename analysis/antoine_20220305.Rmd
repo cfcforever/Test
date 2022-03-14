@@ -40,13 +40,20 @@ data1 = list_tag[[1]]
 data1$diff_ts = round(c(0, data1$record_timestamp[-1]-data1$record_timestamp[-nrow(data1)]), 3)
 data1$x = data1$x/100
 data1$y = data1$y/100
+data1$diff_dist = NA
+for (k in 2:nrow(data1)){
+  data1$diff_dist[k] = as.numeric(dist(data1[(k-1):k,c("x","y")]))
+}
 
 data2 = list_tag[[2]]
 data2$diff_ts = round(c(0, data2$record_timestamp[-1]-data2$record_timestamp[-nrow(data2)]), 3)
 data2$x = data2$x/100
 data2$y = data2$y/100
+data2$diff_dist = NA
+for (k in 2:nrow(data2)){
+  data2$diff_dist[k] = as.numeric(dist(data2[(k-1):k,c("x","y")]))
+}
 
-list_data = list(data1, data2)
 data = rbind.data.frame(data1, data2)
 ```
 
@@ -63,7 +70,7 @@ datatable(data2)
 ```
 
 
-## general analysis
+# general analysis
 ```{r}
 output_table = data.frame(tag = unique(data$tag))
 output_table$count = c(nrow(data1), nrow(data2))
@@ -76,7 +83,7 @@ datatable(output_table)
 ```
 
 
-## hourly plot {.tabset .tabset-pills}
+# hourly plot {.tabset .tabset-pills}
 ```{r results='asis', fig.height=20, fig.width=18}
 tags = unique(data$tag)
 tags = names_tag %>% filter(Identifiant %in% tags)
@@ -90,5 +97,13 @@ q = p + theme_bw() +
   facet_wrap(~H, nrow = 4, drop = F)
 print(q)
 # ggsave(filename = "fig/20220217_Antoine_hourly_plot.png", width=18, height=18)
+```
+
+
+# loss-ratio
+```{r}
+data2 = data2 %>%
+  filter(record_timestamp <= max(data1$record_timestamp)) %>%
+  filter(record_timestamp >= min(data1$record_timestamp))
 ```
 
