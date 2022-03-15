@@ -60,14 +60,6 @@ data = rbind.data.frame(data1, data2)
 data = data[order(data$record_timestamp),]
 ```
 
-
-## Antoine(4288) & Testeur(295e) 
-```{r warning=FALSE}
-datatable(data, filter = "top")
-```
-
-
-# general analysis
 ```{r}
 output_table = data.frame(tag = unique(data$tag))
 output_table$count = c(nrow(data1), nrow(data2))
@@ -78,6 +70,7 @@ output_table$time_end = c(as.character(tail(data1$date,1)), as.character(tail(da
 
 datatable(output_table)
 ```
+
 
 
 # hourly plot {.tabset .tabset-pills}
@@ -95,6 +88,17 @@ q = p + theme_bw() +
 print(q)
 # ggsave(filename = "fig/20220217_Antoine_hourly_plot.png", width=18, height=18)
 ```
+
+
+
+# Antoine(4288) & Testeur(295e) 
+```{r warning=FALSE}
+data = data %>%
+  filter(record_timestamp <= max(data1$record_timestamp)) %>%
+  filter(record_timestamp >= min(data1$record_timestamp))
+datatable(data, filter = "top")
+```
+
 
 
 # discontinued situations {.tabset .tabset-pills}
