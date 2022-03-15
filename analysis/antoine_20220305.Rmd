@@ -137,9 +137,10 @@ for (k in 1:nt){
     print(q)
   }
   
-  dat = rbind.data.frame(dat1, dat2)
-  dat = dat[order(dat$record_timestamp),]
-  print(tagList(datatable(dat[,c("tag","x","y","record_timestamp","date","diff_ts","diff_dist")], options = list(pageLength = 10))))
+  dat = data %>%
+    filter(record_timestamp>=min(dat2$record_timestamp)) %>%
+    filter(record_timestamp<=max(dat2$record_timestamp))
+  print(tagList(datatable(dat[,c("tag","x","y","record_timestamp","date","diff_ts","diff_dist")], filter = "top", options = list(pageLength = 10))))
   
   cat("\n")
 }
