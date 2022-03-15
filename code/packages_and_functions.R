@@ -12,5 +12,6 @@ library(DT)
 library(nnet)
 library(scales)
 library(openxlsx)
+library(htmltools)
 
 source("code/fun_convert_date.R")
