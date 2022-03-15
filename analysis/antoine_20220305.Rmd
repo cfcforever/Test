@@ -118,14 +118,13 @@ for (k in 1:nt){
   cat("## ", "case", k, "\n")
   t2 = order(data2$diff_dist, decreasing = T)[k]
   dat2 = data2[(t2-5):(t2+5),]
-  print(tagList(datatable(dat2)))
-  
+
   dat1 = data1 %>%
     filter(record_timestamp>=min(dat2$record_timestamp)) %>%
     filter(record_timestamp<=max(dat2$record_timestamp))
   
   if (nrow(dat1)==0){
-    cat("no data for Testeur!!!", "\n")
+    cat("> no data for Testeur!!!", "\n")
   }else{
     q <- p + theme_bw() +
       geom_point(data = dat1, aes(x=x, y=y, col="Testeur"), na.rm = T) +
@@ -136,6 +135,9 @@ for (k in 1:nt){
       labs(x = "", y = "", title = dat2$date[1], subtitle = dat2$date[3])
     print(q)
   }
+  
+  print(tagList(datatable(dat2[,c("tag","x","y","date","diff_ts","diff_dist")], options = list(pageLength = nrow(dat2)))))
+  
   cat("\n")
 }
 ```
