@@ -123,6 +123,11 @@ for (k in 1:nt){
     filter(record_timestamp>=min(dat2$record_timestamp)) %>%
     filter(record_timestamp<=max(dat2$record_timestamp))
   
+  dat = data %>%
+    filter(record_timestamp>=min(dat2$record_timestamp)) %>%
+    filter(record_timestamp<=max(dat2$record_timestamp))
+  print(tagList(datatable(dat[,c("tag","x","y","record_timestamp","date","diff_ts","diff_dist")])))
+  
   if (nrow(dat1)==0){
     cat("> no data for Testeur!!!", "\n")
   }else{
@@ -136,11 +141,6 @@ for (k in 1:nt){
       labs(x = "", y = "", title = head(dat2$date,1), subtitle = tail(dat2$date,1))
     print(q)
   }
-  
-  dat = data %>%
-    filter(record_timestamp>=min(dat2$record_timestamp)) %>%
-    filter(record_timestamp<=max(dat2$record_timestamp))
-  print(tagList(datatable(dat[,c("tag","x","y","record_timestamp","date","diff_ts","diff_dist")], filter = "top")))
   
   cat("\n")
 }
