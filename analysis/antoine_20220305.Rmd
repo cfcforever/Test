@@ -91,13 +91,13 @@ print(q)
 
 
 
-# Antoine(4288) & Testeur(295e) 
-```{r warning=FALSE}
-data = data %>%
-  filter(record_timestamp <= max(data1$record_timestamp)) %>%
-  filter(record_timestamp >= min(data1$record_timestamp))
-datatable(data, filter = "top")
-```
+<!-- # Antoine(4288) & Testeur(295e)  -->
+<!-- ```{r warning=FALSE} -->
+<!-- data = data %>% -->
+<!--   filter(record_timestamp <= max(data1$record_timestamp)) %>% -->
+<!--   filter(record_timestamp >= min(data1$record_timestamp)) -->
+<!-- datatable(data, filter = "top") -->
+<!-- ``` -->
 
 
 
@@ -116,18 +116,19 @@ for (k in 1:nt){
   cat("\n")
   cat("## ", "case", k, "\n")
   t2 = order(data2$diff_dist, decreasing = T)[k]
+  t1 = t2-1
   dat2 = data2[(t2-5):(t2+5),]
 
   dat1 = data1 %>%
-    filter(record_timestamp>=min(dat2$record_timestamp)) %>%
-    filter(record_timestamp<=max(dat2$record_timestamp))
+    filter(record_timestamp>=data2[t1,"record_timestamp"]) %>%
+    filter(record_timestamp<=data2[t2,"record_timestamp"])
   
   if (nrow(dat1)==0){
     cat("> no data for Testeur!!!", "\n")
   }else{
     q <- p + theme_bw() +
       geom_point(data = dat1, aes(x=x, y=y, col="Testeur"), na.rm = T) +
-      geom_point(data = data2[(t2-1),], aes(x=x, y=y, col="Antoine before"), na.rm = T) +
+      geom_point(data = data2[(t1),], aes(x=x, y=y, col="Antoine before"), na.rm = T) +
       geom_point(data = data2[(t2),], aes(x=x, y=y, col="Antoine after"), na.rm = T) +
       scale_color_manual(values = c("green", "blue", "red")) +
       coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
@@ -136,7 +137,9 @@ for (k in 1:nt){
     print(q)
   }
   
-  print(tagList(datatable(dat2[,c("tag","x","y","date","diff_ts","diff_dist")], options = list(pageLength = nrow(dat2)))))
+  dat = rbind.data.frame(dat1, dat2)
+  dat = dat[order(dat$record_timestamp),]
+  print(tagList(datatable(dat[,c("tag","x","y","record_timestamp","date","diff_ts","diff_dist")], options = list(pageLength = 10))))
   
   cat("\n")
 }
