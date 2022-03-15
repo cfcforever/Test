@@ -57,18 +57,13 @@ for (k in 2:nrow(data2)){
 }
 
 data = rbind.data.frame(data1, data2)
+data = data[order(data$record_timestamp),]
 ```
 
 
-## tag 295e - Testeur
+## Antoine(4288) & Testeur(295e) 
 ```{r warning=FALSE}
-datatable(data1)
-```
-
-
-## tag 4288 - Antoine
-```{r warning=FALSE}
-datatable(data2)
+datatable(data, filter = "top")
 ```
 
 
