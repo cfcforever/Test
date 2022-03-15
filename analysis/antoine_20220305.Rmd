@@ -128,8 +128,9 @@ for (k in 1:nt){
   }else{
     q <- p + theme_bw() +
       geom_point(data = dat1, aes(x=x, y=y, col="Testeur"), na.rm = T) +
-      geom_point(data = data2[(t2-1):(t2),], aes(x=x, y=y, col="Antoine"), na.rm = T) +
-      scale_color_manual(values = c("blue", "red")) +
+      geom_point(data = data2[(t2-1),], aes(x=x, y=y, col="Antoine before"), na.rm = T) +
+      geom_point(data = data2[(t2),], aes(x=x, y=y, col="Antoine after"), na.rm = T) +
+      scale_color_manual(values = c("green", "blue", "red")) +
       coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
       theme(legend.title = element_blank()) +
       labs(x = "", y = "", title = dat2$date[1], subtitle = dat2$date[3])
