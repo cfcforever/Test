@@ -140,7 +140,7 @@ for (k in 1:nt){
   dat = data %>%
     filter(record_timestamp>=min(dat2$record_timestamp)) %>%
     filter(record_timestamp<=max(dat2$record_timestamp))
-  print(tagList(datatable(dat[,c("tag","x","y","record_timestamp","date","diff_ts","diff_dist")], filter = "top", options = list(pageLength = 10))))
+  print(tagList(datatable(dat[,c("tag","x","y","record_timestamp","date","diff_ts","diff_dist")], filter = "top")))
   
   cat("\n")
 }
@@ -148,13 +148,13 @@ for (k in 1:nt){
 
 
 
-<!-- # loss-ratio -->
-<!-- ```{r} -->
-<!-- data2_loss = data2[which(data2$diff_dist>=5),] -->
-<!-- datatable(data2_loss) -->
+# loss-ratio
+```{r results='asis'}
+data2_loss = data2[which(data2$diff_dist>=5),]
+datatable(data2_loss)
 
-<!-- nr_loss = round(sum(data2_loss$diff_ts)/0.2, 0) -->
+nr_loss = round(sum(data2_loss$diff_ts)/0.2, 0)
 
-<!-- cat("> maximum loss ratio:", round(nr_loss/(nr_loss+nrow(data2))*100,2), "%", "\n") -->
-<!-- ``` -->
+cat("> maximum loss ratio:", round(nr_loss/(nr_loss+nrow(data2))*100,2), "%", "\n")
+```
 
