@@ -38,20 +38,22 @@ list_tag <- split(dat, dat$tag)
 
 data1 = list_tag[[1]]
 data1$diff_ts = round(c(0, data1$record_timestamp[-1]-data1$record_timestamp[-nrow(data1)]), 3)
+data1 = data1[-which(data1$diff_ts<=0.1),]
 data1$x = data1$x/100
 data1$y = data1$y/100
 data1$diff_dist = NA
 for (k in 2:nrow(data1)){
-  data1$diff_dist[k] = as.numeric(dist(data1[(k-1):k,c("x","y")]))
+  data1$diff_dist[k] = round(as.numeric(dist(data1[(k-1):k,c("x","y")])), 3)
 }
 
 data2 = list_tag[[2]]
 data2$diff_ts = round(c(0, data2$record_timestamp[-1]-data2$record_timestamp[-nrow(data2)]), 3)
+data2 = data2[-which(data2$diff_ts<=0.1),]
 data2$x = data2$x/100
 data2$y = data2$y/100
 data2$diff_dist = NA
 for (k in 2:nrow(data2)){
-  data2$diff_dist[k] = as.numeric(dist(data2[(k-1):k,c("x","y")]))
+  data2$diff_dist[k] = round(as.numeric(dist(data2[(k-1):k,c("x","y")])), 3)
 }
 
 data = rbind.data.frame(data1, data2)
@@ -115,7 +117,7 @@ for (k in 1:nt){
   cat("\n")
   cat("## ", "case", k, "\n")
   t2 = order(data2$diff_dist, decreasing = T)[k]
-  dat2 = data2[(t2-1):(t2+1),]
+  dat2 = data2[(t2-5):(t2+5),]
   print(tagList(datatable(dat2)))
   
   dat1 = data1 %>%
@@ -127,7 +129,7 @@ for (k in 1:nt){
   }else{
     q <- p + theme_bw() +
       geom_point(data = dat1, aes(x=x, y=y, col="Testeur"), na.rm = T) +
-      geom_point(data = dat2, aes(x=x, y=y, col="Antoine"), na.rm = T) +
+      geom_point(data = data2[(t2-1):(t2),], aes(x=x, y=y, col="Antoine"), na.rm = T) +
       scale_color_manual(values = c("blue", "red")) +
       coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
       theme(legend.title = element_blank()) +
