@@ -517,16 +517,16 @@ This reproducible <a href="https://rmarkdown.rstudio.com">R Markdown</a> analysi
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreed16894fdebe7fc43123134f5533037ece89a5842targetblankd16894fa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/d16894fdebe7fc43123134f5533037ece89a5842" target="_blank">d16894f</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreed51120b780abea008b5aecf3c2589d8fafab8f26targetblankd51120ba"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/d51120b780abea008b5aecf3c2589d8fafab8f26" target="_blank">d51120b</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreed16894fdebe7fc43123134f5533037ece89a5842targetblankd16894fa" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreed51120b780abea008b5aecf3c2589d8fafab8f26targetblankd51120ba" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/d16894fdebe7fc43123134f5533037ece89a5842" target="_blank">d16894f</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/d51120b780abea008b5aecf3c2589d8fafab8f26" target="_blank">d51120b</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -580,6 +580,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/d51120b780abea008b5aecf3c2589d8fafab8f26/analysis/index.Rmd" target="_blank">d51120b</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-03-28
+</td>
+<td>
+some changes
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cfcforever/Test/bb9f907f0f6e7206c391144e2d6aa2825641feef/docs/index.html" target="_blank">bb9f907</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-03-28
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1595,13 +1629,16 @@ Start workflowr project.
 <h1>Tags and labels</h1>
 <pre class="r"><code>names_tag &lt;- read.xlsx(&quot;data/Inventaire Tags - Firminy - 2022.xlsx&quot;)
 names_tag = names_tag[,c(&quot;Identifiant&quot;,&quot;etiquette&quot;,&quot;affectation&quot;,&quot;Type&quot;)]
+names_tag$etiquette = as.factor(names_tag$etiquette)
+names_tag$affectation = as.factor(names_tag$affectation)
+names_tag$Type = as.factor(names_tag$Type)
 
 # kable(names_tag) %&gt;%
 #   kable_styling(bootstrap_options = &quot;striped&quot;, full_width = F)
 
 datatable(names_tag, filter = &quot;top&quot;, class = &#39;cell-border stripe&#39;, options = list(pageLength = nrow(names_tag)))</code></pre>
 <div id="htmlwidget-2425ed13f6d215e4fcb9" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2425ed13f6d215e4fcb9">{"x":{"filter":"top","vertical":false,"filterHTML":"<tr>\n  <td><\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67"],["4586","3721","460b","67cf","4258","2e56","4288","424f","4585","4596","181b","3722","3719","1669","4273","436d","14bc","468c","4f2e","38d7","4592","4584","36fb","11d2","1a04","1a0a","44e0","1a10","373f","3906","44c5","2a51","0da6","2f7b","2a73","2f40","2f77","2b9c","0d82","29ed","2c57","28e9","2e8d","0baf","0db4","2dd9","19ab","28d2","2e55","cf31","8718","58b2","d9b7","c901","da0c","0a98","4270","44d8","424d","15c0","4219","503a","422e","460e","44db","295e","5afc"],["Blanche","Blanche","Blanche","Blanche","Blanche","Blanche","Blanche","Blanche","Blanche","Verte","Verte","Verte","Verte","Verte","Verte","Verte","Verte","Bleue","Bleue","Bleue","Bleue","Bleue","Bleue","jaune","jaune","jaune","rouge","rouge","rouge","rouge","rouge",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],["Francois","Catherine","brancard","brancard","brancard","brancard","Antoine","brancard","brancard","Medecin","Medecin","Medecin","Medecin","Medecin","Medecin","Medecin","Medecin","Soignant","Soignant","Soignant","Soignant","Soignant","Soignant","Aide soignant","Aide soignant","Aide soignant","brancard","brancard","brancard","echographe","brancard","bladder","brancard","brancard","brancard","brancard","brancard","brancard","chariot","chariot","dynamap","dynamap","dynamap","electro-cardiogramme","fauteuil","fauteuil","Tag fixe","ordi","scope","Medecin","Medecin","Medecin","Soignant","Soignant","Soignant","Medecin","IDE","IDE","IDE","IDE","IDE","Aide soignant","Aide soignant","Aide soignant","Aide soignant","Testeur","Testeur"],["Personnel","Personnel","Materiel","Materiel","Materiel","Materiel","Personnel","Materiel","Materiel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Materiel","Materiel","Materiel","Materiel","Materiel","Materiel","Materiel","Materiel","Materiel","Materiel","Materiel","Materiel","Materiel","Materiel","Materiel","Materiel","Materiel","Materiel","Materiel","Materiel","Tag","Materiel","Materiel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel"]],"container":"<table class=\"cell-border stripe\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Identifiant<\/th>\n      <th>etiquette<\/th>\n      <th>affectation<\/th>\n      <th>Type<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":67,"order":[],"autoWidth":false,"orderClasses":false,"columnDefs":[{"orderable":false,"targets":0}],"orderCellsTop":true,"lengthMenu":[10,25,50,67,100]}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-2425ed13f6d215e4fcb9">{"x":{"filter":"top","vertical":false,"filterHTML":"<tr>\n  <td><\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"factor\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"width: 100%; display: none;\">\n      <select multiple=\"multiple\" style=\"width: 100%;\" data-options=\"[&quot;Blanche&quot;,&quot;Bleue&quot;,&quot;jaune&quot;,&quot;rouge&quot;,&quot;Verte&quot;]\"><\/select>\n    <\/div>\n  <\/td>\n  <td data-type=\"factor\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"width: 100%; display: none;\">\n      <select multiple=\"multiple\" style=\"width: 100%;\" data-options=\"[&quot;Aide soignant&quot;,&quot;Antoine&quot;,&quot;bladder&quot;,&quot;brancard&quot;,&quot;Catherine&quot;,&quot;chariot&quot;,&quot;dynamap&quot;,&quot;echographe&quot;,&quot;electro-cardiogramme&quot;,&quot;fauteuil&quot;,&quot;Francois&quot;,&quot;IDE&quot;,&quot;Medecin&quot;,&quot;ordi&quot;,&quot;scope&quot;,&quot;Soignant&quot;,&quot;Tag fixe&quot;,&quot;Testeur&quot;]\"><\/select>\n    <\/div>\n  <\/td>\n  <td data-type=\"factor\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"width: 100%; display: none;\">\n      <select multiple=\"multiple\" style=\"width: 100%;\" data-options=\"[&quot;Materiel&quot;,&quot;Personnel&quot;,&quot;Tag&quot;]\"><\/select>\n    <\/div>\n  <\/td>\n<\/tr>","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67"],["4586","3721","460b","67cf","4258","2e56","4288","424f","4585","4596","181b","3722","3719","1669","4273","436d","14bc","468c","4f2e","38d7","4592","4584","36fb","11d2","1a04","1a0a","44e0","1a10","373f","3906","44c5","2a51","0da6","2f7b","2a73","2f40","2f77","2b9c","0d82","29ed","2c57","28e9","2e8d","0baf","0db4","2dd9","19ab","28d2","2e55","cf31","8718","58b2","d9b7","c901","da0c","0a98","4270","44d8","424d","15c0","4219","503a","422e","460e","44db","295e","5afc"],["Blanche","Blanche","Blanche","Blanche","Blanche","Blanche","Blanche","Blanche","Blanche","Verte","Verte","Verte","Verte","Verte","Verte","Verte","Verte","Bleue","Bleue","Bleue","Bleue","Bleue","Bleue","jaune","jaune","jaune","rouge","rouge","rouge","rouge","rouge",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],["Francois","Catherine","brancard","brancard","brancard","brancard","Antoine","brancard","brancard","Medecin","Medecin","Medecin","Medecin","Medecin","Medecin","Medecin","Medecin","Soignant","Soignant","Soignant","Soignant","Soignant","Soignant","Aide soignant","Aide soignant","Aide soignant","brancard","brancard","brancard","echographe","brancard","bladder","brancard","brancard","brancard","brancard","brancard","brancard","chariot","chariot","dynamap","dynamap","dynamap","electro-cardiogramme","fauteuil","fauteuil","Tag fixe","ordi","scope","Medecin","Medecin","Medecin","Soignant","Soignant","Soignant","Medecin","IDE","IDE","IDE","IDE","IDE","Aide soignant","Aide soignant","Aide soignant","Aide soignant","Testeur","Testeur"],["Personnel","Personnel","Materiel","Materiel","Materiel","Materiel","Personnel","Materiel","Materiel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Materiel","Materiel","Materiel","Materiel","Materiel","Materiel","Materiel","Materiel","Materiel","Materiel","Materiel","Materiel","Materiel","Materiel","Materiel","Materiel","Materiel","Materiel","Materiel","Materiel","Tag","Materiel","Materiel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel","Personnel"]],"container":"<table class=\"cell-border stripe\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Identifiant<\/th>\n      <th>etiquette<\/th>\n      <th>affectation<\/th>\n      <th>Type<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":67,"order":[],"autoWidth":false,"orderClasses":false,"columnDefs":[{"orderable":false,"targets":0}],"orderCellsTop":true,"lengthMenu":[10,25,50,67,100]}},"evals":[],"jsHooks":[]}</script>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
