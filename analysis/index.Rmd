@@ -23,6 +23,6 @@ names_tag = names_tag[,c("Identifiant","etiquette","affectation","Type")]
 # kable(names_tag) %>%
 #   kable_styling(bootstrap_options = "striped", full_width = F)
 
-datatable(names_tag, class = 'cell-border stripe', options = list(pageLength = nrow(names_tag)))
+datatable(names_tag, filter = "top", class = 'cell-border stripe', options = list(pageLength = nrow(names_tag)))
 ```
 
