@@ -19,6 +19,9 @@ source("code/packages_and_functions.R")
 ```{r}
 names_tag <- read.xlsx("data/Inventaire Tags - Firminy - 2022.xlsx")
 names_tag = names_tag[,c("Identifiant","etiquette","affectation","Type")]
+names_tag$etiquette = as.factor(names_tag$etiquette)
+names_tag$affectation = as.factor(names_tag$affectation)
+names_tag$Type = as.factor(names_tag$Type)
 
 # kable(names_tag) %>%
 #   kable_styling(bootstrap_options = "striped", full_width = F)
