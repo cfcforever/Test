@@ -1,5 +1,5 @@
 ---
-title: "2022-03-29"
+title: "2022-03-30"
 # author: "cfcforever"
 # date: ""
 output: 
@@ -25,7 +25,7 @@ source("code/packages_and_functions.R")
 
 # load data.json
 ```{r}
-today = "2022-03-29"
+today = "2022-03-30"
 cat("data on:", today, "\n")
 
 json_data = fromJSON(file = paste0("data/json/", today, "/position.json"))
