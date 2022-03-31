@@ -44,8 +44,11 @@ cat(nb_tag, "Tags are: ", tagId, "\n")
 dat <- data.frame(tag = unlist(lapply(json_data, function(x){x["tag_id"][[1]]})),
                   x = unlist(lapply(json_data, function(x){x["x"][[1]]})),
                   y = unlist(lapply(json_data, function(x){x["y"][[1]]})),
+                  frame = unlist(lapply(json_data, function(x){x["super_frame_number"][[1]]})),
+                  quality = unlist(lapply(json_data, function(x){x["quality"][[1]]})),
                   record_timestamp = unlist(lapply(json_data, function(x){x["record_timestamp"][[1]]})))
 dat = dat[order(dat$record_timestamp),]
+rownames(dat) = 1:nrow(dat)
 dat = cbind.data.frame(dat, convert_date(dat$record_timestamp))
 dat$x = as.numeric(dat$x)/100
 dat$y = as.numeric(dat$y)/100
@@ -78,6 +81,7 @@ for (k in 1:nb_tag){
   tag = table_tag$tag[k]
   temp = list_tag[tag][[1]]
   temp$diff_ts = c(0, temp$record_timestamp[-1]-temp$record_timestamp[-nrow(temp)])
+  temp$diff_dist = c(NaN, sqrt((temp$x[-1] - temp$x[-nrow(temp)])^2 + (temp$y[-1] - temp$y[-nrow(temp)])^2))
   
   table_tag$first_record[k] = head(as.character(temp$date),1)
   table_tag$last_record[k] = tail(as.character(temp$date),1)
