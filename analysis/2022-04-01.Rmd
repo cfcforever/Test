@@ -1,5 +1,5 @@
 ---
-title: "2022-04-01"
+title: "2022-03-28"
 # author: "cfcforever"
 # date: ""
 output: 
@@ -8,24 +8,15 @@ output:
 editor_options:
   chunk_output_type: console
 ---
-<style type="text/css">
-   body{
-   font-size: 12pt;
-   color: blue;
-}
-</style>
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(eval = TRUE, message=FALSE, warning=FALSE)
-```
-```{r}
+```{r include=FALSE}
 source("code/packages_and_functions.R")
 ```
 
 
 # load data.json
 ```{r}
-today = "2022-04-01"
+today = "2022-03-28"
 cat("data on:", today, "\n")
 
 json_data = fromJSON(file = paste0("data/json/", today, "/position.json"))
@@ -44,14 +35,11 @@ cat(nb_tag, "Tags are: ", tagId, "\n")
 dat <- data.frame(tag = unlist(lapply(json_data, function(x){x["tag_id"][[1]]})),
                   x = unlist(lapply(json_data, function(x){x["x"][[1]]})),
                   y = unlist(lapply(json_data, function(x){x["y"][[1]]})),
-                  frame = unlist(lapply(json_data, function(x){x["super_frame_number"][[1]]})),
-                  quality = unlist(lapply(json_data, function(x){x["quality"][[1]]})),
                   record_timestamp = unlist(lapply(json_data, function(x){x["record_timestamp"][[1]]})))
 dat = dat[order(dat$record_timestamp),]
-rownames(dat) = 1:nrow(dat)
 dat = cbind.data.frame(dat, convert_date(dat$record_timestamp))
-dat$x = as.numeric(dat$x)/100
-dat$y = as.numeric(dat$y)/100
+dat$x = as.numeric(dat$x)
+dat$y = as.numeric(dat$y)
 
 names_tag <- read.xlsx("data/Inventaire Tags - Firminy - 2022.xlsx")
 names_tag = names_tag %>% filter(Identifiant %in% tagId)
@@ -63,6 +51,10 @@ dat$label = factor(dat$tag, levels = names_tag$Identifiant, labels = names_tag$a
 dat$tagn = as.numeric(factor(dat$tag, levels = names_tag$Identifiant, labels = 1:nb_tag))
 
 list_tag <- split(dat, dat$tag)
+list_tag = lapply(list_tag, function(x){
+  x$diff_ts = c(0, x$record_timestamp[-1]-x$record_timestamp[-nrow(x)])
+  x = x[c(1,which(x$diff_ts>=0.1)),]
+})
 ```
 
 
@@ -75,35 +67,28 @@ table_tag$last_record = NA
 table_tag$number = NA
 table_tag$number_NA = NA
 table_tag$ratio_non_NA = NA
-table_tag$abnormal_record = NA
+# table_tag$freq_1Q = NA
+# table_tag$freq_median = NA
+# table_tag$freq_3Q = NA
+
 
 for (k in 1:nb_tag){
   tag = table_tag$tag[k]
   temp = list_tag[tag][[1]]
   temp$diff_ts = c(0, temp$record_timestamp[-1]-temp$record_timestamp[-nrow(temp)])
-  temp$diff_dist = c(NaN, sqrt((temp$x[-1] - temp$x[-nrow(temp)])^2 + (temp$y[-1] - temp$y[-nrow(temp)])^2))
   
   table_tag$first_record[k] = head(as.character(temp$date),1)
   table_tag$last_record[k] = tail(as.character(temp$date),1)
   table_tag$number[k] = nrow(temp)
   table_tag$number_NA[k] = sum(is.na(temp$x))
   table_tag$ratio_non_NA[k] = round(1-table_tag$number_NA[k]/table_tag$number[k],2)
-  table_tag$abnormal_record[k] = sum(temp$diff_ts[-1]<=0.1, na.rm = T)
+  # table_tag$freq_1Q[k] = round(quantile(temp$diff_ts, 0.25), 3)
+  # table_tag$freq_median[k] = round(quantile(temp$diff_ts, 0.5), 3)
+  # table_tag$freq_3Q[k] = round(quantile(temp$diff_ts, 0.75), 3)
 }
 
-# kable(table_tag) %>%
-#   kable_styling(bootstrap_options = "striped", full_width = T)
-table_tag$label = factor(table_tag$label)
-datatable(table_tag, filter = "top", rownames = FALSE, options = list(pageLength = nrow(table_tag)))
-```
-
-In the table above, the abnormal record means the number of records which have a frequency less than 100ms.\
-We will remove these records.
-```{r}
-list_tag = lapply(list_tag, function(x){
-  x$diff_ts = c(0, x$record_timestamp[-1]-x$record_timestamp[-nrow(x)])
-  x = x[c(1,which(x$diff_ts>=0.1)),]
-})
+kable(table_tag) %>%
+  kable_styling(bootstrap_options = "striped", full_width = T)
 ```
 
 
