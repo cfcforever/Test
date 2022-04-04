@@ -14,7 +14,7 @@
 <title>2022-03-31</title>
 
 <script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
-<script src="site_libs/jquery-3.5.1/jquery-3.5.1.min.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -36,18 +36,6 @@
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<script src="site_libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
-<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="site_libs/datatables-binding-0.19/datatables.js"></script>
-<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="site_libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
-<link href="site_libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
-<script src="site_libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
-<link href="site_libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
-<script src="site_libs/selectize-0.12.0/selectize.min.js"></script>
-<link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
-<script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
 <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
@@ -428,7 +416,7 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2022-04-01
+<strong>Last updated:</strong> 2022-04-04
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -519,16 +507,16 @@ This reproducible <a href="https://rmarkdown.rstudio.com">R Markdown</a> analysi
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree4bb6dabfa9fa7e4bfa96cd72ddcee1da36a09d00targetblank4bb6daba"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/4bb6dabfa9fa7e4bfa96cd72ddcee1da36a09d00" target="_blank">4bb6dab</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreef0d2601caf1fe8646321cbb4355d2a8e911c2b87targetblankf0d2601a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/f0d2601caf1fe8646321cbb4355d2a8e911c2b87" target="_blank">f0d2601</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree4bb6dabfa9fa7e4bfa96cd72ddcee1da36a09d00targetblank4bb6daba" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttreef0d2601caf1fe8646321cbb4355d2a8e911c2b87targetblankf0d2601a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/4bb6dabfa9fa7e4bfa96cd72ddcee1da36a09d00" target="_blank">4bb6dab</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/f0d2601caf1fe8646321cbb4355d2a8e911c2b87" target="_blank">f0d2601</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -544,6 +532,11 @@ Ignored files:
     Ignored:    fig/
     Ignored:    figure/
     Ignored:    workflowr.R
+
+Unstaged changes:
+    Modified:   analysis/2022-04-01.Rmd
+    Deleted:    analysis/2022-04-02.Rmd
+    Deleted:    analysis/2022-04-03.Rmd
 
 </code></pre>
 <p>
@@ -582,6 +575,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/f0d2601caf1fe8646321cbb4355d2a8e911c2b87/analysis/2022-03-31.Rmd" target="_blank">f0d2601</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-04
+</td>
+<td>
+add new content
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cfcforever/Test/957e4555c4b641624bebe5744eebd55823e80776/docs/2022-03-31.html" target="_blank">957e455</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-01
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -674,13 +701,6 @@ add new content
 </div>
 </div>
 </div>
-<style type="text/css">
-   body{
-   font-size: 12pt;
-   color: blue;
-}
-</style>
-<pre class="r"><code>source(&quot;code/packages_and_functions.R&quot;)</code></pre>
 <div id="load-data.json" class="section level1">
 <h1>load data.json</h1>
 <pre class="r"><code>today = &quot;2022-03-31&quot;
@@ -701,14 +721,11 @@ cat(nb_tag, &quot;Tags are: &quot;, tagId, &quot;\n&quot;)</code></pre>
 <pre class="r"><code>dat &lt;- data.frame(tag = unlist(lapply(json_data, function(x){x[&quot;tag_id&quot;][[1]]})),
                   x = unlist(lapply(json_data, function(x){x[&quot;x&quot;][[1]]})),
                   y = unlist(lapply(json_data, function(x){x[&quot;y&quot;][[1]]})),
-                  frame = unlist(lapply(json_data, function(x){x[&quot;super_frame_number&quot;][[1]]})),
-                  quality = unlist(lapply(json_data, function(x){x[&quot;quality&quot;][[1]]})),
                   record_timestamp = unlist(lapply(json_data, function(x){x[&quot;record_timestamp&quot;][[1]]})))
 dat = dat[order(dat$record_timestamp),]
-rownames(dat) = 1:nrow(dat)
 dat = cbind.data.frame(dat, convert_date(dat$record_timestamp))
-dat$x = as.numeric(dat$x)/100
-dat$y = as.numeric(dat$y)/100
+dat$x = as.numeric(dat$x)
+dat$y = as.numeric(dat$y)
 
 names_tag &lt;- read.xlsx(&quot;data/Inventaire Tags - Firminy - 2022.xlsx&quot;)
 names_tag = names_tag %&gt;% filter(Identifiant %in% tagId)
@@ -719,7 +736,11 @@ nb_tag = length(tagId)
 dat$label = factor(dat$tag, levels = names_tag$Identifiant, labels = names_tag$affectation)
 dat$tagn = as.numeric(factor(dat$tag, levels = names_tag$Identifiant, labels = 1:nb_tag))
 
-list_tag &lt;- split(dat, dat$tag)</code></pre>
+list_tag &lt;- split(dat, dat$tag)
+list_tag = lapply(list_tag, function(x){
+  x$diff_ts = c(0, x$record_timestamp[-1]-x$record_timestamp[-nrow(x)])
+  x = x[c(1,which(x$diff_ts&gt;=0.1)),]
+})</code></pre>
 <div id="quality-of-collecting-data" class="section level2">
 <h2>quality of collecting data</h2>
 <div id="statistics-of-collecting-data" class="section level3">
@@ -730,34 +751,471 @@ table_tag$last_record = NA
 table_tag$number = NA
 table_tag$number_NA = NA
 table_tag$ratio_non_NA = NA
-table_tag$abnormal_record = NA
+# table_tag$freq_1Q = NA
+# table_tag$freq_median = NA
+# table_tag$freq_3Q = NA
+
 
 for (k in 1:nb_tag){
   tag = table_tag$tag[k]
   temp = list_tag[tag][[1]]
   temp$diff_ts = c(0, temp$record_timestamp[-1]-temp$record_timestamp[-nrow(temp)])
-  temp$diff_dist = c(NaN, sqrt((temp$x[-1] - temp$x[-nrow(temp)])^2 + (temp$y[-1] - temp$y[-nrow(temp)])^2))
   
   table_tag$first_record[k] = head(as.character(temp$date),1)
   table_tag$last_record[k] = tail(as.character(temp$date),1)
   table_tag$number[k] = nrow(temp)
   table_tag$number_NA[k] = sum(is.na(temp$x))
   table_tag$ratio_non_NA[k] = round(1-table_tag$number_NA[k]/table_tag$number[k],2)
-  table_tag$abnormal_record[k] = sum(temp$diff_ts[-1]&lt;=0.1, na.rm = T)
+  # table_tag$freq_1Q[k] = round(quantile(temp$diff_ts, 0.25), 3)
+  # table_tag$freq_median[k] = round(quantile(temp$diff_ts, 0.5), 3)
+  # table_tag$freq_3Q[k] = round(quantile(temp$diff_ts, 0.75), 3)
 }
 
-# kable(table_tag) %&gt;%
-#   kable_styling(bootstrap_options = &quot;striped&quot;, full_width = T)
-table_tag$label = factor(table_tag$label)
-datatable(table_tag, filter = &quot;top&quot;, rownames = FALSE, options = list(pageLength = nrow(table_tag)))</code></pre>
-<div id="htmlwidget-2425ed13f6d215e4fcb9" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2425ed13f6d215e4fcb9">{"x":{"filter":"top","vertical":false,"filterHTML":"<tr>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"factor\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"width: 100%; display: none;\">\n      <select multiple=\"multiple\" style=\"width: 100%;\" data-options=\"[&quot;Aide soignant&quot;,&quot;Antoine&quot;,&quot;brancard&quot;,&quot;Catherine&quot;,&quot;echographe&quot;,&quot;Francois&quot;,&quot;IDE&quot;,&quot;Medecin&quot;,&quot;Soignant&quot;,&quot;Tag fixe&quot;]\"><\/select>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"624\" data-max=\"423557\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"8\" data-max=\"31588\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"0\" data-max=\"0.99\" data-scale=\"2\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"0\" data-max=\"1092\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","data":[["4586","3721","4288","4273","436d","38d7","4584","1a0a","3906","2f7b","2f40","2b9c","19ab","4270","44d8","15c0","4219","503a"],["Francois","Catherine","Antoine","Medecin","Medecin","Soignant","Soignant","Aide soignant","echographe","brancard","brancard","brancard","Tag fixe","IDE","IDE","IDE","IDE","Aide soignant"],["2022-03-31 09:04:31","2022-03-31 08:14:29","2022-03-31 09:07:51","2022-03-31 00:03:11","2022-03-31 00:20:41","2022-03-31 08:57:59","2022-03-31 00:00:00","2022-03-31 07:20:48","2022-03-31 13:02:31","2022-03-31 02:32:42","2022-03-31 09:35:29","2022-03-31 00:01:48","2022-03-31 00:00:00","2022-03-31 01:26:41","2022-03-31 01:42:39","2022-03-31 00:00:00","2022-03-31 08:57:58","2022-03-31 02:36:42"],["2022-03-31 19:01:07","2022-03-31 17:36:53","2022-03-31 10:06:40","2022-03-31 16:40:45","2022-03-31 10:06:08","2022-03-31 23:40:50","2022-03-31 23:57:38","2022-03-31 19:28:52","2022-03-31 21:32:24","2022-03-31 23:43:15","2022-03-31 23:59:41","2022-03-31 23:39:46","2022-03-31 23:59:59","2022-03-31 09:53:56","2022-03-31 22:55:49","2022-03-31 22:55:41","2022-03-31 10:06:52","2022-03-31 22:55:54"],[9777,34054,717,48386,21097,146000,186878,107009,624,19020,3391,7393,423557,684,9856,183165,732,11942],[4360,8549,717,7511,2509,24840,28993,13177,8,472,87,792,31588,683,745,13669,513,3490],[0.55,0.75,0,0.84,0.88,0.83,0.84,0.88,0.99,0.98,0.97,0.89,0.93,0,0.92,0.93,0.3,0.71],[63,333,0,181,97,890,697,673,0,63,18,88,333,0,2,1092,0,8]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>tag<\/th>\n      <th>label<\/th>\n      <th>first_record<\/th>\n      <th>last_record<\/th>\n      <th>number<\/th>\n      <th>number_NA<\/th>\n      <th>ratio_non_NA<\/th>\n      <th>abnormal_record<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":18,"columnDefs":[{"className":"dt-right","targets":[4,5,6,7]}],"order":[],"autoWidth":false,"orderClasses":false,"orderCellsTop":true,"lengthMenu":[10,18,25,50,100]}},"evals":[],"jsHooks":[]}</script>
-<p>In the table above, the abnormal record means the number of records which have a frequency less than 100ms.<br />
-We will remove these records.</p>
-<pre class="r"><code>list_tag = lapply(list_tag, function(x){
-  x$diff_ts = c(0, x$record_timestamp[-1]-x$record_timestamp[-nrow(x)])
-  x = x[c(1,which(x$diff_ts&gt;=0.1)),]
-})</code></pre>
+kable(table_tag) %&gt;%
+  kable_styling(bootstrap_options = &quot;striped&quot;, full_width = T)</code></pre>
+<table class="table table-striped" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+tag
+</th>
+<th style="text-align:left;">
+label
+</th>
+<th style="text-align:left;">
+first_record
+</th>
+<th style="text-align:left;">
+last_record
+</th>
+<th style="text-align:right;">
+number
+</th>
+<th style="text-align:right;">
+number_NA
+</th>
+<th style="text-align:right;">
+ratio_non_NA
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+4586
+</td>
+<td style="text-align:left;">
+Francois
+</td>
+<td style="text-align:left;">
+2022-03-31 09:04:31
+</td>
+<td style="text-align:left;">
+2022-03-31 19:01:07
+</td>
+<td style="text-align:right;">
+9714
+</td>
+<td style="text-align:right;">
+4345
+</td>
+<td style="text-align:right;">
+0.55
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3721
+</td>
+<td style="text-align:left;">
+Catherine
+</td>
+<td style="text-align:left;">
+2022-03-31 08:14:29
+</td>
+<td style="text-align:left;">
+2022-03-31 17:36:53
+</td>
+<td style="text-align:right;">
+33721
+</td>
+<td style="text-align:right;">
+8505
+</td>
+<td style="text-align:right;">
+0.75
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4288
+</td>
+<td style="text-align:left;">
+Antoine
+</td>
+<td style="text-align:left;">
+2022-03-31 09:07:51
+</td>
+<td style="text-align:left;">
+2022-03-31 10:06:40
+</td>
+<td style="text-align:right;">
+717
+</td>
+<td style="text-align:right;">
+717
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4273
+</td>
+<td style="text-align:left;">
+Medecin
+</td>
+<td style="text-align:left;">
+2022-03-31 00:03:11
+</td>
+<td style="text-align:left;">
+2022-03-31 16:40:45
+</td>
+<td style="text-align:right;">
+48205
+</td>
+<td style="text-align:right;">
+7488
+</td>
+<td style="text-align:right;">
+0.84
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+436d
+</td>
+<td style="text-align:left;">
+Medecin
+</td>
+<td style="text-align:left;">
+2022-03-31 00:20:41
+</td>
+<td style="text-align:left;">
+2022-03-31 10:06:08
+</td>
+<td style="text-align:right;">
+21000
+</td>
+<td style="text-align:right;">
+2505
+</td>
+<td style="text-align:right;">
+0.88
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+38d7
+</td>
+<td style="text-align:left;">
+Soignant
+</td>
+<td style="text-align:left;">
+2022-03-31 08:57:59
+</td>
+<td style="text-align:left;">
+2022-03-31 23:40:50
+</td>
+<td style="text-align:right;">
+145110
+</td>
+<td style="text-align:right;">
+24751
+</td>
+<td style="text-align:right;">
+0.83
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4584
+</td>
+<td style="text-align:left;">
+Soignant
+</td>
+<td style="text-align:left;">
+2022-03-31 00:00:00
+</td>
+<td style="text-align:left;">
+2022-03-31 23:57:38
+</td>
+<td style="text-align:right;">
+186181
+</td>
+<td style="text-align:right;">
+28878
+</td>
+<td style="text-align:right;">
+0.84
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1a0a
+</td>
+<td style="text-align:left;">
+Aide soignant
+</td>
+<td style="text-align:left;">
+2022-03-31 07:20:48
+</td>
+<td style="text-align:left;">
+2022-03-31 19:28:52
+</td>
+<td style="text-align:right;">
+106336
+</td>
+<td style="text-align:right;">
+13141
+</td>
+<td style="text-align:right;">
+0.88
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3906
+</td>
+<td style="text-align:left;">
+echographe
+</td>
+<td style="text-align:left;">
+2022-03-31 13:02:31
+</td>
+<td style="text-align:left;">
+2022-03-31 21:32:24
+</td>
+<td style="text-align:right;">
+624
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+0.99
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2f7b
+</td>
+<td style="text-align:left;">
+brancard
+</td>
+<td style="text-align:left;">
+2022-03-31 02:32:42
+</td>
+<td style="text-align:left;">
+2022-03-31 23:43:15
+</td>
+<td style="text-align:right;">
+18957
+</td>
+<td style="text-align:right;">
+470
+</td>
+<td style="text-align:right;">
+0.98
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2f40
+</td>
+<td style="text-align:left;">
+brancard
+</td>
+<td style="text-align:left;">
+2022-03-31 09:35:29
+</td>
+<td style="text-align:left;">
+2022-03-31 23:59:41
+</td>
+<td style="text-align:right;">
+3373
+</td>
+<td style="text-align:right;">
+87
+</td>
+<td style="text-align:right;">
+0.97
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2b9c
+</td>
+<td style="text-align:left;">
+brancard
+</td>
+<td style="text-align:left;">
+2022-03-31 00:01:48
+</td>
+<td style="text-align:left;">
+2022-03-31 23:39:46
+</td>
+<td style="text-align:right;">
+7305
+</td>
+<td style="text-align:right;">
+789
+</td>
+<td style="text-align:right;">
+0.89
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+19ab
+</td>
+<td style="text-align:left;">
+Tag fixe
+</td>
+<td style="text-align:left;">
+2022-03-31 00:00:00
+</td>
+<td style="text-align:left;">
+2022-03-31 23:59:59
+</td>
+<td style="text-align:right;">
+423224
+</td>
+<td style="text-align:right;">
+31537
+</td>
+<td style="text-align:right;">
+0.93
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4270
+</td>
+<td style="text-align:left;">
+IDE
+</td>
+<td style="text-align:left;">
+2022-03-31 01:26:41
+</td>
+<td style="text-align:left;">
+2022-03-31 09:53:56
+</td>
+<td style="text-align:right;">
+684
+</td>
+<td style="text-align:right;">
+683
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+44d8
+</td>
+<td style="text-align:left;">
+IDE
+</td>
+<td style="text-align:left;">
+2022-03-31 01:42:39
+</td>
+<td style="text-align:left;">
+2022-03-31 22:55:49
+</td>
+<td style="text-align:right;">
+9854
+</td>
+<td style="text-align:right;">
+745
+</td>
+<td style="text-align:right;">
+0.92
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+15c0
+</td>
+<td style="text-align:left;">
+IDE
+</td>
+<td style="text-align:left;">
+2022-03-31 00:00:00
+</td>
+<td style="text-align:left;">
+2022-03-31 22:55:41
+</td>
+<td style="text-align:right;">
+182073
+</td>
+<td style="text-align:right;">
+13581
+</td>
+<td style="text-align:right;">
+0.93
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4219
+</td>
+<td style="text-align:left;">
+IDE
+</td>
+<td style="text-align:left;">
+2022-03-31 08:57:58
+</td>
+<td style="text-align:left;">
+2022-03-31 10:06:52
+</td>
+<td style="text-align:right;">
+732
+</td>
+<td style="text-align:right;">
+513
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+503a
+</td>
+<td style="text-align:left;">
+Aide soignant
+</td>
+<td style="text-align:left;">
+2022-03-31 02:36:42
+</td>
+<td style="text-align:left;">
+2022-03-31 22:55:54
+</td>
+<td style="text-align:right;">
+11934
+</td>
+<td style="text-align:right;">
+3484
+</td>
+<td style="text-align:right;">
+0.71
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="frequncy-check-of-collecting-data" class="section level3">
 <h3>frequncy check of collecting data</h3>
@@ -1650,37 +2108,37 @@ Francois
 12
 </td>
 <td style="text-align:right;">
-0.003
+0.292
 </td>
 <td style="text-align:right;">
-0.009
+0.874
 </td>
 <td style="text-align:right;">
-0.012
+1.215
 </td>
 <td style="text-align:right;">
-0.016
+1.562
 </td>
 <td style="text-align:right;">
-0.018
+1.795
 </td>
 <td style="text-align:right;">
-0.022
+2.188
 </td>
 <td style="text-align:right;">
-0.064
+6.379
 </td>
 <td style="text-align:right;">
-0.093
+9.338
 </td>
 <td style="text-align:right;">
-0.122
+12.162
 </td>
 <td style="text-align:right;">
-0.145
+14.501
 </td>
 <td style="text-align:right;">
-0.345
+34.547
 </td>
 </tr>
 <tr>
@@ -1694,37 +2152,37 @@ Catherine
 64
 </td>
 <td style="text-align:right;">
-0.001
+0.094
 </td>
 <td style="text-align:right;">
-0.007
+0.707
 </td>
 <td style="text-align:right;">
-0.010
+0.998
 </td>
 <td style="text-align:right;">
-0.020
+2.011
 </td>
 <td style="text-align:right;">
-0.029
+2.930
 </td>
 <td style="text-align:right;">
-0.046
+4.596
 </td>
 <td style="text-align:right;">
-0.061
+6.090
 </td>
 <td style="text-align:right;">
-0.065
+6.503
 </td>
 <td style="text-align:right;">
-0.098
+9.772
 </td>
 <td style="text-align:right;">
-0.140
+14.017
 </td>
 <td style="text-align:right;">
-0.409
+40.900
 </td>
 </tr>
 <tr>
@@ -1782,37 +2240,37 @@ Medecin
 117
 </td>
 <td style="text-align:right;">
-0.000
+0.036
 </td>
 <td style="text-align:right;">
-0.002
+0.223
 </td>
 <td style="text-align:right;">
-0.004
+0.351
 </td>
 <td style="text-align:right;">
-0.006
+0.619
 </td>
 <td style="text-align:right;">
-0.009
+0.878
 </td>
 <td style="text-align:right;">
-0.011
+1.121
 </td>
 <td style="text-align:right;">
-0.015
+1.460
 </td>
 <td style="text-align:right;">
-0.022
+2.211
 </td>
 <td style="text-align:right;">
-0.033
+3.332
 </td>
 <td style="text-align:right;">
-0.055
+5.453
 </td>
 <td style="text-align:right;">
-0.346
+34.580
 </td>
 </tr>
 <tr>
@@ -1826,37 +2284,37 @@ Medecin
 66
 </td>
 <td style="text-align:right;">
-0.000
+0.010
 </td>
 <td style="text-align:right;">
-0.002
+0.185
 </td>
 <td style="text-align:right;">
-0.004
+0.382
 </td>
 <td style="text-align:right;">
-0.005
+0.544
 </td>
 <td style="text-align:right;">
-0.008
+0.832
 </td>
 <td style="text-align:right;">
-0.011
+1.080
 </td>
 <td style="text-align:right;">
-0.021
+2.069
 </td>
 <td style="text-align:right;">
-0.031
+3.107
 </td>
 <td style="text-align:right;">
-0.038
+3.847
 </td>
 <td style="text-align:right;">
-0.077
+7.651
 </td>
 <td style="text-align:right;">
-0.321
+32.125
 </td>
 </tr>
 <tr>
@@ -1870,37 +2328,37 @@ Soignant
 195
 </td>
 <td style="text-align:right;">
-0.000
-</td>
-<td style="text-align:right;">
-0.002
-</td>
-<td style="text-align:right;">
-0.004
-</td>
-<td style="text-align:right;">
-0.008
-</td>
-<td style="text-align:right;">
-0.012
-</td>
-<td style="text-align:right;">
-0.016
-</td>
-<td style="text-align:right;">
 0.022
 </td>
 <td style="text-align:right;">
-0.033
+0.190
 </td>
 <td style="text-align:right;">
-0.054
+0.420
 </td>
 <td style="text-align:right;">
-0.098
+0.808
 </td>
 <td style="text-align:right;">
-0.338
+1.216
+</td>
+<td style="text-align:right;">
+1.571
+</td>
+<td style="text-align:right;">
+2.151
+</td>
+<td style="text-align:right;">
+3.298
+</td>
+<td style="text-align:right;">
+5.359
+</td>
+<td style="text-align:right;">
+9.786
+</td>
+<td style="text-align:right;">
+33.789
 </td>
 </tr>
 <tr>
@@ -1917,34 +2375,34 @@ Soignant
 0.000
 </td>
 <td style="text-align:right;">
-0.002
+0.228
 </td>
 <td style="text-align:right;">
-0.004
+0.426
 </td>
 <td style="text-align:right;">
-0.007
+0.698
 </td>
 <td style="text-align:right;">
-0.011
+1.056
 </td>
 <td style="text-align:right;">
-0.015
+1.507
 </td>
 <td style="text-align:right;">
-0.020
+1.984
 </td>
 <td style="text-align:right;">
-0.033
+3.267
 </td>
 <td style="text-align:right;">
-0.051
+5.104
 </td>
 <td style="text-align:right;">
-0.098
+9.762
 </td>
 <td style="text-align:right;">
-0.451
+45.060
 </td>
 </tr>
 <tr>
@@ -1958,37 +2416,37 @@ Aide soignant
 138
 </td>
 <td style="text-align:right;">
-0.000
+0.022
 </td>
 <td style="text-align:right;">
-0.003
+0.251
 </td>
 <td style="text-align:right;">
-0.004
+0.350
 </td>
 <td style="text-align:right;">
-0.005
+0.522
 </td>
 <td style="text-align:right;">
-0.008
+0.800
 </td>
 <td style="text-align:right;">
-0.013
+1.299
 </td>
 <td style="text-align:right;">
-0.021
+2.059
 </td>
 <td style="text-align:right;">
-0.035
+3.472
 </td>
 <td style="text-align:right;">
-0.069
+6.874
 </td>
 <td style="text-align:right;">
-0.118
+11.754
 </td>
 <td style="text-align:right;">
-0.349
+34.908
 </td>
 </tr>
 <tr>
@@ -2002,37 +2460,37 @@ echographe
 2
 </td>
 <td style="text-align:right;">
-0.002
+0.232
 </td>
 <td style="text-align:right;">
-0.012
+1.172
 </td>
 <td style="text-align:right;">
-0.021
+2.112
 </td>
 <td style="text-align:right;">
-0.031
+3.052
 </td>
 <td style="text-align:right;">
-0.040
+3.992
 </td>
 <td style="text-align:right;">
-0.049
+4.933
 </td>
 <td style="text-align:right;">
-0.059
+5.873
 </td>
 <td style="text-align:right;">
-0.068
+6.813
 </td>
 <td style="text-align:right;">
-0.078
+7.753
 </td>
 <td style="text-align:right;">
-0.087
+8.693
 </td>
 <td style="text-align:right;">
-0.096
+9.633
 </td>
 </tr>
 <tr>
@@ -2046,37 +2504,37 @@ brancard
 175
 </td>
 <td style="text-align:right;">
-0.000
+0.010
 </td>
 <td style="text-align:right;">
-0.001
+0.054
 </td>
 <td style="text-align:right;">
-0.001
+0.110
 </td>
 <td style="text-align:right;">
-0.002
+0.199
 </td>
 <td style="text-align:right;">
-0.003
+0.281
 </td>
 <td style="text-align:right;">
-0.004
+0.414
 </td>
 <td style="text-align:right;">
-0.005
+0.533
 </td>
 <td style="text-align:right;">
-0.007
+0.714
 </td>
 <td style="text-align:right;">
-0.009
+0.925
 </td>
 <td style="text-align:right;">
-0.016
+1.564
 </td>
 <td style="text-align:right;">
-0.109
+10.911
 </td>
 </tr>
 <tr>
@@ -2090,37 +2548,37 @@ brancard
 36
 </td>
 <td style="text-align:right;">
-0.001
+0.120
 </td>
 <td style="text-align:right;">
-0.003
+0.271
 </td>
 <td style="text-align:right;">
-0.003
+0.326
 </td>
 <td style="text-align:right;">
-0.004
+0.377
 </td>
 <td style="text-align:right;">
-0.005
+0.462
 </td>
 <td style="text-align:right;">
-0.006
+0.602
 </td>
 <td style="text-align:right;">
-0.010
+1.011
 </td>
 <td style="text-align:right;">
-0.019
+1.853
 </td>
 <td style="text-align:right;">
-0.028
+2.764
 </td>
 <td style="text-align:right;">
-0.034
+3.383
 </td>
 <td style="text-align:right;">
-0.100
+9.964
 </td>
 </tr>
 <tr>
@@ -2134,37 +2592,37 @@ brancard
 62
 </td>
 <td style="text-align:right;">
-0.000
-</td>
-<td style="text-align:right;">
-0.001
-</td>
-<td style="text-align:right;">
-0.002
-</td>
-<td style="text-align:right;">
-0.002
-</td>
-<td style="text-align:right;">
-0.004
-</td>
-<td style="text-align:right;">
-0.006
-</td>
-<td style="text-align:right;">
-0.011
-</td>
-<td style="text-align:right;">
-0.027
-</td>
-<td style="text-align:right;">
-0.055
+0.014
 </td>
 <td style="text-align:right;">
 0.091
 </td>
 <td style="text-align:right;">
-0.365
+0.152
+</td>
+<td style="text-align:right;">
+0.242
+</td>
+<td style="text-align:right;">
+0.351
+</td>
+<td style="text-align:right;">
+0.571
+</td>
+<td style="text-align:right;">
+1.085
+</td>
+<td style="text-align:right;">
+2.740
+</td>
+<td style="text-align:right;">
+5.518
+</td>
+<td style="text-align:right;">
+9.094
+</td>
+<td style="text-align:right;">
+36.487
 </td>
 </tr>
 <tr>
@@ -2181,34 +2639,34 @@ Tag fixe
 0.000
 </td>
 <td style="text-align:right;">
-0.000
+0.021
 </td>
 <td style="text-align:right;">
-0.000
+0.041
 </td>
 <td style="text-align:right;">
-0.001
+0.051
 </td>
 <td style="text-align:right;">
-0.001
+0.061
 </td>
 <td style="text-align:right;">
-0.001
+0.062
 </td>
 <td style="text-align:right;">
-0.001
+0.063
 </td>
 <td style="text-align:right;">
-0.001
+0.068
 </td>
 <td style="text-align:right;">
-0.001
+0.073
 </td>
 <td style="text-align:right;">
-0.001
+0.077
 </td>
 <td style="text-align:right;">
-0.001
+0.081
 </td>
 </tr>
 <tr>
@@ -2266,37 +2724,37 @@ IDE
 42
 </td>
 <td style="text-align:right;">
-0.000
+0.040
 </td>
 <td style="text-align:right;">
-0.001
+0.087
 </td>
 <td style="text-align:right;">
-0.002
+0.169
 </td>
 <td style="text-align:right;">
-0.003
+0.350
 </td>
 <td style="text-align:right;">
-0.005
+0.483
 </td>
 <td style="text-align:right;">
-0.007
+0.674
 </td>
 <td style="text-align:right;">
-0.009
+0.865
 </td>
 <td style="text-align:right;">
-0.011
+1.124
 </td>
 <td style="text-align:right;">
-0.013
+1.275
 </td>
 <td style="text-align:right;">
-0.015
+1.504
 </td>
 <td style="text-align:right;">
-0.029
+2.888
 </td>
 </tr>
 <tr>
@@ -2310,37 +2768,37 @@ IDE
 277
 </td>
 <td style="text-align:right;">
-0.000
+0.010
 </td>
 <td style="text-align:right;">
-0.003
+0.299
 </td>
 <td style="text-align:right;">
-0.004
+0.445
 </td>
 <td style="text-align:right;">
-0.006
+0.629
 </td>
 <td style="text-align:right;">
-0.009
+0.897
 </td>
 <td style="text-align:right;">
-0.012
+1.222
 </td>
 <td style="text-align:right;">
-0.017
+1.673
 </td>
 <td style="text-align:right;">
-0.024
+2.428
 </td>
 <td style="text-align:right;">
-0.035
+3.514
 </td>
 <td style="text-align:right;">
-0.058
+5.759
 </td>
 <td style="text-align:right;">
-0.404
+40.377
 </td>
 </tr>
 <tr>
@@ -2398,37 +2856,37 @@ Aide soignant
 35
 </td>
 <td style="text-align:right;">
-0.001
+0.058
 </td>
 <td style="text-align:right;">
-0.001
+0.124
 </td>
 <td style="text-align:right;">
-0.003
+0.297
 </td>
 <td style="text-align:right;">
-0.004
+0.426
 </td>
 <td style="text-align:right;">
-0.005
+0.493
 </td>
 <td style="text-align:right;">
-0.007
+0.728
 </td>
 <td style="text-align:right;">
-0.009
+0.901
 </td>
 <td style="text-align:right;">
-0.013
+1.305
 </td>
 <td style="text-align:right;">
-0.014
+1.360
 </td>
 <td style="text-align:right;">
-0.016
+1.551
 </td>
 <td style="text-align:right;">
-0.022
+2.151
 </td>
 </tr>
 </tbody>
@@ -2446,55 +2904,7 @@ p &lt;- ggplot(dat) + theme_bw() +
   theme(legend.position = &quot;None&quot;) +
   labs(x = &quot;hour&quot;, y = &quot;&quot;, title = today)
 print(p)</code></pre>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-8-1.png" width="1056" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-8-1">
-Past versions of unnamed-chunk-8-1.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-8-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-8-1.png" target="_blank">af04355</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/82519a26d7efc36260426328c5671414bd27e591/docs/figure/2022-03-31.Rmd/unnamed-chunk-8-1.png" target="_blank">82519a2</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-7-1.png" width="1056" style="display: block; margin: auto;" /></p>
 </div>
 <div id="number-nas" class="section level3">
 <h3>number NAs</h3>
@@ -2547,7 +2957,107 @@ dat = do.call(rbind.data.frame, list_tag)</code></pre>
 }</code></pre>
 <div id="francois" class="section level2">
 <h2>4586 - Francois</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="catherine" class="section level2">
+<h2>3721 - Catherine</h2>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-11-2.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="antoine" class="section level2">
+<h2>4288 - Antoine</h2>
+<p>NO DATA for plot!!</p>
+</div>
+<div id="medecin" class="section level2">
+<h2>4273 - Medecin</h2>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-11-3.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="d---medecin" class="section level2">
+<h2>436d - Medecin</h2>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-11-4.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="d7---soignant" class="section level2">
+<h2>38d7 - Soignant</h2>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-11-5.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="soignant" class="section level2">
+<h2>4584 - Soignant</h2>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-11-6.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="a0a---aide-soignant" class="section level2">
+<h2>1a0a - Aide soignant</h2>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-11-7.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="echographe" class="section level2">
+<h2>3906 - echographe</h2>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-11-8.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="f7b---brancard" class="section level2">
+<h2>2f7b - brancard</h2>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-11-9.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="f40---brancard" class="section level2">
+<h2>2f40 - brancard</h2>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-11-10.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="b9c---brancard" class="section level2">
+<h2>2b9c - brancard</h2>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-11-11.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="ab---tag-fixe" class="section level2">
+<h2>19ab - Tag fixe</h2>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-11-12.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="ide" class="section level2">
+<h2>4270 - IDE</h2>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-11-13.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="d8---ide" class="section level2">
+<h2>44d8 - IDE</h2>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-11-14.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="c0---ide" class="section level2">
+<h2>15c0 - IDE</h2>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-11-15.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="ide-1" class="section level2">
+<h2>4219 - IDE</h2>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-11-16.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="a---aide-soignant" class="section level2">
+<h2>503a - Aide soignant</h2>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-11-17.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="hourly-plot" class="section level1 tabset tabset-pills">
+<h1 class="tabset tabset-pills">hourly plot</h1>
+<pre class="r"><code>data &lt;- read.csv2(file = paste0(&quot;data/json/&quot;, today, &quot;/position.csv&quot;))
+tags = unique(data$tag)
+
+names_tag = read.xlsx(&quot;data/Inventaire Tags - Firminy - 2022.xlsx&quot;)
+
+tags = names_tag %&gt;% filter(Identifiant %in% tags)
+
+for (i in 1:nrow(tags)){
+  m  = tags$Identifiant[i]
+  ml = tags$affectation[i]
+  cat(&quot;\n&quot;)
+  cat(&quot;## &quot;, ml, &quot;(&quot;, m, &quot;)&quot;, &quot; {.tabset .tabset-pills}&quot;, &quot;\n&quot;)
+  
+  data_plot = data[data$tag==m,]
+  data_plot$H = factor(data_plot$H, levels = c(0:23))
+  data_plot$H = factor(data_plot$H, levels = c(0:23), labels = paste0(0:23, &quot;H - &quot;, table(data_plot$H[is.na(data_plot$x)]), &quot; (NA) /&quot;, table(data_plot$H), &quot; (Total)&quot;))
+    
+  q = p + theme_bw() +
+    geom_point(data = data_plot, aes(x=x, y=y), col=&quot;red&quot;, na.rm = T) +
+    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+    labs(x = &quot;&quot;, y = &quot;&quot;, title = paste0(ml, &quot; (&quot;, m, &quot;)&quot;)) + 
+    facet_wrap(~H, nrow = 4, drop = F)
+  print(q)
+  cat(&quot;\n&quot;)
+}</code></pre>
+<div id="francois-4586" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">Francois ( 4586 )</h2>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-1.png" width="1728" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-1">
 Past versions of unnamed-chunk-12-1.png
@@ -2570,6 +3080,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/957e4555c4b641624bebe5744eebd55823e80776/docs/figure/2022-03-31.Rmd/unnamed-chunk-12-1.png" target="_blank">957e455</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-01
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-12-1.png" target="_blank">af04355</a>
@@ -2597,9 +3118,9 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="catherine" class="section level2">
-<h2>3721 - Catherine</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-2.png" width="672" style="display: block; margin: auto;" /></p>
+<div id="catherine-3721" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">Catherine ( 3721 )</h2>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-2.png" width="1728" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-2">
 Past versions of unnamed-chunk-12-2.png
@@ -2622,6 +3143,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/957e4555c4b641624bebe5744eebd55823e80776/docs/figure/2022-03-31.Rmd/unnamed-chunk-12-2.png" target="_blank">957e455</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-01
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-12-2.png" target="_blank">af04355</a>
@@ -2649,13 +3181,9 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="antoine" class="section level2">
-<h2>4288 - Antoine</h2>
-<p>NO DATA for plot!!</p>
-</div>
-<div id="medecin" class="section level2">
-<h2>4273 - Medecin</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-3.png" width="672" style="display: block; margin: auto;" /></p>
+<div id="antoine-4288" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">Antoine ( 4288 )</h2>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-3.png" width="1728" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-3">
 Past versions of unnamed-chunk-12-3.png
@@ -2678,6 +3206,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/957e4555c4b641624bebe5744eebd55823e80776/docs/figure/2022-03-31.Rmd/unnamed-chunk-12-3.png" target="_blank">957e455</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-01
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-12-3.png" target="_blank">af04355</a>
@@ -2705,9 +3244,9 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="d---medecin" class="section level2">
-<h2>436d - Medecin</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-4.png" width="672" style="display: block; margin: auto;" /></p>
+<div id="medecin-4273" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">Medecin ( 4273 )</h2>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-4.png" width="1728" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-4">
 Past versions of unnamed-chunk-12-4.png
@@ -2730,6 +3269,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/957e4555c4b641624bebe5744eebd55823e80776/docs/figure/2022-03-31.Rmd/unnamed-chunk-12-4.png" target="_blank">957e455</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-01
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-12-4.png" target="_blank">af04355</a>
@@ -2757,9 +3307,9 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="d7---soignant" class="section level2">
-<h2>38d7 - Soignant</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-5.png" width="672" style="display: block; margin: auto;" /></p>
+<div id="medecin-436d" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">Medecin ( 436d )</h2>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-5.png" width="1728" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-5">
 Past versions of unnamed-chunk-12-5.png
@@ -2782,6 +3332,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/957e4555c4b641624bebe5744eebd55823e80776/docs/figure/2022-03-31.Rmd/unnamed-chunk-12-5.png" target="_blank">957e455</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-01
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-12-5.png" target="_blank">af04355</a>
@@ -2809,9 +3370,9 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="soignant" class="section level2">
-<h2>4584 - Soignant</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-6.png" width="672" style="display: block; margin: auto;" /></p>
+<div id="soignant-38d7" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">Soignant ( 38d7 )</h2>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-6.png" width="1728" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-6">
 Past versions of unnamed-chunk-12-6.png
@@ -2834,6 +3395,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/957e4555c4b641624bebe5744eebd55823e80776/docs/figure/2022-03-31.Rmd/unnamed-chunk-12-6.png" target="_blank">957e455</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-01
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-12-6.png" target="_blank">af04355</a>
@@ -2861,9 +3433,9 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="a0a---aide-soignant" class="section level2">
-<h2>1a0a - Aide soignant</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-7.png" width="672" style="display: block; margin: auto;" /></p>
+<div id="soignant-4584" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">Soignant ( 4584 )</h2>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-7.png" width="1728" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-7">
 Past versions of unnamed-chunk-12-7.png
@@ -2886,6 +3458,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/957e4555c4b641624bebe5744eebd55823e80776/docs/figure/2022-03-31.Rmd/unnamed-chunk-12-7.png" target="_blank">957e455</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-01
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-12-7.png" target="_blank">af04355</a>
@@ -2913,9 +3496,9 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="echographe" class="section level2">
-<h2>3906 - echographe</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-8.png" width="672" style="display: block; margin: auto;" /></p>
+<div id="aide-soignant-1a0a" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">Aide soignant ( 1a0a )</h2>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-8.png" width="1728" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-8">
 Past versions of unnamed-chunk-12-8.png
@@ -2938,6 +3521,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/957e4555c4b641624bebe5744eebd55823e80776/docs/figure/2022-03-31.Rmd/unnamed-chunk-12-8.png" target="_blank">957e455</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-01
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-12-8.png" target="_blank">af04355</a>
@@ -2965,9 +3559,9 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="f7b---brancard" class="section level2">
-<h2>2f7b - brancard</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-9.png" width="672" style="display: block; margin: auto;" /></p>
+<div id="echographe-3906" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">echographe ( 3906 )</h2>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-9.png" width="1728" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-9">
 Past versions of unnamed-chunk-12-9.png
@@ -3006,9 +3600,9 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="f40---brancard" class="section level2">
-<h2>2f40 - brancard</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-10.png" width="672" style="display: block; margin: auto;" /></p>
+<div id="brancard-2f7b" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">brancard ( 2f7b )</h2>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-10.png" width="1728" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-10">
 Past versions of unnamed-chunk-12-10.png
@@ -3031,6 +3625,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/957e4555c4b641624bebe5744eebd55823e80776/docs/figure/2022-03-31.Rmd/unnamed-chunk-12-10.png" target="_blank">957e455</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-01
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-12-10.png" target="_blank">af04355</a>
@@ -3058,9 +3663,9 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="b9c---brancard" class="section level2">
-<h2>2b9c - brancard</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-11.png" width="672" style="display: block; margin: auto;" /></p>
+<div id="brancard-2f40" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">brancard ( 2f40 )</h2>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-11.png" width="1728" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-11">
 Past versions of unnamed-chunk-12-11.png
@@ -3083,6 +3688,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/957e4555c4b641624bebe5744eebd55823e80776/docs/figure/2022-03-31.Rmd/unnamed-chunk-12-11.png" target="_blank">957e455</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-01
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-12-11.png" target="_blank">af04355</a>
@@ -3110,9 +3726,9 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="ab---tag-fixe" class="section level2">
-<h2>19ab - Tag fixe</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-12.png" width="672" style="display: block; margin: auto;" /></p>
+<div id="brancard-2b9c" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">brancard ( 2b9c )</h2>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-12.png" width="1728" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-12">
 Past versions of unnamed-chunk-12-12.png
@@ -3135,6 +3751,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/957e4555c4b641624bebe5744eebd55823e80776/docs/figure/2022-03-31.Rmd/unnamed-chunk-12-12.png" target="_blank">957e455</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-01
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-12-12.png" target="_blank">af04355</a>
@@ -3162,9 +3789,9 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="ide" class="section level2">
-<h2>4270 - IDE</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-13.png" width="672" style="display: block; margin: auto;" /></p>
+<div id="tag-fixe-19ab" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">Tag fixe ( 19ab )</h2>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-13.png" width="1728" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-13">
 Past versions of unnamed-chunk-12-13.png
@@ -3187,6 +3814,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/957e4555c4b641624bebe5744eebd55823e80776/docs/figure/2022-03-31.Rmd/unnamed-chunk-12-13.png" target="_blank">957e455</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-01
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-12-13.png" target="_blank">af04355</a>
@@ -3214,9 +3852,9 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="d8---ide" class="section level2">
-<h2>44d8 - IDE</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-14.png" width="672" style="display: block; margin: auto;" /></p>
+<div id="ide-4270" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">IDE ( 4270 )</h2>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-14.png" width="1728" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-14">
 Past versions of unnamed-chunk-12-14.png
@@ -3239,6 +3877,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/957e4555c4b641624bebe5744eebd55823e80776/docs/figure/2022-03-31.Rmd/unnamed-chunk-12-14.png" target="_blank">957e455</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-01
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-12-14.png" target="_blank">af04355</a>
@@ -3266,9 +3915,9 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="c0---ide" class="section level2">
-<h2>15c0 - IDE</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-15.png" width="672" style="display: block; margin: auto;" /></p>
+<div id="ide-44d8" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">IDE ( 44d8 )</h2>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-15.png" width="1728" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-15">
 Past versions of unnamed-chunk-12-15.png
@@ -3291,6 +3940,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/957e4555c4b641624bebe5744eebd55823e80776/docs/figure/2022-03-31.Rmd/unnamed-chunk-12-15.png" target="_blank">957e455</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-01
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-12-15.png" target="_blank">af04355</a>
@@ -3318,9 +3978,9 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="ide-1" class="section level2">
-<h2>4219 - IDE</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-16.png" width="672" style="display: block; margin: auto;" /></p>
+<div id="ide-15c0" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">IDE ( 15c0 )</h2>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-16.png" width="1728" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-16">
 Past versions of unnamed-chunk-12-16.png
@@ -3343,6 +4003,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/957e4555c4b641624bebe5744eebd55823e80776/docs/figure/2022-03-31.Rmd/unnamed-chunk-12-16.png" target="_blank">957e455</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-01
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-12-16.png" target="_blank">af04355</a>
@@ -3370,9 +4041,9 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="a---aide-soignant" class="section level2">
-<h2>503a - Aide soignant</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-17.png" width="672" style="display: block; margin: auto;" /></p>
+<div id="ide-4219" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">IDE ( 4219 )</h2>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-17.png" width="1728" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-17">
 Past versions of unnamed-chunk-12-17.png
@@ -3395,6 +4066,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/957e4555c4b641624bebe5744eebd55823e80776/docs/figure/2022-03-31.Rmd/unnamed-chunk-12-17.png" target="_blank">957e455</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-01
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-12-17.png" target="_blank">af04355</a>
@@ -3422,969 +4104,9 @@ cfcforever
 </div>
 </div>
 </div>
-</div>
-<div id="hourly-plot" class="section level1 tabset tabset-pills">
-<h1 class="tabset tabset-pills">hourly plot</h1>
-<pre class="r"><code>data &lt;- read.csv2(file = paste0(&quot;data/json/&quot;, today, &quot;/position.csv&quot;))
-tags = unique(data$tag)
-
-names_tag = read.xlsx(&quot;data/Inventaire Tags - Firminy - 2022.xlsx&quot;)
-
-tags = names_tag %&gt;% filter(Identifiant %in% tags)
-
-for (i in 1:nrow(tags)){
-  m  = tags$Identifiant[i]
-  ml = tags$affectation[i]
-  cat(&quot;\n&quot;)
-  cat(&quot;## &quot;, ml, &quot;(&quot;, m, &quot;)&quot;, &quot; {.tabset .tabset-pills}&quot;, &quot;\n&quot;)
-  
-  data_plot = data[data$tag==m,]
-  data_plot$H = factor(data_plot$H, levels = c(0:23))
-  data_plot$H = factor(data_plot$H, levels = c(0:23), labels = paste0(0:23, &quot;H - &quot;, table(data_plot$H[is.na(data_plot$x)]), &quot; (NA) /&quot;, table(data_plot$H), &quot; (Total)&quot;))
-    
-  q = p + theme_bw() +
-    geom_point(data = data_plot, aes(x=x, y=y), col=&quot;red&quot;, na.rm = T) +
-    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
-    labs(x = &quot;&quot;, y = &quot;&quot;, title = paste0(ml, &quot; (&quot;, m, &quot;)&quot;)) + 
-    facet_wrap(~H, nrow = 4, drop = F)
-  print(q)
-  cat(&quot;\n&quot;)
-}</code></pre>
-<div id="francois-4586" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">Francois ( 4586 )</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-13-1.png" width="1728" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-13-1">
-Past versions of unnamed-chunk-13-1.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-13-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-1.png" target="_blank">af04355</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/82519a26d7efc36260426328c5671414bd27e591/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-1.png" target="_blank">82519a2</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="catherine-3721" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">Catherine ( 3721 )</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-13-2.png" width="1728" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-13-2">
-Past versions of unnamed-chunk-13-2.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-13-2" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-2.png" target="_blank">af04355</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/82519a26d7efc36260426328c5671414bd27e591/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-2.png" target="_blank">82519a2</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="antoine-4288" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">Antoine ( 4288 )</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-13-3.png" width="1728" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-13-3">
-Past versions of unnamed-chunk-13-3.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-13-3" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-3.png" target="_blank">af04355</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/82519a26d7efc36260426328c5671414bd27e591/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-3.png" target="_blank">82519a2</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="medecin-4273" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">Medecin ( 4273 )</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-13-4.png" width="1728" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-13-4">
-Past versions of unnamed-chunk-13-4.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-13-4" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-4.png" target="_blank">af04355</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/82519a26d7efc36260426328c5671414bd27e591/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-4.png" target="_blank">82519a2</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="medecin-436d" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">Medecin ( 436d )</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-13-5.png" width="1728" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-13-5">
-Past versions of unnamed-chunk-13-5.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-13-5" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-5.png" target="_blank">af04355</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/82519a26d7efc36260426328c5671414bd27e591/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-5.png" target="_blank">82519a2</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="soignant-38d7" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">Soignant ( 38d7 )</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-13-6.png" width="1728" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-13-6">
-Past versions of unnamed-chunk-13-6.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-13-6" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-6.png" target="_blank">af04355</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/82519a26d7efc36260426328c5671414bd27e591/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-6.png" target="_blank">82519a2</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="soignant-4584" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">Soignant ( 4584 )</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-13-7.png" width="1728" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-13-7">
-Past versions of unnamed-chunk-13-7.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-13-7" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-7.png" target="_blank">af04355</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/82519a26d7efc36260426328c5671414bd27e591/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-7.png" target="_blank">82519a2</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="aide-soignant-1a0a" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">Aide soignant ( 1a0a )</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-13-8.png" width="1728" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-13-8">
-Past versions of unnamed-chunk-13-8.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-13-8" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-8.png" target="_blank">af04355</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/82519a26d7efc36260426328c5671414bd27e591/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-8.png" target="_blank">82519a2</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="echographe-3906" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">echographe ( 3906 )</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-13-9.png" width="1728" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-13-9">
-Past versions of unnamed-chunk-13-9.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-13-9" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-9.png" target="_blank">af04355</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/82519a26d7efc36260426328c5671414bd27e591/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-9.png" target="_blank">82519a2</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="brancard-2f7b" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">brancard ( 2f7b )</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-13-10.png" width="1728" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-13-10">
-Past versions of unnamed-chunk-13-10.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-13-10" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-10.png" target="_blank">af04355</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/82519a26d7efc36260426328c5671414bd27e591/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-10.png" target="_blank">82519a2</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="brancard-2f40" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">brancard ( 2f40 )</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-13-11.png" width="1728" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-13-11">
-Past versions of unnamed-chunk-13-11.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-13-11" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-11.png" target="_blank">af04355</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/82519a26d7efc36260426328c5671414bd27e591/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-11.png" target="_blank">82519a2</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="brancard-2b9c" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">brancard ( 2b9c )</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-13-12.png" width="1728" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-13-12">
-Past versions of unnamed-chunk-13-12.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-13-12" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-12.png" target="_blank">af04355</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/82519a26d7efc36260426328c5671414bd27e591/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-12.png" target="_blank">82519a2</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="tag-fixe-19ab" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">Tag fixe ( 19ab )</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-13-13.png" width="1728" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-13-13">
-Past versions of unnamed-chunk-13-13.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-13-13" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-13.png" target="_blank">af04355</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/82519a26d7efc36260426328c5671414bd27e591/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-13.png" target="_blank">82519a2</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="ide-4270" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">IDE ( 4270 )</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-13-14.png" width="1728" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-13-14">
-Past versions of unnamed-chunk-13-14.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-13-14" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-14.png" target="_blank">af04355</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/82519a26d7efc36260426328c5671414bd27e591/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-14.png" target="_blank">82519a2</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="ide-44d8" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">IDE ( 44d8 )</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-13-15.png" width="1728" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-13-15">
-Past versions of unnamed-chunk-13-15.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-13-15" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-15.png" target="_blank">af04355</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/82519a26d7efc36260426328c5671414bd27e591/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-15.png" target="_blank">82519a2</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="ide-15c0" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">IDE ( 15c0 )</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-13-16.png" width="1728" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-13-16">
-Past versions of unnamed-chunk-13-16.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-13-16" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-16.png" target="_blank">af04355</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/82519a26d7efc36260426328c5671414bd27e591/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-16.png" target="_blank">82519a2</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="ide-4219" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">IDE ( 4219 )</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-13-17.png" width="1728" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-13-17">
-Past versions of unnamed-chunk-13-17.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-13-17" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-17.png" target="_blank">af04355</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/82519a26d7efc36260426328c5671414bd27e591/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-17.png" target="_blank">82519a2</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
 <div id="aide-soignant-503a" class="section level2 tabset tabset-pills">
 <h2 class="tabset tabset-pills">Aide soignant ( 503a )</h2>
-<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-13-18.png" width="1728" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-13-18">
-Past versions of unnamed-chunk-13-18.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-13-18" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/af04355c1b3f74ad193015855302aae9f1e4a61a/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-18.png" target="_blank">af04355</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/cfcforever/Test/blob/82519a26d7efc36260426328c5671414bd27e591/docs/figure/2022-03-31.Rmd/unnamed-chunk-13-18.png" target="_blank">82519a2</a>
-</td>
-<td>
-cfcforever
-</td>
-<td>
-2022-04-01
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+<p><img src="figure/2022-03-31.Rmd/unnamed-chunk-12-18.png" width="1728" style="display: block; margin: auto;" /></p>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -4416,22 +4138,21 @@ other attached packages:
 loaded via a namespace (and not attached):
  [1] Rcpp_1.0.7        svglite_2.0.0     prettyunits_1.1.1 getPass_0.2-2    
  [5] ps_1.6.0          rprojroot_2.0.2   digest_0.6.27     utf8_1.2.1       
- [9] mime_0.10         cellranger_1.1.0  R6_2.5.0          evaluate_0.14    
-[13] highr_0.8         httr_1.4.2        pillar_1.6.0      rlang_0.4.10     
-[17] progress_1.2.2    rstudioapi_0.13   whisker_0.4       callr_3.7.0      
-[21] jquerylib_0.1.3   rmarkdown_2.10    labeling_0.4.2    webshot_0.5.2    
-[25] stringr_1.4.0     htmlwidgets_1.5.3 munsell_0.5.0     shiny_1.6.0      
-[29] compiler_4.0.5    httpuv_1.5.5      xfun_0.29         pkgconfig_2.0.3  
-[33] systemfonts_1.0.1 tidyselect_1.1.0  tibble_3.1.0      fansi_0.4.2      
-[37] viridisLite_0.4.0 crayon_1.4.1      withr_2.4.1       later_1.1.0.1    
-[41] grid_4.0.5        xtable_1.8-4      jsonlite_1.7.2    gtable_0.3.0     
-[45] lifecycle_1.0.0   git2r_0.28.0      magrittr_2.0.1    zip_2.2.0        
-[49] stringi_1.5.3     farver_2.1.0      fs_1.5.0          promises_1.2.0.1 
-[53] xml2_1.3.2        bslib_0.2.4       ellipsis_0.3.1    generics_0.1.0   
-[57] vctrs_0.3.7       tools_4.0.5       glue_1.4.2        tweenr_1.0.2     
-[61] purrr_0.3.4       crosstalk_1.1.1   hms_1.0.0         processx_3.5.1   
-[65] fastmap_1.1.0     yaml_2.2.1        colorspace_2.0-0  rvest_1.0.0      
-[69] knitr_1.37        sass_0.3.1       </code></pre>
+ [9] cellranger_1.1.0  R6_2.5.0          evaluate_0.14     highr_0.8        
+[13] httr_1.4.2        pillar_1.6.0      rlang_0.4.10      progress_1.2.2   
+[17] rstudioapi_0.13   whisker_0.4       callr_3.7.0       jquerylib_0.1.3  
+[21] rmarkdown_2.10    labeling_0.4.2    webshot_0.5.2     stringr_1.4.0    
+[25] htmlwidgets_1.5.3 munsell_0.5.0     compiler_4.0.5    httpuv_1.5.5     
+[29] xfun_0.29         pkgconfig_2.0.3   systemfonts_1.0.1 tidyselect_1.1.0 
+[33] tibble_3.1.0      fansi_0.4.2       viridisLite_0.4.0 crayon_1.4.1     
+[37] withr_2.4.1       later_1.1.0.1     grid_4.0.5        jsonlite_1.7.2   
+[41] gtable_0.3.0      lifecycle_1.0.0   git2r_0.28.0      magrittr_2.0.1   
+[45] zip_2.2.0         stringi_1.5.3     farver_2.1.0      fs_1.5.0         
+[49] promises_1.2.0.1  xml2_1.3.2        bslib_0.2.4       ellipsis_0.3.1   
+[53] generics_0.1.0    vctrs_0.3.7       tools_4.0.5       glue_1.4.2       
+[57] tweenr_1.0.2      purrr_0.3.4       hms_1.0.0         processx_3.5.1   
+[61] fastmap_1.1.0     yaml_2.2.1        colorspace_2.0-0  rvest_1.0.0      
+[65] knitr_1.37        sass_0.3.1       </code></pre>
 </div>
 </div>
 </div>
