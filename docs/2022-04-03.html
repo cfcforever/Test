@@ -42,10 +42,6 @@
 <link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="site_libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
-<link href="site_libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
-<script src="site_libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
-<link href="site_libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
-<script src="site_libs/selectize-0.12.0/selectize.min.js"></script>
 <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
 <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
 <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
@@ -428,7 +424,7 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2022-04-04
+<strong>Last updated:</strong> 2022-04-05
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -519,16 +515,16 @@ This reproducible <a href="https://rmarkdown.rstudio.com">R Markdown</a> analysi
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree8f51e80e0dd15f70fcb8be610d6321500dffde23targetblank8f51e80a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/8f51e80e0dd15f70fcb8be610d6321500dffde23" target="_blank">8f51e80</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree3489f8ebbe93006feaba7779a0c849d97df9c1dctargetblank3489f8ea"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/3489f8ebbe93006feaba7779a0c849d97df9c1dc" target="_blank">3489f8e</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree8f51e80e0dd15f70fcb8be610d6321500dffde23targetblank8f51e80a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree3489f8ebbe93006feaba7779a0c849d97df9c1dctargetblank3489f8ea" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/8f51e80e0dd15f70fcb8be610d6321500dffde23" target="_blank">8f51e80</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/3489f8ebbe93006feaba7779a0c849d97df9c1dc" target="_blank">3489f8e</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -544,9 +540,6 @@ Ignored files:
     Ignored:    fig/
     Ignored:    figure/
     Ignored:    workflowr.R
-
-Unstaged changes:
-    Modified:   output/list_output.RData
 
 </code></pre>
 <p>
@@ -590,6 +583,40 @@ Message
 Rmd
 </td>
 <td>
+<a href="https://github.com/cfcforever/Test/blob/3489f8ebbe93006feaba7779a0c849d97df9c1dc/analysis/2022-04-03.Rmd" target="_blank">3489f8e</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-05
+</td>
+<td>
+add new content
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cfcforever/Test/9ec1713aa3d435fb72cf0d27b534cdf63faedf60/docs/2022-04-03.html" target="_blank">9ec1713</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-04
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
 <a href="https://github.com/cfcforever/Test/blob/8f51e80e0dd15f70fcb8be610d6321500dffde23/analysis/2022-04-03.Rmd" target="_blank">8f51e80</a>
 </td>
 <td>
@@ -609,13 +636,6 @@ add new content
 </div>
 </div>
 </div>
-<style type="text/css">
-   body{
-   font-size: 12pt;
-   color: blue;
-}
-</style>
-<pre class="r"><code>source(&quot;code/packages_and_functions.R&quot;)</code></pre>
 <div id="load-data.json" class="section level1">
 <h1>load data.json</h1>
 <pre class="r"><code>today = &quot;2022-04-03&quot;
@@ -636,14 +656,11 @@ cat(nb_tag, &quot;Tags are: &quot;, tagId, &quot;\n&quot;)</code></pre>
 <pre class="r"><code>dat &lt;- data.frame(tag = unlist(lapply(json_data, function(x){x[&quot;tag_id&quot;][[1]]})),
                   x = unlist(lapply(json_data, function(x){x[&quot;x&quot;][[1]]})),
                   y = unlist(lapply(json_data, function(x){x[&quot;y&quot;][[1]]})),
-                  frame = unlist(lapply(json_data, function(x){x[&quot;super_frame_number&quot;][[1]]})),
-                  quality = unlist(lapply(json_data, function(x){x[&quot;quality&quot;][[1]]})),
                   record_timestamp = unlist(lapply(json_data, function(x){x[&quot;record_timestamp&quot;][[1]]})))
 dat = dat[order(dat$record_timestamp),]
-rownames(dat) = 1:nrow(dat)
 dat = cbind.data.frame(dat, convert_date(dat$record_timestamp))
-dat$x = as.numeric(dat$x)/100
-dat$y = as.numeric(dat$y)/100
+dat$x = as.numeric(dat$x)
+dat$y = as.numeric(dat$y)
 
 names_tag &lt;- read.xlsx(&quot;data/Inventaire Tags - Firminy - 2022.xlsx&quot;)
 names_tag = names_tag %&gt;% filter(Identifiant %in% tagId)
@@ -654,7 +671,11 @@ nb_tag = length(tagId)
 dat$label = factor(dat$tag, levels = names_tag$Identifiant, labels = names_tag$affectation)
 dat$tagn = as.numeric(factor(dat$tag, levels = names_tag$Identifiant, labels = 1:nb_tag))
 
-list_tag &lt;- split(dat, dat$tag)</code></pre>
+list_tag &lt;- split(dat, dat$tag)
+list_tag = lapply(list_tag, function(x){
+  x$diff_ts = c(0, x$record_timestamp[-1]-x$record_timestamp[-nrow(x)])
+  x = x[c(1,which(x$diff_ts&gt;=0.1)),]
+})</code></pre>
 <div id="quality-of-collecting-data" class="section level2">
 <h2>quality of collecting data</h2>
 <div id="statistics-of-collecting-data" class="section level3">
@@ -665,34 +686,31 @@ table_tag$last_record = NA
 table_tag$number = NA
 table_tag$number_NA = NA
 table_tag$ratio_non_NA = NA
-table_tag$abnormal_record = NA
+# table_tag$freq_1Q = NA
+# table_tag$freq_median = NA
+# table_tag$freq_3Q = NA
+
 
 for (k in 1:nb_tag){
   tag = table_tag$tag[k]
   temp = list_tag[tag][[1]]
   temp$diff_ts = c(0, temp$record_timestamp[-1]-temp$record_timestamp[-nrow(temp)])
-  temp$diff_dist = c(NaN, sqrt((temp$x[-1] - temp$x[-nrow(temp)])^2 + (temp$y[-1] - temp$y[-nrow(temp)])^2))
   
   table_tag$first_record[k] = head(as.character(temp$date),1)
   table_tag$last_record[k] = tail(as.character(temp$date),1)
   table_tag$number[k] = nrow(temp)
   table_tag$number_NA[k] = sum(is.na(temp$x))
   table_tag$ratio_non_NA[k] = round(1-table_tag$number_NA[k]/table_tag$number[k],2)
-  table_tag$abnormal_record[k] = sum(temp$diff_ts[-1]&lt;=0.1, na.rm = T)
+  # table_tag$freq_1Q[k] = round(quantile(temp$diff_ts, 0.25), 3)
+  # table_tag$freq_median[k] = round(quantile(temp$diff_ts, 0.5), 3)
+  # table_tag$freq_3Q[k] = round(quantile(temp$diff_ts, 0.75), 3)
 }
 
 # kable(table_tag) %&gt;%
 #   kable_styling(bootstrap_options = &quot;striped&quot;, full_width = T)
-table_tag$label = factor(table_tag$label)
-datatable(table_tag, filter = &quot;top&quot;, rownames = FALSE, options = list(pageLength = nrow(table_tag)))</code></pre>
+datatable(table_tag, options = list(pageLength = nrow(table_tag)))</code></pre>
 <div id="htmlwidget-2425ed13f6d215e4fcb9" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2425ed13f6d215e4fcb9">{"x":{"filter":"top","vertical":false,"filterHTML":"<tr>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"factor\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"width: 100%; display: none;\">\n      <select multiple=\"multiple\" style=\"width: 100%;\" data-options=\"[&quot;Aide soignant&quot;,&quot;Antoine&quot;,&quot;brancard&quot;,&quot;echographe&quot;,&quot;IDE&quot;,&quot;Medecin&quot;,&quot;Soignant&quot;,&quot;Tag fixe&quot;]\"><\/select>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"195\" data-max=\"430076\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"7\" data-max=\"210587\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"0\" data-max=\"1\" data-scale=\"2\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"0\" data-max=\"758\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","data":[["4288","181b","3719","4273","436d","14bc","468c","4f2e","4584","36fb","3906","2f7b","2f40","2b9c","19ab","0a98","4270","15c0","4219","44db"],["Antoine","Medecin","Medecin","Medecin","Medecin","Medecin","Soignant","Soignant","Soignant","Soignant","echographe","brancard","brancard","brancard","Tag fixe","Medecin","IDE","IDE","IDE","Aide soignant"],["2022-04-03 13:19:27","2022-04-03 15:26:22","2022-04-03 09:10:35","2022-04-03 14:19:34","2022-04-03 15:26:22","2022-04-03 15:26:22","2022-04-03 00:00:03","2022-04-03 00:00:00","2022-04-03 03:23:43","2022-04-03 00:12:22","2022-04-03 19:04:56","2022-04-03 02:09:40","2022-04-03 05:14:22","2022-04-03 16:41:57","2022-04-03 00:00:00","2022-04-03 00:00:00","2022-04-03 15:26:22","2022-04-03 00:18:55","2022-04-03 15:26:23","2022-04-03 00:11:43"],["2022-04-03 18:42:01","2022-04-03 15:27:29","2022-04-03 23:59:24","2022-04-03 15:27:31","2022-04-03 15:27:31","2022-04-03 15:27:29","2022-04-03 23:58:43","2022-04-03 23:59:37","2022-04-03 10:39:00","2022-04-03 23:53:43","2022-04-03 19:16:04","2022-04-03 19:45:36","2022-04-03 19:45:35","2022-04-03 23:59:49","2022-04-03 23:59:59","2022-04-03 15:27:33","2022-04-03 15:27:30","2022-04-03 23:59:59","2022-04-03 15:27:27","2022-04-03 21:41:39"],[464,196,30520,528,331,334,70391,134553,999,21450,661,1922,1240,3951,430076,50802,195,84783,291,46164],[464,196,4213,527,331,334,9186,20188,327,1256,41,7,297,200,210587,14790,195,16938,291,6770],[0,0,0.86,0,0,0,0.87,0.85,0.67,0.94,0.94,1,0.76,0.95,0.51,0.71,0,0.8,0,0.85],[0,0,139,0,0,0,432,758,1,85,5,25,10,11,200,256,0,442,0,291]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>tag<\/th>\n      <th>label<\/th>\n      <th>first_record<\/th>\n      <th>last_record<\/th>\n      <th>number<\/th>\n      <th>number_NA<\/th>\n      <th>ratio_non_NA<\/th>\n      <th>abnormal_record<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"columnDefs":[{"className":"dt-right","targets":[4,5,6,7]}],"order":[],"autoWidth":false,"orderClasses":false,"orderCellsTop":true,"lengthMenu":[10,20,25,50,100]}},"evals":[],"jsHooks":[]}</script>
-<p>In the table above, the abnormal record means the number of records which have a frequency less than 100ms.<br />
-We will remove these records.</p>
-<pre class="r"><code>list_tag = lapply(list_tag, function(x){
-  x$diff_ts = c(0, x$record_timestamp[-1]-x$record_timestamp[-nrow(x)])
-  x = x[c(1,which(x$diff_ts&gt;=0.1)),]
-})</code></pre>
+<script type="application/json" data-for="htmlwidget-2425ed13f6d215e4fcb9">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"],["4288","181b","3719","4273","436d","14bc","468c","4f2e","4584","36fb","3906","2f7b","2f40","2b9c","19ab","0a98","4270","15c0","4219","44db"],["Antoine","Medecin","Medecin","Medecin","Medecin","Medecin","Soignant","Soignant","Soignant","Soignant","echographe","brancard","brancard","brancard","Tag fixe","Medecin","IDE","IDE","IDE","Aide soignant"],["2022-04-03 13:19:27","2022-04-03 15:26:22","2022-04-03 09:10:35","2022-04-03 14:19:34","2022-04-03 15:26:22","2022-04-03 15:26:22","2022-04-03 00:00:03","2022-04-03 00:00:00","2022-04-03 03:23:43","2022-04-03 00:12:22","2022-04-03 19:04:56","2022-04-03 02:09:40","2022-04-03 05:14:22","2022-04-03 16:41:57","2022-04-03 00:00:00","2022-04-03 00:00:00","2022-04-03 15:26:22","2022-04-03 00:18:55","2022-04-03 15:26:23","2022-04-03 00:11:43"],["2022-04-03 18:42:01","2022-04-03 15:27:29","2022-04-03 23:59:24","2022-04-03 15:27:31","2022-04-03 15:27:31","2022-04-03 15:27:29","2022-04-03 23:58:43","2022-04-03 23:59:37","2022-04-03 10:39:00","2022-04-03 23:53:43","2022-04-03 19:16:04","2022-04-03 19:45:36","2022-04-03 19:45:35","2022-04-03 23:59:49","2022-04-03 23:59:59","2022-04-03 15:27:33","2022-04-03 15:27:30","2022-04-03 23:59:59","2022-04-03 15:27:27","2022-04-03 21:41:39"],[464,196,30381,528,331,334,69959,133795,998,21365,656,1897,1230,3940,429876,50546,195,84341,291,45873],[464,196,4194,527,331,334,9115,20035,327,1249,41,7,296,200,210439,14762,195,16900,291,6744],[0,0,0.86,0,0,0,0.87,0.85,0.67,0.94,0.94,1,0.76,0.95,0.51,0.71,0,0.8,0,0.85]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>tag<\/th>\n      <th>label<\/th>\n      <th>first_record<\/th>\n      <th>last_record<\/th>\n      <th>number<\/th>\n      <th>number_NA<\/th>\n      <th>ratio_non_NA<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"columnDefs":[{"className":"dt-right","targets":[5,6,7]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,20,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="frequncy-check-of-collecting-data" class="section level3">
 <h3>frequncy check of collecting data</h3>
@@ -1755,37 +1773,37 @@ Medecin
 105
 </td>
 <td style="text-align:right;">
-0.000
+0.032
 </td>
 <td style="text-align:right;">
-0.001
+0.121
 </td>
 <td style="text-align:right;">
-0.004
+0.361
 </td>
 <td style="text-align:right;">
-0.005
+0.532
 </td>
 <td style="text-align:right;">
-0.007
+0.679
 </td>
 <td style="text-align:right;">
-0.008
+0.810
 </td>
 <td style="text-align:right;">
-0.011
+1.108
 </td>
 <td style="text-align:right;">
-0.015
+1.506
 </td>
 <td style="text-align:right;">
-0.021
+2.075
 </td>
 <td style="text-align:right;">
-0.034
+3.412
 </td>
 <td style="text-align:right;">
-0.265
+26.472
 </td>
 </tr>
 <tr>
@@ -1931,37 +1949,37 @@ Soignant
 151
 </td>
 <td style="text-align:right;">
-0.001
+0.051
 </td>
 <td style="text-align:right;">
-0.003
+0.305
 </td>
 <td style="text-align:right;">
-0.006
+0.586
 </td>
 <td style="text-align:right;">
-0.009
+0.930
 </td>
 <td style="text-align:right;">
-0.014
+1.432
 </td>
 <td style="text-align:right;">
-0.018
+1.817
 </td>
 <td style="text-align:right;">
-0.023
+2.349
 </td>
 <td style="text-align:right;">
-0.031
+3.106
 </td>
 <td style="text-align:right;">
-0.062
+6.223
 </td>
 <td style="text-align:right;">
-0.126
+12.606
 </td>
 <td style="text-align:right;">
-0.267
+26.665
 </td>
 </tr>
 <tr>
@@ -1975,37 +1993,37 @@ Soignant
 295
 </td>
 <td style="text-align:right;">
-0.000
+0.020
 </td>
 <td style="text-align:right;">
-0.003
+0.349
 </td>
 <td style="text-align:right;">
-0.006
+0.594
 </td>
 <td style="text-align:right;">
-0.009
+0.872
 </td>
 <td style="text-align:right;">
-0.014
+1.366
 </td>
 <td style="text-align:right;">
-0.018
+1.842
 </td>
 <td style="text-align:right;">
-0.025
+2.451
 </td>
 <td style="text-align:right;">
-0.035
+3.498
 </td>
 <td style="text-align:right;">
-0.059
+5.895
 </td>
 <td style="text-align:right;">
-0.112
+11.228
 </td>
 <td style="text-align:right;">
-0.418
+41.821
 </td>
 </tr>
 <tr>
@@ -2019,37 +2037,37 @@ Soignant
 2
 </td>
 <td style="text-align:right;">
-0.002
+0.150
 </td>
 <td style="text-align:right;">
-0.003
+0.303
 </td>
 <td style="text-align:right;">
-0.005
+0.456
 </td>
 <td style="text-align:right;">
-0.006
+0.608
 </td>
 <td style="text-align:right;">
-0.008
+0.761
 </td>
 <td style="text-align:right;">
-0.009
+0.914
 </td>
 <td style="text-align:right;">
-0.011
+1.066
 </td>
 <td style="text-align:right;">
-0.012
+1.219
 </td>
 <td style="text-align:right;">
-0.014
+1.372
 </td>
 <td style="text-align:right;">
-0.015
+1.525
 </td>
 <td style="text-align:right;">
-0.017
+1.677
 </td>
 </tr>
 <tr>
@@ -2063,37 +2081,37 @@ Soignant
 92
 </td>
 <td style="text-align:right;">
-0.001
+0.061
 </td>
 <td style="text-align:right;">
-0.002
+0.242
 </td>
 <td style="text-align:right;">
-0.004
+0.363
 </td>
 <td style="text-align:right;">
-0.006
+0.560
 </td>
 <td style="text-align:right;">
-0.007
+0.736
 </td>
 <td style="text-align:right;">
-0.009
+0.938
 </td>
 <td style="text-align:right;">
-0.013
+1.330
 </td>
 <td style="text-align:right;">
-0.017
+1.713
 </td>
 <td style="text-align:right;">
-0.023
+2.257
 </td>
 <td style="text-align:right;">
-0.034
+3.416
 </td>
 <td style="text-align:right;">
-0.307
+30.747
 </td>
 </tr>
 <tr>
@@ -2107,37 +2125,37 @@ echographe
 1
 </td>
 <td style="text-align:right;">
-0.027
+2.709
 </td>
 <td style="text-align:right;">
-0.027
+2.709
 </td>
 <td style="text-align:right;">
-0.027
+2.709
 </td>
 <td style="text-align:right;">
-0.027
+2.709
 </td>
 <td style="text-align:right;">
-0.027
+2.709
 </td>
 <td style="text-align:right;">
-0.027
+2.709
 </td>
 <td style="text-align:right;">
-0.027
+2.709
 </td>
 <td style="text-align:right;">
-0.027
+2.709
 </td>
 <td style="text-align:right;">
-0.027
+2.709
 </td>
 <td style="text-align:right;">
-0.027
+2.709
 </td>
 <td style="text-align:right;">
-0.027
+2.709
 </td>
 </tr>
 <tr>
@@ -2151,37 +2169,37 @@ brancard
 11
 </td>
 <td style="text-align:right;">
-0.002
+0.212
 </td>
 <td style="text-align:right;">
-0.003
+0.322
 </td>
 <td style="text-align:right;">
-0.003
+0.348
 </td>
 <td style="text-align:right;">
-0.003
+0.349
 </td>
 <td style="text-align:right;">
-0.005
+0.502
 </td>
 <td style="text-align:right;">
-0.006
+0.624
 </td>
 <td style="text-align:right;">
-0.007
+0.750
 </td>
 <td style="text-align:right;">
-0.010
+0.975
 </td>
 <td style="text-align:right;">
-0.012
+1.230
 </td>
 <td style="text-align:right;">
-0.027
+2.682
 </td>
 <td style="text-align:right;">
-0.035
+3.507
 </td>
 </tr>
 <tr>
@@ -2195,37 +2213,37 @@ brancard
 11
 </td>
 <td style="text-align:right;">
-0.001
+0.051
 </td>
 <td style="text-align:right;">
-0.001
+0.143
 </td>
 <td style="text-align:right;">
-0.002
+0.173
 </td>
 <td style="text-align:right;">
-0.002
+0.178
 </td>
 <td style="text-align:right;">
-0.002
+0.190
 </td>
 <td style="text-align:right;">
-0.002
+0.221
 </td>
 <td style="text-align:right;">
-0.006
+0.551
 </td>
 <td style="text-align:right;">
-0.006
+0.606
 </td>
 <td style="text-align:right;">
-0.061
+6.127
 </td>
 <td style="text-align:right;">
-0.069
+6.902
 </td>
 <td style="text-align:right;">
-0.115
+11.475
 </td>
 </tr>
 <tr>
@@ -2239,37 +2257,37 @@ brancard
 28
 </td>
 <td style="text-align:right;">
-0.000
+0.028
 </td>
 <td style="text-align:right;">
-0.001
+0.101
 </td>
 <td style="text-align:right;">
-0.002
+0.156
 </td>
 <td style="text-align:right;">
-0.003
+0.256
 </td>
 <td style="text-align:right;">
-0.004
+0.396
 </td>
 <td style="text-align:right;">
-0.005
+0.471
 </td>
 <td style="text-align:right;">
-0.008
+0.785
 </td>
 <td style="text-align:right;">
-0.010
+0.996
 </td>
 <td style="text-align:right;">
-0.015
+1.462
 </td>
 <td style="text-align:right;">
-0.043
+4.299
 </td>
 <td style="text-align:right;">
-0.094
+9.416
 </td>
 </tr>
 <tr>
@@ -2283,37 +2301,37 @@ Tag fixe
 2
 </td>
 <td style="text-align:right;">
-0.000
+0.032
 </td>
 <td style="text-align:right;">
-0.000
+0.037
 </td>
 <td style="text-align:right;">
-0.000
+0.041
 </td>
 <td style="text-align:right;">
-0.000
+0.046
 </td>
 <td style="text-align:right;">
-0.001
+0.051
 </td>
 <td style="text-align:right;">
-0.001
+0.056
 </td>
 <td style="text-align:right;">
-0.001
+0.061
 </td>
 <td style="text-align:right;">
-0.001
+0.066
 </td>
 <td style="text-align:right;">
-0.001
+0.071
 </td>
 <td style="text-align:right;">
-0.001
+0.076
 </td>
 <td style="text-align:right;">
-0.001
+0.081
 </td>
 </tr>
 <tr>
@@ -2327,37 +2345,37 @@ Medecin
 69
 </td>
 <td style="text-align:right;">
-0.000
+0.020
 </td>
 <td style="text-align:right;">
-0.003
+0.290
 </td>
 <td style="text-align:right;">
-0.005
+0.464
 </td>
 <td style="text-align:right;">
-0.005
+0.514
 </td>
 <td style="text-align:right;">
-0.008
+0.782
 </td>
 <td style="text-align:right;">
-0.010
+1.009
 </td>
 <td style="text-align:right;">
-0.014
+1.393
 </td>
 <td style="text-align:right;">
-0.021
+2.052
 </td>
 <td style="text-align:right;">
-0.031
+3.060
 </td>
 <td style="text-align:right;">
-0.067
+6.651
 </td>
 <td style="text-align:right;">
-0.322
+32.177
 </td>
 </tr>
 <tr>
@@ -2415,37 +2433,37 @@ IDE
 112
 </td>
 <td style="text-align:right;">
-0.001
+0.058
 </td>
 <td style="text-align:right;">
-0.002
+0.229
 </td>
 <td style="text-align:right;">
-0.005
+0.492
 </td>
 <td style="text-align:right;">
-0.006
+0.637
 </td>
 <td style="text-align:right;">
-0.009
+0.864
 </td>
 <td style="text-align:right;">
-0.011
+1.141
 </td>
 <td style="text-align:right;">
-0.016
+1.607
 </td>
 <td style="text-align:right;">
-0.023
+2.295
 </td>
 <td style="text-align:right;">
-0.038
+3.792
 </td>
 <td style="text-align:right;">
-0.060
+5.963
 </td>
 <td style="text-align:right;">
-0.327
+32.712
 </td>
 </tr>
 <tr>
@@ -2503,37 +2521,37 @@ Aide soignant
 74
 </td>
 <td style="text-align:right;">
-0.000
-</td>
-<td style="text-align:right;">
-0.002
-</td>
-<td style="text-align:right;">
-0.005
-</td>
-<td style="text-align:right;">
-0.009
-</td>
-<td style="text-align:right;">
-0.012
-</td>
-<td style="text-align:right;">
-0.016
-</td>
-<td style="text-align:right;">
 0.022
 </td>
 <td style="text-align:right;">
-0.035
+0.245
 </td>
 <td style="text-align:right;">
-0.051
+0.489
 </td>
 <td style="text-align:right;">
-0.098
+0.853
 </td>
 <td style="text-align:right;">
-0.283
+1.153
+</td>
+<td style="text-align:right;">
+1.564
+</td>
+<td style="text-align:right;">
+2.230
+</td>
+<td style="text-align:right;">
+3.483
+</td>
+<td style="text-align:right;">
+5.057
+</td>
+<td style="text-align:right;">
+9.781
+</td>
+<td style="text-align:right;">
+28.340
 </td>
 </tr>
 </tbody>
@@ -2551,7 +2569,7 @@ p &lt;- ggplot(dat) + theme_bw() +
   theme(legend.position = &quot;None&quot;) +
   labs(x = &quot;hour&quot;, y = &quot;&quot;, title = today)
 print(p)</code></pre>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-8-1.png" width="1056" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-7-1.png" width="1056" style="display: block; margin: auto;" /></p>
 </div>
 <div id="number-nas" class="section level3">
 <h3>number NAs</h3>
@@ -2612,11 +2630,11 @@ dat = do.call(rbind.data.frame, list_tag)</code></pre>
 </div>
 <div id="medecin" class="section level2">
 <h2>3719 - Medecin</h2>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="medecin-1" class="section level2">
 <h2>4273 - Medecin</h2>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-12-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-11-2.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="d---medecin" class="section level2">
 <h2>436d - Medecin</h2>
@@ -2628,43 +2646,43 @@ dat = do.call(rbind.data.frame, list_tag)</code></pre>
 </div>
 <div id="c---soignant" class="section level2">
 <h2>468c - Soignant</h2>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-12-3.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-11-3.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="f2e---soignant" class="section level2">
 <h2>4f2e - Soignant</h2>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-12-4.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-11-4.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="soignant" class="section level2">
 <h2>4584 - Soignant</h2>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-12-5.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-11-5.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="fb---soignant" class="section level2">
 <h2>36fb - Soignant</h2>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-12-6.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-11-6.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="echographe" class="section level2">
 <h2>3906 - echographe</h2>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-12-7.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-11-7.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="f7b---brancard" class="section level2">
 <h2>2f7b - brancard</h2>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-12-8.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-11-8.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="f40---brancard" class="section level2">
 <h2>2f40 - brancard</h2>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-12-9.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-11-9.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="b9c---brancard" class="section level2">
 <h2>2b9c - brancard</h2>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-12-10.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-11-10.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="ab---tag-fixe" class="section level2">
 <h2>19ab - Tag fixe</h2>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-12-11.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-11-11.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="a98---medecin" class="section level2">
 <h2>0a98 - Medecin</h2>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-12-12.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-11-12.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="ide" class="section level2">
 <h2>4270 - IDE</h2>
@@ -2672,7 +2690,7 @@ dat = do.call(rbind.data.frame, list_tag)</code></pre>
 </div>
 <div id="c0---ide" class="section level2">
 <h2>15c0 - IDE</h2>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-12-13.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-11-13.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="ide-1" class="section level2">
 <h2>4219 - IDE</h2>
@@ -2680,7 +2698,7 @@ dat = do.call(rbind.data.frame, list_tag)</code></pre>
 </div>
 <div id="db---aide-soignant" class="section level2">
 <h2>44db - Aide soignant</h2>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-12-14.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-11-14.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="hourly-plot" class="section level1 tabset tabset-pills">
@@ -2712,83 +2730,601 @@ for (i in 1:nrow(tags)){
 }</code></pre>
 <div id="antoine-4288" class="section level2 tabset tabset-pills">
 <h2 class="tabset tabset-pills">Antoine ( 4288 )</h2>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-13-1.png" width="1728" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-12-1.png" width="1728" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-1">
+Past versions of unnamed-chunk-12-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/9ec1713aa3d435fb72cf0d27b534cdf63faedf60/docs/figure/2022-04-03.Rmd/unnamed-chunk-12-1.png" target="_blank">9ec1713</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-04
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="medecin-181b" class="section level2 tabset tabset-pills">
 <h2 class="tabset tabset-pills">Medecin ( 181b )</h2>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-13-2.png" width="1728" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-12-2.png" width="1728" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-2">
+Past versions of unnamed-chunk-12-2.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/9ec1713aa3d435fb72cf0d27b534cdf63faedf60/docs/figure/2022-04-03.Rmd/unnamed-chunk-12-2.png" target="_blank">9ec1713</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-04
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="medecin-3719" class="section level2 tabset tabset-pills">
 <h2 class="tabset tabset-pills">Medecin ( 3719 )</h2>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-13-3.png" width="1728" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-12-3.png" width="1728" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-3">
+Past versions of unnamed-chunk-12-3.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-3" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/9ec1713aa3d435fb72cf0d27b534cdf63faedf60/docs/figure/2022-04-03.Rmd/unnamed-chunk-12-3.png" target="_blank">9ec1713</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-04
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="medecin-4273" class="section level2 tabset tabset-pills">
 <h2 class="tabset tabset-pills">Medecin ( 4273 )</h2>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-13-4.png" width="1728" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-12-4.png" width="1728" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-4">
+Past versions of unnamed-chunk-12-4.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-4" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/9ec1713aa3d435fb72cf0d27b534cdf63faedf60/docs/figure/2022-04-03.Rmd/unnamed-chunk-12-4.png" target="_blank">9ec1713</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-04
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="medecin-436d" class="section level2 tabset tabset-pills">
 <h2 class="tabset tabset-pills">Medecin ( 436d )</h2>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-13-5.png" width="1728" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-12-5.png" width="1728" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-5">
+Past versions of unnamed-chunk-12-5.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-5" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/9ec1713aa3d435fb72cf0d27b534cdf63faedf60/docs/figure/2022-04-03.Rmd/unnamed-chunk-12-5.png" target="_blank">9ec1713</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-04
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="medecin-14bc" class="section level2 tabset tabset-pills">
 <h2 class="tabset tabset-pills">Medecin ( 14bc )</h2>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-13-6.png" width="1728" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-12-6.png" width="1728" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-6">
+Past versions of unnamed-chunk-12-6.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-6" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/9ec1713aa3d435fb72cf0d27b534cdf63faedf60/docs/figure/2022-04-03.Rmd/unnamed-chunk-12-6.png" target="_blank">9ec1713</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-04
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="soignant-468c" class="section level2 tabset tabset-pills">
 <h2 class="tabset tabset-pills">Soignant ( 468c )</h2>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-13-7.png" width="1728" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-12-7.png" width="1728" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-7">
+Past versions of unnamed-chunk-12-7.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-7" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/9ec1713aa3d435fb72cf0d27b534cdf63faedf60/docs/figure/2022-04-03.Rmd/unnamed-chunk-12-7.png" target="_blank">9ec1713</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-04
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="soignant-4f2e" class="section level2 tabset tabset-pills">
 <h2 class="tabset tabset-pills">Soignant ( 4f2e )</h2>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-13-8.png" width="1728" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-12-8.png" width="1728" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-8">
+Past versions of unnamed-chunk-12-8.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-8" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/9ec1713aa3d435fb72cf0d27b534cdf63faedf60/docs/figure/2022-04-03.Rmd/unnamed-chunk-12-8.png" target="_blank">9ec1713</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-04
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="soignant-4584" class="section level2 tabset tabset-pills">
 <h2 class="tabset tabset-pills">Soignant ( 4584 )</h2>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-13-9.png" width="1728" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-12-9.png" width="1728" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-9">
+Past versions of unnamed-chunk-12-9.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-9" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/9ec1713aa3d435fb72cf0d27b534cdf63faedf60/docs/figure/2022-04-03.Rmd/unnamed-chunk-12-9.png" target="_blank">9ec1713</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-04
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="soignant-36fb" class="section level2 tabset tabset-pills">
 <h2 class="tabset tabset-pills">Soignant ( 36fb )</h2>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-13-10.png" width="1728" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-12-10.png" width="1728" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-10">
+Past versions of unnamed-chunk-12-10.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-10" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/9ec1713aa3d435fb72cf0d27b534cdf63faedf60/docs/figure/2022-04-03.Rmd/unnamed-chunk-12-10.png" target="_blank">9ec1713</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-04
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="echographe-3906" class="section level2 tabset tabset-pills">
 <h2 class="tabset tabset-pills">echographe ( 3906 )</h2>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-13-11.png" width="1728" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-12-11.png" width="1728" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-11">
+Past versions of unnamed-chunk-12-11.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-11" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/9ec1713aa3d435fb72cf0d27b534cdf63faedf60/docs/figure/2022-04-03.Rmd/unnamed-chunk-12-11.png" target="_blank">9ec1713</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-04
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="brancard-2f7b" class="section level2 tabset tabset-pills">
 <h2 class="tabset tabset-pills">brancard ( 2f7b )</h2>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-13-12.png" width="1728" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-12-12.png" width="1728" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-12">
+Past versions of unnamed-chunk-12-12.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-12" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/9ec1713aa3d435fb72cf0d27b534cdf63faedf60/docs/figure/2022-04-03.Rmd/unnamed-chunk-12-12.png" target="_blank">9ec1713</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-04
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="brancard-2f40" class="section level2 tabset tabset-pills">
 <h2 class="tabset tabset-pills">brancard ( 2f40 )</h2>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-13-13.png" width="1728" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-12-13.png" width="1728" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-13">
+Past versions of unnamed-chunk-12-13.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-13" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/9ec1713aa3d435fb72cf0d27b534cdf63faedf60/docs/figure/2022-04-03.Rmd/unnamed-chunk-12-13.png" target="_blank">9ec1713</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-04
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="brancard-2b9c" class="section level2 tabset tabset-pills">
 <h2 class="tabset tabset-pills">brancard ( 2b9c )</h2>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-13-14.png" width="1728" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-12-14.png" width="1728" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-14">
+Past versions of unnamed-chunk-12-14.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-14" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/9ec1713aa3d435fb72cf0d27b534cdf63faedf60/docs/figure/2022-04-03.Rmd/unnamed-chunk-12-14.png" target="_blank">9ec1713</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-04
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="tag-fixe-19ab" class="section level2 tabset tabset-pills">
 <h2 class="tabset tabset-pills">Tag fixe ( 19ab )</h2>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-13-15.png" width="1728" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-12-15.png" width="1728" style="display: block; margin: auto;" /></p>
 </div>
 <div id="medecin-0a98" class="section level2 tabset tabset-pills">
 <h2 class="tabset tabset-pills">Medecin ( 0a98 )</h2>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-13-16.png" width="1728" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-12-16.png" width="1728" style="display: block; margin: auto;" /></p>
 </div>
 <div id="ide-4270" class="section level2 tabset tabset-pills">
 <h2 class="tabset tabset-pills">IDE ( 4270 )</h2>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-13-17.png" width="1728" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-12-17.png" width="1728" style="display: block; margin: auto;" /></p>
 </div>
 <div id="ide-15c0" class="section level2 tabset tabset-pills">
 <h2 class="tabset tabset-pills">IDE ( 15c0 )</h2>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-13-18.png" width="1728" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-12-18.png" width="1728" style="display: block; margin: auto;" /></p>
 </div>
 <div id="ide-4219" class="section level2 tabset tabset-pills">
 <h2 class="tabset tabset-pills">IDE ( 4219 )</h2>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-13-19.png" width="1728" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-12-19.png" width="1728" style="display: block; margin: auto;" /></p>
 </div>
 <div id="aide-soignant-44db" class="section level2 tabset tabset-pills">
 <h2 class="tabset tabset-pills">Aide soignant ( 44db )</h2>
-<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-13-20.png" width="1728" style="display: block; margin: auto;" /></p>
+<p><img src="figure/2022-04-03.Rmd/unnamed-chunk-12-20.png" width="1728" style="display: block; margin: auto;" /></p>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
