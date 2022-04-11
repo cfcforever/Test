@@ -12,7 +12,7 @@ editor_options:
 ```{r include=FALSE}
 source("code/packages_and_functions.R")
 day0 = "2021-12-22"
-today = "2022-04-09"
+today = "2022-04-10"
 cat("data on:", today, "\n")
 ```
 
