@@ -149,7 +149,7 @@ kable(table_sensibility) %>%
 
 ### plot with NAs
 ```{r fig.width=11, fig.height=7}
-timestamp_breaks = as.numeric(as.POSIXct(paste0(today, " ", sprintf("%02d", 0:23), ":00:00 CEST"))) + 3600*7
+timestamp_breaks = as.numeric(as.POSIXct(paste0(today, " ", sprintf("%02d", 0:23), ":00:00 CEST"))) + 3600*6
 p <- ggplot(dat) + theme_bw() + 
   geom_point(aes(x=record_timestamp, y=tagn, col=tagn), size=0.5) +
   scale_x_continuous(breaks = timestamp_breaks, labels = 0:23) +
