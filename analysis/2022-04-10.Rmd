@@ -233,7 +233,7 @@ for (i in 1:nrow(tags)){
   m  = tags$Identifiant[i]
   ml = tags$affectation[i]
   cat("\n")
-  cat("## ", ml, "(", m, ")", " {.tabset .tabset-pills}", "\n")
+  cat("## ", m, "-", ml, " {.tabset .tabset-pills}", "\n")
   
   data_plot = data[data$tag==m,]
   data_plot$H = factor(data_plot$H, levels = c(0:23))
