@@ -515,16 +515,16 @@ This reproducible <a href="https://rmarkdown.rstudio.com">R Markdown</a> analysi
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree7e2a5dda82547d6d19b68b76aa31b7a49d0fcab1targetblank7e2a5dda"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/7e2a5dda82547d6d19b68b76aa31b7a49d0fcab1" target="_blank">7e2a5dd</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree935617bf014b5528426d902d75e56e3bc01d097btargetblank935617ba"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/935617bf014b5528426d902d75e56e3bc01d097b" target="_blank">935617b</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree7e2a5dda82547d6d19b68b76aa31b7a49d0fcab1targetblank7e2a5dda" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree935617bf014b5528426d902d75e56e3bc01d097btargetblank935617ba" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/7e2a5dda82547d6d19b68b76aa31b7a49d0fcab1" target="_blank">7e2a5dd</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/935617bf014b5528426d902d75e56e3bc01d097b" target="_blank">935617b</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -579,6 +579,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/935617bf014b5528426d902d75e56e3bc01d097b/analysis/2022-04-10.Rmd" target="_blank">935617b</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-11
+</td>
+<td>
+add new content
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cfcforever/Test/dc02de43576a92bd82ff776c9164ecd992695127/docs/2022-04-10.html" target="_blank">dc02de4</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-04-11
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -2002,7 +2036,8 @@ dat = do.call(rbind.data.frame, list_tag)</code></pre>
 </div>
 <div id="plot" class="section level1 tabset tabset-pills">
 <h1 class="tabset tabset-pills">plot</h1>
-<pre class="r"><code>load(&quot;data/plan/plan_firminy.RData&quot;)</code></pre>
+<pre class="r"><code>load(&quot;data/plan/plan_firminy.RData&quot;)
+names_tag = names_tag[order(names_tag$Identifiant),]</code></pre>
 <pre class="r"><code>for (k in 1:nb_tag){
   tag = names_tag$Identifiant[k]
   type = names_tag$affectation[k]
@@ -2020,8 +2055,8 @@ dat = do.call(rbind.data.frame, list_tag)</code></pre>
   }
   cat(&quot;\n&quot;)
 }</code></pre>
-<div id="soignant" class="section level2">
-<h2>4584 - Soignant</h2>
+<div id="d2---aide-soignant" class="section level2">
+<h2>11d2 - Aide soignant</h2>
 <p><img src="figure/2022-04-10.Rmd/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-11-1">
@@ -2061,8 +2096,8 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="d2---aide-soignant" class="section level2">
-<h2>11d2 - Aide soignant</h2>
+<div id="ab---tag-fixe" class="section level2">
+<h2>19ab - Tag fixe</h2>
 <p><img src="figure/2022-04-10.Rmd/unnamed-chunk-11-2.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-11-2">
@@ -2184,8 +2219,8 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="echographe" class="section level2">
-<h2>3906 - echographe</h2>
+<div id="b9c---brancard" class="section level2">
+<h2>2b9c - brancard</h2>
 <p><img src="figure/2022-04-10.Rmd/unnamed-chunk-11-5.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-11-5">
@@ -2225,8 +2260,8 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="f7b---brancard" class="section level2">
-<h2>2f7b - brancard</h2>
+<div id="f40---brancard" class="section level2">
+<h2>2f40 - brancard</h2>
 <p><img src="figure/2022-04-10.Rmd/unnamed-chunk-11-6.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-11-6">
@@ -2266,8 +2301,8 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="f40---brancard" class="section level2">
-<h2>2f40 - brancard</h2>
+<div id="f7b---brancard" class="section level2">
+<h2>2f7b - brancard</h2>
 <p><img src="figure/2022-04-10.Rmd/unnamed-chunk-11-7.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-11-7">
@@ -2307,8 +2342,8 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="b9c---brancard" class="section level2">
-<h2>2b9c - brancard</h2>
+<div id="echographe" class="section level2">
+<h2>3906 - echographe</h2>
 <p><img src="figure/2022-04-10.Rmd/unnamed-chunk-11-8.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-11-8">
@@ -2348,8 +2383,8 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="ab---tag-fixe" class="section level2">
-<h2>19ab - Tag fixe</h2>
+<div id="e---aide-soignant" class="section level2">
+<h2>422e - Aide soignant</h2>
 <p><img src="figure/2022-04-10.Rmd/unnamed-chunk-11-9.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-11-9">
@@ -2389,8 +2424,8 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="a---aide-soignant" class="section level2">
-<h2>503a - Aide soignant</h2>
+<div id="soignant" class="section level2">
+<h2>4584 - Soignant</h2>
 <p><img src="figure/2022-04-10.Rmd/unnamed-chunk-11-10.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-11-10">
@@ -2430,8 +2465,8 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="e---aide-soignant" class="section level2">
-<h2>422e - Aide soignant</h2>
+<div id="e---aide-soignant-1" class="section level2">
+<h2>460e - Aide soignant</h2>
 <p><img src="figure/2022-04-10.Rmd/unnamed-chunk-11-11.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-11-11">
@@ -2471,8 +2506,8 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="e---aide-soignant-1" class="section level2">
-<h2>460e - Aide soignant</h2>
+<div id="a---aide-soignant" class="section level2">
+<h2>503a - Aide soignant</h2>
 <p><img src="figure/2022-04-10.Rmd/unnamed-chunk-11-12.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-11-12">
@@ -2519,6 +2554,7 @@ cfcforever
 tags = unique(data$tag)
 
 names_tag = read.xlsx(&quot;data/Inventaire Tags - Firminy - 2022.xlsx&quot;)
+names_tag = names_tag[order(names_tag$Identifiant),]
 
 tags = names_tag %&gt;% filter(Identifiant %in% tags)
 
@@ -2540,8 +2576,8 @@ for (i in 1:nrow(tags)){
   print(q)
   cat(&quot;\n&quot;)
 }</code></pre>
-<div id="soignant-4584" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">Soignant ( 4584 )</h2>
+<div id="aide-soignant-11d2" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">Aide soignant ( 11d2 )</h2>
 <p><img src="figure/2022-04-10.Rmd/unnamed-chunk-12-1.png" width="1728" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-1">
@@ -2581,8 +2617,8 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="aide-soignant-11d2" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">Aide soignant ( 11d2 )</h2>
+<div id="tag-fixe-19ab" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">Tag fixe ( 19ab )</h2>
 <p><img src="figure/2022-04-10.Rmd/unnamed-chunk-12-2.png" width="1728" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-2">
@@ -2704,8 +2740,8 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="echographe-3906" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">echographe ( 3906 )</h2>
+<div id="brancard-2b9c" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">brancard ( 2b9c )</h2>
 <p><img src="figure/2022-04-10.Rmd/unnamed-chunk-12-5.png" width="1728" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-5">
@@ -2745,8 +2781,8 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="brancard-2f7b" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">brancard ( 2f7b )</h2>
+<div id="brancard-2f40" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">brancard ( 2f40 )</h2>
 <p><img src="figure/2022-04-10.Rmd/unnamed-chunk-12-6.png" width="1728" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-6">
@@ -2786,8 +2822,8 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="brancard-2f40" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">brancard ( 2f40 )</h2>
+<div id="brancard-2f7b" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">brancard ( 2f7b )</h2>
 <p><img src="figure/2022-04-10.Rmd/unnamed-chunk-12-7.png" width="1728" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-7">
@@ -2827,8 +2863,8 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="brancard-2b9c" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">brancard ( 2b9c )</h2>
+<div id="echographe-3906" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">echographe ( 3906 )</h2>
 <p><img src="figure/2022-04-10.Rmd/unnamed-chunk-12-8.png" width="1728" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-8">
@@ -2868,8 +2904,8 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="tag-fixe-19ab" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">Tag fixe ( 19ab )</h2>
+<div id="aide-soignant-422e" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">Aide soignant ( 422e )</h2>
 <p><img src="figure/2022-04-10.Rmd/unnamed-chunk-12-9.png" width="1728" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-9">
@@ -2909,8 +2945,8 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="aide-soignant-503a" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">Aide soignant ( 503a )</h2>
+<div id="soignant-4584" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">Soignant ( 4584 )</h2>
 <p><img src="figure/2022-04-10.Rmd/unnamed-chunk-12-10.png" width="1728" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-10">
@@ -2950,8 +2986,8 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="aide-soignant-422e" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">Aide soignant ( 422e )</h2>
+<div id="aide-soignant-460e" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">Aide soignant ( 460e )</h2>
 <p><img src="figure/2022-04-10.Rmd/unnamed-chunk-12-11.png" width="1728" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-11">
@@ -2991,8 +3027,8 @@ cfcforever
 </div>
 </div>
 </div>
-<div id="aide-soignant-460e" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">Aide soignant ( 460e )</h2>
+<div id="aide-soignant-503a" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">Aide soignant ( 503a )</h2>
 <p><img src="figure/2022-04-10.Rmd/unnamed-chunk-12-12.png" width="1728" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-12">
