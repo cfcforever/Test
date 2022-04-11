@@ -194,6 +194,7 @@ dat = do.call(rbind.data.frame, list_tag)
 # plot {.tabset .tabset-pills}
 ```{r}
 load("data/plan/plan_firminy.RData")
+names_tag = names_tag[order(names_tag$Identifiant),]
 ```
 
 ```{r results='asis'}
@@ -224,6 +225,7 @@ data <- read.csv2(file = paste0("data/json/", today, "/position.csv"))
 tags = unique(data$tag)
 
 names_tag = read.xlsx("data/Inventaire Tags - Firminy - 2022.xlsx")
+names_tag = names_tag[order(names_tag$Identifiant),]
 
 tags = names_tag %>% filter(Identifiant %in% tags)
 
