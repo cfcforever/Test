@@ -58,8 +58,7 @@ list_tag = lapply(list_tag, function(x){
 ```
 
 
-## quality of collecting data
-### statistics of collecting data
+## statistics of collecting data
 ```{r}
 table_tag <- data.frame(tag = names_tag$Identifiant, label = names_tag$affectation)
 table_tag$first_record = NA
@@ -93,7 +92,7 @@ datatable(table_tag, options = list(pageLength = nrow(table_tag)))
 ```
 
 
-### frequncy check of collecting data 
+## frequncy check of collecting data 
 ```{r}
 nq = 10
 table_diff_ts = matrix(NA, nrow = nb_tag, ncol = nq+1)
@@ -110,7 +109,7 @@ kable(table_diff_ts) %>%
 ```
 
 
-### sensibility check of collecting data 
+## sensibility check of collecting data 
 ```{r}
 nq = 10
 table_sensibility = matrix(NA, nrow = nb_tag, ncol = nq+2)
@@ -147,7 +146,7 @@ kable(table_sensibility) %>%
 ```
 
 
-### plot with NAs
+## plot with NAs
 ```{r fig.width=11, fig.height=7}
 timestamp_breaks = as.numeric(as.POSIXct(paste0(today, " ", sprintf("%02d", 0:23), ":00:00 CEST"))) + 3600*6
 p <- ggplot(dat) + theme_bw() + 
@@ -162,7 +161,7 @@ print(p)
 ```
 
 
-### number NAs
+## number NAs
 ```{r}
 x_na = which(is.na(dat$x))
 y_na = which(is.na(dat$y))
