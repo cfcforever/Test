@@ -39,8 +39,7 @@ dat <- data.frame(tag = unlist(lapply(json_data, function(x){x["tag_id"][[1]]}))
                     return(output)
                   })),
                   y = unlist(lapply(json_data, function(x){
-                    x["y"][[1]]
-                    output = x["x"][[1]]
+                    output = x["y"][[1]]
                     output[is.null(output)] = NaN
                     return(output)
                   })),
