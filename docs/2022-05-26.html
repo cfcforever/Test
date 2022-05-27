@@ -1,0 +1,1911 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>2022-05-26</title>
+
+<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="site_libs/jquery-3.5.1/jquery-3.5.1.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="site_libs/datatables-binding-0.19/datatables.js"></script>
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/main/img/reproducible.png">
+<!-- Add a small amount of space between sections. -->
+<style type="text/css">
+div.section {
+  padding-top: 12px;
+}
+</style>
+
+
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Test</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="daily_results.html">Daily results</a>
+</li>
+<li>
+  <a href="signal_quality.html">Signal quality</a>
+</li>
+<li>
+  <a href="indoor_path.html">Indoor path</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Stabilization
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="machine_learning.html">Machine Learning</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="about.html">About</a>
+</li>
+<li>
+  <a href="license.html">License</a>
+</li>
+<li>
+  <a href="https://github.com/cfcforever/Test">
+    <span class="fa fa-github"></span>
+     
+    Source code
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">2022-05-26</h1>
+
+</div>
+
+
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+</button>
+</p>
+<div id="workflowr-report" class="collapse">
+<ul class="nav nav-tabs">
+<li class="active">
+<a data-toggle="tab" href="#summary">Summary</a>
+</li>
+<li>
+<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> </a>
+</li>
+<li>
+<a data-toggle="tab" href="#versions">Past versions</a>
+</li>
+</ul>
+<div class="tab-content">
+<div id="summary" class="tab-pane fade in active">
+<p>
+<strong>Last updated:</strong> 2022-05-27
+</p>
+<p>
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
+</p>
+<p>
+<strong>Knit directory:</strong> <code>Test/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
+</p>
+<p>
+This reproducible <a href="https://rmarkdown.rstudio.com">R Markdown</a> analysis was created with <a
+  href="https://github.com/workflowr/workflowr">workflowr</a> (version 1.7.0). The <em>Checks</em> tab describes the reproducibility checks that were applied when the results were created. The <em>Past versions</em> tab lists the development history.
+</p>
+<hr>
+</div>
+<div id="checks" class="tab-pane fade">
+<div id="workflowr-checks" class="panel-group">
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date </a>
+</p>
+</div>
+<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongempty"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Environment:</strong> empty </a>
+</p>
+</div>
+<div id="strongEnvironmentstrongempty" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! The global environment was empty. Objects defined in the global environment can affect the analysis in your R Markdown file in unknown ways. For reproduciblity it’s best to always run the code in an empty environment.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed20210926code"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Seed:</strong> <code>set.seed(20210926)</code> </a>
+</p>
+</div>
+<div id="strongSeedstrongcodesetseed20210926code" class="panel-collapse collapse">
+<div class="panel-body">
+<p>The command <code>set.seed(20210926)</code> was run prior to running the code in the R Markdown file. Setting a seed ensures that any results that rely on randomness, e.g. subsampling or permutations, are reproducible.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSessioninformationstrongrecorded"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Session information:</strong> recorded </a>
+</p>
+</div>
+<div id="strongSessioninformationstrongrecorded" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Recording the operating system, R version, and package versions is critical for reproducibility.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Cache:</strong> none </a>
+</p>
+</div>
+<div id="strongCachestrongnone" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Nice! There were no cached chunks for this analysis, so you can be confident that you successfully produced the results during this run.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongFilepathsstrongrelative"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>File paths:</strong> relative </a>
+</p>
+</div>
+<div id="strongFilepathsstrongrelative" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Using relative paths to the files within your workflowr project makes it easier to run your code on other machines.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree25dd3f97c2117ef6b8ef3c46f0775a4a993083fatargetblank25dd3f9a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cfcforever/Test/tree/25dd3f97c2117ef6b8ef3c46f0775a4a993083fa" target="_blank">25dd3f9</a> </a>
+</p>
+</div>
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcfcforeverTesttree25dd3f97c2117ef6b8ef3c46f0775a4a993083fatargetblank25dd3f9a" class="panel-collapse collapse">
+<div class="panel-body">
+<p>
+Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
+</p>
+<p>
+The results in this page were generated with repository version <a href="https://github.com/cfcforever/Test/tree/25dd3f97c2117ef6b8ef3c46f0775a4a993083fa" target="_blank">25dd3f9</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+</p>
+<p>
+Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
+</p>
+<pre><code>
+Ignored files:
+    Ignored:    .DS_Store
+    Ignored:    .Rhistory
+    Ignored:    .Rproj.user/
+    Ignored:    data/.DS_Store
+    Ignored:    data/Stabiliseur/
+    Ignored:    data/json/
+    Ignored:    data/plan/
+    Ignored:    fig/
+    Ignored:    figure/
+    Ignored:    workflowr.R
+
+Unstaged changes:
+    Modified:   output/list_output.RData
+
+</code></pre>
+<p>
+Note that any generated files, e.g. HTML, png, CSS, etc., are not included in this status report because it is ok for generated content to have uncommitted changes.
+</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div id="versions" class="tab-pane fade">
+
+<p>
+These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/2022-05-26.Rmd</code>) and HTML (<code>docs/2022-05-26.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
+</p>
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+File
+</th>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+<th>
+Message
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/cfcforever/Test/blob/25dd3f97c2117ef6b8ef3c46f0775a4a993083fa/analysis/2022-05-26.Rmd" target="_blank">25dd3f9</a>
+</td>
+<td>
+cfcforever
+</td>
+<td>
+2022-05-27
+</td>
+<td>
+add new content
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div id="load-data.json" class="section level1">
+<h1>load data.json</h1>
+<pre class="r"><code>today = &quot;2022-05-26&quot;
+cat(&quot;data on:&quot;, today, &quot;\n&quot;)</code></pre>
+<pre><code>data on: 2022-05-26 </code></pre>
+<pre class="r"><code>json_data = fromJSON(file = paste0(&quot;data/json/&quot;, today, &quot;/position.json&quot;))
+cat(&quot;Total collected positions: &quot;, length(json_data), &quot;\n&quot;)</code></pre>
+<pre><code>Total collected positions:  482913 </code></pre>
+<pre class="r"><code>tagId_seq = unlist(lapply(json_data, function(x){x[&quot;tag_id&quot;][[1]]}))
+tagId = unique(tagId_seq)
+nb_tag = length(tagId)
+
+cat(nb_tag, &quot;Tags are: &quot;, tagId, &quot;\n&quot;)</code></pre>
+<pre><code>9 Tags are:  19ab 2b9c 503a 44d8 2f40 2f7b 4584 3722 3719 </code></pre>
+</div>
+<div id="general-analysis" class="section level1">
+<h1>general analysis</h1>
+<pre class="r"><code>dat &lt;- data.frame(tag = unlist(lapply(json_data, function(x){x[&quot;tag_id&quot;][[1]]})),
+                  x = unlist(lapply(json_data, function(x){
+                    output = x[&quot;x&quot;][[1]]
+                    output[is.null(output)] = NaN
+                    return(output)
+                  })),
+                  y = unlist(lapply(json_data, function(x){
+                    output = x[&quot;y&quot;][[1]]
+                    output[is.null(output)] = NaN
+                    return(output)
+                  })),
+                  record_timestamp = unlist(lapply(json_data, function(x){x[&quot;record_timestamp&quot;][[1]]})))
+dat = dat[order(dat$record_timestamp),]
+dat = cbind.data.frame(dat, convert_date(dat$record_timestamp))
+dat$x = as.numeric(dat$x)
+dat$y = as.numeric(dat$y)
+
+names_tag &lt;- read.xlsx(&quot;data/Inventaire Tags - Firminy - 2022.xlsx&quot;)
+names_tag = names_tag %&gt;% filter(Identifiant %in% tagId)
+
+tagId = names_tag$Identifiant
+nb_tag = length(tagId)
+
+dat$label = factor(dat$tag, levels = names_tag$Identifiant, labels = names_tag$affectation)
+dat$tagn = as.numeric(factor(dat$tag, levels = names_tag$Identifiant, labels = 1:nb_tag))
+
+list_tag &lt;- split(dat, dat$tag)
+list_tag = lapply(list_tag, function(x){
+  x$diff_ts = c(0, x$record_timestamp[-1]-x$record_timestamp[-nrow(x)])
+  x = x[c(1,which(x$diff_ts&gt;=0.1)),]
+})</code></pre>
+<div id="statistics-of-collecting-data" class="section level2">
+<h2>statistics of collecting data</h2>
+<pre class="r"><code>table_tag &lt;- data.frame(tag = names_tag$Identifiant, label = names_tag$affectation)
+table_tag$first_record = NA
+table_tag$last_record = NA
+table_tag$number = NA
+table_tag$number_NA = NA
+table_tag$ratio_non_NA = NA
+# table_tag$freq_1Q = NA
+# table_tag$freq_median = NA
+# table_tag$freq_3Q = NA
+
+
+for (k in 1:nb_tag){
+  tag = table_tag$tag[k]
+  temp = list_tag[tag][[1]]
+  temp$diff_ts = c(0, temp$record_timestamp[-1]-temp$record_timestamp[-nrow(temp)])
+  
+  table_tag$first_record[k] = head(as.character(temp$date),1)
+  table_tag$last_record[k] = tail(as.character(temp$date),1)
+  table_tag$number[k] = nrow(temp)
+  table_tag$number_NA[k] = sum(is.na(temp$x))
+  table_tag$ratio_non_NA[k] = round(1-table_tag$number_NA[k]/table_tag$number[k],2)
+  # table_tag$freq_1Q[k] = round(quantile(temp$diff_ts, 0.25), 3)
+  # table_tag$freq_median[k] = round(quantile(temp$diff_ts, 0.5), 3)
+  # table_tag$freq_3Q[k] = round(quantile(temp$diff_ts, 0.75), 3)
+}
+
+# kable(table_tag) %&gt;%
+#   kable_styling(bootstrap_options = &quot;striped&quot;, full_width = T)
+datatable(table_tag, options = list(pageLength = nrow(table_tag)))</code></pre>
+<div id="htmlwidget-2425ed13f6d215e4fcb9" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2425ed13f6d215e4fcb9">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9"],["3722","3719","4584","2f7b","2f40","2b9c","19ab","44d8","503a"],["Medecin","Medecin","Soignant","brancard","brancard","brancard","Tag fixe","IDE","Aide soignant"],["2022-05-26 09:30:56","2022-05-26 09:30:54","2022-05-26 01:52:13","2022-05-26 00:11:37","2022-05-26 11:12:22","2022-05-26 00:01:53","2022-05-26 00:00:00","2022-05-26 01:42:50","2022-05-26 01:42:50"],["2022-05-26 09:31:56","2022-05-26 09:31:55","2022-05-26 19:58:32","2022-05-26 21:20:01","2022-05-26 21:29:55","2022-05-26 22:50:11","2022-05-26 23:59:59","2022-05-26 21:52:49","2022-05-26 21:52:50"],[149,67,936,19409,3707,6396,423980,17383,10407],[149,67,374,576,357,749,48232,12746,5776],[0,0,0.6,0.97,0.9,0.88,0.89,0.27,0.44]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>tag<\/th>\n      <th>label<\/th>\n      <th>first_record<\/th>\n      <th>last_record<\/th>\n      <th>number<\/th>\n      <th>number_NA<\/th>\n      <th>ratio_non_NA<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":9,"columnDefs":[{"className":"dt-right","targets":[5,6,7]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[9,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="frequncy-check-of-collecting-data" class="section level2">
+<h2>frequncy check of collecting data</h2>
+<pre class="r"><code>nq = 10
+table_diff_ts = matrix(NA, nrow = nb_tag, ncol = nq+1)
+colnames(table_diff_ts) = paste0(c(0:10)/10*100, &quot;%&quot;)
+rownames(table_diff_ts) = tagId
+for (k in 1:nb_tag){
+  tag = tagId[k]
+  table_diff_ts[k,] = round(quantile(list_tag[tag][[1]]$diff_ts[-1], c(0:10)/10), 3)
+}
+table_diff_ts = cbind.data.frame(label = names_tag$affectation, table_diff_ts)
+
+kable(table_diff_ts) %&gt;%
+  kable_styling(bootstrap_options = &quot;striped&quot;, full_width = T)</code></pre>
+<table class="table table-striped" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+label
+</th>
+<th style="text-align:right;">
+0%
+</th>
+<th style="text-align:right;">
+10%
+</th>
+<th style="text-align:right;">
+20%
+</th>
+<th style="text-align:right;">
+30%
+</th>
+<th style="text-align:right;">
+40%
+</th>
+<th style="text-align:right;">
+50%
+</th>
+<th style="text-align:right;">
+60%
+</th>
+<th style="text-align:right;">
+70%
+</th>
+<th style="text-align:right;">
+80%
+</th>
+<th style="text-align:right;">
+90%
+</th>
+<th style="text-align:right;">
+100%
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+3722
+</td>
+<td style="text-align:left;">
+Medecin
+</td>
+<td style="text-align:right;">
+0.196
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.399
+</td>
+<td style="text-align:right;">
+0.400
+</td>
+<td style="text-align:right;">
+0.519
+</td>
+<td style="text-align:right;">
+0.800
+</td>
+<td style="text-align:right;">
+3.000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3719
+</td>
+<td style="text-align:left;">
+Medecin
+</td>
+<td style="text-align:right;">
+0.151
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+0.399
+</td>
+<td style="text-align:right;">
+0.800
+</td>
+<td style="text-align:right;">
+30.000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4584
+</td>
+<td style="text-align:left;">
+Soignant
+</td>
+<td style="text-align:right;">
+0.153
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+0.400
+</td>
+<td style="text-align:right;">
+0.601
+</td>
+<td style="text-align:right;">
+25403.468
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2f7b
+</td>
+<td style="text-align:left;">
+brancard
+</td>
+<td style="text-align:right;">
+0.141
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+10781.906
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2f40
+</td>
+<td style="text-align:left;">
+brancard
+</td>
+<td style="text-align:right;">
+0.153
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+10571.909
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2b9c
+</td>
+<td style="text-align:left;">
+brancard
+</td>
+<td style="text-align:right;">
+0.152
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+31838.814
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+19ab
+</td>
+<td style="text-align:left;">
+Tag fixe
+</td>
+<td style="text-align:right;">
+0.146
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+242.645
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+44d8
+</td>
+<td style="text-align:left;">
+IDE
+</td>
+<td style="text-align:right;">
+0.151
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+18695.509
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+503a
+</td>
+<td style="text-align:left;">
+Aide soignant
+</td>
+<td style="text-align:right;">
+0.144
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+0.201
+</td>
+<td style="text-align:right;">
+17934.409
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="sensibility-check-of-collecting-data" class="section level2">
+<h2>sensibility check of collecting data</h2>
+<pre class="r"><code>nq = 10
+table_sensibility = matrix(NA, nrow = nb_tag, ncol = nq+2)
+colnames(table_sensibility) = c(&quot;number&quot;, paste0(c(0:10)/10*100, &quot;%&quot;))
+rownames(table_sensibility) = tagId
+for (k in 1:nb_tag){
+  tag = tagId[k]
+  dat_tag = list_tag[tag][[1]]
+  
+  rows_sel = which(dat_tag$diff_ts&gt;5)
+  if (length(rows_sel)&gt;=1){
+    nr = c()
+    nd = c()
+    ns = c()
+    for (i in 1:length(rows_sel)){
+      ki = rows_sel[i]
+      s = dat_tag[(ki-1):ki,c(&quot;x&quot;,&quot;y&quot;)]
+      if (sum(is.na(s))==0){
+        nr = c(nr, ki)
+        ns = c(ns, dat_tag$diff_ts[ki])
+        d = dist(s)/100
+        nd = c(nd, d)
+      }
+    }
+    table_sensibility[k,] = matrix(c(length(nd), round(quantile(nd, 0:10/10),3)), nrow = 1, ncol = nq+2)
+  }else{
+    table_sensibility[k,] = matrix(c(0, rep(NA, nq+1)), nrow = 1, ncol = nq+2)
+  }
+}
+table_sensibility = cbind.data.frame(label = names_tag$affectation, table_sensibility)
+
+kable(table_sensibility) %&gt;%
+  kable_styling(bootstrap_options = &quot;striped&quot;, full_width = T)</code></pre>
+<table class="table table-striped" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+label
+</th>
+<th style="text-align:right;">
+number
+</th>
+<th style="text-align:right;">
+0%
+</th>
+<th style="text-align:right;">
+10%
+</th>
+<th style="text-align:right;">
+20%
+</th>
+<th style="text-align:right;">
+30%
+</th>
+<th style="text-align:right;">
+40%
+</th>
+<th style="text-align:right;">
+50%
+</th>
+<th style="text-align:right;">
+60%
+</th>
+<th style="text-align:right;">
+70%
+</th>
+<th style="text-align:right;">
+80%
+</th>
+<th style="text-align:right;">
+90%
+</th>
+<th style="text-align:right;">
+100%
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+3722
+</td>
+<td style="text-align:left;">
+Medecin
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3719
+</td>
+<td style="text-align:left;">
+Medecin
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4584
+</td>
+<td style="text-align:left;">
+Soignant
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+0.187
+</td>
+<td style="text-align:right;">
+0.190
+</td>
+<td style="text-align:right;">
+0.194
+</td>
+<td style="text-align:right;">
+0.199
+</td>
+<td style="text-align:right;">
+0.240
+</td>
+<td style="text-align:right;">
+0.301
+</td>
+<td style="text-align:right;">
+0.323
+</td>
+<td style="text-align:right;">
+0.346
+</td>
+<td style="text-align:right;">
+0.372
+</td>
+<td style="text-align:right;">
+0.493
+</td>
+<td style="text-align:right;">
+0.663
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2f7b
+</td>
+<td style="text-align:left;">
+brancard
+</td>
+<td style="text-align:right;">
+159
+</td>
+<td style="text-align:right;">
+0.010
+</td>
+<td style="text-align:right;">
+0.053
+</td>
+<td style="text-align:right;">
+0.138
+</td>
+<td style="text-align:right;">
+0.255
+</td>
+<td style="text-align:right;">
+0.349
+</td>
+<td style="text-align:right;">
+0.452
+</td>
+<td style="text-align:right;">
+0.537
+</td>
+<td style="text-align:right;">
+0.607
+</td>
+<td style="text-align:right;">
+0.753
+</td>
+<td style="text-align:right;">
+0.955
+</td>
+<td style="text-align:right;">
+10.492
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2f40
+</td>
+<td style="text-align:left;">
+brancard
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:right;">
+0.042
+</td>
+<td style="text-align:right;">
+0.123
+</td>
+<td style="text-align:right;">
+0.260
+</td>
+<td style="text-align:right;">
+0.333
+</td>
+<td style="text-align:right;">
+0.366
+</td>
+<td style="text-align:right;">
+0.441
+</td>
+<td style="text-align:right;">
+0.553
+</td>
+<td style="text-align:right;">
+1.011
+</td>
+<td style="text-align:right;">
+1.468
+</td>
+<td style="text-align:right;">
+1.779
+</td>
+<td style="text-align:right;">
+4.208
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2b9c
+</td>
+<td style="text-align:left;">
+brancard
+</td>
+<td style="text-align:right;">
+49
+</td>
+<td style="text-align:right;">
+0.014
+</td>
+<td style="text-align:right;">
+0.231
+</td>
+<td style="text-align:right;">
+0.360
+</td>
+<td style="text-align:right;">
+0.476
+</td>
+<td style="text-align:right;">
+0.674
+</td>
+<td style="text-align:right;">
+0.847
+</td>
+<td style="text-align:right;">
+1.078
+</td>
+<td style="text-align:right;">
+1.282
+</td>
+<td style="text-align:right;">
+2.044
+</td>
+<td style="text-align:right;">
+6.196
+</td>
+<td style="text-align:right;">
+15.696
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+19ab
+</td>
+<td style="text-align:left;">
+Tag fixe
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+0.014
+</td>
+<td style="text-align:right;">
+0.018
+</td>
+<td style="text-align:right;">
+0.022
+</td>
+<td style="text-align:right;">
+0.027
+</td>
+<td style="text-align:right;">
+0.032
+</td>
+<td style="text-align:right;">
+0.043
+</td>
+<td style="text-align:right;">
+0.054
+</td>
+<td style="text-align:right;">
+0.059
+</td>
+<td style="text-align:right;">
+0.063
+</td>
+<td style="text-align:right;">
+0.067
+</td>
+<td style="text-align:right;">
+0.071
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+44d8
+</td>
+<td style="text-align:left;">
+IDE
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+0.104
+</td>
+<td style="text-align:right;">
+0.145
+</td>
+<td style="text-align:right;">
+0.174
+</td>
+<td style="text-align:right;">
+0.195
+</td>
+<td style="text-align:right;">
+0.237
+</td>
+<td style="text-align:right;">
+0.284
+</td>
+<td style="text-align:right;">
+0.363
+</td>
+<td style="text-align:right;">
+0.525
+</td>
+<td style="text-align:right;">
+0.629
+</td>
+<td style="text-align:right;">
+0.922
+</td>
+<td style="text-align:right;">
+0.984
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+503a
+</td>
+<td style="text-align:left;">
+Aide soignant
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:right;">
+0.032
+</td>
+<td style="text-align:right;">
+0.037
+</td>
+<td style="text-align:right;">
+0.054
+</td>
+<td style="text-align:right;">
+0.137
+</td>
+<td style="text-align:right;">
+0.183
+</td>
+<td style="text-align:right;">
+0.604
+</td>
+<td style="text-align:right;">
+0.818
+</td>
+<td style="text-align:right;">
+0.970
+</td>
+<td style="text-align:right;">
+1.092
+</td>
+<td style="text-align:right;">
+1.229
+</td>
+<td style="text-align:right;">
+2.359
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="plot-with-nas" class="section level2">
+<h2>plot with NAs</h2>
+<pre class="r"><code>timestamp_breaks = as.numeric(as.POSIXct(paste0(today, &quot; &quot;, sprintf(&quot;%02d&quot;, 0:23), &quot;:00:00 CEST&quot;))) + 3600*6
+p &lt;- ggplot(dat) + theme_bw() + 
+  geom_point(aes(x=record_timestamp, y=tagn, col=tagn), size=0.5) +
+  scale_x_continuous(breaks = timestamp_breaks, labels = 0:23) +
+  scale_y_continuous(breaks = 1:nb_tag, labels = paste0(names_tag$affectation, &quot;-&quot;, names_tag$Identifiant)) + 
+  scale_color_gradientn(colours = hue_pal()(nb_tag)) + 
+  coord_cartesian(xlim = c(timestamp_breaks[1], timestamp_breaks[23]+3600)) +
+  theme(legend.position = &quot;None&quot;) +
+  labs(x = &quot;hour&quot;, y = &quot;&quot;, title = today)
+print(p)</code></pre>
+<p><img src="figure/2022-05-26.Rmd/unnamed-chunk-7-1.png" width="1056" style="display: block; margin: auto;" /></p>
+</div>
+<div id="number-nas" class="section level2">
+<h2>number NAs</h2>
+<pre class="r"><code>x_na = which(is.na(dat$x))
+y_na = which(is.na(dat$y))
+cat(&quot;if x_na = y_na:&quot;, identical(x_na, y_na), &quot;\n&quot;)</code></pre>
+<pre><code>if x_na = y_na: TRUE </code></pre>
+<pre class="r"><code>cat(&quot;number of NA positions:&quot;, length(x_na), &quot;/&quot;, length(tagId_seq), &quot;(=&quot;, 
+    length(x_na)/length(tagId_seq)*100, &quot;%)&quot;, &quot;\n&quot;)</code></pre>
+<pre><code>number of NA positions: 69125 / 482913 (= 14.31417 %) </code></pre>
+<pre class="r"><code>if (length(x_na)!=0){
+  dat = dat[-x_na,]
+}</code></pre>
+<pre class="r"><code>list_tag &lt;- split(dat, dat$tag)
+
+for (tag in names(list_tag)){
+  if (!is.null(list_tag[tag][[1]])){
+    dd = list_tag[tag][[1]]
+    dd[,c(&quot;x&quot;,&quot;y&quot;)] = dd[,c(&quot;x&quot;,&quot;y&quot;)]/100
+    rownames(dd) = 1:nrow(dd)
+    dd$num = 1:nrow(dd)
+    dd$timediff = c(0, dd$record_timestamp[-1] - dd$record_timestamp[-nrow(dd)])
+    
+    list_tag[tag][[1]] = dd
+  }
+}
+dat = do.call(rbind.data.frame, list_tag)</code></pre>
+</div>
+</div>
+<div id="plot" class="section level1 tabset tabset-pills">
+<h1 class="tabset tabset-pills">plot</h1>
+<pre class="r"><code>load(&quot;data/plan/plan_firminy.RData&quot;)
+names_tag = names_tag[order(names_tag$Identifiant),]</code></pre>
+<pre class="r"><code>for (k in 1:nb_tag){
+  tag = names_tag$Identifiant[k]
+  type = names_tag$affectation[k]
+  cat(&quot;\n&quot;)
+  cat(&quot;## &quot;, tag, &quot;-&quot;, type, &quot;\n&quot;)
+  dd = list_tag[tag][[1]]
+  if (!is.null(dd)){
+    q &lt;- p + 
+      geom_point(data = dd, aes(x=x,y=y), col=&quot;red&quot;, size = 0.5) +
+      coord_equal(ratio = 1, xlim = c(-20,20), ylim = c(-35,35)) + 
+      labs(x = &quot;&quot;, y = &quot;&quot;, title = paste0(tag, &quot; - &quot;, names_tag$affectation[names_tag$Identifiant==tag]))
+    print(q)
+  }else{
+    cat(&quot;NO DATA for plot!!&quot;)
+  }
+  cat(&quot;\n&quot;)
+}</code></pre>
+<div id="ab---tag-fixe" class="section level2">
+<h2>19ab - Tag fixe</h2>
+<p><img src="figure/2022-05-26.Rmd/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="b9c---brancard" class="section level2">
+<h2>2b9c - brancard</h2>
+<p><img src="figure/2022-05-26.Rmd/unnamed-chunk-11-2.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="f40---brancard" class="section level2">
+<h2>2f40 - brancard</h2>
+<p><img src="figure/2022-05-26.Rmd/unnamed-chunk-11-3.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="f7b---brancard" class="section level2">
+<h2>2f7b - brancard</h2>
+<p><img src="figure/2022-05-26.Rmd/unnamed-chunk-11-4.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="medecin" class="section level2">
+<h2>3719 - Medecin</h2>
+<p>NO DATA for plot!!</p>
+</div>
+<div id="medecin-1" class="section level2">
+<h2>3722 - Medecin</h2>
+<p>NO DATA for plot!!</p>
+</div>
+<div id="d8---ide" class="section level2">
+<h2>44d8 - IDE</h2>
+<p><img src="figure/2022-05-26.Rmd/unnamed-chunk-11-5.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="soignant" class="section level2">
+<h2>4584 - Soignant</h2>
+<p><img src="figure/2022-05-26.Rmd/unnamed-chunk-11-6.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="a---aide-soignant" class="section level2">
+<h2>503a - Aide soignant</h2>
+<p><img src="figure/2022-05-26.Rmd/unnamed-chunk-11-7.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="hourly-plot" class="section level1 tabset tabset-pills">
+<h1 class="tabset tabset-pills">hourly plot</h1>
+<pre class="r"><code>data &lt;- read.csv2(file = paste0(&quot;data/json/&quot;, today, &quot;/position.csv&quot;))
+tags = unique(data$tag)
+
+names_tag = read.xlsx(&quot;data/Inventaire Tags - Firminy - 2022.xlsx&quot;)
+names_tag = names_tag[order(names_tag$Identifiant),]
+
+tags = names_tag %&gt;% filter(Identifiant %in% tags)
+
+for (i in 1:nrow(tags)){
+  m  = tags$Identifiant[i]
+  ml = tags$affectation[i]
+  cat(&quot;\n&quot;)
+  cat(&quot;## &quot;, m, &quot;-&quot;, ml, &quot; {.tabset .tabset-pills}&quot;, &quot;\n&quot;)
+  
+  data_plot = data[data$tag==m,]
+  data_plot$H = factor(data_plot$H, levels = c(0:23))
+  data_plot$H = factor(data_plot$H, levels = c(0:23), labels = paste0(0:23, &quot;H - &quot;, table(data_plot$H[is.na(data_plot$x)]), &quot; (NA) /&quot;, table(data_plot$H), &quot; (Total)&quot;))
+    
+  q = p + theme_bw() +
+    geom_point(data = data_plot, aes(x=x, y=y), col=&quot;red&quot;, na.rm = T) +
+    coord_equal(ratio = 1, xlim = c(-20,17), ylim = c(-35,35)) +
+    labs(x = &quot;&quot;, y = &quot;&quot;, title = paste0(ml, &quot; (&quot;, m, &quot;)&quot;)) + 
+    facet_wrap(~H, nrow = 4, drop = F)
+  print(q)
+  cat(&quot;\n&quot;)
+}</code></pre>
+<div id="ab---tag-fixe-1" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">19ab - Tag fixe</h2>
+<p><img src="figure/2022-05-26.Rmd/unnamed-chunk-12-1.png" width="1728" style="display: block; margin: auto;" /></p>
+</div>
+<div id="b9c---brancard-1" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">2b9c - brancard</h2>
+<p><img src="figure/2022-05-26.Rmd/unnamed-chunk-12-2.png" width="1728" style="display: block; margin: auto;" /></p>
+</div>
+<div id="f40---brancard-1" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">2f40 - brancard</h2>
+<p><img src="figure/2022-05-26.Rmd/unnamed-chunk-12-3.png" width="1728" style="display: block; margin: auto;" /></p>
+</div>
+<div id="f7b---brancard-1" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">2f7b - brancard</h2>
+<p><img src="figure/2022-05-26.Rmd/unnamed-chunk-12-4.png" width="1728" style="display: block; margin: auto;" /></p>
+</div>
+<div id="medecin-2" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">3719 - Medecin</h2>
+<p><img src="figure/2022-05-26.Rmd/unnamed-chunk-12-5.png" width="1728" style="display: block; margin: auto;" /></p>
+</div>
+<div id="medecin-3" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">3722 - Medecin</h2>
+<p><img src="figure/2022-05-26.Rmd/unnamed-chunk-12-6.png" width="1728" style="display: block; margin: auto;" /></p>
+</div>
+<div id="d8---ide-1" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">44d8 - IDE</h2>
+<p><img src="figure/2022-05-26.Rmd/unnamed-chunk-12-7.png" width="1728" style="display: block; margin: auto;" /></p>
+</div>
+<div id="soignant-1" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">4584 - Soignant</h2>
+<p><img src="figure/2022-05-26.Rmd/unnamed-chunk-12-8.png" width="1728" style="display: block; margin: auto;" /></p>
+</div>
+<div id="a---aide-soignant-1" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">503a - Aide soignant</h2>
+<p><img src="figure/2022-05-26.Rmd/unnamed-chunk-12-9.png" width="1728" style="display: block; margin: auto;" /></p>
+<br>
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
+<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Session information
+</button>
+</p>
+<div id="workflowr-sessioninfo" class="collapse">
+<pre class="r"><code>sessionInfo()</code></pre>
+<pre><code>R version 4.0.5 (2021-03-31)
+Platform: x86_64-apple-darwin17.0 (64-bit)
+Running under: macOS Big Sur 10.16
+
+Matrix products: default
+BLAS:   /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRblas.dylib
+LAPACK: /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRlapack.dylib
+
+locale:
+[1] zh_CN.UTF-8/zh_CN.UTF-8/zh_CN.UTF-8/C/zh_CN.UTF-8/zh_CN.UTF-8
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] htmltools_0.5.2  openxlsx_4.2.4   scales_1.1.1     DT_0.19         
+ [5] readxl_1.3.1     lubridate_1.7.10 dplyr_1.0.5      nnet_7.3-15     
+ [9] kableExtra_1.3.4 rjson_0.2.20     cowplot_1.1.1    gifski_1.4.3-1  
+[13] gganimate_1.0.7  ggplot2_3.3.5    workflowr_1.7.0 
+
+loaded via a namespace (and not attached):
+ [1] Rcpp_1.0.7        svglite_2.0.0     prettyunits_1.1.1 getPass_0.2-2    
+ [5] ps_1.6.0          rprojroot_2.0.2   digest_0.6.27     utf8_1.2.1       
+ [9] mime_0.10         cellranger_1.1.0  R6_2.5.0          evaluate_0.14    
+[13] highr_0.8         httr_1.4.2        pillar_1.6.0      rlang_0.4.10     
+[17] progress_1.2.2    rstudioapi_0.13   whisker_0.4       callr_3.7.0      
+[21] jquerylib_0.1.3   rmarkdown_2.10    labeling_0.4.2    webshot_0.5.2    
+[25] stringr_1.4.0     htmlwidgets_1.5.3 munsell_0.5.0     shiny_1.6.0      
+[29] compiler_4.0.5    httpuv_1.5.5      xfun_0.29         pkgconfig_2.0.3  
+[33] systemfonts_1.0.1 tidyselect_1.1.0  tibble_3.1.0      fansi_0.4.2      
+[37] viridisLite_0.4.0 crayon_1.4.1      withr_2.4.1       later_1.1.0.1    
+[41] grid_4.0.5        xtable_1.8-4      jsonlite_1.7.2    gtable_0.3.0     
+[45] lifecycle_1.0.0   git2r_0.28.0      magrittr_2.0.1    zip_2.2.0        
+[49] stringi_1.5.3     farver_2.1.0      fs_1.5.0          promises_1.2.0.1 
+[53] xml2_1.3.2        bslib_0.2.4       ellipsis_0.3.1    generics_0.1.0   
+[57] vctrs_0.3.7       tools_4.0.5       glue_1.4.2        tweenr_1.0.2     
+[61] purrr_0.3.4       crosstalk_1.1.1   hms_1.0.0         processx_3.5.1   
+[65] fastmap_1.1.0     yaml_2.2.1        colorspace_2.0-0  rvest_1.0.0      
+[69] knitr_1.37        sass_0.3.1       </code></pre>
+</div>
+</div>
+</div>
+
+
+<!-- Adjust MathJax settings so that all math formulae are shown using
+TeX fonts only; see
+https://docs.mathjax.org/en/latest/web/configuration.html. This will make
+the presentation more consistent at the cost of the webpage sometimes
+taking slightly longer to load. Note that this only works because the
+footer is added to webpages before the MathJax javascript. -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
