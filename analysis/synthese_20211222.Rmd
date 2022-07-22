@@ -12,13 +12,13 @@ editor_options:
 ```{r include=FALSE}
 source("code/packages_and_functions.R")
 day0 = "2021-12-22"
-today = "2022-07-09"
+today = "2022-07-21"
 cat("data on:", today, "\n")
 ```
 
 
 ```{r eval=FALSE, include=FALSE}
-today = "2022-06-13"
+today = "2022-07-21"
 days = seq(as.Date("2021-12-22"),to=as.Date(today),by='1 day')
 
 list_output = vector("list", length(days))
